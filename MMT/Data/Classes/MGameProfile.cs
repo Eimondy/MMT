@@ -20,7 +20,7 @@ namespace MMT
         private int doorCount;
         private List<MItem> itemCount;
 
-        public string PlayerName { get { return playerName; } }
+        public string PlayerName { get { return playerName; } set { playerName = value; } }
         public int PlayedTime { get { return playedTime; } }
         public MMainCharacter Character { get { return character; } }
         public int CurrentLevelNumber { get { return currentLevelNumber; } }
