@@ -30,7 +30,7 @@ namespace MMT
         public List<MItem> ItemCount { get { return itemCount; } }
         public MGameProfile()
         {
-
+            
         }
     }
 }

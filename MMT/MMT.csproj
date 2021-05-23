@@ -49,6 +49,7 @@
     <Compile Include="Data\Classes\Character\MCharacter.cs" />
     <Compile Include="Data\Classes\Character\MMainCharacter.cs" />
     <Compile Include="Data\Classes\Item\MItem.cs" />
+    <Compile Include="Data\Classes\MEnum.cs" />
     <Compile Include="Data\Classes\MGameProfile.cs" />
     <Compile Include="Data\Classes\MLevel.cs" />
     <Compile Include="Data\Classes\MMainForm.cs">
