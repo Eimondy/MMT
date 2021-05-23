@@ -8,5 +8,6 @@ namespace MMT.Data.Classes.Item
 {
     class MItem
     {
+
     }
 }
