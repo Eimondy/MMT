@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Data\Classes\MApplication.cs" />
     <Compile Include="Data\Classes\MMainLogic.cs" />
+    <Compile Include="Data\Classes\Skill\MSkill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Data\Classes\MMainForm.resx">
       <DependentUpon>MMainForm.cs</DependentUpon>
@@ -86,8 +87,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\Classes\Skill\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
