@@ -50,6 +50,7 @@ namespace MMT
         public MMainLogic()
         {
 
+
         }
 
         public void GameInit()
