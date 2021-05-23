@@ -10,7 +10,7 @@ namespace MMT
 
         /// <summary>
         /// 清理所有正在使用的资源。
-        /// </summary>
+        /// </summary> 
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         protected override void Dispose(bool disposing)
         {
