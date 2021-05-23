@@ -21,7 +21,7 @@ namespace MMT
             //Form.GameInit();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MMainForm());
+            //Application.Run(Form);
         }
     }
 }
