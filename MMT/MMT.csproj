@@ -52,17 +52,17 @@
     <Compile Include="Data\Classes\MEnum.cs" />
     <Compile Include="Data\Classes\MGameProfile.cs" />
     <Compile Include="Data\Classes\MLevel.cs" />
-    <Compile Include="Data\Classes\MMainForm.cs">
+    <Compile Include="MMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Data\Classes\MMainForm.Designer.cs">
+    <Compile Include="MMainForm.Designer.cs">
       <DependentUpon>MMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\Classes\MApplication.cs" />
-    <Compile Include="Data\Classes\MMainLogic.cs" />
+    <Compile Include="MApplication.cs" />
+    <Compile Include="MMainLogic.cs" />
     <Compile Include="Data\Classes\Skill\MSkill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Data\Classes\MMainForm.resx">
+    <EmbeddedResource Include="MMainForm.resx">
       <DependentUpon>MMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

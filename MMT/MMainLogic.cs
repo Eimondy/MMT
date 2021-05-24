@@ -4,10 +4,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using MMT.Data.Classes;
 
 namespace MMT
 {
-    class MMainLogic
+    public class MMainLogic
     {
         private static MMainLogic instance;
         private List<MGameProfile> saves;

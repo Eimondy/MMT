@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes
 {
-    class MLevel
+    [Serializable]
+    public class MLevel
     {
         public MLevel()
         {

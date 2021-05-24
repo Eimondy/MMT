@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Character
 {
-    class MCharacter
+    [Serializable]
+    public class MCharacter
     {
 
     }

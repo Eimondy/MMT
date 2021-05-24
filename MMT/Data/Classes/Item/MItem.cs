@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Item
 {
-    class MItem
+    [Serializable]
+    public class MItem
     {
         public MItem()
         {

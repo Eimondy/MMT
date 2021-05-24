@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MMT.Data.Classes;
 using MMT.Data.Classes.Character;
 using MMT.Data.Classes.Item;
 
-namespace MMT
+namespace MMT.Data.Classes
 {
-    class MGameProfile
+    [Serializable]
+    public class MGameProfile
     {
         private string playerName;
         private int playedTime;
