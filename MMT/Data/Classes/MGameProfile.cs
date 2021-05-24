@@ -28,11 +28,18 @@ namespace MMT.Data.Classes
         public int DefeatedCount { get { return defeatedCount; } set { defeatedCount = value; } }
         public int DoorCount { get { return doorCount; } set { doorCount = value; } }
         public List<MItem> ItemCount { get { return itemCount; } }     // no setter
-        public MGameProfile()
+        public MGameProfile()     // default constructor, need no Character
         {
-
+            PlayerName = "";
+            PlayedTime = 0;
+            CurrentLevelNumber = 0;
+            DefeatedCount = 0;
+            DoorCount = 0;
+            existLevels = new List<MLevel>();
+            itemCount = new List<MItem>();
+            character = null;
         }
-        public MGameProfile(string pn, int pt, int cln, int dec, int doc, MMainCharacter c, List<MLevel> el, List<MItem> ic)
+        public MGameProfile(string pn, int pt = 0, int cln = 0, int dec = 0, int doc = 0, MMainCharacter c = null, List<MLevel> el = null, List<MItem> ic = null)
         {
             PlayerName = pn;
             PlayedTime = pt;
@@ -69,6 +76,21 @@ namespace MMT.Data.Classes
                 itemCount.Add(new MItem(item));
             }
             character = new MMainCharacter(p.Character);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is MGameProfile)
+            {
+                MGameProfile p = obj as MGameProfile;
+                if (PlayerName == p.PlayerName && PlayedTime == p.PlayedTime && CurrentLevelNumber == p.CurrentLevelNumber
+                    && DefeatedCount == p.DefeatedCount && DoorCount == p.DoorCount )
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
         }
     }
 }

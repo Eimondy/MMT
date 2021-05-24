@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using MMT.Data.Classes;
+using MMT.Data.Classes.Character;
 
 namespace MMT
 {
@@ -68,12 +69,13 @@ namespace MMT
 
         }
 
-        public void NewGame()
+        public void NewGame(string pn)     // untested
         {
-
+            CurrentProfile = new MGameProfile();
+            CurrentProfile.Character = new MMainCharacter();
         }
 
-        public void LoadProfile(int number)     //untested
+        public void LoadProfile(int number)     // path may need to change later
         {
             BinaryFormatter bf = new BinaryFormatter();
             string path = @"..\..\Saves\Saves_" + number.ToString() + ".save";
@@ -83,7 +85,7 @@ namespace MMT
             }
         }
 
-        public void SaveProfile()     // untested
+        public void SaveProfile()     // path may need to change later
         {
             BinaryFormatter bf = new BinaryFormatter();
             string path = @"..\..\Saves\Saves_" + (Saves.Count + 1).ToString() + ".save";

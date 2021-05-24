@@ -15,12 +15,12 @@ namespace MMT
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             MMainLogic Logic = MMainLogic.Instance;
             Logic.GameInit();
             //MMainForm Form = MMainForm.Instance;
             //Form.GameInit();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(Form);
         }
     }
