@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace MMT
 {
@@ -28,20 +29,8 @@ namespace MMT
                     return instance;
             }
         }
-        public List<MGameProfile> Saves
-        {
-            get
-            {
-                return saves;
-            }
-        }
-        public MGameProfile CurrentProfile
-        {
-            get
-            {
-                return currentProfile;
-            }
-        }
+        public List<MGameProfile> Saves { get { return saves; } set { saves = value; } }
+        public MGameProfile CurrentProfile { get { return currentProfile; } set { currentProfile = value; } }
         public bool Paused { get { return paused; } set { paused = value; } }
         public bool Combat { get { return paused; } set { combat = value; } }
         public bool Victory { get { return paused; } set { victory = value; } }
@@ -55,7 +44,7 @@ namespace MMT
 
         public void GameInit()
         {
-
+                 // load all saves from disk into Saves
         }
 
         public void GameOver()
@@ -83,14 +72,24 @@ namespace MMT
 
         }
 
-        public void LoadProfile()
+        public void LoadProfile(int number)     //untested
         {
-
+            BinaryFormatter bf = new BinaryFormatter();
+            string path = @"..\..\Saves\Saves_" + number.ToString() + ".save";
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                CurrentProfile = new MGameProfile((MGameProfile)bf.Deserialize(fs));
+            }
         }
 
-        public void SaveProfile()
+        public void SaveProfile()     // untested
         {
-
+            BinaryFormatter bf = new BinaryFormatter();
+            string path = @"..\..\Saves\Saves_" + (Saves.Count + 1).ToString() + ".save";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                bf.Serialize(fs, CurrentProfile);
+            }
         }
 
         public void CombatMode()

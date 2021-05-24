@@ -8,6 +8,13 @@ namespace MMT.Data.Classes.Item
 {
     class MItem
     {
+        public MItem()
+        {
 
+        }
+        public MItem(MItem item)     // copy constructor
+        {
+
+        }
     }
 }

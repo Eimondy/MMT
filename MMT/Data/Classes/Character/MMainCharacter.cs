@@ -8,6 +8,13 @@ namespace MMT.Data.Classes.Character
 {
     class MMainCharacter : MCharacter
     {
+        public MMainCharacter()
+        {
 
+        }
+        public MMainCharacter(MMainCharacter c)     // copy constructor
+        {
+
+        }
     }
 }

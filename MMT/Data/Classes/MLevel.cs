@@ -8,6 +8,13 @@ namespace MMT.Data.Classes
 {
     class MLevel
     {
+        public MLevel()
+        {
 
+        }
+        public MLevel(MLevel level)     // copy constructor
+        {
+
+        }
     }
 }
