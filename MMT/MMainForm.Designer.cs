@@ -38,6 +38,8 @@ namespace MMT
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "MMainForm";
             this.Text = "MMainForm";
+            this.SizeChanged += new System.EventHandler(this.MMainForm_SizeChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MMainForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);
             this.ResumeLayout(false);
 
