@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +11,7 @@ namespace MMT
     public partial class MMainForm : Form
     {
         private static MMainForm instance;
+        private Graphics g;
         public static MMainForm Instance
         {
             get
@@ -26,22 +25,27 @@ namespace MMT
                     return instance;
             }
         }
+        public Graphics G { get { return g; } }
         public MMainForm()
         {
             InitializeComponent();
-
-        }
-
-        protected override void OnPaint(PaintEventArgs e)     // 绘制事件
-        {
-            base.OnPaint(e);
-            MMainLogic.Instance.Draw();
+            g = this.CreateGraphics();
         }
 
         private void MMainForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.X)
                 MMainLogic.Instance.Exit();
+        }
+
+        private void MMainForm_Paint(object sender, PaintEventArgs e)     // 绘制事件
+        {
+            MMainLogic.Instance.Draw();
+        }
+
+        private void MMainForm_SizeChanged(object sender, EventArgs e)     // 更改窗体大小时，重设画布
+        {
+            g = this.CreateGraphics();
         }
     }
 }
