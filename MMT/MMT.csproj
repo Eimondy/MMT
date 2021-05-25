@@ -49,7 +49,13 @@
   <ItemGroup>
     <Compile Include="Data\Classes\Character\MCharacter.cs" />
     <Compile Include="Data\Classes\Character\MMainCharacter.cs" />
+    <Compile Include="Data\Classes\Item\MDoor.cs" />
+    <Compile Include="Data\Classes\Item\MEquipment.cs" />
+    <Compile Include="Data\Classes\Item\MExit.cs" />
+    <Compile Include="Data\Classes\Item\MIPickable.cs" />
     <Compile Include="Data\Classes\Item\MItem.cs" />
+    <Compile Include="Data\Classes\Item\MKey.cs" />
+    <Compile Include="Data\Classes\Item\MPotion.cs" />
     <Compile Include="Data\Classes\MEnum.cs" />
     <Compile Include="Data\Classes\MGameProfile.cs" />
     <Compile Include="Data\Classes\MLevel.cs" />
