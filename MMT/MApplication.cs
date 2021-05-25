@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using MMT.Data.Classes;
 
@@ -19,9 +18,14 @@ namespace MMT
             Application.SetCompatibleTextRenderingDefault(false);
             MMainLogic Logic = MMainLogic.Instance;
             Logic.GameInit();
-            //MMainForm Form = MMainForm.Instance;
+            MMainForm Form = MMainForm.Instance;
             //Form.GameInit();
-            //Application.Run(Form);
+            Thread GameThread = new Thread(new ThreadStart(MMainLogic.Instance.GameLoop));
+            //GameThread.Start();
+            
+            Application.Run(Form);
+            // gently top the GameThread
+
         }
     }
 }

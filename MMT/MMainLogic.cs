@@ -12,8 +12,8 @@ namespace MMT
     public class MMainLogic
     {
         private static MMainLogic instance;
-        private List<MGameProfile> saves;
-        private MGameProfile currentProfile;
+        private List<MGameProfile> saves = new List<MGameProfile>();
+        private MGameProfile currentProfile = null;
         private bool paused = false;
         private bool combat = false;
         private bool victory = false;
@@ -40,13 +40,20 @@ namespace MMT
 
         public MMainLogic()
         {
-
-
         }
 
         public void GameInit()
         {
-                 // load all saves from disk into Saves
+            // 加载所有存档文件到Saves
+            BinaryFormatter bf = new BinaryFormatter();
+            string dir = @"..\..\Saves";
+            string[] files = Directory.GetFiles(dir, @"*.save");
+            FileStream fs;
+            foreach(string file in files)
+            {
+                fs = new FileStream(file, FileMode.Open);
+                Saves.Add(new MGameProfile((MGameProfile)bf.Deserialize(fs)));
+            }
         }
 
         public void GameOver()
@@ -66,33 +73,37 @@ namespace MMT
 
         public void Exit()
         {
-
+            MMainForm.Instance.Dispose();
+            //MMainForm.Instance.Close();
         }
 
-        public void NewGame(string pn)     // untested
+        public void NewGame(string pn)
         {
-            CurrentProfile = new MGameProfile();
-            CurrentProfile.Character = new MMainCharacter();
+            CurrentProfile = new MGameProfile(pn);
+            CurrentProfile.Character = new MMainCharacter();     // 后续可能需改动
         }
 
-        public void LoadProfile(int number)     // path may need to change later
+        public void LoadProfile(int number)     // 路径后续可能需改动
         {
             BinaryFormatter bf = new BinaryFormatter();
-            string path = @"..\..\Saves\Saves_" + number.ToString() + ".save";
+            string path = @"..\..\Saves_" + number.ToString() + ".save";
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
                 CurrentProfile = new MGameProfile((MGameProfile)bf.Deserialize(fs));
             }
         }
 
-        public void SaveProfile()     // path may need to change later
+        public void SaveProfile()     // 路径后续可能需改动
         {
+            // 保存到文件
             BinaryFormatter bf = new BinaryFormatter();
-            string path = @"..\..\Saves\Saves_" + (Saves.Count + 1).ToString() + ".save";
+            string path = @"..\..\Saves_" + (Saves.Count + 1).ToString() + ".save";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 bf.Serialize(fs, CurrentProfile);
             }
+            // 更新Saves
+            Saves.Add(CurrentProfile);
         }
 
         public void CombatMode()

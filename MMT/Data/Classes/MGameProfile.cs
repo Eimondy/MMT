@@ -24,11 +24,11 @@ namespace MMT.Data.Classes
         public int PlayedTime { get { return playedTime; } set { playedTime = value; } }
         public MMainCharacter Character { get { return character; } set { character = value; } }
         public int CurrentLevelNumber { get { return currentLevelNumber; } set { currentLevelNumber = value; } }
-        public List<MLevel> ExistLevels { get { return existLevels; } }     // no setter
+        public List<MLevel> ExistLevels { get { return existLevels; } }     // 不设setter
         public int DefeatedCount { get { return defeatedCount; } set { defeatedCount = value; } }
         public int DoorCount { get { return doorCount; } set { doorCount = value; } }
-        public List<MItem> ItemCount { get { return itemCount; } }     // no setter
-        public MGameProfile()     // default constructor, need no Character
+        public List<MItem> ItemCount { get { return itemCount; } }     // 不设setter
+        public MGameProfile()     // 默认构造函数，初始角色为null
         {
             PlayerName = "";
             PlayedTime = 0;
@@ -58,7 +58,7 @@ namespace MMT.Data.Classes
             }
             character = new MMainCharacter(c);
         }
-        public MGameProfile(MGameProfile p)     // copy constructor
+        public MGameProfile(MGameProfile p)     // 复制构造函数
         {
             PlayerName = p.PlayerName;
             PlayedTime = p.PlayedTime;
