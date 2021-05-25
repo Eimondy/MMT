@@ -24,7 +24,7 @@ namespace MMT
             //GameThread.Start();
             
             Application.Run(Form);
-            // gently top the GameThread
+            // 安全地关闭GameThread，等待直到GameOver()执行完
 
         }
     }
