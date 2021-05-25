@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Classes\Character\MCharacter.cs" />
+    <Compile Include="Data\Classes\Character\MEnemy.cs" />
     <Compile Include="Data\Classes\Character\MMainCharacter.cs" />
     <Compile Include="Data\Classes\Item\MDoor.cs" />
     <Compile Include="Data\Classes\Item\MEquipment.cs" />
