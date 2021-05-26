@@ -34,8 +34,8 @@ namespace MMT
 
         private void MMainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.X)
-                MMainLogic.Instance.Exit();
+            MMainLogic.Instance.KeyboardInput = true;
+            MMainLogic.Instance.KeyboardData = e.KeyData;
         }
 
         private void MMainForm_Paint(object sender, PaintEventArgs e)     // 绘制事件
@@ -46,6 +46,11 @@ namespace MMT
         private void MMainForm_SizeChanged(object sender, EventArgs e)     // 更改窗体大小时，重设画布
         {
             g = this.CreateGraphics();
+        }
+
+        private void MMainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            MMainLogic.Instance.KeyboardInput = false;
         }
     }
 }

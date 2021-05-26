@@ -41,6 +41,7 @@ namespace MMT
             this.SizeChanged += new System.EventHandler(this.MMainForm_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MMainForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyUp);
             this.ResumeLayout(false);
 
         }
