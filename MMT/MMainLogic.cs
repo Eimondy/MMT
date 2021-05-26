@@ -10,7 +10,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT
 {
-    public class MMainLogic
+    class MMainLogic
     {
         private static MMainLogic instance;
         private List<MGameProfile> saves = new List<MGameProfile>();
@@ -80,7 +80,7 @@ namespace MMT
         public void NewGame(string pn)
         {
             CurrentProfile = new MGameProfile(pn);
-            CurrentProfile.Character = new MMainCharacter();     // 后续可能需改动
+            //CurrentProfile.Character = new MMainCharacter();     // 后续可能需改动
         }
 
         public void LoadProfile(int number)     // 路径后续可能需改动
@@ -105,7 +105,7 @@ namespace MMT
             // 更新Saves
             Saves.Add(CurrentProfile);
         }
-
+        
         public void CombatMode(MCharacter enemy)     // 类型后续需改为MEnemy
         {
             Combat = true;
