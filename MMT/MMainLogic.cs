@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Windows.Forms;
 using MMT.Data.Classes;
 using MMT.Data.Classes.Character;
+using MMT.Data.Classes.Item;
 
 namespace MMT
 {
@@ -19,6 +22,9 @@ namespace MMT
         private bool combat = false;
         private bool victory = false;
         private bool defeated = false;
+        private bool isInGame = false;
+        private bool keyboardInput = false;
+        private Keys keyboardData;
         public static MMainLogic Instance
         {
             get
@@ -38,6 +44,9 @@ namespace MMT
         public bool Combat { get { return paused; } set { combat = value; } }
         public bool Victory { get { return paused; } set { victory = value; } }
         public bool Defeated { get { return paused; } set { defeated = value; } }
+        public bool IsInGame { get { return isInGame; } set { isInGame = value; } }
+        public bool KeyboardInput { get { return keyboardInput; } set { keyboardInput = value; } }
+        public Keys KeyboardData { get { return keyboardData; } set { keyboardData = value; } }
 
         public MMainLogic()
         {
@@ -69,7 +78,9 @@ namespace MMT
 
         public void Start()
         {
-
+            MLevel.Levels.Add(new MLevel());
+            // 设置进入游戏标志
+            IsInGame = true;
         }
 
         public void Exit()
@@ -165,7 +176,45 @@ namespace MMT
 
         public void GameLoop()
         {
-
+            while (true)
+            {
+                if (IsInGame)     // 开始游戏之后才开始游戏循环
+                {
+                    // 处理输入
+                    if (KeyboardInput == true)
+                    {
+                        switch (KeyboardData)
+                        {
+                            case Keys.A: break;
+                            case Keys.D: break;
+                            case Keys.W: break;
+                            case Keys.S: break;
+                            case Keys.Escape: break;
+                        }
+                    }
+                    // 碰撞检测
+                    MLevel currentLevel = (from level in MLevel.Levels where level.LevelNumber == MLevel.CurrentLevel select level).First();
+                    //MLevel currentLevel = (MLevel)MLevel.Levels.Where(l => l.LevelNumber == MLevel.CurrentLevel).Select(l => l);
+                    bool hit = false;
+                    foreach (MItem item in currentLevel.Items)
+                    {
+                        if(item.LocationX == MMainCharacter.Instance.LocationX && item.LocationY == MMainCharacter.Instance.LocationY)
+                        {
+                            // 发生碰撞
+                            hit = true;
+                        }
+                    }
+                    if(!hit)
+                        foreach(MEnemy enemy in currentLevel.Enemies)
+                        {
+                            if (enemy.LocationX == MMainCharacter.Instance.LocationX && enemy.LocationY == MMainCharacter.Instance.LocationY)
+                            {
+                                // 发生碰撞
+                                hit = true;
+                            }
+                        }
+                }
+            }
         }
     }
 }
