@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Character
 {
-    public abstract class MEnemy : MCharacter
+    abstract class MEnemy : MCharacter
     {
         private MONSTER monstertype; //敌人类型
         private string description; //描述
