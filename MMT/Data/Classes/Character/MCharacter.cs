@@ -9,7 +9,7 @@ using MMT.Data.Classes.Skill;
 namespace MMT.Data.Classes.Character
 {
     [Serializable]
-    public abstract class MCharacter
+    abstract class MCharacter
     {
         private String name;     //人物名称。
         private Bitmap image;    //人物使用的图片。
