@@ -9,27 +9,26 @@ using MMT.Data.Classes.Skill;
 namespace MMT.Data.Classes.Character
 {
     [Serializable]
-    public class MCharacter
+    public abstract class MCharacter
     {
-        public String name;     //人物名称。
-        public Bitmap image;    //人物使用的图片。
-        public byte location_x; //人物所在行数。
-        public byte location_y; //人物所在列数。
-        public int maxhp;       //最大生命值。
-        public int hp;          //当前生命值。
-        public int maxmp;       //最大法力值。
-        public int mp;          //当前法力值。
-        public int maxpower;    //最大力量值
-        public int power;       //当前力量值。
-        public int armor;       //护甲值。
-        public int magicarmor;  //魔抗值。
-        public int speed;       //速度。
-        public float hitrate;   //命中率。
-        public float avoidrate; //闪避率。
-        public byte level;      //等级。
-        public byte exp;        //经验值。对主角而言，是当前获得的经验值，对敌人而言，是掉落的经验值。
-
-        internal List<MSkill> Skills;   //技能。
+        private String name;     //人物名称。
+        private Bitmap image;    //人物使用的图片。
+        private byte location_x; //人物所在行数。
+        private byte location_y; //人物所在列数。
+        private int maxhp;       //最大生命值。
+        private int hp;          //当前生命值。
+        private int maxmp;       //最大法力值。
+        private int mp;          //当前法力值。
+        private int maxpower;    //最大力量值
+        private int power;       //当前力量值。
+        private int armor;       //护甲值。
+        private int magicarmor;  //魔抗值。
+        private int speed;       //速度。
+        private float hitrate;   //命中率。
+        private float avoidrate; //闪避率。
+        private byte level;      //等级。
+        private byte exp;        //经验值。对主角而言，是当前获得的经验值，对敌人而言，是掉落的经验值。
+        private List<MSkill> skills;   //技能。
 
         public String Name { get { return name; } set { name = value; } }
         public Bitmap Image { get { return image; } set { image = value; } }
@@ -48,18 +47,13 @@ namespace MMT.Data.Classes.Character
         public float AvoidRate { get { return avoidrate; } set { avoidrate = value; } }
         public byte Level { get { return level; } set { level = value; } }
         public byte Exp { get { return exp; } set { exp = value; } }
+        public List<MSkill> Skills { get { return skills; } }
 
         //计算攻击产生的伤害。主角可以使用技能攻击。
-        internal int Attack(MEnemy e,MSkill skill)
-        {
-            return 0;
-        }
+        public abstract int Attack(MEnemy e, MSkill skill);
 
         //交互操作。与主角相遇时调用。当主角与人物在同一位置时，才产生交互。
-        public void Iteract(MEnemy e)
-        {
-
-        }
+        public abstract void Iteract(MEnemy e);
 
 
 
