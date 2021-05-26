@@ -13,8 +13,8 @@ namespace MMT.Data.Classes.Character
     {
         private String name;     //人物名称。
         private Bitmap image;    //人物使用的图片。
-        private byte location_x; //人物所在行数。
-        private byte location_y; //人物所在列数。
+        private byte locationX; //人物所在行数。
+        private byte locationY; //人物所在列数。
         private int maxhp;       //最大生命值。
         private int hp;          //当前生命值。
         private int maxmp;       //最大法力值。
@@ -32,8 +32,8 @@ namespace MMT.Data.Classes.Character
 
         public String Name { get { return name; } set { name = value; } }
         public Bitmap Image { get { return image; } set { image = value; } }
-        public byte Location_X { get { return location_x; } set { location_x = value; } }
-        public byte Location_Y { get { return location_y; } set { location_y = value; } }
+        public byte LocationX { get { return locationX; } set { locationX = value; } }
+        public byte LocationY { get { return locationY; } set { locationY = value; } }
         public int MaxHP { get { return maxhp; } set { maxhp = value; } }
         public int HP { get { return hp; } set { hp = value; } }
         public int MaxMP { get { return maxmp; } set { maxmp = value; } }
