@@ -9,7 +9,7 @@ using MMT.Data.Classes.Item;
 namespace MMT.Data.Classes
 {
     [Serializable]
-    public class MGameProfile
+    class MGameProfile
     {
         private string playerName;
         private int playedTime;
@@ -54,7 +54,9 @@ namespace MMT.Data.Classes
             itemCount = new List<MItem>();
             foreach(MItem item in ic)
             {
-                itemCount.Add(new MItem(item));
+                Type type = item.GetType();     // 获取动态类型
+                System.Reflection.ConstructorInfo constructor = type.GetConstructor(new Type[1] { type });     // 获取复制构造函数
+                itemCount.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[1] { item }), type));     // 调用复制构造函数，将item放入列表中
             }
             character = new MMainCharacter(c);
         }
@@ -73,7 +75,9 @@ namespace MMT.Data.Classes
             itemCount = new List<MItem>();
             foreach (MItem item in p.ItemCount)
             {
-                itemCount.Add(new MItem(item));
+                Type type = item.GetType();     // 获取动态类型
+                System.Reflection.ConstructorInfo constructor = type.GetConstructor(new Type[1] { type });     // 获取复制构造函数
+                itemCount.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[1] { item }), type));     // 调用复制构造函数，将item放入列表中
             }
             character = new MMainCharacter(p.Character);
         }
