@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Item
 {
-    abstract class MEquipment
+    abstract class MEquipment:MItem
     {
         private EQUIPMENT type;//装备类型
         private int power;//力量增值
@@ -27,7 +27,7 @@ namespace MMT.Data.Classes.Item
         //卸下装备，减少属性
         public abstract void Unequip();
         //构造方法
-        public MEquipment(EQUIPMENT type,int power, int magic, int armor, int magicArmor, int speed, int hitRate)
+        public MEquipment(string name, Bitmap image, byte locationX, byte locationY, EQUIPMENT type,int power, int magic, int armor, int magicArmor, int speed, int hitRate):base(name,image,locationX,locationY)
         {
             Type = type;
             Power = power;
@@ -36,6 +36,20 @@ namespace MMT.Data.Classes.Item
             MagicArmor = magicArmor;
             Speed = speed;
             HitRate = hitRate;
+        }
+         public MEquipment(MEquipment equipment) : base(equipment.Name, equipment.Image,equipment.LocationX, equipment.LocationY)
+        {
+            Type = equipment.type;
+            Power = equipment.power;
+            Magic = equipment.magic;
+            Armor = equipment.armor;
+            MagicArmor = equipment.magicArmor;
+            Speed = equipment.speed;
+            HitRate = equipment.hitRate;
+        }
+        public override void Interact()
+        {
+            throw new NotImplementedException();
         }
     }
 }
