@@ -12,6 +12,7 @@ namespace MMT.Data.Classes.Character
     [Serializable]
     class MMainCharacter : MCharacter
     {
+        private static MMainCharacter instance;
         private List<MEquipment> equipped;     //装备好的所有装备。根据装备的属性，为主角增加相应的属性。
         private List<MEquipment> equipment;    //收集到的装备。可以装备，可以卸载。
         private List<MKey> keys;               //收集到的钥匙。每收集一个钥匙，便放入Keys中，并在界面上显示；
@@ -19,11 +20,20 @@ namespace MMT.Data.Classes.Character
         private List<MSkill> skills;        //拥有的技能。主角拥有固定的技能。采用new的形式
         private int expToLevelUp;
 
-        internal List<MEquipment> Equipped { get => equipped; }
-        internal List<MEquipment> Equipment { get => equipment; }
-        internal List<MKey> Keys { get => keys; }
-        internal List<MSkill> Skills { get => skills; }
-        internal int ExpToLevelUp;
+        public static MMainCharacter Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new MMainCharacter();
+                return instance;
+            }
+        }
+        public List<MEquipment> Equipped { get => equipped; }
+        public List<MEquipment> Equipment { get => equipment; }
+        public List<MKey> Keys { get => keys; }
+        public List<MSkill> Skills { get => skills; }
+        public int ExpToLevelUp;
 
 
         public MMainCharacter()
