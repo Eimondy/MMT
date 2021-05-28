@@ -33,11 +33,15 @@ namespace MMT
             // 
             // MMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::MMT.Properties.Resources.Img_start;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1254, 569);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MMainForm";
-            this.Text = "MMainForm";
+            this.Text = "MyMagicTower";
+            this.Load += new System.EventHandler(this.MMainForm_Load);
             this.SizeChanged += new System.EventHandler(this.MMainForm_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MMainForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);

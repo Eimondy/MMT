@@ -32,6 +32,38 @@ namespace MMT
             g = this.CreateGraphics();
         }
 
+        public void GameInit() { 
+                
+        }
+
+        public void GameStart() { 
+        
+        }
+
+        public void MainMenu() { 
+        
+        }
+
+        public void LoadMenu() { 
+        
+        }
+
+        public void SettingMenu() { 
+        
+        }
+
+        public void PausedMenu() { 
+        
+        }
+
+        public void CombatMenu() { 
+        
+        }
+
+        public void EndingMenu() { 
+        
+        }
+
         private void MMainForm_KeyDown(object sender, KeyEventArgs e)
         {
             MMainLogic.Instance.KeyboardInput = true;
@@ -52,5 +84,11 @@ namespace MMT
         {
             MMainLogic.Instance.KeyboardInput = false;
         }
+
+        private void MMainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
