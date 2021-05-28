@@ -3,9 +3,9 @@
 namespace MMT.Data.Classes
 {
     public enum BLOCKS { WALL = -1, EARTH = 1 }
-    enum ATTRIBUTE { HEALTH, MAGIC, POWER, ARMOR, MAGICARMOR, SPEED, HITRATE }
-    enum EQUIPMENT { WEAPON, GEM, UPPER, SHOES }
-    enum MONSTER { ORDINARY, ELITE, BOSS }
+    public enum ATTRIBUTE { HEALTH, MAGIC, POWER, ARMOR, MAGICARMOR, SPEED, HITRATE }
+    public enum EQUIPMENT { WEAPON, GEM, UPPER, SHOES }
+    public enum MONSTER { ORDINARY, ELITE, BOSS }
     public enum MAP
     {
         // basics
