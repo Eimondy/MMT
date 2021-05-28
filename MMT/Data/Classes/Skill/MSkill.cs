@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Skill
 {
-    enum ATTRIBUTE { 
-        POWER,
-        MAGIC
-    }
+   
 
-    class MSkill
+     public class MSkill
     {
         private string name; //技能名称
         private float points;//伤害倍数
@@ -30,16 +27,11 @@ namespace MMT.Data.Classes.Skill
 
 
         //构造方法
-        public MSkill(string name, float points, int consumption, ATTRIBUTE type, string description)
+        public MSkill()
         {
-            Name = name;
-            Points = points;
-            Consumption = consumption;
-            Type = type;
-            Description = description;
+
         }
-
-
-
     }
+
+
 }
