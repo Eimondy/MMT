@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Item
 {
-    interface MIPickable
+    public interface MIPickable
     {
         void Picked();
     }

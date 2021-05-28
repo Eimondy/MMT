@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Item
 {
-    abstract class MEquipment:MItem
+    public abstract class MEquipment:MItem
     {
         private EQUIPMENT type;//装备类型
         private int power;//力量增值
