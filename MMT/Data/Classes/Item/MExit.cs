@@ -12,12 +12,22 @@ namespace MMT.Data.Classes.Item
         private bool exit;//bool=1为出口，bool=0为上一关入口
         public bool Exit { get => exit; set => exit = value; }
         //构造函数
-        public MExit(string name, Bitmap image, byte locationX, byte locationY,bool exit=false):base(name,image,locationX,locationY)
+        public MExit(byte locationX, byte locationY, bool exit = false) : base(locationX, locationY)
         {
+            if (exit = true)
+            {
+                Name = "出口";
+                //Image=new Bitmap();
+            }
+            else
+            {
+                Name = "入口";
+                //Image=new Bitmap();
+            }
             Exit = exit;
         }
 
-        public MExit(MExit exit) : base(exit.Name, exit.Image, exit.LocationX, exit.LocationY)
+        public MExit(MExit exit) : base(exit)
         {
             Exit = exit.Exit;
         }
@@ -28,3 +38,4 @@ namespace MMT.Data.Classes.Item
         }
     }
 }
+
