@@ -70,7 +70,7 @@ namespace MMT
 
         public void GameOver()
         {
-            IsInGame = true;
+            IsInGame = false;
             IsGameOver = true;
         }
 
@@ -178,23 +178,31 @@ namespace MMT
                 else     // 敌人的轮次
                 {
                     // 随机选择技能进行攻击操作
-
+                    Random rand = new Random();
+                    enemy.Attack(enemy, enemy.Skills[rand.Next(enemy.Skills.Count)]);
                     // 判断对方血量、是否胜利
                     if(MMainCharacter.Instance.HP <= 0)
                     {
-
+                        // 将当前敌人的HP MP Power重置
+                        enemy.HP = enemy.MaxHP;
+                        enemy.MP = enemy.MaxMP;
+                        enemy.Power = enemy.MaxPower;
                         fightOver = true;
                     }
                 }
             }
             Combat = false;
             // 若主角战败，则调用DefeatedMode()
-
+            if (MMainCharacter.Instance.HP <= 0)
+                DefeatedMode();
             // 若敌人为关底Boss，则调用VictoryMode()
+            if (true)
+                VictoryMode();
         }
 
         public void VictoryMode()
         {
+            IsInGame = false;
             Victory = true;
             MMainForm.Instance.EndingMenu();
             // 调用MMainForm.Instance.EndingMenu()
@@ -203,24 +211,31 @@ namespace MMT
 
         public void DefeatedMode()
         {
+            IsInGame = false;
             Defeated = true;
             MMainForm.Instance.EndingMenu();
         }
 
         public void PauseMode()
         {
+            IsInGame = false;
             Paused = true;
             MMainForm.Instance.PausedMenu();
         }
 
         public void StarFromCurrentLevel()     // 战斗失败之后，从当前关卡重玩。将主角传送至关卡入口处即可
         {
-
+            MExit enter = (MExit)MLevel.Levels[MLevel.CurrentLevel - 1].Items.Find(item => (item is MExit && !(item as MExit).Exit));
+            MMainCharacter.Instance.LocationX = enter.LocationX;
+            MMainCharacter.Instance.LocationY = enter.LocationY;
+            IsInGame = true;     // 设置游戏进行中
         }
 
         public void BackToMainMenu()     // 游戏胜利之后/战斗失败之后，返回主菜单。不保存当前存档
         {
+            // 
 
+            IsInGame = false;
         }
 
         public void GameLoop()
@@ -232,7 +247,7 @@ namespace MMT
                     // 需要更改
                     byte direction = 0;     // 上1下2左3右4
                     MLevel currentLevel = (from level in MLevel.Levels where level.LevelNumber == MLevel.CurrentLevel select level).First();
-                    // 处理输入
+                    // 处理键盘输入
                     if (KeyboardInput == true)
                     {
                         switch (KeyboardData)     // 使用主角的Move()
