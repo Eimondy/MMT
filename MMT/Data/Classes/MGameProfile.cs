@@ -24,7 +24,7 @@ namespace MMT.Data.Classes
         public int PlayedTime { get { return playedTime; } set { playedTime = value; } }
         public MMainCharacter Character { get { return character; } set { character = value; } }
         public int CurrentLevelNumber { get { return currentLevelNumber; } set { currentLevelNumber = value; } }
-        public List<MLevel> ExistLevels { get { return existLevels; } }     // 不设setter
+        public List<MLevel> ExistLevels { get { return existLevels; } set { existLevels = value; } }    // 不设setter
         public int DefeatedCount { get { return defeatedCount; } set { defeatedCount = value; } }
         public int DoorCount { get { return doorCount; } set { doorCount = value; } }
         public List<MItem> ItemCount { get { return itemCount; } }     // 不设setter
@@ -35,8 +35,8 @@ namespace MMT.Data.Classes
             CurrentLevelNumber = 0;
             DefeatedCount = 0;
             DoorCount = 0;
-            existLevels = new List<MLevel>();
-            itemCount = new List<MItem>();
+            existLevels = null;
+            itemCount = null;
             character = null;
         }
         public MGameProfile(string pn, int pt = 0, int cln = 0, int dec = 0, int doc = 0, MMainCharacter c = null, List<MLevel> el = null, List<MItem> ic = null)
