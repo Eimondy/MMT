@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Item
 {
@@ -20,7 +21,11 @@ namespace MMT.Data.Classes.Item
         }
         public override void Interact()
         {
-            MMainLogic.Instance.CurrentProfile.DoorCount++;//将所开的门类信息加一
+            if(MMainCharacter.Instance.Keys.Find(key => key.RelatedDoor == RelatedKey) != null)
+            {
+                MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
+                MMainLogic.Instance.CurrentProfile.DoorCount++;//将所开的门类信息加一
+            }
         }
     }
 }
