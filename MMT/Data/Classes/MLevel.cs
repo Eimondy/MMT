@@ -16,7 +16,7 @@ namespace MMT.Data.Classes
         public static int LastLevel => CurrentLevel == MinLevel ? MinLevel : CurrentLevel - 1;
         public static int NextLevel => CurrentLevel == MaxLevel ? MaxLevel : CurrentLevel + 1;
 
-        public static List<MLevel> Levels;
+        public static List<MLevel> Levels = new List<MLevel>();
 
         public int LevelNumber;
 
