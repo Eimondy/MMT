@@ -25,17 +25,13 @@ namespace MMT.Data.Classes.Item
             MMainLogic.Instance.CurrentProfile.ItemCount.Add(this);
         }
         //构造方法
-        public MItem(string name, Bitmap image, byte locationX, byte locationY)
+        public MItem(byte locationX, byte locationY)
         {
-            Name = name;
-            Image = image;
             LocationX = locationX;
             LocationY = locationY;
         }
         public MItem(MItem item)     // 复制构造函数
         {
-            Name = item.Name;
-            Image = item.Image.Clone() as Bitmap;
             LocationX = item.LocationX;
             LocationY = item.LocationY;
         }
