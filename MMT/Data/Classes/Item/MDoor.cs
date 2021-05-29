@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Item
 {
-    public class MDoor:MItem
+    public class MDoor : MItem
     {
         private byte relatedKey;//和门对应的钥匙
         public byte RelatedKey { get => relatedKey; set => relatedKey = value; }
         //构造函数
-        public MDoor(string name, Bitmap image, byte locationX, byte locationY,byte relatedKey):base(name,image,locationX,locationY)
+        public MDoor(byte locationX, byte locationY, byte relatedKey) : base(locationX, locationY)
         {
+            Name = "门";
+            //Image=new Bitmap();
             RelatedKey = relatedKey;
-        }
-        public MDoor(MDoor door) : base(door.Name, door.Image, door.LocationX, door.LocationY)
-        {
-           RelatedKey = door.relatedKey;
         }
         public override void Interact()
         {
-            throw new NotImplementedException();
+            MMainLogic.Instance.CurrentProfile.DoorCount++;//将所开的门类信息加一
         }
     }
 }
