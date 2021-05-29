@@ -64,7 +64,7 @@ namespace MMT
             foreach(string file in files)
             {
                 fs = new FileStream(file, FileMode.Open);
-                Saves.Add(new MGameProfile((MGameProfile)bf.Deserialize(fs)));
+                Saves.Add((MGameProfile)bf.Deserialize(fs));
             }
         }
 
@@ -85,12 +85,10 @@ namespace MMT
             {
                 NewGame(pn);
                 MLevel.Levels.Add(new MLevel(1));
-                CurrentProfile.ExistLevels = MLevel.Levels;
             }
             else     // 加载游戏
             {
                 LoadProfile(saveNum);
-                MLevel.Levels = CurrentProfile.ExistLevels;
             }
             // 设置进入游戏标志
             IsInGame = true;
@@ -105,7 +103,6 @@ namespace MMT
         public void NewGame(string pn)
         {
             CurrentProfile = new MGameProfile(pn);
-            CurrentProfile.Character = new MMainCharacter();     // 后续可能需改动
         }
 
         public void LoadProfile(int number)     // 路径后续可能需改动
@@ -114,7 +111,7 @@ namespace MMT
             string path = @"..\..\Saves_" + number.ToString() + ".save";
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                CurrentProfile = new MGameProfile((MGameProfile)bf.Deserialize(fs));
+                CurrentProfile = (MGameProfile)bf.Deserialize(fs);
             }
         }
 
@@ -233,9 +230,10 @@ namespace MMT
 
         public void BackToMainMenu()     // 游戏胜利之后/战斗失败之后，返回主菜单。不保存当前存档
         {
-            // 
-
             IsInGame = false;
+            CurrentProfile = null;
+            MMainCharacter.Instance
+            MMainForm.Instance.MainMenu();
         }
 
         public void GameLoop()
