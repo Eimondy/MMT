@@ -68,6 +68,8 @@ namespace MMT
         {
             MMainLogic.Instance.KeyboardInput = true;
             MMainLogic.Instance.KeyboardData = e.KeyData;
+            if (e.KeyData == Keys.D0)
+                MMT.Data.Classes.Character.MMainCharacter.Instance.AttackChoice = 0;
         }
 
         private void MMainForm_Paint(object sender, PaintEventArgs e)     // 绘制事件
@@ -90,5 +92,9 @@ namespace MMT
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.Start(0, "TEST");
+        }
     }
 }
