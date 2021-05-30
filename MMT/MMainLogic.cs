@@ -244,24 +244,23 @@ namespace MMT
             Shell.WriteLine("游戏暂停", ConsoleColor.Black);
             IsInGame = false;
             Paused = true;
-            MMainForm.Instance.PausedMenu();
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.PausedMenu));
         }
 
         public void StarFromCurrentLevel()     // 战斗失败之后，从当前关卡重玩。将主角传送至关卡入口处即可
         {
             Shell.WriteLine("重玩", ConsoleColor.Black);
-            MExit enter = (MExit)MLevel.Levels[MLevel.CurrentLevel - 1].Items.Find(item => (item is MExit && !(item as MExit).Exit));
-            MMainCharacter.Instance.LocationX = enter.LocationX;
-            MMainCharacter.Instance.LocationY = enter.LocationY;
+            MLevel.LocateNearExit(false);
             IsInGame = true;     // 设置游戏进行中
         }
 
         public void BackToMainMenu()     // 游戏胜利之后/战斗失败之后，返回主菜单。不保存当前存档
         {
             Shell.WriteLine("返回主界面", ConsoleColor.Black);
+            MLevel.Levels = new List<MLevel>();
             IsInGame = false;
             CurrentProfile = null;
-            MMainForm.Instance.MainMenu();
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.MainMenu));
         }
 
         public void GameLoop()
@@ -299,6 +298,9 @@ namespace MMT
                                 break;
                             case Keys.Q:
                                 VictoryMode();
+                                break;
+                            case Keys.E:
+                                BackToMainMenu();
                                 break;
                         }
                         // 重置输入
