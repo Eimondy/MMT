@@ -68,7 +68,7 @@ namespace MMT.Data.Classes.Character
         }
 
         //带参数的完全构造函数,注意x,y坐标，level,exp为byte类型
-        internal MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
+        public MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
         {
             this.Name = null;
             this.MaxHP = 50;
