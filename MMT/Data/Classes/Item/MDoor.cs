@@ -25,6 +25,7 @@ namespace MMT.Data.Classes.Item
             {
                 MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
                 MMainLogic.Instance.CurrentProfile.DoorCount++;//将所开的门类信息加一
+                Shell.WriteLine(string.Format("开启{}号门", RelatedKey), ConsoleColor.Yellow);
             }
         }
     }

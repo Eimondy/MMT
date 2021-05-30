@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Skill
 {
    
 
-     abstract class MSkill
+     public abstract class MSkill
     {
         private string name; //技能名称
         private float points;//伤害倍数
@@ -23,7 +24,7 @@ namespace MMT.Data.Classes.Skill
         public string Description { get => description; set => description = value; }
 
         //技能使用
-       public abstract void Activate();
+       public abstract void Activate(MEnemy e);
 
 
         //构造方法

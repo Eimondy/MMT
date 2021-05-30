@@ -90,7 +90,7 @@ namespace MMT
                 NewGame(pn);
                 MLevel.Levels.Add(new MLevel(1));
                 MMainCharacter.Instance.Name = CurrentProfile.PlayerName;     // 新主角只用定义Name
-                MMainCharacter.Instance.LocationX = 10;     // 新主角移动至第一关入口处
+                MMainCharacter.Instance.LocationX = 9;     // 新主角移动至第一关入口处
                 MMainCharacter.Instance.LocationY = 4;
             }
             else     // 加载游戏
@@ -158,30 +158,38 @@ namespace MMT
             MMainCharacter.Instance.Power = MMainCharacter.Instance.MaxPower;
             while (!fightOver)
             {
-                if(currentOne is MMainCharacter)     // 主角的轮次。若30秒之内不攻击，则使用普通攻击。
+                Shell.WriteLine(string.Format("玩家HP：{0}     敌人HP：{1}", MMainCharacter.Instance.HP, enemy.HP), ConsoleColor.Green);
+                if (currentOne is MMainCharacter)     // 主角的轮次。若30秒之内不攻击，则使用普通攻击。
                 {
+                    Shell.WriteLine("玩家的回合", ConsoleColor.Green);
                     int i = 0;
-                    while (i < 300 && MMainCharacter.Instance.AttackChoice == 0)
+                    while (i < 300 && MMainCharacter.Instance.AttackChoice == 255)
                     {
                         Thread.Sleep(100);
                         i++;
                     }
                     // 根据AttackChoice来进行攻击操作
-                    if (MMainCharacter.Instance.AttackChoice != 0)     // 技能攻击
+                    if (MMainCharacter.Instance.AttackChoice != 0 && MMainCharacter.Instance.AttackChoice != 255)     // 技能攻击
                     {
+                        //Shell.WriteLine(string.Format("使用{0}进行攻击", MMainCharacter.Instance.Skills[MMainCharacter.Instance.AttackChoice - 1].Name), ConsoleColor.Green);
                         //MMainCharacter.Instance.Skills[MMainCharacter.Instance.AttackChoice - 1].Activate(enemy);
                         MMainCharacter.Instance.Attack(enemy, MMainCharacter.Instance.Skills[MMainCharacter.Instance.AttackChoice - 1]);
-                        MMainCharacter.Instance.AttackChoice = 0;
+                        MMainCharacter.Instance.AttackChoice = 255;
                     }
                     else     // 普通攻击
+                    {
+                        Shell.WriteLine("使用普通攻击", ConsoleColor.Green);
                         MMainCharacter.Instance.Attack(enemy, null);
+                        MMainCharacter.Instance.AttackChoice = 255;
+                    }
                     // 判断对方血量、是否胜利
                     if(enemy.HP <= 0)
                     {
+                        Shell.WriteLine("敌人死亡", ConsoleColor.Green);
                         // 获取经验值，判断是否升级
                         MMainCharacter.Instance.GetExp(enemy);
                         // 将敌人从当前关卡移除
-                        MLevel.Levels[MLevel.CurrentLevel].Enemies.Remove(enemy);
+                        MLevel.Levels[MLevel.CurrentLevel - 1].Enemies.Remove(enemy);
                         // 更新GameProfile
                         CurrentProfile.DefeatedCount++;
                         fightOver = true;
@@ -189,12 +197,14 @@ namespace MMT
                 }
                 else     // 敌人的轮次
                 {
+                    Shell.WriteLine("敌人的回合", ConsoleColor.Green);
                     // 随机选择技能进行攻击操作
                     Random rand = new Random();
                     enemy.Attack(enemy, enemy.Skills[rand.Next(enemy.Skills.Count)]);
                     // 判断对方血量、是否胜利
                     if(MMainCharacter.Instance.HP <= 0)
                     {
+                        Shell.WriteLine("主角死亡", ConsoleColor.Green);
                         // 将当前敌人的HP MP Power重置
                         enemy.HP = enemy.MaxHP;
                         enemy.MP = enemy.MaxMP;
@@ -208,7 +218,7 @@ namespace MMT
             if (MMainCharacter.Instance.HP <= 0)
                 DefeatedMode();
             // 若敌人为关底Boss，则调用VictoryMode()
-            if (true)
+            if (MLevel.CurrentLevel == 16 && enemy is TheDevil)
                 VictoryMode();
         }
 
@@ -327,8 +337,9 @@ namespace MMT
                                     }
                             }
                             // 发生交互
+                            Shell.WriteLine(string.Format("与{0}发生交互", item.Name), ConsoleColor.Blue);
                             item.Interact();
-                            Shell.WriteLine(string.Format("与{0}发生交互",item.Name), ConsoleColor.Blue);
+                            break;
                         }
                     }
                     // 与敌人碰撞
@@ -337,8 +348,9 @@ namespace MMT
                         {
                             if (enemy.LocationX == MMainCharacter.Instance.LocationX && enemy.LocationY == MMainCharacter.Instance.LocationY)
                             {
-                                //CombatMode(enemy);
-                                Shell.WriteLine(string.Format("与{0}发生交互", enemy.Name), ConsoleColor.Red);
+                                Shell.WriteLine(string.Format("与{0}发生战斗", enemy.Name), ConsoleColor.Red);
+                                CombatMode(enemy);
+                                break;
                             }
                         }
                 }
