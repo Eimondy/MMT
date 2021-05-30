@@ -91,7 +91,7 @@ namespace MMT.Data.Classes
     {
         public static bool IsExit(this MAP mapConst)
         {
-            return (byte)mapConst == 1;
+            return (byte)mapConst == 1 || (byte)mapConst == 0;
         }
 
         public static bool IsWall(this MAP mapConst)
