@@ -83,7 +83,13 @@ namespace MMT.Data.Classes
                         Items.Add(new MKey(x, y, related));
                     }
                     // 添加物品
-
+                    else if (mapBlock.IsProperty())
+                    {
+                        int index = (int)mapBlock - 51;
+                        Type itemType = GENERATOR.ITEMS[index];
+                        System.Reflection.ConstructorInfo constructor = itemType.GetConstructor(new Type[2] { Type.GetType("System.Byte"), Type.GetType("System.Byte") });
+                        Items.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[2] { x, y }), itemType));
+                    }
                     // 添加敌人
                     else if (mapBlock.IsEnemy())
                     {
@@ -128,11 +134,11 @@ namespace MMT.Data.Classes
             }
             MMainCharacter.Instance.LocationX = e.LocationX;
             MMainCharacter.Instance.LocationY = e.LocationY;
-            byte x = Convert.ToByte(e.LocationX - 1);
-            byte y = Convert.ToByte(e.LocationY - 1);
             bool set = false;
             for (int i = 1; i <= 4; i++)
             {
+                byte x = Convert.ToByte(e.LocationX - 1);
+                byte y = Convert.ToByte(e.LocationY - 1);
                 switch (i)
                 {
                     case 1:
@@ -202,20 +208,20 @@ namespace MMT.Data.Classes
             Type.GetType("MMT.Data.Classes.Item.MagicArmorpotion"),
             Type.GetType("MMT.Data.Classes.Item.Speedpotion"),
             // Equipment
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
-            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item.StrawSandals"),
+            Type.GetType("MMT.Data.Classes.Item.RustySword"),
+            Type.GetType("MMT.Data.Classes.Item.Robe"),
+            Type.GetType("MMT.Data.Classes.Item.RedGem"),
+            Type.GetType("MMT.Data.Classes.Item.RottenStaff"),
+            Type.GetType("MMT.Data.Classes.Item.SharpSword"),
+            Type.GetType("MMT.Data.Classes.Item.Armor"),
+            Type.GetType("MMT.Data.Classes.Item.PowerfulStaff"),
+            Type.GetType("MMT.Data.Classes.Item.BlueGem"),
+            Type.GetType("MMT.Data.Classes.Item.LongShoes"),
+            Type.GetType("MMT.Data.Classes.Item.OverlordArmor"),
+            Type.GetType("MMT.Data.Classes.Item.MerlinStaff"),
+            Type.GetType("MMT.Data.Classes.Item.Excalibur"),
+            Type.GetType("MMT.Data.Classes.Item.Legend")
         };
     }
 }

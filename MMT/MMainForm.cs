@@ -92,9 +92,19 @@ namespace MMT
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.Start(0, "TEST");
+        }
+
+        private void btn_MainMenu_Load_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_MainMenu_Exit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
