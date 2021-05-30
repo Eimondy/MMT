@@ -38,4 +38,14 @@ namespace MMT
             FreeConsole();
         }
     }
+
+    public static class Shell
+    {
+        public static void WriteLine(string text, ConsoleColor color = ConsoleColor.White)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine("[{0}] {1}", DateTime.Now.ToString(), text);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+    }
 }
