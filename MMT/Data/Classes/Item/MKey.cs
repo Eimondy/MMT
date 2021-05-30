@@ -26,7 +26,7 @@ namespace MMT.Data.Classes.Item
             // 执行父类的交互操作，将钥匙记录到GameProfile当中
             base.Interact();
             Picked();
-            Shell.WriteLine(string.Format("获取{}号门的钥匙", RelatedDoor), ConsoleColor.Yellow);
+            Shell.WriteLine(string.Format("获取{0}号门的钥匙", RelatedDoor), ConsoleColor.Yellow);
         }
 
         public void Picked()
