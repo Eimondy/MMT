@@ -14,7 +14,7 @@ namespace MMT.Data.Classes.Character
     {
         private MONSTER monstertype; //敌人类型
         private string description; //描述
-        public string Description { get { return Description; } set { description = value; } }
+        public string Description { get { return description; } set { description = value; } }
         public MONSTER MonsterType { get { return monstertype; } set { monstertype = value; } }
         //敌人的攻击
         public override void Attack(MEnemy e, MSkill skill)
@@ -31,12 +31,22 @@ namespace MMT.Data.Classes.Character
                 skill.Activate(e);
             }
         }
+        //敌人位置的初始化
+        public MEnemy(byte x,byte y)
+        {
+            LocationX = x;
+            LocationY = y;
+        }
+
     }
     class GreenSlim : MEnemy
     {
-        //默认构造函数
-        GreenSlim()
+        //构造函数
+
+        GreenSlim(byte x,byte y) : base(x, y)
         {
+            Name = "绿色史莱姆";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 24;
             MaxMP = MP = 0;
@@ -49,6 +59,8 @@ namespace MMT.Data.Classes.Character
             Exp = 1;
             Description = "迷宫中随处可见的小型生物，只有低级智能";
 
+
+
             //暂时还未加入技能
         }
     }
@@ -56,8 +68,10 @@ namespace MMT.Data.Classes.Character
     class RedSlim : MEnemy
     {
         //默认构造函数
-        RedSlim()
+        RedSlim(byte x,byte y) : base(x, y)
         {
+            Name = "红色史莱姆";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 35;
             MaxMP = MP = 0;
@@ -77,8 +91,10 @@ namespace MMT.Data.Classes.Character
     class Bat : MEnemy
     {
         //默认构造函数
-        Bat()
+        Bat(byte x,byte y) : base(x, y)
         {
+            Name = "蝙蝠怪";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 49;
             MaxMP = MP = 10;
@@ -98,8 +114,10 @@ namespace MMT.Data.Classes.Character
     class Zombie : MEnemy
     {
         //默认构造函数
-        Zombie()
+        Zombie(byte x,byte y) : base(x, y)
         {
+            Name = "僵尸怪";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 100;
             MaxMP = MP = 50;
@@ -119,8 +137,10 @@ namespace MMT.Data.Classes.Character
     class Skeleton : MEnemy
     {
         //默认构造函数
-        Skeleton()
+        Skeleton(byte x,byte y) : base(x, y)
         {
+            Name = "骷髅怪";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 120;
             MaxMP = MP = 20;
@@ -140,8 +160,10 @@ namespace MMT.Data.Classes.Character
     class Magician : MEnemy
     {
         //默认构造函数
-        Magician()
+        Magician(byte x ,byte y) : base(x, y)
         {
+            Name = "魔法师";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 70;
             MaxMP = MP = 100;
@@ -161,8 +183,10 @@ namespace MMT.Data.Classes.Character
     class SkeletonKnight : MEnemy
     {
         //默认构造函数
-        SkeletonKnight()
+        SkeletonKnight(byte x,byte y) : base(x, y)
         {
+            Name = "骷髅骑士";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 200;
             MaxMP = MP = 80;
@@ -182,8 +206,10 @@ namespace MMT.Data.Classes.Character
     class Gargoyle : MEnemy
     {
         //默认构造函数
-        Gargoyle()
+        Gargoyle(byte x,byte y) : base(x, y)
         {
+            Name = "石像鬼";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 500;
             MaxMP = MP = 20;
@@ -203,8 +229,10 @@ namespace MMT.Data.Classes.Character
     class ScytheSpider : MEnemy
     {
         //默认构造函数
-        ScytheSpider()
+        ScytheSpider(byte x,byte y) : base(x, y)
         {
+            Name = "镰刀蜘蛛怪";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 150;
             MaxMP = MP = 50;
@@ -224,8 +252,10 @@ namespace MMT.Data.Classes.Character
     class SkeletonGeneral : MEnemy
     {
         //默认构造函数
-        SkeletonGeneral()
+        SkeletonGeneral(byte x, byte y) : base(x, y)
         {
+            Name = "骷髅将军";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.BOSS;
             MaxHP = HP = 300;
             MaxMP = MP = 50;
@@ -245,8 +275,10 @@ namespace MMT.Data.Classes.Character
     class GrandMaster : MEnemy
     {
         //默认构造函数
-        GrandMaster()
+        GrandMaster(byte x, byte y) : base(x, y)
         {
+            Name = "大魔法师";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.BOSS;
             MaxHP = HP = 800;
             MaxMP = MP = 250;
@@ -266,8 +298,10 @@ namespace MMT.Data.Classes.Character
     class TheDevil : MEnemy
     {
         //默认构造函数
-        TheDevil()
+        TheDevil(byte x, byte y) : base(x, y)
         {
+            Name = "魔王";
+            Image = null;     //暂时还未加入图片
             MonsterType = MONSTER.BOSS;
             MaxHP = HP = 1500;
             MaxMP = MP = 200;
