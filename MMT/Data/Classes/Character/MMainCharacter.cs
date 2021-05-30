@@ -12,7 +12,7 @@ using MMT;
 namespace MMT.Data.Classes.Character
 {
     [Serializable]
-    class MMainCharacter : MCharacter
+    public class MMainCharacter : MCharacter
     {
         private static MMainCharacter instance;
         private List<MEquipment> equipped = new List<MEquipment>();     //装备好的所有装备。根据装备的属性，为主角增加相应的属性。
@@ -68,7 +68,7 @@ namespace MMT.Data.Classes.Character
         }
 
         //带参数的完全构造函数,注意x,y坐标，level,exp为byte类型
-        internal MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
+        public MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
         {
             this.Name = null;
             this.MaxHP = 50;
@@ -196,7 +196,7 @@ namespace MMT.Data.Classes.Character
                         { LocationY += 1; }
                     break;
             }
-            Console.WriteLine("Player at : (" + LocationX.ToString() + "," + LocationY.ToString() + ")");
+            Shell.WriteLine(string.Format("玩家位于：({0},{1})", LocationX, LocationY), ConsoleColor.Green);
         }
 
         //主角的攻击
