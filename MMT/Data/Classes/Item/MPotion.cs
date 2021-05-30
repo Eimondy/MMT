@@ -53,11 +53,13 @@ namespace MMT.Data.Classes.Item
                     MMainCharacter.Instance.HitRate += (float)PromotePoints;
                     break;
             }
+            //将药剂从该地图中去除
+            MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
         }
     }
-    public class Healthpotion : MPotion
+    public class HealthPotion : MPotion
     {
-        public Healthpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public HealthPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "生命药剂";
             //Image=new Bitmap();
@@ -66,9 +68,9 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角生命值+20";
         }
     }
-    public class Magicpotion : MPotion
+    public class MagicPotion : MPotion
     {
-        public Magicpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public MagicPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "法力药剂";
             //Image=new Bitmap();
@@ -77,9 +79,9 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角魔法值+10";
         }
     }
-    public class Powerpotion : MPotion
+    public class PowerPotion : MPotion
     {
-        public Powerpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public PowerPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "力量药剂";
             //Image=new Bitmap();
@@ -88,9 +90,9 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角力量值+8";
         }
     }
-    public class Armorpotion : MPotion
+    public class ArmorPotion : MPotion
     {
-        public Armorpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public ArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "护甲药剂";
             //Image=new Bitmap();
@@ -99,9 +101,9 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角护甲值+8";
         }
     }
-    public class MagicArmorpotion : MPotion
+    public class MagicArmorPotion : MPotion
     {
-        public MagicArmorpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public MagicArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "魔抗药剂";
             //Image=new Bitmap();
@@ -110,9 +112,9 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角魔抗值+8";
         }
     }
-    public class Speedpotion : MPotion
+    public class SpeedPotion : MPotion
     {
-        public Speedpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public SpeedPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "速度药剂";
             //Image=new Bitmap();
@@ -121,9 +123,9 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角速度值+8";
         }
     }
-    public class Hitpotion : MPotion
+    public class HitPotion : MPotion
     {
-        public Hitpotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public HitPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "命中药剂";
             //Image=new Bitmap();
