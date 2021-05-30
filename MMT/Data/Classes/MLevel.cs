@@ -192,7 +192,6 @@ namespace MMT.Data.Classes
                         int index = (int)mapBlock - 11;
                         Type enemyType = GENERATOR.ENEMYS[index];
                         System.Reflection.ConstructorInfo constructor = enemyType.GetConstructor(new Type[2] { Type.GetType("System.Byte"), Type.GetType("System.Byte") });
-                        
                         Enemies.Add((MEnemy)Convert.ChangeType(constructor.Invoke(new object[2] { x, y }), enemyType));
                     }
                 }
