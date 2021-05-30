@@ -8,7 +8,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Item
 {
-    class MKey : MItem, MIPickable
+    public class MKey : MItem, MIPickable
     {
 
         private byte relatedDoor;//和钥匙对应的门
@@ -26,6 +26,7 @@ namespace MMT.Data.Classes.Item
             // 执行父类的交互操作，将钥匙记录到GameProfile当中
             base.Interact();
             Picked();
+            Shell.WriteLine(string.Format("获取{}号门的钥匙", RelatedDoor), ConsoleColor.Yellow);
         }
 
         public void Picked()
