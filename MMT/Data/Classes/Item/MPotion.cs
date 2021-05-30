@@ -25,6 +25,7 @@ namespace MMT.Data.Classes.Item
         {
             base.Interact();
             Picked();
+            Shell.WriteLine(string.Format("增加{0}{1}点", Type.ToString(), PromotePoints), ConsoleColor.Yellow);
         }
         public void Picked()
         {
