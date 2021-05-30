@@ -55,9 +55,7 @@ namespace MMT.Data.Classes
             if(ic!=null)
                 foreach(MItem item in ic)
                 {
-                    Type type = item.GetType();     // 获取动态类型
-                    System.Reflection.ConstructorInfo constructor = type.GetConstructor(new Type[1] { type });     // 获取复制构造函数
-                    itemCount.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[1] { item }), type));     // 调用复制构造函数，将item放入列表中
+                    ItemCount.Add(item);
                 }
         }
 

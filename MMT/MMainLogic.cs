@@ -58,6 +58,7 @@ namespace MMT
 
         public void GameInit()
         {
+            Shell.WriteLine("游戏初始化...", ConsoleColor.Black);
             // 加载所有存档文件到Saves
             BinaryFormatter bf = new BinaryFormatter();
             string dir = @"..\..\Saves";
@@ -72,6 +73,7 @@ namespace MMT
 
         public void GameOver()
         {
+            Shell.WriteLine("游戏结束.", ConsoleColor.Black);
             IsInGame = false;
             IsGameOver = true;
         }
@@ -100,27 +102,31 @@ namespace MMT
             }
             // 设置进入游戏标志
             IsInGame = true;
-            Console.WriteLine("Game Start");
+            Shell.WriteLine("游戏开始", ConsoleColor.Black);
         }
 
         public void Exit()
         {
+            Shell.WriteLine("退出游戏...", ConsoleColor.Black);
             GameOver();
             MMainForm.Instance.Dispose();
         }
 
         public void NewGame(string pn)
         {
+            Shell.WriteLine("新建游戏", ConsoleColor.Black);
             CurrentProfile = new MGameProfile(pn);
         }
 
         public void LoadProfile(int number)    // 根据Saves初始化当前用户档案
         {
+            Shell.WriteLine("加载游戏", ConsoleColor.Black);
             CurrentProfile = Saves[number - 1];
         }
 
         public void SaveProfile()     // 将用户档案保存到文件，并更新Saves
         {
+            Shell.WriteLine("保存游戏", ConsoleColor.Black);
             // 保存到文件
             BinaryFormatter bf = new BinaryFormatter();
             string path = @"..\..\Saves_" + (Saves.Count + 1).ToString() + ".save";
@@ -135,6 +141,7 @@ namespace MMT
         
         public void CombatMode(MEnemy enemy)
         {
+            Shell.WriteLine("进入战斗", ConsoleColor.Black);
             Combat = true;
             bool fightOver = false;
             // 与从窗体通信，告知目前哪些技能可用
@@ -207,6 +214,7 @@ namespace MMT
 
         public void VictoryMode()
         {
+            Shell.WriteLine("游戏胜利", ConsoleColor.Black);
             IsInGame = false;
             Victory = true;
             MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
@@ -215,6 +223,7 @@ namespace MMT
 
         public void DefeatedMode()
         {
+            Shell.WriteLine("游戏失败", ConsoleColor.Black);
             IsInGame = false;
             Defeated = true;
             MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
@@ -222,6 +231,7 @@ namespace MMT
 
         public void PauseMode()
         {
+            Shell.WriteLine("游戏暂停", ConsoleColor.Black);
             IsInGame = false;
             Paused = true;
             MMainForm.Instance.PausedMenu();
@@ -229,6 +239,7 @@ namespace MMT
 
         public void StarFromCurrentLevel()     // 战斗失败之后，从当前关卡重玩。将主角传送至关卡入口处即可
         {
+            Shell.WriteLine("重玩", ConsoleColor.Black);
             MExit enter = (MExit)MLevel.Levels[MLevel.CurrentLevel - 1].Items.Find(item => (item is MExit && !(item as MExit).Exit));
             MMainCharacter.Instance.LocationX = enter.LocationX;
             MMainCharacter.Instance.LocationY = enter.LocationY;
@@ -237,6 +248,7 @@ namespace MMT
 
         public void BackToMainMenu()     // 游戏胜利之后/战斗失败之后，返回主菜单。不保存当前存档
         {
+            Shell.WriteLine("返回主界面", ConsoleColor.Black);
             IsInGame = false;
             CurrentProfile = null;
             MMainForm.Instance.MainMenu();
@@ -294,11 +306,11 @@ namespace MMT
                         {
                             // 与物品发生碰撞
                             hit = true;
-                            // 若为门或出入口，则不进行移动
-                            if(item is MDoor || item is MExit)
+                            // 若为门，则不进行移动
+                            if(item is MDoor)
                             {
                                 if(direction != 0)
-                                    switch (direction)     // 使用主角的Move()
+                                    switch (direction)
                                     {
                                         case 1:
                                             MMainCharacter.Instance.Move(2);
@@ -316,6 +328,7 @@ namespace MMT
                             }
                             // 发生交互
                             item.Interact();
+                            Shell.WriteLine(string.Format("与{0}发生交互",item.Name), ConsoleColor.Blue);
                         }
                     }
                     // 与敌人碰撞
@@ -324,7 +337,8 @@ namespace MMT
                         {
                             if (enemy.LocationX == MMainCharacter.Instance.LocationX && enemy.LocationY == MMainCharacter.Instance.LocationY)
                             {
-                                CombatMode(enemy);
+                                //CombatMode(enemy);
+                                Shell.WriteLine(string.Format("与{0}发生交互", enemy.Name), ConsoleColor.Red);
                             }
                         }
                 }
