@@ -56,41 +56,12 @@ namespace MMT.Data.Classes.Character
         public abstract void Attack(MEnemy e, MSkill skill);     // 攻击
 
         //交互操作。与主角相遇时调用。当主角与人物在同一位置时，才产生交互。
-        //public abstract void Iteract();   //交互操作不能被MEnemy继承
-        //角色技能
-        //beat
-        class Beat : MSkill
-        {
-            private string name = "Beat"; //技能名称
-            private float points = 1.2f;//伤害倍数
-            private int consumption = 20;//所消耗的对应属性的值
-            private ATTRIBUTE type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
-            private string description = "普通b级物理技能，伤害倍数1.2";//技能描述
+        public abstract void Iteract(MEnemy e);
 
-            public override void Activate(MEnemy enemy)
-            {
 
-                //若角色体力不足，返回
-                if (MMainCharacter.Instance.Power < consumption)
-                {
-                    // Console.WriteLine("体力不够");
-                    return;
-                }
-                //生成0-1随机数
-                Random rd = new Random();
-                double p = rd.NextDouble();
-                var Attack = 0.0;
-                if (p < MMainCharacter.Instance.HitRate) //命中
-                {
-                    Attack = MMainCharacter.Instance.Power * points * 2.4;
-                }
-                else //未命中
-                {
-                    Attack = 0;
-                }
-                var TakeAttack = Attack - enemy.Armor * 1.2;
-                enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
-            }
-        }
+
+
     }
+
+
 }

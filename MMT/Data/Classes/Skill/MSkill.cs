@@ -8,7 +8,7 @@ namespace MMT.Data.Classes.Skill
 {
    
 
-     public class MSkill
+     abstract class MSkill
     {
         private string name; //技能名称
         private float points;//伤害倍数
@@ -23,7 +23,7 @@ namespace MMT.Data.Classes.Skill
         public string Description { get => description; set => description = value; }
 
         //技能使用
-        public void Activate() { }
+       public abstract void Activate();
 
 
         //构造方法
