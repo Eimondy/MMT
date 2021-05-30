@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
@@ -8,12 +9,19 @@ namespace MMT
 {
     static class MApplication
     {
+        [DllImport("kernel32.dll")]
+        public static extern Boolean AllocConsole();
+        [DllImport("kernel32.dll")]
+        public static extern Boolean FreeConsole();
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
         static void Main()
         {
+            AllocConsole();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MMainLogic Logic = MMainLogic.Instance;
@@ -21,12 +29,13 @@ namespace MMT
             MMainForm Form = MMainForm.Instance;
             //Form.GameInit();
             Thread GameThread = new Thread(new ThreadStart(MMainLogic.Instance.GameLoop));
-            //GameThread.Start();
+            GameThread.Start();
             Application.Run(Form);
             // 安全地关闭GameThread。通过退出游戏的按钮退出时，将自动关闭窗体、调用GameOver()
             if (!MMainLogic.Instance.IsGameOver)     // 若窗体异常关闭，则主动调用GameOver()，安全结束GameThread
                 MMainLogic.Instance.GameOver();
 
+            FreeConsole();
         }
     }
 }

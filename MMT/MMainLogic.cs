@@ -15,6 +15,8 @@ namespace MMT
 {
     class MMainLogic
     {
+        private delegate void TOUI();
+
         private static MMainLogic instance;
         private List<MGameProfile> saves = new List<MGameProfile>();
         private MGameProfile currentProfile = null;
@@ -85,19 +87,26 @@ namespace MMT
             {
                 NewGame(pn);
                 MLevel.Levels.Add(new MLevel(1));
+                MMainCharacter.Instance.Name = CurrentProfile.PlayerName;     // 新主角只用定义Name
+                MMainCharacter.Instance.LocationX = 10;     // 新主角移动至第一关入口处
+                MMainCharacter.Instance.LocationY = 4;
             }
             else     // 加载游戏
             {
                 LoadProfile(saveNum);
+                MLevel.Levels = CurrentProfile.ExistLevels;
+                MLevel.CurrentLevel = CurrentProfile.CurrentLevelNumber;
+                MMainCharacter.Instance = CurrentProfile.Character;     // 旧主角需要跟存档中的主角一样
             }
             // 设置进入游戏标志
             IsInGame = true;
+            Console.WriteLine("Game Start");
         }
 
         public void Exit()
         {
-            MMainForm.Instance.Dispose();
             GameOver();
+            MMainForm.Instance.Dispose();
         }
 
         public void NewGame(string pn)
@@ -105,17 +114,12 @@ namespace MMT
             CurrentProfile = new MGameProfile(pn);
         }
 
-        public void LoadProfile(int number)     // 路径后续可能需改动
+        public void LoadProfile(int number)    // 根据Saves初始化当前用户档案
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            string path = @"..\..\Saves_" + number.ToString() + ".save";
-            using (FileStream fs = new FileStream(path, FileMode.Open))
-            {
-                CurrentProfile = (MGameProfile)bf.Deserialize(fs);
-            }
+            CurrentProfile = Saves[number - 1];
         }
 
-        public void SaveProfile()     // 路径后续可能需改动
+        public void SaveProfile()     // 将用户档案保存到文件，并更新Saves
         {
             // 保存到文件
             BinaryFormatter bf = new BinaryFormatter();
@@ -133,6 +137,8 @@ namespace MMT
         {
             Combat = true;
             bool fightOver = false;
+            // 与从窗体通信，告知目前哪些技能可用
+
             // 比较速度判出先后手
             MCharacter currentOne;
             if (MMainCharacter.Instance.Speed >= enemy.Speed)
@@ -148,23 +154,25 @@ namespace MMT
                 if(currentOne is MMainCharacter)     // 主角的轮次。若30秒之内不攻击，则使用普通攻击。
                 {
                     int i = 0;
-                    while (i < 300 && MMainCharacter.Instance.AttackChoice != -1)     // 后续需更改。等待MMAinCharacter的新增属性AttackChoice : int
+                    while (i < 300 && MMainCharacter.Instance.AttackChoice == 0)
                     {
                         Thread.Sleep(100);
                         i++;
                     }
                     // 根据AttackChoice来进行攻击操作
-                    if (MMainCharacter.Instance.AttackChoice != -1)     // 技能攻击
+                    if (MMainCharacter.Instance.AttackChoice != 0)     // 技能攻击
                     {
                         //MMainCharacter.Instance.Skills[MMainCharacter.Instance.AttackChoice - 1].Activate(enemy);
                         MMainCharacter.Instance.Attack(enemy, MMainCharacter.Instance.Skills[MMainCharacter.Instance.AttackChoice - 1]);
-                        MMainCharacter.Instance.AttackChoice = -1;
+                        MMainCharacter.Instance.AttackChoice = 0;
                     }
                     else     // 普通攻击
                         MMainCharacter.Instance.Attack(enemy, null);
                     // 判断对方血量、是否胜利
                     if(enemy.HP <= 0)
                     {
+                        // 获取经验值，判断是否升级
+                        MMainCharacter.Instance.GetExp(enemy);
                         // 将敌人从当前关卡移除
                         MLevel.Levels[MLevel.CurrentLevel].Enemies.Remove(enemy);
                         // 更新GameProfile
@@ -201,8 +209,7 @@ namespace MMT
         {
             IsInGame = false;
             Victory = true;
-            MMainForm.Instance.EndingMenu();
-            // 调用MMainForm.Instance.EndingMenu()
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
             // 展示统计信息
         }
 
@@ -210,7 +217,7 @@ namespace MMT
         {
             IsInGame = false;
             Defeated = true;
-            MMainForm.Instance.EndingMenu();
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
         }
 
         public void PauseMode()
@@ -232,7 +239,6 @@ namespace MMT
         {
             IsInGame = false;
             CurrentProfile = null;
-            MMainCharacter.Instance
             MMainForm.Instance.MainMenu();
         }
 
@@ -251,37 +257,31 @@ namespace MMT
                         switch (KeyboardData)     // 使用主角的Move()
                         {
                             case Keys.A:
-                                if (currentLevel.Map.Content[MMainCharacter.Instance.LocationX, MMainCharacter.Instance.LocationY - 1] == BLOCKS.EARTH)
-                                {
-                                    MMainCharacter.Instance.LocationY--;
-                                    direction = 3;
-                                }
+                                MMainCharacter.Instance.Move(3);
+                                direction = 3;
                                 break;
                             case Keys.D:
-                                if (currentLevel.Map.Content[MMainCharacter.Instance.LocationX, MMainCharacter.Instance.LocationY + 1] == BLOCKS.EARTH)
-                                {
-                                    MMainCharacter.Instance.LocationY++;
-                                    direction = 4;
-                                }
+                                MMainCharacter.Instance.Move(4);
+                                direction = 4;
                                 break;
                             case Keys.W:
-                                if (currentLevel.Map.Content[MMainCharacter.Instance.LocationX - 1, MMainCharacter.Instance.LocationY] == BLOCKS.EARTH)
-                                {
-                                    MMainCharacter.Instance.LocationX--;
-                                    direction = 1;
-                                }
+                                MMainCharacter.Instance.Move(1);
+                                direction = 1;
                                 break;
                             case Keys.S:
-                                if (currentLevel.Map.Content[MMainCharacter.Instance.LocationX+1, MMainCharacter.Instance.LocationY] == BLOCKS.EARTH)
-                                {
-                                    MMainCharacter.Instance.LocationX++;
-                                    direction = 2;
-                                }
+                                MMainCharacter.Instance.Move(2);
+                                direction = 2;
                                 break;
                             case Keys.Escape:
                                 PauseMode();
                                 break;
+                            case Keys.Q:
+                                VictoryMode();
+                                break;
                         }
+                        // 重置输入
+                        KeyboardInput = false;
+                        KeyboardData = Keys.None;
                     }
                     // 暂停，不进行后续处理
                     if (Paused) continue;
@@ -301,16 +301,16 @@ namespace MMT
                                     switch (direction)     // 使用主角的Move()
                                     {
                                         case 1:
-                                            MMainCharacter.Instance.LocationX++;
+                                            MMainCharacter.Instance.Move(2);
                                             break;
                                         case 2:
-                                            MMainCharacter.Instance.LocationX--;
+                                            MMainCharacter.Instance.Move(1);
                                             break;
                                         case 3:
-                                            MMainCharacter.Instance.LocationY++;
+                                            MMainCharacter.Instance.Move(4);
                                             break;
                                         case 4:
-                                            MMainCharacter.Instance.LocationY--;
+                                            MMainCharacter.Instance.Move(3);
                                             break;
                                     }
                             }

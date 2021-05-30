@@ -15,7 +15,7 @@ namespace MMT.Data.Classes
         private int playedTime;
         private MMainCharacter character = MMainCharacter.Instance;
         private int currentLevelNumber;
-        private List<MLevel> existLevels = MLevel.Levels;
+        private List<MLevel> existLevels;
         private int defeatedCount;
         private int doorCount;
         private List<MItem> itemCount;
@@ -24,7 +24,7 @@ namespace MMT.Data.Classes
         public int PlayedTime { get { return playedTime; } set { playedTime = value; } }
         public MMainCharacter Character { get { return character; } }
         public int CurrentLevelNumber { get { return currentLevelNumber; } set { currentLevelNumber = value; } }
-        public List<MLevel> ExistLevels { get { return existLevels; } }
+        public List<MLevel> ExistLevels { get { return existLevels; } set { existLevels = value; } }
         public int DefeatedCount { get { return defeatedCount; } set { defeatedCount = value; } }
         public int DoorCount { get { return doorCount; } set { doorCount = value; } }
         public List<MItem> ItemCount { get { return itemCount; } }     // 不设setter
@@ -46,17 +46,19 @@ namespace MMT.Data.Classes
             CurrentLevelNumber = cln;
             DefeatedCount = dec;
             DoorCount = doc;
-            foreach(MLevel level in el)
-            {
-                ExistLevels.Add(level);
-            }
+            if(el!=null)
+                foreach(MLevel level in el)
+                {
+                    ExistLevels.Add(level);
+                }
             itemCount = new List<MItem>();
-            foreach(MItem item in ic)
-            {
-                Type type = item.GetType();     // 获取动态类型
-                System.Reflection.ConstructorInfo constructor = type.GetConstructor(new Type[1] { type });     // 获取复制构造函数
-                itemCount.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[1] { item }), type));     // 调用复制构造函数，将item放入列表中
-            }
+            if(ic!=null)
+                foreach(MItem item in ic)
+                {
+                    Type type = item.GetType();     // 获取动态类型
+                    System.Reflection.ConstructorInfo constructor = type.GetConstructor(new Type[1] { type });     // 获取复制构造函数
+                    itemCount.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[1] { item }), type));     // 调用复制构造函数，将item放入列表中
+                }
         }
 
         public override bool Equals(object obj)
