@@ -34,56 +34,7 @@ namespace MMT.Data.Classes
             CurrentLevel--;
             Shell.WriteLine(string.Format("进入关卡{0}", CurrentLevel), ConsoleColor.Green);
             // 移动角色位置
-            MExit exit = null;
-            foreach(MItem item in Levels[CurrentLevel - 1].Items)
-            {
-                if(item is MExit && (item as MExit).Exit)
-                {
-                    exit = item as MExit;
-                    break;
-                }
-            }
-            MMainCharacter.Instance.LocationX = exit.LocationX;
-            MMainCharacter.Instance.LocationY = exit.LocationY;
-            byte x = Convert.ToByte(exit.LocationX - 1);
-            byte y = Convert.ToByte(exit.LocationY - 1);
-            bool set = false;
-            for (int i = 1; i <= 4; i++)
-            {
-                switch (i)
-                {
-                    case 1:
-                        if (x > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationX--;
-                            set = true;
-                        }
-                        break;
-                    case 2:
-                        if (x < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationX++;
-                            set = true;
-                        }
-                        break;
-                    case 3:
-                        if (y > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationY--;
-                            set = true;
-                        }
-                        break;
-                    case 4:
-                        if (y < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationY++;
-                            set = true;
-                        }
-                        break;
-                }
-                if (set) break;
-            }
-            Shell.WriteLine(string.Format("玩家位于：({0},{1})", MMainCharacter.Instance.LocationX, MMainCharacter.Instance.LocationY), ConsoleColor.Green);
+            LocateNearExit(true);
         }
 
         public static void IntoNextLevel()
@@ -95,60 +46,7 @@ namespace MMT.Data.Classes
                 Levels.Add(new MLevel(CurrentLevel));
             Shell.WriteLine(string.Format("进入关卡{0}", CurrentLevel), ConsoleColor.Green);
             // 移动角色位置
-            MExit enter = null;
-            foreach (MItem item in Levels[CurrentLevel - 1].Items)
-            {
-                if (item is MExit && !(item as MExit).Exit)
-                {
-                    enter = item as MExit;
-                    break;
-                }
-            }
-            MMainCharacter.Instance.LocationX = enter.LocationX;
-            MMainCharacter.Instance.LocationY = enter.LocationY;
-            byte x = Convert.ToByte(enter.LocationX - 1);
-            byte y = Convert.ToByte(enter.LocationY - 1);
-            bool set = false;
-            for (int i = 1; i <= 4; i++)
-            {
-                switch (i)
-                {
-                    case 1:
-                        x--;
-                        if( x > 0 && Levels[CurrentLevel - 1].Map.Content[x,y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationX--;
-                            set = true;
-                        }
-                        break;
-                    case 2:
-                        x++;
-                        if (x < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationX++;
-                            set = true;
-                        }
-                        break;
-                    case 3:
-                        y--;
-                        if (y > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationY--;
-                            set = true;
-                        }
-                        break;
-                    case 4:
-                        y++;
-                        if (y < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        {
-                            MMainCharacter.Instance.LocationY++;
-                            set = true;
-                        }
-                        break;
-                }
-                if (set) break;
-            }
-            Shell.WriteLine(string.Format("玩家位于：({0},{1})", MMainCharacter.Instance.LocationX, MMainCharacter.Instance.LocationY), ConsoleColor.Green);
+            LocateNearExit(false);
         }
 
         private void InitMap()
@@ -215,6 +113,64 @@ namespace MMT.Data.Classes
             CurrentLevel = lv;
             LevelNumber = lv;
             InitMap();
+        }
+
+        public static void LocateNearExit(bool exit)
+        {
+            MExit e = null;
+            foreach (MItem item in Levels[CurrentLevel - 1].Items)
+            {
+                if (item is MExit && (item as MExit).Exit == exit?true:false)
+                {
+                    e = item as MExit;
+                    break;
+                }
+            }
+            MMainCharacter.Instance.LocationX = e.LocationX;
+            MMainCharacter.Instance.LocationY = e.LocationY;
+            byte x = Convert.ToByte(e.LocationX - 1);
+            byte y = Convert.ToByte(e.LocationY - 1);
+            bool set = false;
+            for (int i = 1; i <= 4; i++)
+            {
+                switch (i)
+                {
+                    case 1:
+                        x--;
+                        if (x > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationX--;
+                            set = true;
+                        }
+                        break;
+                    case 2:
+                        x++;
+                        if (x < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationX++;
+                            set = true;
+                        }
+                        break;
+                    case 3:
+                        y--;
+                        if (y > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationY--;
+                            set = true;
+                        }
+                        break;
+                    case 4:
+                        y++;
+                        if (y < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationY++;
+                            set = true;
+                        }
+                        break;
+                }
+                if (set) break;
+            }
+            Shell.WriteLine(string.Format("玩家位于：({0},{1})", MMainCharacter.Instance.LocationX, MMainCharacter.Instance.LocationY), ConsoleColor.Green);
         }
     }
 
