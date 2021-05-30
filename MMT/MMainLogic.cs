@@ -194,13 +194,15 @@ namespace MMT
                         CurrentProfile.DefeatedCount++;
                         fightOver = true;
                     }
+                    // 切换伦次
+                    currentOne = enemy;
                 }
                 else     // 敌人的轮次
                 {
                     Shell.WriteLine("敌人的回合", ConsoleColor.Green);
                     // 随机选择技能进行攻击操作
                     Random rand = new Random();
-                    enemy.Attack(enemy, enemy.Skills[rand.Next(enemy.Skills.Count)]);
+                    enemy.Attack(enemy, enemy.Skills.Count == 0 ? null : enemy.Skills[rand.Next(enemy.Skills.Count)]);     // 需更改
                     // 判断对方血量、是否胜利
                     if(MMainCharacter.Instance.HP <= 0)
                     {
@@ -211,6 +213,8 @@ namespace MMT
                         enemy.Power = enemy.MaxPower;
                         fightOver = true;
                     }
+                    // 切换伦次
+                    currentOne = MMainCharacter.Instance;
                 }
             }
             Combat = false;
