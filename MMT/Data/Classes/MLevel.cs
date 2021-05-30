@@ -22,46 +22,109 @@ namespace MMT.Data.Classes
 
         public MMap Map = new MMap();
 
-        public List<MItem> Items;
+        public List<MItem> Items = new List<MItem>();
 
-        public List<MEnemy> Enemies;
+        public List<MEnemy> Enemies = new List<MEnemy>();
         // TODO :Fix bug in "MEnemy is not public".
 
-        public void IntoLastLevel()
+        public static void IntoLastLevel()
         {
-            if (CurrentLevel == MinLevel) throw new Exception("Level is min level.");
-            CurrentLevel--;
-            foreach (var level in Levels.Where(level => level.LevelNumber == CurrentLevel))
+            if (CurrentLevel > MinLevel)
+                CurrentLevel--;
+            Shell.WriteLine(string.Format("进入关卡", CurrentLevel), ConsoleColor.Green);
+            // 移动角色位置
+            MExit exit = (MExit)Levels[CurrentLevel - 1].Items.Where(i => (i as MExit).Exit);
+            MMainCharacter.Instance.LocationX = exit.LocationX;
+            MMainCharacter.Instance.LocationY = exit.LocationY;
+            byte x = Convert.ToByte(exit.LocationX - 1);
+            byte y = Convert.ToByte(exit.LocationY - 1);
+            bool set = false;
+            for (int i = 1; i <= 4; i++)
             {
-                LevelNumber = level.LevelNumber;
-                Map = level.Map;
-                Items = level.Items;
-                Enemies = level.Enemies;
+                switch (i)
+                {
+                    case 1:
+                        if (x > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationX--;
+                            set = true;
+                        }
+                        break;
+                    case 2:
+                        if (x < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationX++;
+                            set = true;
+                        }
+                        break;
+                    case 3:
+                        if (y > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationY--;
+                            set = true;
+                        }
+                        break;
+                    case 4:
+                        if (y < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationY++;
+                            set = true;
+                        }
+                        break;
+                }
+                if (set) break;
             }
         }
 
-        public void IntoNextLevel()
+        public static void IntoNextLevel()
         {
-            if (CurrentLevel == MaxLevel) throw new Exception("Level is max level.");
-            CurrentLevel++;
-            var newLevel = true;
-            foreach (var level in Levels.Where(level => level.LevelNumber == CurrentLevel))
+            if (CurrentLevel < MaxLevel) 
+                CurrentLevel++;
+            // 若当前关卡还未生成，则初始化新关卡，并加入到Levels中
+            if (Levels.Count < CurrentLevel)
+                Levels.Add(new MLevel(CurrentLevel));
+            Shell.WriteLine(string.Format("进入关卡", CurrentLevel), ConsoleColor.Green);
+            // 移动角色位置
+            MExit enter = (MExit)Levels[CurrentLevel - 1].Items.Where(i => !(i as MExit).Exit);
+            MMainCharacter.Instance.LocationX = enter.LocationX;
+            MMainCharacter.Instance.LocationY = enter.LocationY;
+            byte x = Convert.ToByte(enter.LocationX - 1);
+            byte y = Convert.ToByte(enter.LocationY - 1);
+            bool set = false;
+            for (int i = 1; i <= 4; i++)
             {
-                newLevel = false;
-                LevelNumber = level.LevelNumber;
-                Map = level.Map;
-                Items = level.Items;
-                Enemies = level.Enemies;
-            }
-
-            if (!newLevel) return;
-            Levels.Add(new MLevel(CurrentLevel));
-            foreach (var level in Levels.Where(level => level.LevelNumber == CurrentLevel))
-            {
-                LevelNumber = level.LevelNumber;
-                Map = level.Map;
-                Items = level.Items;
-                Enemies = level.Enemies;
+                switch (i)
+                {
+                    case 1:
+                        if( x > 0 && Levels[CurrentLevel - 1].Map.Content[x,y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationX--;
+                            set = true;
+                        }
+                        break;
+                    case 2:
+                        if (x < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationX++;
+                            set = true;
+                        }
+                        break;
+                    case 3:
+                        if (y > 0 && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationY--;
+                            set = true;
+                        }
+                        break;
+                    case 4:
+                        if (y < Levels[CurrentLevel - 1].Map.Size && Levels[CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
+                        {
+                            MMainCharacter.Instance.LocationY++;
+                            set = true;
+                        }
+                        break;
+                }
+                if (set) break;
             }
         }
 
@@ -73,17 +136,50 @@ namespace MMT.Data.Classes
             {
                 for (var j = 0; j < Map.Size; j++)
                 {
-                        Map.Content[i, j] = ((MAP) OriginalMap.maps[CurrentLevel - 1][i, j]).IsWall() ? BLOCKS.WALL : BLOCKS.EARTH;
+                    byte x = Convert.ToByte(i + 1);
+                    byte y = Convert.ToByte(j + 1);
+                    MAP mapBlock = (MAP)OriginalMap.maps[CurrentLevel - 1][i, j];
+                    if (mapBlock.IsWall())
+                    {
+                        Map.Content[i, j] = BLOCKS.WALL;
+                        continue;
+                    }
+                    Map.Content[i, j] = BLOCKS.EARTH;
+                    // 添加物品与敌人
+                    // 添加出入口
+                    if (mapBlock.IsExit())
+                        Items.Add(new MExit(x, y, mapBlock == MAP.EXIT));
+                    // 添加门
+                    else if (mapBlock.IsDoor())
+                    {
+                        byte related = Convert.ToByte(mapBlock - 150);
+                        Items.Add(new MDoor(x, y, related));
+                    }
+                    // 添加钥匙
+                    else if (mapBlock.IsKey())
+                    {
+                        byte related = Convert.ToByte(mapBlock - 100);
+                        Items.Add(new MKey(x, y, related));
+                    }
+                    // 添加物品
+
+                    // 添加敌人
+                    else if (mapBlock.IsEnemy())
+                    {
+                        int index = (int)mapBlock - 11;
+                        Type enemyType = GENERATOR.ENEMYS[index];
+                        System.Reflection.ConstructorInfo constructor = enemyType.GetConstructor(new Type[2] { Type.GetType("System.Byte"), Type.GetType("System.Byte") });
+                        
+                        Enemies.Add((MEnemy)Convert.ChangeType(constructor.Invoke(new object[2] { x, y }), enemyType));
+                    }
                 }
             }
-            // TODO :Add items and enemies. (type missing)
         }
 
         public MLevel()
         {
             CurrentLevel = 1;
             LevelNumber = 1;
-            Levels.Add(new MLevel(CurrentLevel));
             foreach (var level in Levels.Where(level => level.LevelNumber == CurrentLevel))
             {
                 Map = level.Map;
@@ -94,18 +190,54 @@ namespace MMT.Data.Classes
 
         public MLevel(int lv)
         {
+            CurrentLevel = lv;
             LevelNumber = lv;
             InitMap();
         }
+    }
 
-        public MLevel(MLevel level) // copy constructor
+    public static class GENERATOR
+    {
+        public static List<Type> ENEMYS = new List<Type>()
         {
-            foreach (var mLevel in Levels.Where(l => l.LevelNumber == level.LevelNumber))
-            {
-                Map = level.Map;
-                Items = level.Items;
-                Enemies = level.Enemies;
-            }
-        }
+            Type.GetType("MMT.Data.Classes.Character.GreenSlim"),
+            Type.GetType("MMT.Data.Classes.Character.RedSlim"),
+            Type.GetType("MMT.Data.Classes.Character.Bat"),
+            Type.GetType("MMT.Data.Classes.Character.Zombie"),
+            Type.GetType("MMT.Data.Classes.Character.Skeleton"),
+            Type.GetType("MMT.Data.Classes.Character.Magician"),
+            Type.GetType("MMT.Data.Classes.Character.SkeletonKnight"),
+            Type.GetType("MMT.Data.Classes.Character.Gargoyle"),
+            Type.GetType("MMT.Data.Classes.Character.ScytheSpider"),
+            Type.GetType("MMT.Data.Classes.Character.SkeletonGeneral"),
+            Type.GetType("MMT.Data.Classes.Character.GrandMaster"),
+            Type.GetType("MMT.Data.Classes.Character.TheDevil")
+        };
+
+        public static List<Type> ITEMS = new List<Type>()
+        {   // Potion
+            Type.GetType("MMT.Data.Classes.Item.Healthpotion"),
+            Type.GetType("MMT.Data.Classes.Item.Magicpotion"),
+            Type.GetType("MMT.Data.Classes.Item.Hitpotion"),
+            Type.GetType("MMT.Data.Classes.Item.Powerpotion"),
+            Type.GetType("MMT.Data.Classes.Item.Armorpotion"),
+            Type.GetType("MMT.Data.Classes.Item.MagicArmorpotion"),
+            Type.GetType("MMT.Data.Classes.Item.Speedpotion"),
+            // Equipment
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+            Type.GetType("MMT.Data.Classes.Item."),
+        };
     }
 }
