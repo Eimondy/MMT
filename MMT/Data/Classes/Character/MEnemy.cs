@@ -39,7 +39,7 @@ namespace MMT.Data.Classes.Character
         }
 
     }
-    class GreenSlim : MEnemy
+    public class GreenSlim : MEnemy
     {
         //构造函数
 
@@ -65,7 +65,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class RedSlim : MEnemy
+    public class RedSlim : MEnemy
     {
         //默认构造函数
         RedSlim(byte x,byte y) : base(x, y)
@@ -88,7 +88,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class Bat : MEnemy
+    public class Bat : MEnemy
     {
         //默认构造函数
         Bat(byte x,byte y) : base(x, y)
@@ -111,7 +111,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class Zombie : MEnemy
+    public class Zombie : MEnemy
     {
         //默认构造函数
         Zombie(byte x,byte y) : base(x, y)
@@ -134,7 +134,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class Skeleton : MEnemy
+    public class Skeleton : MEnemy
     {
         //默认构造函数
         Skeleton(byte x,byte y) : base(x, y)
@@ -157,7 +157,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class Magician : MEnemy
+    public class Magician : MEnemy
     {
         //默认构造函数
         Magician(byte x ,byte y) : base(x, y)
@@ -180,7 +180,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class SkeletonKnight : MEnemy
+    public class SkeletonKnight : MEnemy
     {
         //默认构造函数
         SkeletonKnight(byte x,byte y) : base(x, y)
@@ -203,7 +203,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class Gargoyle : MEnemy
+    public class Gargoyle : MEnemy
     {
         //默认构造函数
         Gargoyle(byte x,byte y) : base(x, y)
@@ -226,7 +226,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class ScytheSpider : MEnemy
+    public class ScytheSpider : MEnemy
     {
         //默认构造函数
         ScytheSpider(byte x,byte y) : base(x, y)
@@ -249,7 +249,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class SkeletonGeneral : MEnemy
+    public class SkeletonGeneral : MEnemy
     {
         //默认构造函数
         SkeletonGeneral(byte x, byte y) : base(x, y)
@@ -272,7 +272,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class GrandMaster : MEnemy
+    public class GrandMaster : MEnemy
     {
         //默认构造函数
         GrandMaster(byte x, byte y) : base(x, y)
@@ -295,7 +295,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
-    class TheDevil : MEnemy
+    public class TheDevil : MEnemy
     {
         //默认构造函数
         TheDevil(byte x, byte y) : base(x, y)

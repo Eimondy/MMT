@@ -56,7 +56,7 @@ namespace MMT.Data.Classes.Character
         public abstract void Attack(MEnemy e, MSkill skill);     // 攻击
 
         //交互操作。与主角相遇时调用。当主角与人物在同一位置时，才产生交互。
-        public abstract void Iteract(MEnemy e);
+
 
 
 
