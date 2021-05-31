@@ -95,6 +95,10 @@ namespace MMT
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.Start(0, "TEST");
+            Picturebox_MainMenu.Visible = false;
+            Form_Status Fs = new Form_Status();
+            Fs.MdiParent = this;
+            Fs.Show();          
         }
 
         private void btn_MainMenu_Load_Click(object sender, EventArgs e)
@@ -106,5 +110,6 @@ namespace MMT
         {
 
         }
+
     }
 }
