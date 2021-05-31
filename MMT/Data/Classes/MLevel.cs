@@ -200,13 +200,13 @@ namespace MMT.Data.Classes
 
         public static List<Type> ITEMS = new List<Type>()
         {   // Potion
-            Type.GetType("MMT.Data.Classes.Item.Healthpotion"),
-            Type.GetType("MMT.Data.Classes.Item.Magicpotion"),
-            Type.GetType("MMT.Data.Classes.Item.Hitpotion"),
-            Type.GetType("MMT.Data.Classes.Item.Powerpotion"),
-            Type.GetType("MMT.Data.Classes.Item.Armorpotion"),
-            Type.GetType("MMT.Data.Classes.Item.MagicArmorpotion"),
-            Type.GetType("MMT.Data.Classes.Item.Speedpotion"),
+            Type.GetType("MMT.Data.Classes.Item.HealthPotion"),
+            Type.GetType("MMT.Data.Classes.Item.MagicPotion"),
+            Type.GetType("MMT.Data.Classes.Item.HitPotion"),
+            Type.GetType("MMT.Data.Classes.Item.PowerPotion"),
+            Type.GetType("MMT.Data.Classes.Item.ArmorPotion"),
+            Type.GetType("MMT.Data.Classes.Item.MagicArmorPotion"),
+            Type.GetType("MMT.Data.Classes.Item.SpeedPotion"),
             // Equipment
             Type.GetType("MMT.Data.Classes.Item.StrawSandals"),
             Type.GetType("MMT.Data.Classes.Item.RustySword"),
