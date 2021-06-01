@@ -16,5 +16,10 @@ namespace MMT
         {
             InitializeComponent();
         }
+
+        private void btn_StopGame_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

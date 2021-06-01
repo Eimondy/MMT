@@ -29,6 +29,7 @@ namespace MMT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Status));
             this.lbl_StopGame = new System.Windows.Forms.Label();
             this.btn_StopGame = new System.Windows.Forms.Button();
             this.lbl_FloorShow = new System.Windows.Forms.Label();
@@ -58,13 +59,15 @@ namespace MMT
             // 
             // btn_StopGame
             // 
-            this.btn_StopGame.BackgroundImage = global::MMT.Properties.Resources.stop;
+            this.btn_StopGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_StopGame.BackgroundImage")));
             this.btn_StopGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_StopGame.FlatAppearance.BorderSize = 0;
             this.btn_StopGame.Location = new System.Drawing.Point(193, 63);
             this.btn_StopGame.Name = "btn_StopGame";
             this.btn_StopGame.Size = new System.Drawing.Size(41, 41);
             this.btn_StopGame.TabIndex = 1;
             this.btn_StopGame.UseVisualStyleBackColor = true;
+            this.btn_StopGame.Click += new System.EventHandler(this.btn_StopGame_Click);
             // 
             // lbl_FloorShow
             // 
@@ -196,7 +199,7 @@ namespace MMT
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(360, 640);
+            this.ClientSize = new System.Drawing.Size(384, 640);
             this.Controls.Add(this.picturebox_BackColor);
             this.Controls.Add(this.lbl_FloorNum);
             this.Controls.Add(this.lbl_FloorShow);

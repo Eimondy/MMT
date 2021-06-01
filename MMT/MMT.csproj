@@ -113,13 +113,38 @@
   <ItemGroup>
     <Folder Include="Data\Level\" />
     <Folder Include="Data\Sound\" />
+    <Folder Include="Resources\" />
     <Folder Include="Saves\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Image\Img_start.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stop.jpg" />
+    <None Include="Data\Image\Img_stop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_ground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_ground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_ground3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_ground4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_wall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_wall2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_wall3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_wall4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

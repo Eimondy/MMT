@@ -34,8 +34,10 @@ namespace MMT
             this.btn_MainMenu_Load = new System.Windows.Forms.Button();
             this.btn_MainMenu_Start = new System.Windows.Forms.Button();
             this.lbl_MainMenu_MagicTower = new System.Windows.Forms.Label();
+            this.Picturebox_Map = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).BeginInit();
             this.Picturebox_MainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             this.SuspendLayout();
             // 
             // Picturebox_MainMenu
@@ -116,12 +118,22 @@ namespace MMT
             this.lbl_MainMenu_MagicTower.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_MainMenu_MagicTower.UseWaitCursor = true;
             // 
+            // Picturebox_Map
+            // 
+            this.Picturebox_Map.Location = new System.Drawing.Point(384, 0);
+            this.Picturebox_Map.Name = "Picturebox_Map";
+            this.Picturebox_Map.Size = new System.Drawing.Size(600, 600);
+            this.Picturebox_Map.TabIndex = 7;
+            this.Picturebox_Map.TabStop = false;
+            this.Picturebox_Map.Visible = false;
+            // 
             // MMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 601);
+            this.Controls.Add(this.Picturebox_Map);
             this.Controls.Add(this.Picturebox_MainMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IsMdiContainer = true;
@@ -136,6 +148,7 @@ namespace MMT
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).EndInit();
             this.Picturebox_MainMenu.ResumeLayout(false);
             this.Picturebox_MainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,6 +160,7 @@ namespace MMT
         private System.Windows.Forms.Button btn_MainMenu_Exit;
         private System.Windows.Forms.Label lbl_MainMenu_MagicTower;
         private System.Windows.Forms.PictureBox Picturebox_MainMenu;
+        private System.Windows.Forms.PictureBox Picturebox_Map;
     }
 }
 
