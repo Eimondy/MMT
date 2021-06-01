@@ -35,23 +35,22 @@ namespace MMT
             g = this.CreateGraphics();
         }
 
-        public void GameStart() {
-            this.Picturebox_MainMenu.Hide();
-            Form_Status Fs = new Form_Status();
-            Fs.MdiParent = this;
-            Fs.Show();
-            Bitmap b = new Bitmap(this.Picturebox_Map.Width,this.Picturebox_Map.Height);
+        public void Draw()
+        {
+            Bitmap b = new Bitmap(this.Picturebox_Map.Width, this.Picturebox_Map.Height);
             Graphics cur = Graphics.FromImage(b);
-            Console.WriteLine(MLevel.CurrentLevel);
             MLevel CurLevel = MLevel.Levels[MLevel.CurrentLevel - 1];
             var x = this.Picturebox_Map.Width / CurLevel.Map.Size;
-            Image ground=null, wall=null;
-            for (int i = 0; i < CurLevel.Map.Size; i++) {
-                for (int j = 0; j < CurLevel.Map.Size; j++) {
+            Image ground = null, wall = null;
+            for (int i = 0; i < CurLevel.Map.Size; i++)
+            {
+                for (int j = 0; j < CurLevel.Map.Size; j++)
+                {
                     //Console.WriteLine(System.Environment.CurrentDirectory);
-                    switch ((MLevel.CurrentLevel-1)/4) {
+                    switch ((MLevel.CurrentLevel - 1) / 4)
+                    {
                         case 0:
-                            ground= Properties.Resources.Img_ground1;
+                            ground = Properties.Resources.Img_ground1;
                             wall = Properties.Resources.Img_wall1;
                             break;
                         case 1:
@@ -67,15 +66,25 @@ namespace MMT
                             wall = Properties.Resources.Img_wall4;
                             break;
                     }
-                    if (CurLevel.Map.Content[i,j] == BLOCKS.WALL) 
+                    if (CurLevel.Map.Content[i, j] == BLOCKS.WALL)
                         cur.DrawImage(wall, x * j, x * i, x, x);
                     else
                         cur.DrawImage(ground, x * j, x * i, x, x);
                 }
             }
-                    
+
+            cur.DrawImage(MMainCharacter.Instance.Image, x * (MMainCharacter.Instance.LocationY - 1), x * (MMainCharacter.Instance.LocationX - 1), x, x);
+
             this.Picturebox_Map.Image = b;
             this.Picturebox_Map.Show();
+        }
+
+        public void GameStart() {
+            this.Picturebox_MainMenu.Hide();
+            Form_Status Fs = new Form_Status();
+            Fs.MdiParent = this;
+            Fs.Show();
+            Draw();
         }
 
         public void MainMenu() {
@@ -112,7 +121,7 @@ namespace MMT
 
         private void MMainForm_Paint(object sender, PaintEventArgs e)     // 绘制事件
         {
-            MMainLogic.Instance.Draw();
+
         }
 
         private void MMainForm_SizeChanged(object sender, EventArgs e)     // 更改窗体大小时，重设画布
