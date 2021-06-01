@@ -63,6 +63,16 @@ namespace MMT.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Img_character_test {
+            get {
+                object obj = ResourceManager.GetObject("Img_character_test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Img_ground1 {
             get {
                 object obj = ResourceManager.GetObject("Img_ground1", resourceCulture);
