@@ -32,6 +32,7 @@ namespace MMT.Data.Classes.Skill
             double p = rd.NextDouble();
             if (p < MMainCharacter.Instance.HitRate) //命中，敌人护甲-4
             {
+                MMainCharacter.Instance.Power -= 20;
                 enemy.Armar = enemy.Armar - 4;
             }
             else //未命中

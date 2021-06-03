@@ -33,6 +33,7 @@ namespace MMT.Data.Classes.Skill
             var Attack = 0.0;
             if (p < MMainCharacter.Instance.HitRate) //命中
             {
+                MMainCharacter.Instance.Power -= 20;
                 Attack = MMainCharacter.Instance.Power * Points * 2.4;
             }
             else //未命中
