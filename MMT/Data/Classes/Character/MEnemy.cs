@@ -59,9 +59,10 @@ namespace MMT.Data.Classes.Character
             Exp = 1;
             Description = "迷宫中随处可见的小型生物，只有低级智能";
 
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
 
-
-            //暂时还未加入技能
+            
         }
     }
 
@@ -84,7 +85,8 @@ namespace MMT.Data.Classes.Character
             Exp = 2;
             Description = "小型生物在魔塔魔气影响下发生的变异，比原来更强大";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -107,7 +109,8 @@ namespace MMT.Data.Classes.Character
             Exp = 3;
             Description = "倒悬在魔塔层顶的魔化生物，具有较快的敏捷，较难被击中";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -130,7 +133,8 @@ namespace MMT.Data.Classes.Character
             Exp = 5;
             Description = "游荡在魔塔中的类人型魔物，具有高防御，在获得强力武器之前，主角难以抗衡";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -153,7 +157,8 @@ namespace MMT.Data.Classes.Character
             Exp = 5;
             Description = "游荡在魔塔中的类人型魔物，具有极高的攻击，在获得强力防具之前，主角难以抗衡";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -176,7 +181,8 @@ namespace MMT.Data.Classes.Character
             Exp = 6;
             Description = "曾经是进入魔塔挑战的法师，失败之后，被魔气魔化，成为邪恶的魔法恶鬼";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -199,7 +205,8 @@ namespace MMT.Data.Classes.Character
             Exp = 7;
             Description = "曾经是进入魔塔挑战的骑士，失败之后，被魔气魔化，成为凶残的骷髅骑士";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -222,7 +229,8 @@ namespace MMT.Data.Classes.Character
             Exp = 5;
             Description = "常常出现在密室门口，具有很高的血量，护甲值，魔抗值。说不定在它身后的密室里存在着什么好东西……";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -245,7 +253,8 @@ namespace MMT.Data.Classes.Character
             Exp = 6;
             Description = "出现在魔塔中的蜘蛛形怪物，具有很高的攻击力，敏捷值，使用魔法攻击说不定不是个好方法";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -268,7 +277,8 @@ namespace MMT.Data.Classes.Character
             Exp = 10;
             Description = "魔塔前几层的Boss,具有很强的综合属性，稍不注意就会葬送在它的魔刀下";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -291,7 +301,8 @@ namespace MMT.Data.Classes.Character
             Exp = 20;
             Description = "魔塔中层出现的Boss,精通魔法，具有很强的魔法攻击";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 
@@ -314,7 +325,8 @@ namespace MMT.Data.Classes.Character
             Exp = 0;
             Description = "魔塔最终boss，曾是拯救世人的勇者，但是在魔塔中失去本性，最终化为黑暗的傀儡。魔塔的化身。";
 
-            //暂时还未加入技能
+            //空list，技能暂未添加
+            Skills = new List<MSkill>();
         }
     }
 }
