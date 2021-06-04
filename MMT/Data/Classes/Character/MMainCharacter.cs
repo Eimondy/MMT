@@ -202,21 +202,5 @@ namespace MMT.Data.Classes.Character
             }
             Shell.WriteLine(string.Format("玩家位于：({0},{1})", LocationX, LocationY), ConsoleColor.Green);
         }
-
-        //主角的攻击
-        public override void Attack(MEnemy e, MSkill skill)
-        {
-            if (skill == null)     // 普攻
-            {
-                double Attack = Power * 2.4;
-                int TakeAttack = Convert.ToInt32(Attack - e.Armor * 1.2);
-                e.HP -= TakeAttack;
-                
-            }
-            else     // 直接使用技能
-            {
-                skill.Activate(e);
-            }
-        }
     }
 }

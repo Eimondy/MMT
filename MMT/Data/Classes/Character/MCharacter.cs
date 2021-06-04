@@ -53,15 +53,16 @@ namespace MMT.Data.Classes.Character
 
         //计算攻击产生的伤害。主角可以使用技能攻击。
 
-        public abstract void Attack(MEnemy e, MSkill skill);     // 攻击
-
-        //交互操作。与主角相遇时调用。当主角与人物在同一位置时，才产生交互。
-
-
-
-
-
+        public void Attack(MCharacter enemy, MSkill skill)     // 攻击
+        {
+            if (skill == null)     // 普攻
+            {
+                double Attack = MaxPower * COMBAT.ATTACK;
+                int TakeAttack = Convert.ToInt32(Attack - enemy.Armor * COMBAT.DEFENSE);
+                enemy.HP -= TakeAttack;
+            }
+            else     // 直接使用技能
+                skill.Activate(this, enemy);
+        }
     }
-
-
 }

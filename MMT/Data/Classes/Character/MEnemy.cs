@@ -1,43 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MMT.Data.Classes.Skill;
 using MMT.Data.Classes;
 
 
 namespace MMT.Data.Classes.Character
 {
-
     public class MEnemy : MCharacter
     {
         private MONSTER monstertype; //敌人类型
         private string description; //描述
         public string Description { get { return description; } set { description = value; } }
         public MONSTER MonsterType { get { return monstertype; } set { monstertype = value; } }
-        //敌人的攻击
-        public override void Attack(MEnemy e, MSkill skill)
-        {
-            if (skill == null)     // 普攻
-            {
-                double Attack = Power * 2.4;
-                int TakeAttack = Convert.ToInt32(Attack - MMainCharacter.Instance.Armor * 1.2);
-                MMainCharacter.Instance.HP -= TakeAttack;
-
-            }
-            else     // 直接使用技能
-            {
-                skill.Activate(e);
-            }
-        }
         //敌人位置的初始化
         public MEnemy(byte x,byte y)
         {
             LocationX = x;
             LocationY = y;
         }
-
     }
     public class GreenSlim : MEnemy
     {
