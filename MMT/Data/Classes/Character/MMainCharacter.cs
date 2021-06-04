@@ -72,7 +72,7 @@ namespace MMT.Data.Classes.Character
         public MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
         {
             this.Name = "勇士";
-            this.Image = Properties.Resources.Img_character_test;
+            this.Image = Properties.Resources.Img_char_down;
             this.MaxHP = 50;
             this.HP = 50;
             this.MaxMP = 0;
@@ -92,6 +92,7 @@ namespace MMT.Data.Classes.Character
             this.ExpToLevelUp = Convert.ToByte(this.Level + 10) - exp;
             this.Skills = new List<MSkill>();   // 技能暂时未添加
         }
+        /*
         public MMainCharacter(MMainCharacter c)     // copy constructor
         {
             this.Name = c.Name;
@@ -114,7 +115,7 @@ namespace MMT.Data.Classes.Character
             this.Exp = c.Exp;
             this.ExpToLevelUp = Convert.ToByte(this.Level + 10) - this.Exp;
             this.Skills = c.Skills;     
-        }
+        }*/
 
         // 获取经验值
         public void GetExp(MEnemy e)
@@ -181,22 +182,22 @@ namespace MMT.Data.Classes.Character
                 case 1:
                     x -= 1;
                     if (x > 0 && MLevel.Levels[MLevel.CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        { LocationX -= 1; }
+                        { LocationX -= 1; Image = Properties.Resources.Img_char_up; }
                     break;
                 case 2:
                     x += 1;
                     if (x < MLevel.Levels[MLevel.CurrentLevel - 1].Map.Size && MLevel.Levels[MLevel.CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        { LocationX += 1; }
+                        { LocationX += 1; Image = Properties.Resources.Img_char_down; }
                     break;
                 case 3:
                     y -= 1;
                     if (y > 0 && MLevel.Levels[MLevel.CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        { LocationY -= 1; }
+                        { LocationY -= 1; Image = Properties.Resources.Img_char_left; }
                     break;
                 case 4:
                     y += 1;
                     if (y < MLevel.Levels[MLevel.CurrentLevel - 1].Map.Size && MLevel.Levels[MLevel.CurrentLevel - 1].Map.Content[x, y] == BLOCKS.EARTH)
-                        { LocationY += 1; }
+                        { LocationY += 1; Image = Properties.Resources.Img_char_right; }
                     break;
             }
             Shell.WriteLine(string.Format("玩家位于：({0},{1})", LocationX, LocationY), ConsoleColor.Green);
