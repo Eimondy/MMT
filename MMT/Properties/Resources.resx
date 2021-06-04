@@ -124,6 +124,9 @@
   <data name="Img_char_Bat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_Bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_char_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_char_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_char_Gargoyle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_Gargoyle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,11 +136,17 @@
   <data name="Img_char_GreenSlim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_GreenSlim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_char_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_char_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_char_Magician" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_Magician.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_char_RedSlim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_RedSlim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_char_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_char_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_char_ScytheSpider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_ScytheSpider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +163,9 @@
   <data name="Img_char_TheDevil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_TheDevil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_char_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_char_up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_char_Zombie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_Zombie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,6 +180,9 @@
   </data>
   <data name="Img_ground4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_ground4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_item_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_item_ArmorPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_ArmorPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +208,9 @@
   <data name="Img_item_Excalibur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_Excalibur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_item_Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_item_HealthPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_HealthPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,6 +232,12 @@
   <data name="Img_item_Key5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_Key5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_item_Legend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_Legend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_item_LongShoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_LongShoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_item_MagicAntidote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_MagicAntidote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,6 +247,9 @@
   <data name="Img_item_MerlinStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_MerlinStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_item_OverlordArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_OverlordArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_item_PowerfulStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_PowerfulStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -231,6 +258,9 @@
   </data>
   <data name="Img_item_RedGem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_RedGem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_item_Robe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_Robe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_item_RottenStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_RottenStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -243,6 +273,9 @@
   </data>
   <data name="Img_item_SpeedPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_SpeedPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_item_StrawSandals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_StrawSandals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

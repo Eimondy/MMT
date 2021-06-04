@@ -260,5 +260,38 @@
   <ItemGroup>
     <None Include="Data\Image\Img_item_SpeedPotion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Legend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_LongShoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_OverlordArmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Robe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_StrawSandals.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
