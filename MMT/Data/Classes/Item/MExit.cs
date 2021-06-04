@@ -25,11 +25,7 @@ namespace MMT.Data.Classes.Item
                 //Image=new Bitmap();
             }
             Exit = exit;
-        }
-
-        public MExit(MExit exit) : base(exit)
-        {
-            Exit = exit.Exit;
+            Image = Properties.Resources.Img_item_Exit;
         }
 
         public override void Interact()
