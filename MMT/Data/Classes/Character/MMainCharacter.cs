@@ -58,7 +58,7 @@ namespace MMT.Data.Classes.Character
             this.Speed = 1;
             this.HitRate = 0.8;
             this.AvoidRate = 1.0;
-            this.Image = null;     // 图片暂时未添加
+            this.Image = Properties.Resources.Img_character_test;     // 图片暂用
             this.LocationX = 0;
             this.LocationY = 0;
             this.Level = 1;
@@ -71,7 +71,8 @@ namespace MMT.Data.Classes.Character
         //带参数的完全构造函数,注意x,y坐标，level,exp为byte类型
         public MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
         {
-            this.Name = null;
+            this.Name = "勇士";
+            this.Image = Properties.Resources.Img_character_test;
             this.MaxHP = 50;
             this.HP = 50;
             this.MaxMP = 0;
@@ -94,6 +95,7 @@ namespace MMT.Data.Classes.Character
         public MMainCharacter(MMainCharacter c)     // copy constructor
         {
             this.Name = c.Name;
+            this.Image = Properties.Resources.Img_character_test;
             this.MaxHP = c.MaxHP;
             this.HP = c.HP;
             this.MaxMP = c.MaxMP;

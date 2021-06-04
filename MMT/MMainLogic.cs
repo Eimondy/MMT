@@ -80,7 +80,7 @@ namespace MMT
 
         public void Draw()
         {
-
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Draw));
         }
 
         public void Start(int saveNum = 0, string pn="")
@@ -307,6 +307,7 @@ namespace MMT
                                 BackToMainMenu();
                                 break;
                         }
+                        Draw();
                         // 重置输入
                         KeyboardInput = false;
                         KeyboardData = Keys.None;
@@ -345,6 +346,7 @@ namespace MMT
                             // 发生交互
                             Shell.WriteLine(string.Format("与{0}发生交互", item.Name), ConsoleColor.Blue);
                             item.Interact();
+                            Draw();
                             break;
                         }
                     }
@@ -356,6 +358,7 @@ namespace MMT
                             {
                                 Shell.WriteLine(string.Format("与{0}发生战斗", enemy.Name), ConsoleColor.Red);
                                 CombatMode(enemy);
+                                Draw();
                                 break;
                             }
                         }

@@ -118,7 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Img_character_test" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_character_test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_ground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_ground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_ground2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_ground2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_ground3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_ground3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_ground4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_ground4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_stop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_wall1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_wall1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_wall2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_wall2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_wall3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_wall3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_wall4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_wall4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

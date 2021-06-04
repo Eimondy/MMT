@@ -6,9 +6,9 @@ namespace MMT.Data.Classes.Skill
 
     //角色技能
     //beat
-    public class Beat : MSkill
+    public class CBeat : MSkill
     {
-        public Beat()
+        public CBeat()
         {
             Name = "Beat"; //技能名称
             Points = 1.2f;//伤害倍数
@@ -33,15 +33,16 @@ namespace MMT.Data.Classes.Skill
             var Attack = 0.0;
             if (p < MMainCharacter.Instance.HitRate) //命中
             {
+                MMainCharacter.Instance.Power -= 20;
                 Attack = MMainCharacter.Instance.Power * Points * 2.4;
+                var TakeAttack = Attack - enemy.Armor;
+                enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
             }
             else //未命中
             {
-                Attack = 0;
+                return;
             }
-            var TakeAttack = Attack - enemy.Armor;
-            enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
-
+            
             //没有加判断生命值是否小于0的判断
         }
     }
