@@ -73,5 +73,10 @@ namespace MMT.Data.Classes
             else
                 return false;
         }
+
+        public override string ToString()
+        {
+            return string.Format("玩家：{0}\n游玩时间：{1}\n击败敌人：{2}\n开启密室：{3}\n收集物品：{4}\n", PlayerName, PlayedTime, DefeatedCount, DoorCount, ItemCount.Count);
+        }
     }
 }
