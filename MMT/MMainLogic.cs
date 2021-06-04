@@ -16,6 +16,7 @@ namespace MMT
     class MMainLogic
     {
         private delegate void TOUI();
+        private delegate void TOUIARG(byte[] choices);
 
         private static MMainLogic instance;
         private List<MGameProfile> saves = new List<MGameProfile>();
@@ -28,6 +29,7 @@ namespace MMT
         private bool isGameOver = false;
         private bool keyboardInput = false;
         private Keys keyboardData;
+        private string defeatedEnemy;
         public static MMainLogic Instance
         {
             get
@@ -51,6 +53,7 @@ namespace MMT
         public bool IsGameOver { get { return isGameOver; } set { isGameOver = value; } }
         public bool KeyboardInput { get { return keyboardInput; } set { keyboardInput = value; } }
         public Keys KeyboardData { get { return keyboardData; } set { keyboardData = value; } }
+        public string DefeatedEnemy { get { return defeatedEnemy; } set { defeatedEnemy = value; } }
 
         public MMainLogic()
         {
@@ -62,6 +65,7 @@ namespace MMT
             // 加载所有存档文件到Saves
             BinaryFormatter bf = new BinaryFormatter();
             string dir = @"..\..\Saves";
+            if (!Directory.Exists(dir)) return;
             string[] files = Directory.GetFiles(dir, @"*.save");
             FileStream fs;
             foreach(string file in files)
@@ -132,7 +136,8 @@ namespace MMT
             Shell.WriteLine("保存游戏", ConsoleColor.Black);
             // 保存到文件
             BinaryFormatter bf = new BinaryFormatter();
-            string path = @"..\..\Saves_" + (Saves.Count + 1).ToString() + ".save";
+            if (!Directory.Exists(@"..\..\Saves")) Directory.CreateDirectory(@"..\..\Saves");
+            string path = @"..\..\Saves\Saves_" + (Saves.Count + 1).ToString() + ".save";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 CurrentProfile.ExistLevels = MLevel.Levels;
@@ -147,8 +152,8 @@ namespace MMT
             Shell.WriteLine("进入战斗", ConsoleColor.Black);
             Combat = true;
             bool fightOver = false;
-            // 与从窗体通信，告知目前哪些技能可用
-
+            // 与窗体通信，显示战斗界面
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.ShowCombatMenu));
             // 比较速度判出先后手
             MCharacter currentOne;
             if (MMainCharacter.Instance.Speed >= enemy.Speed)
@@ -161,6 +166,18 @@ namespace MMT
             MMainCharacter.Instance.Power = MMainCharacter.Instance.MaxPower;
             while (!fightOver)
             {
+                // 与从窗体通信，告知目前哪些技能可用
+                List<byte> choice = new List<byte>();
+                for (int i = 0; i < MMainCharacter.Instance.Skills.Count; i++)
+                {
+                    if (MMainCharacter.Instance.Skills[i].Type == ATTRIBUTE.POWER)
+                        if (MMainCharacter.Instance.Skills[i].Consumption <= MMainCharacter.Instance.Power)
+                            choice.Add(Convert.ToByte(i));
+                        else
+                        if (MMainCharacter.Instance.Skills[i].Consumption <= MMainCharacter.Instance.MP)
+                            choice.Add(Convert.ToByte(i));
+                }
+                MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.UpdateCombatMenu), choice.ToArray());
                 Shell.WriteLine(string.Format("玩家HP：{0}     敌人HP：{1}", MMainCharacter.Instance.HP, enemy.HP), ConsoleColor.Green);
                 if (currentOne is MMainCharacter)     // 主角的轮次。若30秒之内不攻击，则使用普通攻击。
                 {
@@ -221,9 +238,17 @@ namespace MMT
                 }
             }
             Combat = false;
+            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.CloseCombatMenu));
             // 若主角战败，则调用DefeatedMode()
             if (MMainCharacter.Instance.HP <= 0)
+            {
+                DefeatedEnemy = enemy.Name;
                 DefeatedMode();
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("击败{0}，获得{1}经验值", enemy.Name, enemy.Exp), ConsoleColor.Green);
+            }
             // 若敌人为关底Boss，则调用VictoryMode()
             if (MLevel.CurrentLevel == 16 && enemy is TheDevil)
                 VictoryMode();
@@ -236,6 +261,7 @@ namespace MMT
             Victory = true;
             MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
             // 展示统计信息
+            Shell.WriteLine(CurrentProfile.ToString(), ConsoleColor.Green);
         }
 
         public void DefeatedMode()
@@ -301,10 +327,10 @@ namespace MMT
                                 direction = 2;
                                 break;
                             case Keys.Escape:
-                                Exit();     // 需要修改
+                                PauseMode();
                                 break;
                             case Keys.Q:
-                                VictoryMode();
+                                Exit();     // 需要修改
                                 break;
                             case Keys.E:
                                 BackToMainMenu();
