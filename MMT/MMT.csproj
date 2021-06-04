@@ -64,6 +64,16 @@
     <Compile Include="Data\Classes\MGameProfile.cs" />
     <Compile Include="Data\Classes\MLevel.cs" />
     <Compile Include="Data\Classes\MMap.cs" />
+    <Compile Include="Data\Classes\Skill\CBeat.cs" />
+    <Compile Include="Data\Classes\Skill\CExtinctRoar.cs" />
+    <Compile Include="Data\Classes\Skill\CFragmentImpact.cs" />
+    <Compile Include="Data\Classes\Skill\CFrustrated.cs" />
+    <Compile Include="Data\Classes\Skill\CGodShine.cs" />
+    <Compile Include="Data\Classes\Skill\CGodStrike.cs" />
+    <Compile Include="Data\Classes\Skill\CStrongAbsorption.cs" />
+    <Compile Include="Data\Classes\Skill\CTreat.cs" />
+    <Compile Include="Data\Classes\Skill\OAttack.cs" />
+    <Compile Include="Data\Classes\Skill\OPosion.cs" />
     <Compile Include="Form_Status.cs">
       <SubType>Form</SubType>
     </Compile>
