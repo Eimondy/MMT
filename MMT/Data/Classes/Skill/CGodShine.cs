@@ -3,9 +3,6 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Skill
 {
-
-    //角色技能
-    //beat
     public class CGodShine : MSkill
     {
         public CGodShine()
