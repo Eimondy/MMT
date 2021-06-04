@@ -49,7 +49,7 @@ namespace MMT.Data.Classes.Character
         public byte Level { get { return level; } set { level = value; } }
         public byte Exp { get { return exp; } set { exp = value; } }
 
-        public List<MSkill> Skills { get { return skills; } }
+        public List<MSkill> Skills { get { return skills; } set { skills = value; } }
 
         //计算攻击产生的伤害。主角可以使用技能攻击。
 

@@ -19,7 +19,7 @@ namespace MMT.Data.Classes.Character
         private List<MEquipment> equipment = new List<MEquipment>();    //收集到的装备。可以装备，可以卸载。
         private List<MKey> keys = new List<MKey>();     //收集到的钥匙。每收集一个钥匙，便放入Keys中，并在界面上显示；
                                                         //每使用一个钥匙，会从Keys中移除相应的钥匙。每进入新的关卡时，置空Keys。
-        private List<MSkill> skills;     //拥有的技能。主角拥有固定的技能。采用new的形式
+
         private int expToLevelUp;     //主角升级时所需要的经验
         private byte attackchoice = 255;     //表示主角攻击时的攻击方式
 
@@ -39,7 +39,7 @@ namespace MMT.Data.Classes.Character
         public List<MEquipment> Equipped { get => equipped; }
         public List<MEquipment> Equipment { get => equipment; }
         public List<MKey> Keys { get => keys; }
-        public List<MSkill> Skills { get => skills; }
+
         public int ExpToLevelUp { get => expToLevelUp; set => expToLevelUp = value; }
         public byte AttackChoice { get => attackchoice; set => attackchoice = value; }
 
@@ -64,7 +64,8 @@ namespace MMT.Data.Classes.Character
             this.Level = 1;
             this.Exp = 0;
             this.ExpToLevelUp = Convert.ToByte(this.Level + 10);
-            //skills = new List<MSkill>() { }     // 技能暂时未添加
+            this.Skills = new List<MSkill>();    // 技能暂时未添加
+            
         }
 
         //带参数的完全构造函数,注意x,y坐标，level,exp为byte类型
@@ -89,7 +90,7 @@ namespace MMT.Data.Classes.Character
             this.Level = level;
             this.Exp = exp;
             this.ExpToLevelUp = Convert.ToByte(this.Level + 10) - exp;
-            //skills = new List<MSkill>() { }     // 技能暂时未添加
+            this.Skills = new List<MSkill>();   // 技能暂时未添加
         }
         public MMainCharacter(MMainCharacter c)     // copy constructor
         {
@@ -112,7 +113,7 @@ namespace MMT.Data.Classes.Character
             this.Level = c.Level;
             this.Exp = c.Exp;
             this.ExpToLevelUp = Convert.ToByte(this.Level + 10) - this.Exp;
-            //skills = new List<MSkill>() { }     // 技能暂时未添加
+            this.Skills = c.Skills;     
         }
 
         // 获取经验值

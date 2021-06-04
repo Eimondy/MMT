@@ -149,5 +149,116 @@
   <ItemGroup>
     <None Include="Data\Image\Img_character_test.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_Bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_Gargoyle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_GrandMaster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_GreenSlim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_Magician.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_RedSlim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_ScytheSpider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_Skeleton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_SkeletonGeneral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_SkeletonKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_TheDevil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_char_Zombie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_ArmorPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_BlueGem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Door1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Door2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Door3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Door4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Door5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Excalibur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_HealthPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_HitPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Key1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Key2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Key3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Key4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Key5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_MagicAntidote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_MagicPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_MerlinStaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_PowerfulStaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_PowerPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_RedGem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_RottenStaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_RustySword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_SharpSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_SpeedPotion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
