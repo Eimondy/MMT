@@ -64,6 +64,8 @@
     <Compile Include="Data\Classes\MGameProfile.cs" />
     <Compile Include="Data\Classes\MLevel.cs" />
     <Compile Include="Data\Classes\MMap.cs" />
+    <Compile Include="Data\Classes\Skill\CharacterSkills.cs" />
+    <Compile Include="Data\Classes\Skill\EnemySkills.cs" />
     <Compile Include="Form_Status.cs">
       <SubType>Form</SubType>
     </Compile>
