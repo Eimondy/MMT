@@ -58,7 +58,7 @@ namespace MMT.Data.Classes.Character
             this.Speed = 1;
             this.HitRate = 0.8;
             this.AvoidRate = 1.0;
-            this.Image = Properties.Resources.Img_character_test;     // 图片暂用
+            this.Image = Properties.Resources.Img_char_down;     // 图片暂用
             this.LocationX = 0;
             this.LocationY = 0;
             this.Level = 1;
