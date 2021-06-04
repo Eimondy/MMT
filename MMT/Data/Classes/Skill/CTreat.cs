@@ -6,9 +6,9 @@ namespace MMT.Data.Classes.Skill
 
     //角色技能
     //Treat
-    public class Treat : MSkill
+    public class CTreat : MSkill
     {
-        public Treat()
+        public CTreat()
         {
             Name = "Treat"; //技能名称
             Points = 0.0f;//伤害倍数
@@ -27,7 +27,7 @@ namespace MMT.Data.Classes.Skill
                 // Console.WriteLine("法力值不够");
                 return;
             }
-
+            //这边没设置概率值，应该是直接就回复生命，没有概率
             MMainCharacter.Instance.Magic -= 20;
             MMainCharacter.Instance.HP += 50;
         }

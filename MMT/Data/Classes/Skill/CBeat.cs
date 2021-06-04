@@ -6,15 +6,15 @@ namespace MMT.Data.Classes.Skill
 
     //角色技能
     //beat
-    public class Frustrated : MSkill
+    public class CBeat : MSkill
     {
-        public Frustrated()
+        public CBeat()
         {
-            Name = "Frustrated"; //技能名称
-            Points = 1.0f;//伤害倍数
+            Name = "Beat"; //技能名称
+            Points = 1.2f;//伤害倍数
             Consumption = 20;//所消耗的对应属性的值
             Type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
-            Description = "命中敌人可降低敌人4点护甲";//技能描述
+            Description = "普通b级物理技能，伤害倍数1.2";//技能描述
         }
 
 
@@ -30,17 +30,19 @@ namespace MMT.Data.Classes.Skill
             //生成0-1随机数
             Random rd = new Random();
             double p = rd.NextDouble();
-            if (p < MMainCharacter.Instance.HitRate) //命中，敌人护甲-4
+            var Attack = 0.0;
+            if (p < MMainCharacter.Instance.HitRate) //命中
             {
                 MMainCharacter.Instance.Power -= 20;
-                enemy.Armar = enemy.Armar - 4;
+                Attack = MMainCharacter.Instance.Power * Points * 2.4;
+                var TakeAttack = Attack - enemy.Armor;
+                enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
             }
             else //未命中
             {
-                return
+                return;
             }
             
-
             //没有加判断生命值是否小于0的判断
         }
     }
