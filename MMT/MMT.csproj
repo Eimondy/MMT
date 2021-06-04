@@ -292,5 +292,8 @@
   <ItemGroup>
     <None Include="Data\Image\Img_item_StrawSandals.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_item_Entrance.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
