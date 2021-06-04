@@ -323,8 +323,8 @@ namespace MMT
                         {
                             // 与物品发生碰撞
                             hit = true;
-                            // 若为门，则不进行移动
-                            if(item is MDoor)
+                            // 若为门/第一关入口，则不进行移动
+                            if(item is MDoor || (item is MExit && MLevel.CurrentLevel==1))
                             {
                                 if(direction != 0)
                                     switch (direction)
