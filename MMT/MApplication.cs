@@ -29,7 +29,9 @@ namespace MMT
             MMainForm Form = MMainForm.Instance;
             //Form.GameInit();
             Thread GameThread = new Thread(new ThreadStart(MMainLogic.Instance.GameLoop));
+            GameThread.Name = "Logic";
             GameThread.Start();
+            Thread.CurrentThread.Name = "Form";
             Application.Run(Form);
             // 安全地关闭GameThread。通过退出游戏的按钮退出时，将自动关闭窗体、调用GameOver()
             if (!MMainLogic.Instance.IsGameOver)     // 若窗体异常关闭，则主动调用GameOver()，安全结束GameThread
