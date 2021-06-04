@@ -83,7 +83,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "蓝宝石";
             Type = EQUIPMENT.GEM;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_BlueGem;
             Armor = 4;
             MagicArmor = 4;
             Magic = 10;
@@ -96,7 +96,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "红宝石";
             Type = EQUIPMENT.GEM;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_RedGem;
             Power = 5;
             Speed = 1;
             HitRate = 0.1f;
@@ -109,7 +109,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "生锈的宝剑";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_RustySword;
             Power = 10;
             HitRate = 0.05f;
             Description = "曾经的冒险者遗失在魔塔中的宝剑，经过岁月的打磨，没有了往日的光辉";
@@ -121,7 +121,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "腐朽的法杖";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_RottenStaff;
             Power = 1;
             Magic = 15;
             HitRate = 0.05f;
@@ -134,7 +134,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "锋利的宝剑";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_SharpSword;
             Power = 30;
             HitRate = 0.1f;
             Description = "一把完好锋利的宝剑，冷锋出鞘，刀光逼人";
@@ -146,7 +146,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "强力的法杖";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_PowerfulStaff;
             Power = 1;
             Magic = 40;
             HitRate = 0.1f;
@@ -159,7 +159,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "石中剑";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_Excalibur;
             Power = 50;
             Magic = 10;
             Speed = 2;
@@ -173,7 +173,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "梅林的法杖";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_MerlinStaff;
             Power = 1;
             Magic = 55;
             Speed = 2;
@@ -187,7 +187,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "长袍";
             Type = EQUIPMENT.UPPER;
-            //Image = new Bitmap();
+            Image=Properties.Resources.Img_item_Robe; 
             Armor = 10;
             MagicArmor = 8;
             Description = "随处可见的战士长袍，美观，耐用";
@@ -199,7 +199,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "铠甲";
             Type = EQUIPMENT.UPPER;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_Armor;
             Armor = 30;
             MagicArmor = 25;
             Description = "具有很强实用性的盔甲，战士的必备用品";
@@ -211,7 +211,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "霸王甲胄";
             Type = EQUIPMENT.UPPER;
-            //Image = new Bitmap();
+            Image =Properties.Resources.Img_item_OverlordArmor ;
             Power = 5;
             Magic = 10;
             Armor = 50;
@@ -227,7 +227,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "草鞋";
             Type = EQUIPMENT.SHOES;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_StrawSandals;
             Speed = 1;
             HitRate = 0.05f;
             Description = "用最普通的芦苇编制的草鞋，方便耐磨";
@@ -239,7 +239,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "长筒靴";
             Type = EQUIPMENT.SHOES;
-            //Image = new Bitmap();
+            Image = Properties.Resources.Img_item_LongShoes;
             Speed = 2;
             HitRate = 0.1f;
             Description = "少见的昂贵的长筒鞋";
@@ -251,7 +251,7 @@ namespace MMT.Data.Classes.Item
         {
             Name = "传说";
             Type = EQUIPMENT.WEAPON;
-            //Image = new Bitmap();
+            Image =Properties.Resources.Img_item_Legend;
             Power = 999;
             Magic = 999;
             Speed = 99;

@@ -62,7 +62,7 @@ namespace MMT.Data.Classes.Item
         public HealthPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "生命药剂";
-            //Image=new Bitmap();
+            Image = Properties.Resources.Img_item_HealthPotion;
             PromotePoints = 20;
             Type = ATTRIBUTE.HEALTH;
             Description = "使用后主角生命值+20";
@@ -73,7 +73,7 @@ namespace MMT.Data.Classes.Item
         public MagicPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "法力药剂";
-            //Image=new Bitmap();
+            Image = Properties.Resources.Img_item_MagicPotion;
             PromotePoints = 10;
             Type = ATTRIBUTE.MAGIC;
             Description = "使用后主角魔法值+10";
@@ -84,7 +84,7 @@ namespace MMT.Data.Classes.Item
         public PowerPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "力量药剂";
-            //Image=new Bitmap();
+            Image = Properties.Resources.Img_item_PowerPotion;
             PromotePoints = 8;
             Type = ATTRIBUTE.POWER;
             Description = "使用后主角力量值+8";
@@ -95,7 +95,7 @@ namespace MMT.Data.Classes.Item
         public ArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "护甲药剂";
-            //Image=new Bitmap();
+            Image = Properties.Resources.Img_item_ArmorPotion;
             PromotePoints = 8;
             Type = ATTRIBUTE.ARMOR;
             Description = "使用后主角护甲值+8";
@@ -106,7 +106,7 @@ namespace MMT.Data.Classes.Item
         public MagicArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "魔抗药剂";
-            //Image=new Bitmap();
+            Image=Properties.Resources.Img_item_MagicAntidote;
             PromotePoints = 8;
             Type = ATTRIBUTE.MAGICARMOR;
             Description = "使用后主角魔抗值+8";
@@ -117,7 +117,7 @@ namespace MMT.Data.Classes.Item
         public SpeedPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "速度药剂";
-            //Image=new Bitmap();
+            Image=Properties.Resources.Img_item_SpeedPotion;
             PromotePoints = 5;
             Type = ATTRIBUTE.SPEED;
             Description = "使用后主角速度值+8";
@@ -128,7 +128,7 @@ namespace MMT.Data.Classes.Item
         public HitPotion(byte locationX, byte locationY) : base(locationX, locationY)
         {
             Name = "命中药剂";
-            //Image=new Bitmap();
+            Image=Properties.Resources.Img_item_HitPotion;
             PromotePoints = 0.1;
             Type = ATTRIBUTE.HITRATE;
             Description = "使用后主角命中率+0.1";
