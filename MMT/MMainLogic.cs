@@ -205,7 +205,7 @@ namespace MMT
                     Shell.WriteLine("敌人的回合", ConsoleColor.Green);
                     // 随机选择技能进行攻击操作
                     Random rand = new Random();
-                    enemy.Attack(enemy, enemy.Skills.Count == 0 ? null : enemy.Skills[rand.Next(enemy.Skills.Count)]);     // 需更改
+                    enemy.Attack(MMainCharacter.Instance, enemy.Skills.Count == 0 ? null : enemy.Skills[rand.Next(enemy.Skills.Count)]);     // 需更改
                     // 判断对方血量、是否胜利
                     if(MMainCharacter.Instance.HP <= 0)
                     {
