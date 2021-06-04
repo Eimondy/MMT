@@ -63,6 +63,16 @@ namespace MMT.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Img_button {
+            get {
+                object obj = ResourceManager.GetObject("Img_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Img_char_Bat {
             get {
                 object obj = ResourceManager.GetObject("Img_char_Bat", resourceCulture);
@@ -226,6 +236,36 @@ namespace MMT.Properties {
         internal static System.Drawing.Bitmap Img_character_test {
             get {
                 object obj = ResourceManager.GetObject("Img_character_test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_attribute {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_attribute", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_inventory {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_inventory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_message {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_message", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -596,6 +636,46 @@ namespace MMT.Properties {
         internal static System.Drawing.Bitmap Img_item_StrawSandals {
             get {
                 object obj = ResourceManager.GetObject("Img_item_StrawSandals", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_LoadMenu_menu {
+            get {
+                object obj = ResourceManager.GetObject("Img_LoadMenu_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_menu {
+            get {
+                object obj = ResourceManager.GetObject("Img_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_scroll {
+            get {
+                object obj = ResourceManager.GetObject("Img_scroll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_slot {
+            get {
+                object obj = ResourceManager.GetObject("Img_slot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
