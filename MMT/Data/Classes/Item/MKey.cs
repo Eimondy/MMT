@@ -17,8 +17,17 @@ namespace MMT.Data.Classes.Item
         public MKey(byte locationX, byte locationY, byte relatedDoor) : base(locationX, locationY)
         {
             Name = "钥匙";
-            //Image=new Bitmap();
             RelatedDoor = relatedDoor;
+            if (RelatedDoor <= 3)
+                Image = Properties.Resources.Img_item_Key1;
+            else if (RelatedDoor >= 4 && RelatedDoor <= 6)
+                Image = Properties.Resources.Img_item_Key2;
+            else if (RelatedDoor >= 7 && RelatedDoor <= 9)
+                Image = Properties.Resources.Img_item_Key3;
+            else if (RelatedDoor >= 10 && RelatedDoor <= 13)
+                Image = Properties.Resources.Img_item_Key4;
+            else if (RelatedDoor == 14)
+                Image = Properties.Resources.Img_item_Key5;
         }
 
         public override void Interact()
