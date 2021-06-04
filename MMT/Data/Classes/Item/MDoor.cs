@@ -18,15 +18,15 @@ namespace MMT.Data.Classes.Item
             Name = "门";
             RelatedKey = relatedKey;
             if (RelatedKey == 14)
-                Image = Properties.Resources.Img_item_Key5;
+                Image = Properties.Resources.Img_item_Door5;
             else if (RelatedKey <= 3)
-                Image = Properties.Resources.Img_item_Key1;
+                Image = Properties.Resources.Img_item_Door1;
             else if (RelatedKey <= 6 && RelatedKey>3)
-                Image = Properties.Resources.Img_item_Key2;
+                Image = Properties.Resources.Img_item_Door2;
             else if (RelatedKey <= 9 && RelatedKey>6)
-                Image = Properties.Resources.Img_item_Key3;
+                Image = Properties.Resources.Img_item_Door3;
             else if (RelatedKey <= 13 && RelatedKey>9)
-                Image = Properties.Resources.Img_item_Key4;
+                Image = Properties.Resources.Img_item_Door4;
         }
         public override void Interact()
         {
