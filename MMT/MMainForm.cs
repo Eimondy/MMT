@@ -32,7 +32,6 @@ namespace MMT
         public MMainForm()
         {
             InitializeComponent();
-            g = this.CreateGraphics();
         }
 
         public void Draw()
@@ -86,7 +85,8 @@ namespace MMT
             this.Picturebox_Map.Show();
         }
 
-        public void GameStart() {
+        public void GameStart() 
+        {
             this.Picturebox_MainMenu.Hide();
             Form_Status Fs = new Form_Status();
             Fs.MdiParent = this;
@@ -94,28 +94,42 @@ namespace MMT
             Draw();
         }
 
-        public void MainMenu() {
+        public void MainMenu() 
+        {
             Picturebox_MainMenu.Visible = true;
         }
 
-        public void LoadMenu() { 
+        public void LoadMenu() 
+        { 
             
         }
 
-        public void PausedMenu() { 
+        public void PausedMenu() 
+        { 
         
         }
 
-        public void SettingMenu() { 
+        public void SettingMenu() 
+        { 
         
         }
 
-        public void CombatMenu() { 
+        public void ShowCombatMenu() 
+        { 
         
         }
 
-        public void EndingMenu() { 
-        
+        public void UpdateCombatMenu(byte[] choices)
+        {
+
+        }
+        public void CloseCombatMenu()
+        {
+
+        }
+        public void EndingMenu() 
+        { 
+            // 根据MMainLogic的Victory和Defeated来显示
         }
 
         private void MMainForm_KeyDown(object sender, KeyEventArgs e)
@@ -154,7 +168,7 @@ namespace MMT
 
         private void btn_MainMenu_Load_Click(object sender, EventArgs e)
         {
-
+            LoadMenu();
         }
 
         private void btn_MainMenu_Exit_Click(object sender, EventArgs e)
@@ -162,5 +176,14 @@ namespace MMT
             MMainLogic.Instance.Exit();
         }
 
+        public void Write(string info)
+        {
+            bool scroll = false;
+            if (listBox_Message.TopIndex == listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight))
+                scroll = true;
+            listBox_Message.Items.Add(info);
+            if(scroll)
+                listBox_Message.TopIndex = listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight);
+        }
     }
 }
