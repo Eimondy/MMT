@@ -297,5 +297,29 @@
   <ItemGroup>
     <None Include="Data\Image\Img_item_Entrance.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_attribute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_LoadMenu_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_slot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
