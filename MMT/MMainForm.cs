@@ -39,6 +39,8 @@ namespace MMT
         {
             Bitmap b = new Bitmap(this.Picturebox_Map.Width, this.Picturebox_Map.Height);
             Graphics cur = Graphics.FromImage(b);
+            if (MLevel.CurrentLevel - 1 >= MLevel.Levels.Count)     // 解决双线程变量共享读失败问题
+                return;
             MLevel CurLevel = MLevel.Levels[MLevel.CurrentLevel - 1];
             var x = this.Picturebox_Map.Width / CurLevel.Map.Size;
             Image ground = null, wall = null;
@@ -46,7 +48,6 @@ namespace MMT
             {
                 for (int j = 0; j < CurLevel.Map.Size; j++)
                 {
-                    //Console.WriteLine(System.Environment.CurrentDirectory);
                     switch ((MLevel.CurrentLevel - 1) / 4)
                     {
                         case 0:
@@ -72,7 +73,13 @@ namespace MMT
                         cur.DrawImage(ground, x * j, x * i, x, x);
                 }
             }
-
+            // 绘制物品
+            foreach(var o in MLevel.Levels[MLevel.CurrentLevel - 1].Items)
+                cur.DrawImage(o.Image, x * (o.LocationY - 1), x * (o.LocationX - 1), x, x);
+            // 绘制敌人
+            foreach (var o in MLevel.Levels[MLevel.CurrentLevel - 1].Enemies)
+                cur.DrawImage(o.Image, x * (o.LocationY - 1), x * (o.LocationX - 1), x, x);
+            // 绘制人物
             cur.DrawImage(MMainCharacter.Instance.Image, x * (MMainCharacter.Instance.LocationY - 1), x * (MMainCharacter.Instance.LocationX - 1), x, x);
 
             this.Picturebox_Map.Image = b;
@@ -152,7 +159,7 @@ namespace MMT
 
         private void btn_MainMenu_Exit_Click(object sender, EventArgs e)
         {
-
+            MMainLogic.Instance.Exit();
         }
 
     }
