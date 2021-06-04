@@ -15,6 +15,8 @@ namespace MMT
     {
         private static MMainForm instance;
         private Graphics g;
+        private Form_Status Fs;
+        private Form_Load Fl;
         public static MMainForm Instance
         {
             get
@@ -32,6 +34,13 @@ namespace MMT
         public MMainForm()
         {
             InitializeComponent();
+            //this.Panel_Inventory.Visible = false;
+            Fs = new Form_Status();
+            Fs.MdiParent = this;
+            Fl = new Form_Load();
+            Fl.MdiParent = this;
+            Fl.TopLevel = false;
+            Fl.Parent = this.Picturebox_MainMenu;  
         }
 
         public void Draw()
@@ -88,20 +97,25 @@ namespace MMT
         public void GameStart() 
         {
             this.Picturebox_MainMenu.Hide();
-            Form_Status Fs = new Form_Status();
-            Fs.MdiParent = this;
+            this.PictureBox_Inventory.Visible = true;
             Fs.Show();
             Draw();
         }
 
         public void MainMenu() 
         {
-            Picturebox_MainMenu.Visible = true;
+            
         }
 
         public void LoadMenu() 
-        { 
-            
+        {
+            this.PictureBox_Inventory.Visible = false;
+            this.lbl_MainMenu_MagicTower.Visible = false;
+            this.btn_MainMenu_Exit.Visible = false;
+            this.btn_MainMenu_Load.Visible = false;
+            this.btn_MainMenu_Start.Visible = false;     
+            Fl.Show();
+            Fl.BringToFront();
         }
 
         public void PausedMenu() 
@@ -115,8 +129,12 @@ namespace MMT
         }
 
         public void ShowCombatMenu() 
-        { 
-        
+        {
+            Form_Battle Fb = new Form_Battle();
+            Fb.TopLevel = false;
+            Fb.Parent = this;
+            Fb.Show();
+            Fb.BringToFront();
         }
 
         public void UpdateCombatMenu(byte[] choices)
@@ -184,6 +202,11 @@ namespace MMT
             listBox_Message.Items.Add(info);
             if(scroll)
                 listBox_Message.TopIndex = listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight);
+        }
+
+        private void Panel_Inventory_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

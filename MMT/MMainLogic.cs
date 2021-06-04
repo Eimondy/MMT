@@ -55,6 +55,8 @@ namespace MMT
         public Keys KeyboardData { get { return keyboardData; } set { keyboardData = value; } }
         public string DefeatedEnemy { get { return defeatedEnemy; } set { defeatedEnemy = value; } }
 
+        public MEnemy CurEnemy; 
+
         public MMainLogic()
         {
         }
@@ -153,6 +155,7 @@ namespace MMT
             Combat = true;
             bool fightOver = false;
             // 与窗体通信，显示战斗界面
+            CurEnemy = enemy;
             MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.ShowCombatMenu));
             // 比较速度判出先后手
             MCharacter currentOne;
