@@ -184,6 +184,7 @@ namespace MMT
             this.PictureBox_Inventory.TabIndex = 9;
             this.PictureBox_Inventory.TabStop = false;
             this.PictureBox_Inventory.Visible = false;
+            this.PictureBox_Inventory.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.PictureBox_Inventory_LoadCompleted);
             // 
             // groupBox_Equipped
             // 

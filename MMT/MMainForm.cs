@@ -17,6 +17,8 @@ namespace MMT
         private Graphics g;
         private Form_Status Fs;
         private Form_Load Fl;
+        private Form_Pause Fp;
+        private Form_Battle Fb;
         public static MMainForm Instance
         {
             get
@@ -34,13 +36,18 @@ namespace MMT
         public MMainForm()
         {
             InitializeComponent();
-            //this.Panel_Inventory.Visible = false;
+
             Fs = new Form_Status();
             Fs.MdiParent = this;
+
             Fl = new Form_Load();
             Fl.MdiParent = this;
             Fl.TopLevel = false;
-            Fl.Parent = this.Picturebox_MainMenu;  
+            Fl.Parent = this.Picturebox_MainMenu;
+
+            Fp = new Form_Pause();
+            Fp.TopLevel = false;
+            Fp.Parent = this;
         }
 
         public void Draw()
@@ -92,6 +99,10 @@ namespace MMT
 
             this.Picturebox_Map.Image = b;
             this.Picturebox_Map.Show();
+
+            //更新属性和装备
+            this.Fs.Form_Status_Load(null,null);
+            this.PictureBox_Inventory_LoadCompleted(null,null);
         }
 
         public void GameStart() 
@@ -119,8 +130,9 @@ namespace MMT
         }
 
         public void PausedMenu() 
-        { 
-        
+        {
+            Fp.Show();
+            Fp.BringToFront();
         }
 
         public void SettingMenu() 
@@ -130,7 +142,7 @@ namespace MMT
 
         public void ShowCombatMenu() 
         {
-            Form_Battle Fb = new Form_Battle();
+            Fb = new Form_Battle();
             Fb.TopLevel = false;
             Fb.Parent = this;
             Fb.Show();
@@ -143,11 +155,27 @@ namespace MMT
         }
         public void CloseCombatMenu()
         {
-
+            Fb.Hide();
         }
         public void EndingMenu() 
-        { 
+        {
             // 根据MMainLogic的Victory和Defeated来显示
+            if (MMainLogic.Instance.Victory)
+            {
+                Form_Win Fw = new Form_Win();
+                Fw.TopLevel = false;
+                Fw.Parent = this;
+                Fw.Show();
+                Fw.BringToFront();
+            }
+            else
+            {
+                Form_Lose Fl = new Form_Lose();
+                Fl.TopLevel = false;
+                Fl.Parent = this;
+                Fl.Show();
+                Fl.BringToFront();
+            }
         }
 
         private void MMainForm_KeyDown(object sender, KeyEventArgs e)
@@ -207,6 +235,12 @@ namespace MMT
         private void Panel_Inventory_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void PictureBox_Inventory_LoadCompleted(object sender, AsyncCompletedEventArgs e) //draw重绘时更新装备和背包的数据
+        {
+           // this.groupBox_Equipped
+           // this.groupBox_Inventory
         }
     }
 }

@@ -18,20 +18,24 @@ namespace MMT
         public Form_Status()
         {
             InitializeComponent();
-            this.lbl_FloorNum.Text = "——" + (MLevel.CurrentLevel+1).ToString() + "——"; //不+1不太对劲的亚子
-            this.lbl_MpShow.Text = "法力值：" + MMainCharacter.Instance.MP;
-            this.lbl_HpShow.Text = "生命值：" + MMainCharacter.Instance.HP;
+        }
+
+        private void btn_StopGame_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void Form_Status_Load(object sender, EventArgs e)
+        {
+            this.lbl_FloorNum.Text = "——" + (MLevel.CurrentLevel + 1).ToString() + "——"; //不+1不太对劲的亚子
+            this.lbl_MpShow.Text = "法力值：" + MMainCharacter.Instance.MaxMP;
+            this.lbl_HpShow.Text = "生命值：" + MMainCharacter.Instance.MaxHP;
             this.lbl_PowerShow.Text = "力量值：" + MMainCharacter.Instance.Power;
             this.lbl_ArmorShow.Text = "护甲：" + MMainCharacter.Instance.Armor;
             this.lbl_MagicArmorShow.Text = "魔抗：" + MMainCharacter.Instance.MagicArmor;
             this.lbl_SpeedShow.Text = "速度：" + MMainCharacter.Instance.Speed;
             this.lbl_HitRateShow.Text = "命中率：" + MMainCharacter.Instance.HitRate;
             this.lbl_LevelShow.Text = "等级：" + MMainCharacter.Instance.Level;
-        }
-
-        private void btn_StopGame_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

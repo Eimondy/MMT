@@ -173,6 +173,7 @@ namespace MMT
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Status";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form_Status_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_BackColor)).EndInit();
             this.picturebox_BackColor.ResumeLayout(false);
             this.picturebox_BackColor.PerformLayout();

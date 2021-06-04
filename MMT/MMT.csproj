@@ -78,11 +78,29 @@
     <Compile Include="Form_Load.Designer.cs">
       <DependentUpon>Form_Load.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Lose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Lose.Designer.cs">
+      <DependentUpon>Form_Lose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Pause.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Pause.Designer.cs">
+      <DependentUpon>Form_Pause.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Status.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Status.Designer.cs">
       <DependentUpon>Form_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Win.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Win.Designer.cs">
+      <DependentUpon>Form_Win.cs</DependentUpon>
     </Compile>
     <Compile Include="MMainForm.cs">
       <SubType>Form</SubType>
@@ -100,8 +118,17 @@
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Lose.resx">
+      <DependentUpon>Form_Lose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Pause.resx">
+      <DependentUpon>Form_Pause.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Status.resx">
       <DependentUpon>Form_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Win.resx">
+      <DependentUpon>Form_Win.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MMainForm.resx">
       <DependentUpon>MMainForm.cs</DependentUpon>

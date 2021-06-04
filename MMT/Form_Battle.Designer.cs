@@ -61,7 +61,7 @@ namespace MMT
             // 
             // btn_Battle_skill1
             // 
-            this.btn_Battle_skill1.Location = new System.Drawing.Point(75, 260);
+            this.btn_Battle_skill1.Location = new System.Drawing.Point(152, 295);
             this.btn_Battle_skill1.Name = "btn_Battle_skill1";
             this.btn_Battle_skill1.Size = new System.Drawing.Size(76, 38);
             this.btn_Battle_skill1.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace MMT
             // 
             // btn_Battle_skill2
             // 
-            this.btn_Battle_skill2.Location = new System.Drawing.Point(194, 260);
+            this.btn_Battle_skill2.Location = new System.Drawing.Point(271, 295);
             this.btn_Battle_skill2.Name = "btn_Battle_skill2";
             this.btn_Battle_skill2.Size = new System.Drawing.Size(73, 38);
             this.btn_Battle_skill2.TabIndex = 2;
@@ -109,14 +109,14 @@ namespace MMT
             this.panel1.Controls.Add(this.btn_Battle_skill2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 400);
+            this.panel1.Size = new System.Drawing.Size(800, 500);
             this.panel1.TabIndex = 3;
             // 
             // lbl_Battle_Hp1
             // 
             this.lbl_Battle_Hp1.AutoSize = true;
             this.lbl_Battle_Hp1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hp1.Location = new System.Drawing.Point(71, 101);
+            this.lbl_Battle_Hp1.Location = new System.Drawing.Point(161, 136);
             this.lbl_Battle_Hp1.Name = "lbl_Battle_Hp1";
             this.lbl_Battle_Hp1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Hp1.TabIndex = 11;
@@ -126,7 +126,7 @@ namespace MMT
             // 
             this.lbl_Battle_name2.AutoSize = true;
             this.lbl_Battle_name2.Font = new System.Drawing.Font("幼圆", 21F);
-            this.lbl_Battle_name2.Location = new System.Drawing.Point(373, 46);
+            this.lbl_Battle_name2.Location = new System.Drawing.Point(463, 81);
             this.lbl_Battle_name2.Name = "lbl_Battle_name2";
             this.lbl_Battle_name2.Size = new System.Drawing.Size(82, 28);
             this.lbl_Battle_name2.TabIndex = 10;
@@ -136,7 +136,7 @@ namespace MMT
             // 
             this.lbl_Battle_name1.AutoSize = true;
             this.lbl_Battle_name1.Font = new System.Drawing.Font("幼圆", 21F);
-            this.lbl_Battle_name1.Location = new System.Drawing.Point(125, 46);
+            this.lbl_Battle_name1.Location = new System.Drawing.Point(215, 81);
             this.lbl_Battle_name1.Name = "lbl_Battle_name1";
             this.lbl_Battle_name1.Size = new System.Drawing.Size(96, 28);
             this.lbl_Battle_name1.TabIndex = 9;
@@ -144,7 +144,7 @@ namespace MMT
             // 
             // btn_Battle_skill8
             // 
-            this.btn_Battle_skill8.Location = new System.Drawing.Point(445, 329);
+            this.btn_Battle_skill8.Location = new System.Drawing.Point(535, 364);
             this.btn_Battle_skill8.Name = "btn_Battle_skill8";
             this.btn_Battle_skill8.Size = new System.Drawing.Size(73, 38);
             this.btn_Battle_skill8.TabIndex = 8;
@@ -153,7 +153,7 @@ namespace MMT
             // 
             // btn_Battle_skill7
             // 
-            this.btn_Battle_skill7.Location = new System.Drawing.Point(318, 329);
+            this.btn_Battle_skill7.Location = new System.Drawing.Point(408, 364);
             this.btn_Battle_skill7.Name = "btn_Battle_skill7";
             this.btn_Battle_skill7.Size = new System.Drawing.Size(73, 38);
             this.btn_Battle_skill7.TabIndex = 7;
@@ -162,7 +162,7 @@ namespace MMT
             // 
             // btn_Battle_skill5
             // 
-            this.btn_Battle_skill5.Location = new System.Drawing.Point(75, 329);
+            this.btn_Battle_skill5.Location = new System.Drawing.Point(152, 364);
             this.btn_Battle_skill5.Name = "btn_Battle_skill5";
             this.btn_Battle_skill5.Size = new System.Drawing.Size(76, 38);
             this.btn_Battle_skill5.TabIndex = 5;
@@ -171,7 +171,7 @@ namespace MMT
             // 
             // btn_Battle_skill6
             // 
-            this.btn_Battle_skill6.Location = new System.Drawing.Point(194, 329);
+            this.btn_Battle_skill6.Location = new System.Drawing.Point(271, 364);
             this.btn_Battle_skill6.Name = "btn_Battle_skill6";
             this.btn_Battle_skill6.Size = new System.Drawing.Size(73, 38);
             this.btn_Battle_skill6.TabIndex = 6;
@@ -180,7 +180,7 @@ namespace MMT
             // 
             // btn_Battle_skill4
             // 
-            this.btn_Battle_skill4.Location = new System.Drawing.Point(445, 260);
+            this.btn_Battle_skill4.Location = new System.Drawing.Point(535, 295);
             this.btn_Battle_skill4.Name = "btn_Battle_skill4";
             this.btn_Battle_skill4.Size = new System.Drawing.Size(73, 38);
             this.btn_Battle_skill4.TabIndex = 4;
@@ -189,7 +189,7 @@ namespace MMT
             // 
             // btn_Battle_skill3
             // 
-            this.btn_Battle_skill3.Location = new System.Drawing.Point(318, 260);
+            this.btn_Battle_skill3.Location = new System.Drawing.Point(408, 295);
             this.btn_Battle_skill3.Name = "btn_Battle_skill3";
             this.btn_Battle_skill3.Size = new System.Drawing.Size(73, 38);
             this.btn_Battle_skill3.TabIndex = 3;
@@ -200,7 +200,7 @@ namespace MMT
             // 
             this.lbl_Battle_Level1.AutoSize = true;
             this.lbl_Battle_Level1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Level1.Location = new System.Drawing.Point(190, 101);
+            this.lbl_Battle_Level1.Location = new System.Drawing.Point(280, 136);
             this.lbl_Battle_Level1.Name = "lbl_Battle_Level1";
             this.lbl_Battle_Level1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Level1.TabIndex = 12;
@@ -210,7 +210,7 @@ namespace MMT
             // 
             this.lbl_Battle_Mp1.AutoSize = true;
             this.lbl_Battle_Mp1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Mp1.Location = new System.Drawing.Point(71, 141);
+            this.lbl_Battle_Mp1.Location = new System.Drawing.Point(161, 176);
             this.lbl_Battle_Mp1.Name = "lbl_Battle_Mp1";
             this.lbl_Battle_Mp1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Mp1.TabIndex = 13;
@@ -220,7 +220,7 @@ namespace MMT
             // 
             this.lbl_Battle_MagicArmor1.AutoSize = true;
             this.lbl_Battle_MagicArmor1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_MagicArmor1.Location = new System.Drawing.Point(71, 179);
+            this.lbl_Battle_MagicArmor1.Location = new System.Drawing.Point(161, 214);
             this.lbl_Battle_MagicArmor1.Name = "lbl_Battle_MagicArmor1";
             this.lbl_Battle_MagicArmor1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_MagicArmor1.TabIndex = 14;
@@ -230,7 +230,7 @@ namespace MMT
             // 
             this.lbl_Battle_Speed1.AutoSize = true;
             this.lbl_Battle_Speed1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Speed1.Location = new System.Drawing.Point(71, 216);
+            this.lbl_Battle_Speed1.Location = new System.Drawing.Point(161, 251);
             this.lbl_Battle_Speed1.Name = "lbl_Battle_Speed1";
             this.lbl_Battle_Speed1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Speed1.TabIndex = 15;
@@ -240,7 +240,7 @@ namespace MMT
             // 
             this.lbl_Battle_Power1.AutoSize = true;
             this.lbl_Battle_Power1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Power1.Location = new System.Drawing.Point(190, 141);
+            this.lbl_Battle_Power1.Location = new System.Drawing.Point(280, 176);
             this.lbl_Battle_Power1.Name = "lbl_Battle_Power1";
             this.lbl_Battle_Power1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Power1.TabIndex = 16;
@@ -250,7 +250,7 @@ namespace MMT
             // 
             this.lbl_Battle_Armor1.AutoSize = true;
             this.lbl_Battle_Armor1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Armor1.Location = new System.Drawing.Point(190, 179);
+            this.lbl_Battle_Armor1.Location = new System.Drawing.Point(280, 214);
             this.lbl_Battle_Armor1.Name = "lbl_Battle_Armor1";
             this.lbl_Battle_Armor1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Armor1.TabIndex = 17;
@@ -260,7 +260,7 @@ namespace MMT
             // 
             this.lbl_Battle_Hitrate1.AutoSize = true;
             this.lbl_Battle_Hitrate1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hitrate1.Location = new System.Drawing.Point(190, 216);
+            this.lbl_Battle_Hitrate1.Location = new System.Drawing.Point(280, 251);
             this.lbl_Battle_Hitrate1.Name = "lbl_Battle_Hitrate1";
             this.lbl_Battle_Hitrate1.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Hitrate1.TabIndex = 18;
@@ -270,7 +270,7 @@ namespace MMT
             // 
             this.lbl_Battle_Hitrate2.AutoSize = true;
             this.lbl_Battle_Hitrate2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hitrate2.Location = new System.Drawing.Point(441, 216);
+            this.lbl_Battle_Hitrate2.Location = new System.Drawing.Point(531, 251);
             this.lbl_Battle_Hitrate2.Name = "lbl_Battle_Hitrate2";
             this.lbl_Battle_Hitrate2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Hitrate2.TabIndex = 26;
@@ -280,7 +280,7 @@ namespace MMT
             // 
             this.lbl_Battle_Armor2.AutoSize = true;
             this.lbl_Battle_Armor2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Armor2.Location = new System.Drawing.Point(441, 179);
+            this.lbl_Battle_Armor2.Location = new System.Drawing.Point(531, 214);
             this.lbl_Battle_Armor2.Name = "lbl_Battle_Armor2";
             this.lbl_Battle_Armor2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Armor2.TabIndex = 25;
@@ -290,7 +290,7 @@ namespace MMT
             // 
             this.lbl_Battle_Power2.AutoSize = true;
             this.lbl_Battle_Power2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Power2.Location = new System.Drawing.Point(441, 141);
+            this.lbl_Battle_Power2.Location = new System.Drawing.Point(531, 176);
             this.lbl_Battle_Power2.Name = "lbl_Battle_Power2";
             this.lbl_Battle_Power2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Power2.TabIndex = 24;
@@ -300,7 +300,7 @@ namespace MMT
             // 
             this.lbl_Battle_Speed2.AutoSize = true;
             this.lbl_Battle_Speed2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Speed2.Location = new System.Drawing.Point(322, 216);
+            this.lbl_Battle_Speed2.Location = new System.Drawing.Point(412, 251);
             this.lbl_Battle_Speed2.Name = "lbl_Battle_Speed2";
             this.lbl_Battle_Speed2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Speed2.TabIndex = 23;
@@ -310,7 +310,7 @@ namespace MMT
             // 
             this.lbl_Battle_MagicArmor2.AutoSize = true;
             this.lbl_Battle_MagicArmor2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_MagicArmor2.Location = new System.Drawing.Point(322, 179);
+            this.lbl_Battle_MagicArmor2.Location = new System.Drawing.Point(412, 214);
             this.lbl_Battle_MagicArmor2.Name = "lbl_Battle_MagicArmor2";
             this.lbl_Battle_MagicArmor2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_MagicArmor2.TabIndex = 22;
@@ -320,7 +320,7 @@ namespace MMT
             // 
             this.lbl_Battle_Mp2.AutoSize = true;
             this.lbl_Battle_Mp2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Mp2.Location = new System.Drawing.Point(322, 141);
+            this.lbl_Battle_Mp2.Location = new System.Drawing.Point(412, 176);
             this.lbl_Battle_Mp2.Name = "lbl_Battle_Mp2";
             this.lbl_Battle_Mp2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Mp2.TabIndex = 21;
@@ -330,7 +330,7 @@ namespace MMT
             // 
             this.lbl_Battle_Level2.AutoSize = true;
             this.lbl_Battle_Level2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Level2.Location = new System.Drawing.Point(441, 101);
+            this.lbl_Battle_Level2.Location = new System.Drawing.Point(531, 136);
             this.lbl_Battle_Level2.Name = "lbl_Battle_Level2";
             this.lbl_Battle_Level2.Size = new System.Drawing.Size(64, 21);
             this.lbl_Battle_Level2.TabIndex = 20;
@@ -340,7 +340,7 @@ namespace MMT
             // 
             this.lbl_Battle_Hp2.AutoSize = true;
             this.lbl_Battle_Hp2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hp2.Location = new System.Drawing.Point(322, 101);
+            this.lbl_Battle_Hp2.Location = new System.Drawing.Point(412, 136);
             this.lbl_Battle_Hp2.Name = "lbl_Battle_Hp2";
             this.lbl_Battle_Hp2.Size = new System.Drawing.Size(55, 21);
             this.lbl_Battle_Hp2.TabIndex = 19;
@@ -350,9 +350,10 @@ namespace MMT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(284, 40);
             this.Name = "Form_Battle";
             this.Text = "Form_Battle";
             this.panel1.ResumeLayout(false);
