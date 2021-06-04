@@ -130,7 +130,6 @@ namespace MMT.Data.Classes.Skill
             // 1/2的概率进行第二次攻击
             if (p <= 0.5) return true;
             //第二次攻击,新生成一个随机数
-            Random rd = new Random();
             double p2 = rd.NextDouble();
             if (p2 > user.HitRate) return true;
             var SecondAttack = user.MaxPower  * Points * COMBAT.ATTACK;
