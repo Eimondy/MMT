@@ -109,7 +109,10 @@ namespace MMT
         {
             Shell.WriteLine("退出游戏...", ConsoleColor.Black);
             GameOver();
-            MMainForm.Instance.Dispose();
+            if (Thread.CurrentThread.Name == "Form")
+                MMainForm.Instance.Dispose();
+            else if (Thread.CurrentThread.Name == "Logic")
+                MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Dispose));
         }
 
         public void NewGame(string pn)
@@ -298,7 +301,7 @@ namespace MMT
                                 direction = 2;
                                 break;
                             case Keys.Escape:
-                                PauseMode();
+                                Exit();     // 需要修改
                                 break;
                             case Keys.Q:
                                 VictoryMode();
