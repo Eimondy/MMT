@@ -43,11 +43,14 @@ namespace MMT
 
     public static class Shell
     {
+        delegate void WRITE(string text);
         public static void WriteLine(string text, ConsoleColor color = ConsoleColor.White)
         {
             Console.ForegroundColor = color;
             Console.WriteLine("[{0}] {1}", DateTime.Now.ToString(), text);
             Console.ForegroundColor = ConsoleColor.White;
+            if(MMainLogic.Instance.IsInGame)
+                MMainForm.Instance.BeginInvoke(new WRITE(MMainForm.Instance.Write), text);
         }
     }
 }
