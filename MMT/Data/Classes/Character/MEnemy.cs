@@ -46,7 +46,7 @@ namespace MMT.Data.Classes.Character
         public GreenSlim(byte x,byte y) : base(x, y)
         {
             Name = "绿色史莱姆";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_GreenSlim;     
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 24;
             MaxMP = MP = 0;
@@ -72,7 +72,7 @@ namespace MMT.Data.Classes.Character
         public RedSlim(byte x,byte y) : base(x, y)
         {
             Name = "红色史莱姆";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_RedSlim;     
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 35;
             MaxMP = MP = 0;
@@ -96,7 +96,7 @@ namespace MMT.Data.Classes.Character
         public Bat(byte x,byte y) : base(x, y)
         {
             Name = "蝙蝠怪";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_Bat;     
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 49;
             MaxMP = MP = 10;
@@ -120,7 +120,7 @@ namespace MMT.Data.Classes.Character
         public Zombie(byte x,byte y) : base(x, y)
         {
             Name = "僵尸怪";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_Zombie;    
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 100;
             MaxMP = MP = 50;
@@ -144,7 +144,7 @@ namespace MMT.Data.Classes.Character
         public Skeleton(byte x,byte y) : base(x, y)
         {
             Name = "骷髅怪";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_Skeleton;     
             MonsterType = MONSTER.ORDINARY;
             MaxHP = HP = 120;
             MaxMP = MP = 20;
@@ -168,7 +168,7 @@ namespace MMT.Data.Classes.Character
         public Magician(byte x ,byte y) : base(x, y)
         {
             Name = "魔法师";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_Magician;     
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 70;
             MaxMP = MP = 100;
@@ -192,7 +192,7 @@ namespace MMT.Data.Classes.Character
         public SkeletonKnight(byte x,byte y) : base(x, y)
         {
             Name = "骷髅骑士";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_SkeletonKnight;     
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 200;
             MaxMP = MP = 80;
@@ -216,7 +216,7 @@ namespace MMT.Data.Classes.Character
         public Gargoyle(byte x,byte y) : base(x, y)
         {
             Name = "石像鬼";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_Gargoyle;     
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 500;
             MaxMP = MP = 20;
@@ -240,7 +240,7 @@ namespace MMT.Data.Classes.Character
         public ScytheSpider(byte x,byte y) : base(x, y)
         {
             Name = "镰刀蜘蛛怪";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_ScytheSpider;     
             MonsterType = MONSTER.ELITE;
             MaxHP = HP = 150;
             MaxMP = MP = 50;
@@ -264,7 +264,7 @@ namespace MMT.Data.Classes.Character
         public SkeletonGeneral(byte x, byte y) : base(x, y)
         {
             Name = "骷髅将军";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_SkeletonGeneral;     
             MonsterType = MONSTER.BOSS;
             MaxHP = HP = 300;
             MaxMP = MP = 50;
@@ -288,7 +288,7 @@ namespace MMT.Data.Classes.Character
         public GrandMaster(byte x, byte y) : base(x, y)
         {
             Name = "大魔法师";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_GrandMaster;     
             MonsterType = MONSTER.BOSS;
             MaxHP = HP = 800;
             MaxMP = MP = 250;
@@ -312,7 +312,7 @@ namespace MMT.Data.Classes.Character
         public TheDevil(byte x, byte y) : base(x, y)
         {
             Name = "魔王";
-            Image = null;     //暂时还未加入图片
+            Image = Properties.Resources.Img_char_TheDevil;     
             MonsterType = MONSTER.BOSS;
             MaxHP = HP = 1500;
             MaxMP = MP = 200;
