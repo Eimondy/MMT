@@ -205,6 +205,9 @@
   <data name="Img_item_Door5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_Door5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_item_Entrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_item_Entrance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_item_Excalibur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_item_Excalibur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
