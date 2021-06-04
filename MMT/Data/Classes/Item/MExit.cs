@@ -17,15 +17,15 @@ namespace MMT.Data.Classes.Item
             if (exit)
             {
                 Name = "出口";
-                //Image=new Bitmap();
+                Image = Properties.Resources.Img_item_Exit;
             }
             else
             {
                 Name = "入口";
-                //Image=new Bitmap();
+                Image = Properties.Resources.Img_item_Entrance;
             }
             Exit = exit;
-            Image = Properties.Resources.Img_item_Exit;
+            
         }
 
         public override void Interact()
