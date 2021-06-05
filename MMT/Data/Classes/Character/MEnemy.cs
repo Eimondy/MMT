@@ -6,6 +6,7 @@ using MMT.Data.Classes;
 
 namespace MMT.Data.Classes.Character
 {
+    [Serializable]
     public class MEnemy : MCharacter
     {
         private MONSTER monstertype; //敌人类型
@@ -19,6 +20,8 @@ namespace MMT.Data.Classes.Character
             LocationY = y;
         }
     }
+
+    [Serializable]
     public class GreenSlim : MEnemy
     {
         //构造函数
@@ -46,6 +49,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class RedSlim : MEnemy
     {
         //构造函数
@@ -70,6 +74,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class Bat : MEnemy
     {
         //构造函数
@@ -94,6 +99,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class Zombie : MEnemy
     {
         //构造函数
@@ -118,6 +124,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class Skeleton : MEnemy
     {
         //构造函数
@@ -142,6 +149,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class Magician : MEnemy
     {
         //构造函数
@@ -166,6 +174,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class SkeletonKnight : MEnemy
     {
         //构造函数
@@ -190,6 +199,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class Gargoyle : MEnemy
     {
         //构造函数
@@ -214,6 +224,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class ScytheSpider : MEnemy
     {
         //构造函数
@@ -238,6 +249,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class SkeletonGeneral : MEnemy
     {
         //构造函数
@@ -262,6 +274,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class GrandMaster : MEnemy
     {
         //构造函数
@@ -286,6 +299,7 @@ namespace MMT.Data.Classes.Character
         }
     }
 
+    [Serializable]
     public class TheDevil : MEnemy
     {
         //构造函数
