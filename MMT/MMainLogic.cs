@@ -16,7 +16,7 @@ namespace MMT
     class MMainLogic
     {
         private delegate void TOUI();
-        private delegate void TOUIARG(byte[] choices);
+        private delegate void TOUIARG(object[] args);
 
         private static MMainLogic instance;
         private List<MGameProfile> saves = new List<MGameProfile>();
@@ -46,16 +46,14 @@ namespace MMT
         public List<MGameProfile> Saves { get { return saves; } set { saves = value; } }
         public MGameProfile CurrentProfile { get { return currentProfile; } set { currentProfile = value; } }
         public bool Paused { get { return paused; } set { paused = value; } }
-        public bool Combat { get { return paused; } set { combat = value; } }
-        public bool Victory { get { return paused; } set { victory = value; } }
-        public bool Defeated { get { return paused; } set { defeated = value; } }
+        public bool Combat { get { return combat; } set { combat = value; } }
+        public bool Victory { get { return victory; } set { victory = value; } }
+        public bool Defeated { get { return defeated; } set { defeated = value; } }
         public bool IsInGame { get { return isInGame; } set { isInGame = value; } }
         public bool IsGameOver { get { return isGameOver; } set { isGameOver = value; } }
         public bool KeyboardInput { get { return keyboardInput; } set { keyboardInput = value; } }
         public Keys KeyboardData { get { return keyboardData; } set { keyboardData = value; } }
         public string DefeatedEnemy { get { return defeatedEnemy; } set { defeatedEnemy = value; } }
-
-        public MEnemy CurEnemy; 
 
         public MMainLogic()
         {
@@ -161,8 +159,7 @@ namespace MMT
             Combat = true;
             bool fightOver = false;
             // 与窗体通信，显示战斗界面
-            CurEnemy = enemy;
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.ShowCombatMenu));
+            MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.ShowCombatMenu), new object[1] { new object[1] { enemy } });
             // 比较速度判出先后手
             MCharacter currentOne;
             if (MMainCharacter.Instance.Speed >= enemy.Speed)
@@ -176,17 +173,25 @@ namespace MMT
             while (!fightOver)
             {
                 // 与从窗体通信，告知目前哪些技能可用
-                List<byte> choice = new List<byte>();
+                object[] choice = new object[MMainCharacter.Instance.Skills.Count];
                 for (int i = 0; i < MMainCharacter.Instance.Skills.Count; i++)
                 {
                     if (MMainCharacter.Instance.Skills[i].Type == ATTRIBUTE.POWER)
+                    {
                         if (MMainCharacter.Instance.Skills[i].Consumption <= MMainCharacter.Instance.Power)
-                            choice.Add(Convert.ToByte(i));
+                            choice[i] = true;
                         else
+                            choice[i] = false;
+                    }
+                    else
+                    {
                         if (MMainCharacter.Instance.Skills[i].Consumption <= MMainCharacter.Instance.MP)
-                            choice.Add(Convert.ToByte(i));
+                            choice[i] = true;
+                        else
+                            choice[i] = false;
+                    }
                 }
-                MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.UpdateCombatMenu), choice.ToArray());
+                MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.UpdateCombatMenu), new object[1] { choice });
                 Shell.WriteLine(string.Format("玩家HP：{0}     敌人HP：{1}", MMainCharacter.Instance.HP, enemy.HP), ConsoleColor.Green);
                 if (currentOne is MMainCharacter)     // 主角的轮次。若30秒之内不攻击，则使用普通攻击。
                 {
@@ -223,12 +228,14 @@ namespace MMT
                         CurrentProfile.DefeatedCount++;
                         fightOver = true;
                     }
-                    // 切换伦次
+                    // 切换轮次
                     currentOne = enemy;
                 }
                 else     // 敌人的轮次
                 {
                     Shell.WriteLine("敌人的回合", ConsoleColor.Green);
+                    // 延迟
+                    Thread.Sleep(1000);
                     // 随机选择技能进行攻击操作
                     Random rand = new Random();
                     enemy.Attack(MMainCharacter.Instance, enemy.Skills.Count == 0 ? null : enemy.Skills[rand.Next(enemy.Skills.Count)]);     // 需更改
@@ -242,7 +249,7 @@ namespace MMT
                         enemy.Power = enemy.MaxPower;
                         fightOver = true;
                     }
-                    // 切换伦次
+                    // 切换轮次
                     currentOne = MMainCharacter.Instance;
                 }
             }
@@ -279,6 +286,13 @@ namespace MMT
             IsInGame = false;
             Defeated = true;
             MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
+        }
+
+        public void PauseRelease()
+        {
+            Shell.WriteLine("游戏继续", ConsoleColor.Black);
+            IsInGame = true;
+            Paused = false;
         }
 
         public void PauseMode()
@@ -337,12 +351,6 @@ namespace MMT
                                 break;
                             case Keys.Escape:
                                 PauseMode();
-                                break;
-                            case Keys.Q:
-                                Exit();     // 需要修改
-                                break;
-                            case Keys.E:
-                                BackToMainMenu();
                                 break;
                         }
                         Draw();
