@@ -108,6 +108,12 @@ namespace MMT
             }
             // 设置进入游戏标志
             IsInGame = true;
+            // 重置其他标志
+            Paused = false;
+            Combat = false;
+            Victory = false;
+            Defeated = false;
+            IsGameOver = false;
             Shell.WriteLine("游戏开始", ConsoleColor.Black);
         }
 

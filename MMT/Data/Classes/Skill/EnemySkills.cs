@@ -128,10 +128,11 @@ namespace MMT.Data.Classes.Skill
             var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
             enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
             // 1/2的概率进行第二次攻击
+            p = rd.NextDouble();
             if (p <= 0.5) return true;
             //第二次攻击,新生成一个随机数
-            double p2 = rd.NextDouble();
-            if (p2 > user.HitRate) return true;
+            p = rd.NextDouble();
+            if (p > user.HitRate) return true;
             var SecondAttack = user.MaxPower  * Points * COMBAT.ATTACK;
             var SecondTakeAttack = SecondAttack - enemy.Armor * COMBAT.DEFENSE;
             enemy.HP -= (int)SecondTakeAttack; //这里把伤害转成整型了
