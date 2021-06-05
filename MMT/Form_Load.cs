@@ -36,17 +36,25 @@ namespace MMT
 
         private void btn_Load_Confirm_Click(object sender, EventArgs e)
         {
-
+            //MMainLogic.Instance.Start(num);     // 读取选中的存档并开始游戏
+            // 判断是否在游戏暂停时呼出
+            if (MMainLogic.Instance.Paused)
+                MMainForm.Instance.Fp.Hide();
+            this.Hide();
         }
 
         private void btn_Load_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void Table_Load_Paint(object sender, PaintEventArgs e)
         {
-
+            // 若无存档，则不可点击确认
+            if (MMainLogic.Instance.Saves.Count == 0)
+                btn_Load_Confirm.Enabled = false;
+            else
+                btn_Load_Confirm.Enabled = true;
         }
     }
 }

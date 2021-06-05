@@ -16,5 +16,33 @@ namespace MMT
         {
             InitializeComponent();
         }
+
+        private void btn_Pause_Continue_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.PauseRelease();
+            this.Hide();
+        }
+
+        private void btn_Pause_Save_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.SaveProfile();
+        }
+
+        private void btn_Pause_Load_Click(object sender, EventArgs e)
+        {
+            MMainForm.Instance.LoadMenu();
+        }
+
+        private void btn_Pause_Mainmenu_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.BackToMainMenu();
+            this.Hide();
+        }
+
+        private void btn_Pause_Exit_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.Exit();
+            this.Hide();
+        }
     }
 }

@@ -56,6 +56,7 @@ namespace MMT
             this.btn_Pause_Continue.TabIndex = 1;
             this.btn_Pause_Continue.Text = "继续游戏";
             this.btn_Pause_Continue.UseVisualStyleBackColor = true;
+            this.btn_Pause_Continue.Click += new System.EventHandler(this.btn_Pause_Continue_Click);
             // 
             // btn_Pause_Save
             // 
@@ -66,6 +67,7 @@ namespace MMT
             this.btn_Pause_Save.TabIndex = 2;
             this.btn_Pause_Save.Text = "保存游戏";
             this.btn_Pause_Save.UseVisualStyleBackColor = true;
+            this.btn_Pause_Save.Click += new System.EventHandler(this.btn_Pause_Save_Click);
             // 
             // btn_Pause_Load
             // 
@@ -76,6 +78,7 @@ namespace MMT
             this.btn_Pause_Load.TabIndex = 3;
             this.btn_Pause_Load.Text = "加载游戏";
             this.btn_Pause_Load.UseVisualStyleBackColor = true;
+            this.btn_Pause_Load.Click += new System.EventHandler(this.btn_Pause_Load_Click);
             // 
             // btn_Pause_Mainmenu
             // 
@@ -86,6 +89,7 @@ namespace MMT
             this.btn_Pause_Mainmenu.TabIndex = 4;
             this.btn_Pause_Mainmenu.Text = "返回主菜单";
             this.btn_Pause_Mainmenu.UseVisualStyleBackColor = true;
+            this.btn_Pause_Mainmenu.Click += new System.EventHandler(this.btn_Pause_Mainmenu_Click);
             // 
             // btn_Pause_Exit
             // 
@@ -96,6 +100,7 @@ namespace MMT
             this.btn_Pause_Exit.TabIndex = 5;
             this.btn_Pause_Exit.Text = "退出游戏";
             this.btn_Pause_Exit.UseVisualStyleBackColor = true;
+            this.btn_Pause_Exit.Click += new System.EventHandler(this.btn_Pause_Exit_Click);
             // 
             // Form_Pause
             // 

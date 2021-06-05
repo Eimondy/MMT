@@ -16,5 +16,11 @@ namespace MMT
         {
             InitializeComponent();
         }
+
+        private void btn_Win_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.BackToMainMenu();
+            this.Close();
+        }
     }
 }

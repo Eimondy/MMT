@@ -15,10 +15,27 @@ namespace MMT
 {
     public partial class Form_Battle : Form
     {
-        public Form_Battle()
+        private List<Button> btns;
+        public List<Button> Btns { get => btns; }
+        public Form_Battle(object o)
         {
             InitializeComponent();
-            //数值调整
+            // 获得按钮
+            btns = new List<Button>();
+            foreach (var c in panel1.Controls)
+            {
+                if (c is Button)
+                {
+                    (c as Button).Enabled = false;
+                    Btns.Add((c as Button));
+                }
+            }
+            // 按钮绑定事件
+            foreach(var b in Btns)
+            {
+                b.Click += new EventHandler(BtnClick);
+            }
+            // 数值调整
             this.lbl_Battle_Mp1.Text = "法力值：" + MMainCharacter.Instance.MP;
             this.lbl_Battle_Hp1.Text = "生命值：" + MMainCharacter.Instance.HP;
             this.lbl_Battle_Level1.Text = "等级：" + MMainCharacter.Instance.Level;
@@ -27,20 +44,32 @@ namespace MMT
             this.lbl_Battle_Speed1.Text = "速度：" + MMainCharacter.Instance.Speed;
             this.lbl_Battle_Hitrate1.Text = "命中率：" + MMainCharacter.Instance.HitRate;
             this.lbl_Battle_Power1.Text = "力量：" + MMainCharacter.Instance.Power;
-
-            this.lbl_Battle_Mp2.Text = "法力值：" + MMT.MMainLogic.Instance.CurEnemy.MP;
-            this.lbl_Battle_Hp2.Text = "生命值：" + MMT.MMainLogic.Instance.CurEnemy.HP;
-            this.lbl_Battle_Level2.Text = "等级：" + MMT.MMainLogic.Instance.CurEnemy.Level;
-            this.lbl_Battle_Armor2.Text = "护甲：" + MMT.MMainLogic.Instance.CurEnemy.Armor;
-            this.lbl_Battle_MagicArmor2.Text = "魔抗：" + MMT.MMainLogic.Instance.CurEnemy.MagicArmor;
-            this.lbl_Battle_Speed2.Text = "速度：" + MMT.MMainLogic.Instance.CurEnemy.Speed;
-            this.lbl_Battle_Hitrate2.Text = "命中率：" + MMT.MMainLogic.Instance.CurEnemy.HitRate;
-            this.lbl_Battle_Power2.Text = "力量：" + MMT.MMainLogic.Instance.CurEnemy.Power;
+            MEnemy enemy = o as MEnemy;
+            this.lbl_Battle_Mp2.Text = "法力值：" + enemy.MP;
+            this.lbl_Battle_Hp2.Text = "生命值：" + enemy.HP;
+            this.lbl_Battle_Level2.Text = "等级：" + enemy.Level;
+            this.lbl_Battle_Armor2.Text = "护甲：" + enemy.Armor;
+            this.lbl_Battle_MagicArmor2.Text = "魔抗：" + enemy.MagicArmor;
+            this.lbl_Battle_Speed2.Text = "速度：" + enemy.Speed;
+            this.lbl_Battle_Hitrate2.Text = "命中率：" + enemy.HitRate;
+            this.lbl_Battle_Power2.Text = "力量：" + enemy.Power;
         }
 
-        private void btn_Battle_skill1_Click(object sender, EventArgs e)
+        public void UpdateCombatMenu(object[] choice)
         {
+            for (int i = 0; i < choice.Length; i++)
+            {
+                if (Convert.ToBoolean(choice[i]))
+                    Btns[i].Enabled = true;
+                else
+                    Btns[i].Enabled = false;
+            }
+        }
 
+        private void BtnClick(object sender, EventArgs e)
+        {
+            byte i = Convert.ToByte(Convert.ToInt32((sender as Button).Name[(sender as Button).Name.Length - 1]));
+            MMainCharacter.Instance.AttackChoice = i;
         }
     }
 }

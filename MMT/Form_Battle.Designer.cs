@@ -32,6 +32,21 @@ namespace MMT
             this.btn_Battle_skill1 = new System.Windows.Forms.Button();
             this.btn_Battle_skill2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Battle_Hitrate2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Armor2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Power2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Speed2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_MagicArmor2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Mp2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Level2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Hp2 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Hitrate1 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Armor1 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Power1 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Speed1 = new System.Windows.Forms.Label();
+            this.lbl_Battle_MagicArmor1 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Mp1 = new System.Windows.Forms.Label();
+            this.lbl_Battle_Level1 = new System.Windows.Forms.Label();
             this.lbl_Battle_Hp1 = new System.Windows.Forms.Label();
             this.lbl_Battle_name2 = new System.Windows.Forms.Label();
             this.lbl_Battle_name1 = new System.Windows.Forms.Label();
@@ -41,21 +56,6 @@ namespace MMT
             this.btn_Battle_skill6 = new System.Windows.Forms.Button();
             this.btn_Battle_skill4 = new System.Windows.Forms.Button();
             this.btn_Battle_skill3 = new System.Windows.Forms.Button();
-            this.lbl_Battle_Level1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Mp1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_MagicArmor1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Speed1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Power1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Armor1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Hitrate1 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Hitrate2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Armor2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Power2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Speed2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_MagicArmor2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Mp2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Level2 = new System.Windows.Forms.Label();
-            this.lbl_Battle_Hp2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,6 @@ namespace MMT
             this.btn_Battle_skill1.TabIndex = 1;
             this.btn_Battle_skill1.Text = "button2";
             this.btn_Battle_skill1.UseVisualStyleBackColor = true;
-            this.btn_Battle_skill1.Click += new System.EventHandler(this.btn_Battle_skill1_Click);
             // 
             // btn_Battle_skill2
             // 
@@ -111,6 +110,156 @@ namespace MMT
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 500);
             this.panel1.TabIndex = 3;
+            // 
+            // lbl_Battle_Hitrate2
+            // 
+            this.lbl_Battle_Hitrate2.AutoSize = true;
+            this.lbl_Battle_Hitrate2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Hitrate2.Location = new System.Drawing.Point(531, 251);
+            this.lbl_Battle_Hitrate2.Name = "lbl_Battle_Hitrate2";
+            this.lbl_Battle_Hitrate2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Hitrate2.TabIndex = 26;
+            this.lbl_Battle_Hitrate2.Text = "label1";
+            // 
+            // lbl_Battle_Armor2
+            // 
+            this.lbl_Battle_Armor2.AutoSize = true;
+            this.lbl_Battle_Armor2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Armor2.Location = new System.Drawing.Point(531, 214);
+            this.lbl_Battle_Armor2.Name = "lbl_Battle_Armor2";
+            this.lbl_Battle_Armor2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Armor2.TabIndex = 25;
+            this.lbl_Battle_Armor2.Text = "label1";
+            // 
+            // lbl_Battle_Power2
+            // 
+            this.lbl_Battle_Power2.AutoSize = true;
+            this.lbl_Battle_Power2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Power2.Location = new System.Drawing.Point(531, 176);
+            this.lbl_Battle_Power2.Name = "lbl_Battle_Power2";
+            this.lbl_Battle_Power2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Power2.TabIndex = 24;
+            this.lbl_Battle_Power2.Text = "label1";
+            // 
+            // lbl_Battle_Speed2
+            // 
+            this.lbl_Battle_Speed2.AutoSize = true;
+            this.lbl_Battle_Speed2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Speed2.Location = new System.Drawing.Point(412, 251);
+            this.lbl_Battle_Speed2.Name = "lbl_Battle_Speed2";
+            this.lbl_Battle_Speed2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Speed2.TabIndex = 23;
+            this.lbl_Battle_Speed2.Text = "label1";
+            // 
+            // lbl_Battle_MagicArmor2
+            // 
+            this.lbl_Battle_MagicArmor2.AutoSize = true;
+            this.lbl_Battle_MagicArmor2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_MagicArmor2.Location = new System.Drawing.Point(412, 214);
+            this.lbl_Battle_MagicArmor2.Name = "lbl_Battle_MagicArmor2";
+            this.lbl_Battle_MagicArmor2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_MagicArmor2.TabIndex = 22;
+            this.lbl_Battle_MagicArmor2.Text = "label1";
+            // 
+            // lbl_Battle_Mp2
+            // 
+            this.lbl_Battle_Mp2.AutoSize = true;
+            this.lbl_Battle_Mp2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Mp2.Location = new System.Drawing.Point(412, 176);
+            this.lbl_Battle_Mp2.Name = "lbl_Battle_Mp2";
+            this.lbl_Battle_Mp2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Mp2.TabIndex = 21;
+            this.lbl_Battle_Mp2.Text = "label1";
+            // 
+            // lbl_Battle_Level2
+            // 
+            this.lbl_Battle_Level2.AutoSize = true;
+            this.lbl_Battle_Level2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Level2.Location = new System.Drawing.Point(531, 136);
+            this.lbl_Battle_Level2.Name = "lbl_Battle_Level2";
+            this.lbl_Battle_Level2.Size = new System.Drawing.Size(64, 21);
+            this.lbl_Battle_Level2.TabIndex = 20;
+            this.lbl_Battle_Level2.Text = "label14";
+            // 
+            // lbl_Battle_Hp2
+            // 
+            this.lbl_Battle_Hp2.AutoSize = true;
+            this.lbl_Battle_Hp2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Hp2.Location = new System.Drawing.Point(412, 136);
+            this.lbl_Battle_Hp2.Name = "lbl_Battle_Hp2";
+            this.lbl_Battle_Hp2.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Hp2.TabIndex = 19;
+            this.lbl_Battle_Hp2.Text = "label1";
+            // 
+            // lbl_Battle_Hitrate1
+            // 
+            this.lbl_Battle_Hitrate1.AutoSize = true;
+            this.lbl_Battle_Hitrate1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Hitrate1.Location = new System.Drawing.Point(280, 251);
+            this.lbl_Battle_Hitrate1.Name = "lbl_Battle_Hitrate1";
+            this.lbl_Battle_Hitrate1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Hitrate1.TabIndex = 18;
+            this.lbl_Battle_Hitrate1.Text = "label1";
+            // 
+            // lbl_Battle_Armor1
+            // 
+            this.lbl_Battle_Armor1.AutoSize = true;
+            this.lbl_Battle_Armor1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Armor1.Location = new System.Drawing.Point(280, 214);
+            this.lbl_Battle_Armor1.Name = "lbl_Battle_Armor1";
+            this.lbl_Battle_Armor1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Armor1.TabIndex = 17;
+            this.lbl_Battle_Armor1.Text = "label1";
+            // 
+            // lbl_Battle_Power1
+            // 
+            this.lbl_Battle_Power1.AutoSize = true;
+            this.lbl_Battle_Power1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Power1.Location = new System.Drawing.Point(280, 176);
+            this.lbl_Battle_Power1.Name = "lbl_Battle_Power1";
+            this.lbl_Battle_Power1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Power1.TabIndex = 16;
+            this.lbl_Battle_Power1.Text = "label1";
+            // 
+            // lbl_Battle_Speed1
+            // 
+            this.lbl_Battle_Speed1.AutoSize = true;
+            this.lbl_Battle_Speed1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Speed1.Location = new System.Drawing.Point(161, 251);
+            this.lbl_Battle_Speed1.Name = "lbl_Battle_Speed1";
+            this.lbl_Battle_Speed1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Speed1.TabIndex = 15;
+            this.lbl_Battle_Speed1.Text = "label1";
+            // 
+            // lbl_Battle_MagicArmor1
+            // 
+            this.lbl_Battle_MagicArmor1.AutoSize = true;
+            this.lbl_Battle_MagicArmor1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_MagicArmor1.Location = new System.Drawing.Point(161, 214);
+            this.lbl_Battle_MagicArmor1.Name = "lbl_Battle_MagicArmor1";
+            this.lbl_Battle_MagicArmor1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_MagicArmor1.TabIndex = 14;
+            this.lbl_Battle_MagicArmor1.Text = "label1";
+            // 
+            // lbl_Battle_Mp1
+            // 
+            this.lbl_Battle_Mp1.AutoSize = true;
+            this.lbl_Battle_Mp1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Mp1.Location = new System.Drawing.Point(161, 176);
+            this.lbl_Battle_Mp1.Name = "lbl_Battle_Mp1";
+            this.lbl_Battle_Mp1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Mp1.TabIndex = 13;
+            this.lbl_Battle_Mp1.Text = "label1";
+            // 
+            // lbl_Battle_Level1
+            // 
+            this.lbl_Battle_Level1.AutoSize = true;
+            this.lbl_Battle_Level1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Battle_Level1.Location = new System.Drawing.Point(280, 136);
+            this.lbl_Battle_Level1.Name = "lbl_Battle_Level1";
+            this.lbl_Battle_Level1.Size = new System.Drawing.Size(55, 21);
+            this.lbl_Battle_Level1.TabIndex = 12;
+            this.lbl_Battle_Level1.Text = "label1";
             // 
             // lbl_Battle_Hp1
             // 
@@ -195,156 +344,6 @@ namespace MMT
             this.btn_Battle_skill3.TabIndex = 3;
             this.btn_Battle_skill3.Text = "button2";
             this.btn_Battle_skill3.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Battle_Level1
-            // 
-            this.lbl_Battle_Level1.AutoSize = true;
-            this.lbl_Battle_Level1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Level1.Location = new System.Drawing.Point(280, 136);
-            this.lbl_Battle_Level1.Name = "lbl_Battle_Level1";
-            this.lbl_Battle_Level1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Level1.TabIndex = 12;
-            this.lbl_Battle_Level1.Text = "label1";
-            // 
-            // lbl_Battle_Mp1
-            // 
-            this.lbl_Battle_Mp1.AutoSize = true;
-            this.lbl_Battle_Mp1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Mp1.Location = new System.Drawing.Point(161, 176);
-            this.lbl_Battle_Mp1.Name = "lbl_Battle_Mp1";
-            this.lbl_Battle_Mp1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Mp1.TabIndex = 13;
-            this.lbl_Battle_Mp1.Text = "label1";
-            // 
-            // lbl_Battle_MagicArmor1
-            // 
-            this.lbl_Battle_MagicArmor1.AutoSize = true;
-            this.lbl_Battle_MagicArmor1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_MagicArmor1.Location = new System.Drawing.Point(161, 214);
-            this.lbl_Battle_MagicArmor1.Name = "lbl_Battle_MagicArmor1";
-            this.lbl_Battle_MagicArmor1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_MagicArmor1.TabIndex = 14;
-            this.lbl_Battle_MagicArmor1.Text = "label1";
-            // 
-            // lbl_Battle_Speed1
-            // 
-            this.lbl_Battle_Speed1.AutoSize = true;
-            this.lbl_Battle_Speed1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Speed1.Location = new System.Drawing.Point(161, 251);
-            this.lbl_Battle_Speed1.Name = "lbl_Battle_Speed1";
-            this.lbl_Battle_Speed1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Speed1.TabIndex = 15;
-            this.lbl_Battle_Speed1.Text = "label1";
-            // 
-            // lbl_Battle_Power1
-            // 
-            this.lbl_Battle_Power1.AutoSize = true;
-            this.lbl_Battle_Power1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Power1.Location = new System.Drawing.Point(280, 176);
-            this.lbl_Battle_Power1.Name = "lbl_Battle_Power1";
-            this.lbl_Battle_Power1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Power1.TabIndex = 16;
-            this.lbl_Battle_Power1.Text = "label1";
-            // 
-            // lbl_Battle_Armor1
-            // 
-            this.lbl_Battle_Armor1.AutoSize = true;
-            this.lbl_Battle_Armor1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Armor1.Location = new System.Drawing.Point(280, 214);
-            this.lbl_Battle_Armor1.Name = "lbl_Battle_Armor1";
-            this.lbl_Battle_Armor1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Armor1.TabIndex = 17;
-            this.lbl_Battle_Armor1.Text = "label1";
-            // 
-            // lbl_Battle_Hitrate1
-            // 
-            this.lbl_Battle_Hitrate1.AutoSize = true;
-            this.lbl_Battle_Hitrate1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hitrate1.Location = new System.Drawing.Point(280, 251);
-            this.lbl_Battle_Hitrate1.Name = "lbl_Battle_Hitrate1";
-            this.lbl_Battle_Hitrate1.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Hitrate1.TabIndex = 18;
-            this.lbl_Battle_Hitrate1.Text = "label1";
-            // 
-            // lbl_Battle_Hitrate2
-            // 
-            this.lbl_Battle_Hitrate2.AutoSize = true;
-            this.lbl_Battle_Hitrate2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hitrate2.Location = new System.Drawing.Point(531, 251);
-            this.lbl_Battle_Hitrate2.Name = "lbl_Battle_Hitrate2";
-            this.lbl_Battle_Hitrate2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Hitrate2.TabIndex = 26;
-            this.lbl_Battle_Hitrate2.Text = "label1";
-            // 
-            // lbl_Battle_Armor2
-            // 
-            this.lbl_Battle_Armor2.AutoSize = true;
-            this.lbl_Battle_Armor2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Armor2.Location = new System.Drawing.Point(531, 214);
-            this.lbl_Battle_Armor2.Name = "lbl_Battle_Armor2";
-            this.lbl_Battle_Armor2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Armor2.TabIndex = 25;
-            this.lbl_Battle_Armor2.Text = "label1";
-            // 
-            // lbl_Battle_Power2
-            // 
-            this.lbl_Battle_Power2.AutoSize = true;
-            this.lbl_Battle_Power2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Power2.Location = new System.Drawing.Point(531, 176);
-            this.lbl_Battle_Power2.Name = "lbl_Battle_Power2";
-            this.lbl_Battle_Power2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Power2.TabIndex = 24;
-            this.lbl_Battle_Power2.Text = "label1";
-            // 
-            // lbl_Battle_Speed2
-            // 
-            this.lbl_Battle_Speed2.AutoSize = true;
-            this.lbl_Battle_Speed2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Speed2.Location = new System.Drawing.Point(412, 251);
-            this.lbl_Battle_Speed2.Name = "lbl_Battle_Speed2";
-            this.lbl_Battle_Speed2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Speed2.TabIndex = 23;
-            this.lbl_Battle_Speed2.Text = "label1";
-            // 
-            // lbl_Battle_MagicArmor2
-            // 
-            this.lbl_Battle_MagicArmor2.AutoSize = true;
-            this.lbl_Battle_MagicArmor2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_MagicArmor2.Location = new System.Drawing.Point(412, 214);
-            this.lbl_Battle_MagicArmor2.Name = "lbl_Battle_MagicArmor2";
-            this.lbl_Battle_MagicArmor2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_MagicArmor2.TabIndex = 22;
-            this.lbl_Battle_MagicArmor2.Text = "label1";
-            // 
-            // lbl_Battle_Mp2
-            // 
-            this.lbl_Battle_Mp2.AutoSize = true;
-            this.lbl_Battle_Mp2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Mp2.Location = new System.Drawing.Point(412, 176);
-            this.lbl_Battle_Mp2.Name = "lbl_Battle_Mp2";
-            this.lbl_Battle_Mp2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Mp2.TabIndex = 21;
-            this.lbl_Battle_Mp2.Text = "label1";
-            // 
-            // lbl_Battle_Level2
-            // 
-            this.lbl_Battle_Level2.AutoSize = true;
-            this.lbl_Battle_Level2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Level2.Location = new System.Drawing.Point(531, 136);
-            this.lbl_Battle_Level2.Name = "lbl_Battle_Level2";
-            this.lbl_Battle_Level2.Size = new System.Drawing.Size(64, 21);
-            this.lbl_Battle_Level2.TabIndex = 20;
-            this.lbl_Battle_Level2.Text = "label14";
-            // 
-            // lbl_Battle_Hp2
-            // 
-            this.lbl_Battle_Hp2.AutoSize = true;
-            this.lbl_Battle_Hp2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Battle_Hp2.Location = new System.Drawing.Point(412, 136);
-            this.lbl_Battle_Hp2.Name = "lbl_Battle_Hp2";
-            this.lbl_Battle_Hp2.Size = new System.Drawing.Size(55, 21);
-            this.lbl_Battle_Hp2.TabIndex = 19;
-            this.lbl_Battle_Hp2.Text = "label1";
             // 
             // Form_Battle
             // 

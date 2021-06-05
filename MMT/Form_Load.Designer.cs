@@ -74,7 +74,7 @@ namespace MMT
             this.Table_Load.Location = new System.Drawing.Point(155, 94);
             this.Table_Load.Name = "Table_Load";
             this.Table_Load.RowCount = 1;
-            this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 222F));
             this.Table_Load.Size = new System.Drawing.Size(494, 222);
             this.Table_Load.TabIndex = 2;
             this.Table_Load.Paint += new System.Windows.Forms.PaintEventHandler(this.Table_Load_Paint);
