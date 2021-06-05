@@ -8,6 +8,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Item
 {
+    [Serializable]
     public class MDoor : MItem
     {
         private byte relatedKey;//和门对应的钥匙

@@ -8,6 +8,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Item
 {
+    [Serializable]
     public class MKey : MItem, MIPickable
     {
 
