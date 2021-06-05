@@ -42,9 +42,10 @@ namespace MMT.Data.Classes.Character
             Exp = 1;
             Description = "迷宫中随处可见的小型生物，只有低级智能";
 
-            //空list，技能暂未添加
+            //绿色史莱姆只装备了Oattack;
             Skills = new List<MSkill>();
-
+            OAttack skill0 = new OAttack();
+            Skills.Add(skill0);
             
         }
     }
@@ -69,8 +70,12 @@ namespace MMT.Data.Classes.Character
             Exp = 2;
             Description = "小型生物在魔塔魔气影响下发生的变异，比原来更强大";
 
-            //空list，技能暂未添加
+            //红色史莱姆添加了OAttack和OPosion;
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            OPosion skill1 = new OPosion();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
         }
     }
 
@@ -94,8 +99,12 @@ namespace MMT.Data.Classes.Character
             Exp = 3;
             Description = "倒悬在魔塔层顶的魔化生物，具有较快的敏捷，较难被击中";
 
-            //空list，技能暂未添加
+            //蝙蝠怪添加了OAttack和OPosion;
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            OPosion skill1 = new OPosion();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
         }
     }
 
@@ -119,8 +128,12 @@ namespace MMT.Data.Classes.Character
             Exp = 5;
             Description = "游荡在魔塔中的类人型魔物，具有高防御，在获得强力武器之前，主角难以抗衡";
 
-            //空list，技能暂未添加
+            //僵尸怪添加了OAttack和OPosion;
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            OPosion skill1 = new OPosion();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
         }
     }
 
@@ -144,8 +157,10 @@ namespace MMT.Data.Classes.Character
             Exp = 5;
             Description = "游荡在魔塔中的类人型魔物，具有极高的攻击，在获得强力防具之前，主角难以抗衡";
 
-            //空list，技能暂未添加
+            //骷髅怪只添加了OAttack
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            Skills.Add(skill0);
         }
     }
 
@@ -169,8 +184,14 @@ namespace MMT.Data.Classes.Character
             Exp = 6;
             Description = "曾经是进入魔塔挑战的法师，失败之后，被魔气魔化，成为邪恶的魔法恶鬼";
 
-            //空list，技能暂未添加
+            //魔法师添加了OAttack，OPosion，EEvilFluctuation
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            OPosion skill1 = new OPosion();
+            EEvilFluctuation skill2 = new EEvilFluctuation();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
         }
     }
 
@@ -194,8 +215,16 @@ namespace MMT.Data.Classes.Character
             Exp = 7;
             Description = "曾经是进入魔塔挑战的骑士，失败之后，被魔气魔化，成为凶残的骷髅骑士";
 
-            //空list，技能暂未添加
+            //骷髅骑士添加了OAttack，OPosion，EEvilFluctuation,EDeadWinding
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            OPosion skill1 = new OPosion();
+            EEvilFluctuation skill2 = new EEvilFluctuation();
+            EDeadWinding skill3 = new EDeadWinding();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
+            Skills.Add(skill3);
         }
     }
 
@@ -219,8 +248,14 @@ namespace MMT.Data.Classes.Character
             Exp = 5;
             Description = "常常出现在密室门口，具有很高的血量，护甲值，魔抗值。说不定在它身后的密室里存在着什么好东西……";
 
-            //空list，技能暂未添加
+            //石像鬼添加了OAttack，EEvilFluctuation,EDeadWinding
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            EEvilFluctuation skill1 = new EEvilFluctuation();
+            EDeadWinding skill2 = new EDeadWinding();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
         }
     }
 
@@ -244,8 +279,16 @@ namespace MMT.Data.Classes.Character
             Exp = 6;
             Description = "出现在魔塔中的蜘蛛形怪物，具有很高的攻击力，敏捷值，使用魔法攻击说不定不是个好方法";
 
-            //空list，技能暂未添加
+            //镰刀蜘蛛怪添加了OAttack，OPosion，EEvilFluctuation,EDeadWinding
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            OPosion skill1 = new OPosion();
+            EEvilFluctuation skill2 = new EEvilFluctuation();
+            EDeadWinding skill3 = new EDeadWinding();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
+            Skills.Add(skill3);
         }
     }
 
@@ -269,8 +312,18 @@ namespace MMT.Data.Classes.Character
             Exp = 10;
             Description = "魔塔前几层的Boss,具有很强的综合属性，稍不注意就会葬送在它的魔刀下";
 
-            //空list，技能暂未添加
+            //骷髅将军添加了OAttack，EEvilFluctuation,EDeadWinding，BDevilChopper，BSarifice
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            EEvilFluctuation skill1 = new EEvilFluctuation();
+            EDeadWinding skill2 = new EDeadWinding();
+            BDevilChopper skill3 = new BDevilChopper();
+            BSarifice skill4 = new BSarifice();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
+            Skills.Add(skill3);
+            Skills.Add(skill4);
         }
     }
 
@@ -294,8 +347,16 @@ namespace MMT.Data.Classes.Character
             Exp = 20;
             Description = "魔塔中层出现的Boss,精通魔法，具有很强的魔法攻击";
 
-            //空list，技能暂未添加
+            //大魔法师添加了EEvilFluctuation,EDeadWinding，BSoulKnife，BSoulGift
             Skills = new List<MSkill>();
+            EEvilFluctuation skill0 = new EEvilFluctuation();
+            EDeadWinding skill1 = new EDeadWinding();
+            BSoulKnife skill2 = new BSoulKnife();
+            BSoulGift skill3 = new BSoulGift();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
+            Skills.Add(skill3);
         }
     }
 
@@ -319,8 +380,18 @@ namespace MMT.Data.Classes.Character
             Exp = 0;
             Description = "魔塔最终boss，曾是拯救世人的勇者，但是在魔塔中失去本性，最终化为黑暗的傀儡。魔塔的化身。";
 
-            //空list，技能暂未添加
+            //魔王添加了OAttack,EEvilFluctuation,EDeadWinding，BSoulChop，BSoulGift
             Skills = new List<MSkill>();
+            OAttack skill0 = new OAttack();
+            EEvilFluctuation skill1 = new EEvilFluctuation();
+            EDeadWinding skill2 = new EDeadWinding();
+            BSoulChop skill3 = new BSoulChop();
+            BDarkCurse skill4 = new BDarkCurse();
+            Skills.Add(skill0);
+            Skills.Add(skill1);
+            Skills.Add(skill2);
+            Skills.Add(skill3);
+            Skills.Add(skill4);
         }
     }
 }
