@@ -267,8 +267,8 @@ namespace MMT.Data.Classes.Skill
             var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
             enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
 
-            double p2 = rd.NextDouble();
-            if (p2 > 0.33) return true;
+            p= rd.NextDouble();
+            if (p > 0.33) return true;
             //第二次攻击points变为1.3
             var SecondAttack = user.MaxMP * 1.3 * COMBAT.ATTACK;
             var SecondTakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
