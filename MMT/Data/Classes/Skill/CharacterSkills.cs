@@ -3,6 +3,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Skill
 {
+    [Serializable]
     public class CBeat : MSkill
     {
         public CBeat()
@@ -30,6 +31,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CExtinctRoar : MSkill
     {
         public CExtinctRoar()
@@ -55,6 +57,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CFragmentImpact : MSkill
     {
         public CFragmentImpact()
@@ -80,6 +83,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CFrustrated : MSkill
     {
         public CFrustrated()
@@ -106,6 +110,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CGodShine : MSkill
     {
         public CGodShine()
@@ -135,6 +140,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CGodStrick : MSkill
     {
         public CGodStrick()
@@ -164,6 +170,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CStrongAbsorption : MSkill
     {
         public CStrongAbsorption()
@@ -195,6 +202,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class CTreat : MSkill
     {
         public CTreat()
