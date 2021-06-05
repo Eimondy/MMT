@@ -7,12 +7,14 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Skill
 {
-   public static class COMBAT
+    [Serializable]
+    public static class COMBAT
     {
         public static double ATTACK = 2.4;
         public static double DEFENSE = 1.2;
     }
-     public abstract class MSkill
+    [Serializable]
+    public abstract class MSkill
     {
         private string name; //技能名称
         private double points;//伤害倍数

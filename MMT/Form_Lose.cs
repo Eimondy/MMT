@@ -15,7 +15,19 @@ namespace MMT
         public Form_Lose()
         {
             InitializeComponent();
-            this.lbl_Lose.Text = "你被[" + MMainLogic.Instance.CurEnemy.Name + "]击败";
+            this.lbl_Lose.Text = "你被[" + MMainLogic.Instance.DefeatedEnemy + "]击败";
+        }
+
+        private void btn_Lose_Again_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.StarFromCurrentLevel();
+            this.Close();
+        }
+
+        private void btn_Lose_Exit_Click(object sender, EventArgs e)
+        {
+            MMainLogic.Instance.BackToMainMenu();
+            this.Close();
         }
     }
 }

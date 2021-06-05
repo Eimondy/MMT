@@ -1,5 +1,8 @@
-﻿namespace MMT.Data.Classes
+﻿using System;
+
+namespace MMT.Data.Classes
 {
+    [Serializable]
     public class MMap
     {
         public byte Size;

@@ -8,6 +8,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Item
 {
+    [Serializable]
     public abstract class MPotion : MItem, MIPickable
     {
         private string description;//药剂效果描述
@@ -57,6 +58,7 @@ namespace MMT.Data.Classes.Item
             MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
         }
     }
+    [Serializable]
     public class HealthPotion : MPotion
     {
         public HealthPotion(byte locationX, byte locationY) : base(locationX, locationY)
@@ -68,6 +70,7 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角生命值+20";
         }
     }
+    [Serializable]
     public class MagicPotion : MPotion
     {
         public MagicPotion(byte locationX, byte locationY) : base(locationX, locationY)
@@ -79,6 +82,7 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角魔法值+10";
         }
     }
+    [Serializable]
     public class PowerPotion : MPotion
     {
         public PowerPotion(byte locationX, byte locationY) : base(locationX, locationY)
@@ -90,6 +94,7 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角力量值+8";
         }
     }
+    [Serializable]
     public class ArmorPotion : MPotion
     {
         public ArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
@@ -101,6 +106,7 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角护甲值+8";
         }
     }
+    [Serializable]
     public class MagicArmorPotion : MPotion
     {
         public MagicArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
@@ -112,6 +118,7 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角魔抗值+8";
         }
     }
+    [Serializable]
     public class SpeedPotion : MPotion
     {
         public SpeedPotion(byte locationX, byte locationY) : base(locationX, locationY)
@@ -123,6 +130,7 @@ namespace MMT.Data.Classes.Item
             Description = "使用后主角速度值+8";
         }
     }
+    [Serializable]
     public class HitPotion : MPotion
     {
         public HitPotion(byte locationX, byte locationY) : base(locationX, locationY)

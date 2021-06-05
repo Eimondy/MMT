@@ -53,6 +53,7 @@ namespace MMT
             this.btn_Win.TabIndex = 1;
             this.btn_Win.Text = "返回主菜单";
             this.btn_Win.UseVisualStyleBackColor = true;
+            this.btn_Win.Click += new System.EventHandler(this.btn_Win_Click);
             // 
             // Form_Win
             // 

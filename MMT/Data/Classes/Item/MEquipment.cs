@@ -8,6 +8,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Item
 {
+    [Serializable]
     public abstract class MEquipment : MItem , MIPickable
     {
         private string description;//装备描述
@@ -77,6 +78,7 @@ namespace MMT.Data.Classes.Item
             MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
         }
     }
+    [Serializable]
     public class BlueGem : MEquipment
     {
         public BlueGem(byte locationX, byte locationY) : base(locationX, locationY)
@@ -90,6 +92,7 @@ namespace MMT.Data.Classes.Item
             Description = "在魔塔中比较普遍的一种水晶，装备之后能在一定程度上增加主角法力值、护甲和魔抗";
         }       
     }
+    [Serializable]
     public class RedGem : MEquipment
     {
         public RedGem(byte locationX, byte locationY) : base(locationX, locationY)
@@ -103,6 +106,7 @@ namespace MMT.Data.Classes.Item
             Description = "魔塔中蓝宝石变异而成，装备之后能在一定程度上增长主角力量，速度和命中率";
         }
     }
+    [Serializable]
     public class RustySword : MEquipment
     {
         public RustySword(byte locationX, byte locationY) : base(locationX, locationY)
@@ -115,6 +119,7 @@ namespace MMT.Data.Classes.Item
             Description = "曾经的冒险者遗失在魔塔中的宝剑，经过岁月的打磨，没有了往日的光辉";
         }
     }
+    [Serializable]
     public class RottenStaff : MEquipment
     {
         public RottenStaff(byte locationX, byte locationY) : base(locationX, locationY)
@@ -128,6 +133,7 @@ namespace MMT.Data.Classes.Item
             Description = "曾经的冒险者遗失在魔塔中的法杖，经过岁月的淘洗，不复当年的威力";
         }
     }
+    [Serializable]
     public class SharpSword : MEquipment
     {
         public SharpSword(byte locationX, byte locationY) : base(locationX, locationY)
@@ -140,6 +146,7 @@ namespace MMT.Data.Classes.Item
             Description = "一把完好锋利的宝剑，冷锋出鞘，刀光逼人";
         }
     }
+    [Serializable]
     public class PowerfulStaff : MEquipment
     {
         public PowerfulStaff(byte locationX, byte locationY) : base(locationX, locationY)
@@ -153,6 +160,7 @@ namespace MMT.Data.Classes.Item
             Description = "一把完好的法杖，光彩焕发，法力依旧";
         }
     }
+    [Serializable]
     public class Excalibur : MEquipment
     {
         public Excalibur(byte locationX, byte locationY) : base(locationX, locationY)
@@ -167,6 +175,7 @@ namespace MMT.Data.Classes.Item
             Description = "传说中为亚瑟王所佩戴的宝剑，不知道为什么出现在这里";
         }
     }
+    [Serializable]
     public class MerlinStaff : MEquipment
     {
         public MerlinStaff(byte locationX, byte locationY) : base(locationX, locationY)
@@ -181,6 +190,7 @@ namespace MMT.Data.Classes.Item
             Description = "梅林心爱的法杖，可能是在梅林的某次法术中被传送至此";
         }
     }
+    [Serializable]
     public class Robe : MEquipment
     {
         public Robe(byte locationX, byte locationY) : base(locationX, locationY)
@@ -193,6 +203,7 @@ namespace MMT.Data.Classes.Item
             Description = "随处可见的战士长袍，美观，耐用";
         }
     }
+    [Serializable]
     public class Armor : MEquipment
     {
         public Armor(byte locationX, byte locationY) : base(locationX, locationY)
@@ -205,6 +216,7 @@ namespace MMT.Data.Classes.Item
             Description = "具有很强实用性的盔甲，战士的必备用品";
         }
     }
+    [Serializable]
     public class OverlordArmor : MEquipment
     {
         public OverlordArmor(byte locationX, byte locationY) : base(locationX, locationY)
@@ -221,6 +233,7 @@ namespace MMT.Data.Classes.Item
             Description = "不死王的铠甲，只存在于典籍之中";
         }
     }
+    [Serializable]
     public class StrawSandals : MEquipment
     {
         public StrawSandals(byte locationX, byte locationY) : base(locationX, locationY)
@@ -233,6 +246,7 @@ namespace MMT.Data.Classes.Item
             Description = "用最普通的芦苇编制的草鞋，方便耐磨";
         }
     }
+    [Serializable]
     public class LongShoes : MEquipment
     {
         public LongShoes(byte locationX, byte locationY) : base(locationX, locationY)
@@ -245,6 +259,7 @@ namespace MMT.Data.Classes.Item
             Description = "少见的昂贵的长筒鞋";
         }
     }
+    [Serializable]
     public class Legend : MEquipment
     {
         public Legend(byte locationX, byte locationY) : base(locationX, locationY)

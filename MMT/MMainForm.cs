@@ -14,11 +14,10 @@ namespace MMT
     public partial class MMainForm : Form
     {
         private static MMainForm instance;
-        private Graphics g;
-        private Form_Status Fs;
-        private Form_Load Fl;
-        private Form_Pause Fp;
-        private Form_Battle Fb;
+        private Form_Status fs;
+        private Form_Load fl;
+        private Form_Pause fp;
+        private Form_Battle fb;
         public static MMainForm Instance
         {
             get
@@ -32,20 +31,25 @@ namespace MMT
                     return instance;
             }
         }
-        public Graphics G { get { return g; } }
+
+        public Form_Status Fs { get => fs; }
+        public Form_Load Fl { get => fl; }
+        public Form_Pause Fp { get => fp; }
+        public Form_Battle Fb { get => fb; }
+
         public MMainForm()
         {
             InitializeComponent();
 
-            Fs = new Form_Status();
+            fs = new Form_Status();
             Fs.MdiParent = this;
 
-            Fl = new Form_Load();
+            fl = new Form_Load();
             Fl.MdiParent = this;
             Fl.TopLevel = false;
             Fl.Parent = this.Picturebox_MainMenu;
 
-            Fp = new Form_Pause();
+            fp = new Form_Pause();
             Fp.TopLevel = false;
             Fp.Parent = this;
         }
@@ -119,12 +123,12 @@ namespace MMT
         }
 
         public void LoadMenu() 
-        {
+        {/*
             this.PictureBox_Inventory.Visible = false;
             this.lbl_MainMenu_MagicTower.Visible = false;
             this.btn_MainMenu_Exit.Visible = false;
             this.btn_MainMenu_Load.Visible = false;
-            this.btn_MainMenu_Start.Visible = false;     
+            this.btn_MainMenu_Start.Visible = false;     */
             Fl.Show();
             Fl.BringToFront();
         }
@@ -140,22 +144,22 @@ namespace MMT
         
         }
 
-        public void ShowCombatMenu() 
+        public void ShowCombatMenu(object[] enemy) 
         {
-            Fb = new Form_Battle();
+            fb = new Form_Battle(enemy[0]);
             Fb.TopLevel = false;
             Fb.Parent = this;
             Fb.Show();
             Fb.BringToFront();
         }
 
-        public void UpdateCombatMenu(byte[] choices)
+        public void UpdateCombatMenu(object[] choice)
         {
-
+            Fb.UpdateCombatMenu(choice);
         }
         public void CloseCombatMenu()
         {
-            Fb.Hide();
+            Fb.Close();
         }
         public void EndingMenu() 
         {
@@ -168,7 +172,7 @@ namespace MMT
                 Fw.Show();
                 Fw.BringToFront();
             }
-            else
+            else if(MMainLogic.Instance.Defeated)
             {
                 Form_Lose Fl = new Form_Lose();
                 Fl.TopLevel = false;

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MMT.Data.Classes.Item
 {
+    [Serializable]
     public class MExit : MItem
     {
         private bool exit;//true为出口，false为上一关入口

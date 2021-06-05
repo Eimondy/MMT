@@ -54,6 +54,7 @@ namespace MMT
             this.btn_Lose_Again.TabIndex = 2;
             this.btn_Lose_Again.Text = "再来一次";
             this.btn_Lose_Again.UseVisualStyleBackColor = true;
+            this.btn_Lose_Again.Click += new System.EventHandler(this.btn_Lose_Again_Click);
             // 
             // btn_Lose_Exit
             // 
@@ -65,6 +66,7 @@ namespace MMT
             this.btn_Lose_Exit.TabIndex = 3;
             this.btn_Lose_Exit.Text = "返回主菜单";
             this.btn_Lose_Exit.UseVisualStyleBackColor = true;
+            this.btn_Lose_Exit.Click += new System.EventHandler(this.btn_Lose_Exit_Click);
             // 
             // Form_Lose
             // 
