@@ -3,6 +3,7 @@ using MMT.Data.Classes.Character;
 
 namespace MMT.Data.Classes.Skill
 {
+    [Serializable]
     public class OAttack : MSkill
     {
         public OAttack()
@@ -30,6 +31,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class OPosion : MSkill
     {
         public OPosion()
@@ -57,6 +59,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class EEvilFluctuation : MSkill
     {
         public EEvilFluctuation()
@@ -79,6 +82,8 @@ namespace MMT.Data.Classes.Skill
             return true;
         }
     }
+
+    [Serializable]
     public class EDeadWinding:MSkill
     { 
         public EDeadWinding()
@@ -105,7 +110,7 @@ namespace MMT.Data.Classes.Skill
     }
 
     //3个Boss的技能全都用B开头命名
-
+    [Serializable]
     public class BDevilChopper:MSkill
     {
         public BDevilChopper()
@@ -140,6 +145,8 @@ namespace MMT.Data.Classes.Skill
 
         }
     }
+
+    [Serializable]
     public class BSarifice:MSkill
     {
         public BSarifice()
@@ -166,6 +173,7 @@ namespace MMT.Data.Classes.Skill
         }
     }
 
+    [Serializable]
     public class BSoulKnife : MSkill
     {
         public BSoulKnife()
@@ -192,6 +200,8 @@ namespace MMT.Data.Classes.Skill
 
         }
     }
+
+    [Serializable]
     public class BSoulGift : MSkill 
     {
         public BSoulGift()
@@ -218,6 +228,8 @@ namespace MMT.Data.Classes.Skill
 
         }
     }
+
+    [Serializable]
     public class BSoulChop : MSkill
     {
         public BSoulChop()
@@ -245,6 +257,8 @@ namespace MMT.Data.Classes.Skill
             return true;
         }
     }
+
+    [Serializable]
     public class BDarkCurse : MSkill
     {
         public BDarkCurse()
