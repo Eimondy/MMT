@@ -21,21 +21,18 @@ namespace MMT
         {
             InitializeComponent();
             // 获得按钮
-            btns = new List<Button>();
-            foreach (var c in panel1.Controls)
+            btns = new List<Button>()
             {
-                if (c is Button)
-                {
-                    (c as Button).Enabled = false;
-                    Btns.Add((c as Button));
-                }
-            }
+                btn_Battle_skill1, btn_Battle_skill2, btn_Battle_skill3, btn_Battle_skill4,
+                btn_Battle_skill5, btn_Battle_skill6, btn_Battle_skill7, btn_Battle_skill8
+            };
             // 按钮绑定事件
             foreach(var b in Btns)
             {
                 b.Click += new EventHandler(BtnClick);
             }
             // 数值调整
+            this.lbl_Battle_name1.Text = MMainCharacter.Instance.Name;
             this.lbl_Battle_Mp1.Text = "法力值：" + MMainCharacter.Instance.MP;
             this.lbl_Battle_Hp1.Text = "生命值：" + MMainCharacter.Instance.HP;
             this.lbl_Battle_Level1.Text = "等级：" + MMainCharacter.Instance.Level;
@@ -45,6 +42,7 @@ namespace MMT
             this.lbl_Battle_Hitrate1.Text = "命中率：" + MMainCharacter.Instance.HitRate;
             this.lbl_Battle_Power1.Text = "力量：" + MMainCharacter.Instance.Power;
             MEnemy enemy = o as MEnemy;
+            this.lbl_Battle_name2.Text = enemy.Name;
             this.lbl_Battle_Mp2.Text = "法力值：" + enemy.MP;
             this.lbl_Battle_Hp2.Text = "生命值：" + enemy.HP;
             this.lbl_Battle_Level2.Text = "等级：" + enemy.Level;
@@ -68,7 +66,7 @@ namespace MMT
 
         private void BtnClick(object sender, EventArgs e)
         {
-            byte i = Convert.ToByte(Convert.ToInt32((sender as Button).Name[(sender as Button).Name.Length - 1]));
+            byte i = Convert.ToByte(Btns.IndexOf((sender as Button))+1);
             MMainCharacter.Instance.AttackChoice = i;
         }
     }
