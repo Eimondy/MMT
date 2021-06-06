@@ -366,5 +366,20 @@
   <ItemGroup>
     <None Include="Data\Image\Img_slot.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_attr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_attr2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_attr3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_GameScreen_attr4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

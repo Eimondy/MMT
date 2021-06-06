@@ -243,6 +243,46 @@ namespace MMT.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_attr1 {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_attr1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_attr2 {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_attr2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_attr3 {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_attr3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_attr4 {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_attr4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Img_GameScreen_attribute {
             get {
                 object obj = ResourceManager.GetObject("Img_GameScreen_attribute", resourceCulture);
@@ -266,6 +306,16 @@ namespace MMT.Properties {
         internal static System.Drawing.Bitmap Img_GameScreen_message {
             get {
                 object obj = ResourceManager.GetObject("Img_GameScreen_message", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_GameScreen_message1 {
+            get {
+                object obj = ResourceManager.GetObject("Img_GameScreen_message1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -172,6 +172,18 @@
   <data name="Img_char_Zombie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_char_Zombie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Img_GameScreen_attr1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_GameScreen_attr1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_GameScreen_attr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_GameScreen_attr2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_GameScreen_attr3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_GameScreen_attr3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_GameScreen_attr4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_GameScreen_attr4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_GameScreen_attribute" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_GameScreen_attribute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -179,6 +191,9 @@
     <value>..\Data\Image\Img_GameScreen_inventory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_GameScreen_message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Image\Img_GameScreen_message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_GameScreen_message1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Image\Img_GameScreen_message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_ground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
