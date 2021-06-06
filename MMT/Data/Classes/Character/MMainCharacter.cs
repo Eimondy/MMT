@@ -66,24 +66,11 @@ namespace MMT.Data.Classes.Character
             this.ExpToLevelUp = Convert.ToByte(this.Level + 10);
 
             // 主角技能的初始化包含所有技能
-            this.Skills = new List<MSkill>();
-            CBeat cBeat = new CBeat();
-            Skills.Add(cBeat);                  //skill0
-            CExtinctRoar cExtinctRoar = new CExtinctRoar();
-            Skills.Add(cExtinctRoar);           //skill1
-            CFragmentImpact cFragmentImpact = new CFragmentImpact();
-            Skills.Add(cFragmentImpact);        //skill2
-            CFrustrated cFrustrated = new CFrustrated();
-            Skills.Add(cFrustrated);            //skill3
-            CGodShine cGodShine = new CGodShine();
-            Skills.Add(cGodShine);              //skill4
-            CGodStrick cGodStrick = new CGodStrick();
-            Skills.Add(cGodStrick);             //skill5
-            CStrongAbsorption cStrongAbsorption = new CStrongAbsorption();
-            Skills.Add(cStrongAbsorption);      //skill6
-            CTreat cTreat = new CTreat();
-            Skills.Add(cTreat);                 //skill7
-
+            this.Skills = new List<MSkill>()
+            {
+                new CBeat(), new CExtinctRoar(), new CFragmentImpact(), new CFrustrated(),
+                new CGodShine(), new CGodStrick(), new CStrongAbsorption(), new CTreat()
+            };
         }
 
         //带参数的完全构造函数,注意x,y坐标，level,exp为byte类型
@@ -218,7 +205,7 @@ namespace MMT.Data.Classes.Character
                         { LocationY += 1; Image = Properties.Resources.Img_char_right; }
                     break;
             }
-            Shell.WriteLine(string.Format("玩家位于：({0},{1})", LocationX, LocationY), ConsoleColor.Green);
+            //Shell.WriteLine(string.Format("玩家位于：({0},{1})", LocationX, LocationY), ConsoleColor.Green);
         }
     }
 }
