@@ -201,7 +201,7 @@ namespace MMT
                         Thread.Sleep(100);
                         i++;
                     }
-                    // 根据AttackChoice来进行攻击操作
+                    // 根据AttackChoice来进行攻击操作。0为普通攻击
                     if (MMainCharacter.Instance.AttackChoice != 0 && MMainCharacter.Instance.AttackChoice != 255)     // 技能攻击
                     {
                         //Shell.WriteLine(string.Format("使用{0}进行攻击", MMainCharacter.Instance.Skills[MMainCharacter.Instance.AttackChoice - 1].Name), ConsoleColor.Green);
