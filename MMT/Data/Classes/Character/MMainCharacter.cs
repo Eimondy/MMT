@@ -68,8 +68,8 @@ namespace MMT.Data.Classes.Character
             // 主角技能的初始化包含所有技能
             this.Skills = new List<MSkill>()
             {
-                new CBeat(), new CExtinctRoar(), new CFragmentImpact(), new CFrustrated(),
-                new CGodShine(), new CGodStrick(), new CStrongAbsorption(), new CTreat()
+                new CBeat(), new CFrustrated(), new CTreat(), new CStrongAbsorption(),
+                new CExtinctRoar(), new CFragmentImpact(), new CGodStrick(), new CGodShine()
             };
         }
 
