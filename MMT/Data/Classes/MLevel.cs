@@ -85,7 +85,12 @@ namespace MMT.Data.Classes
                     // 添加物品
                     else if (mapBlock.IsProperty())
                     {
-                        int index = (int)mapBlock - 51;
+                        int index;
+                        if ((int)mapBlock > 60)
+                            index = (int)mapBlock - 61 + 7;
+                        else
+                            index = (int)mapBlock - 51;
+                        
                         Type itemType = GENERATOR.ITEMS[index];
                         System.Reflection.ConstructorInfo constructor = itemType.GetConstructor(new Type[2] { Type.GetType("System.Byte"), Type.GetType("System.Byte") });
                         Items.Add((MItem)Convert.ChangeType(constructor.Invoke(new object[2] { x, y }), itemType));
