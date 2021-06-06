@@ -157,7 +157,6 @@ namespace MMT
         {
             Shell.WriteLine("进入战斗", ConsoleColor.Black);
             Combat = true;
-            bool fightOver = false;
             // 与窗体通信，显示战斗界面
             MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.ShowCombatMenu), new object[1] { new object[1] { enemy } });
             // 比较速度判出先后手
@@ -170,7 +169,7 @@ namespace MMT
             MMainCharacter.Instance.HP = MMainCharacter.Instance.MaxHP;
             MMainCharacter.Instance.MP = MMainCharacter.Instance.MaxMP;
             MMainCharacter.Instance.Power = MMainCharacter.Instance.MaxPower;
-            while (!fightOver)
+            while (Combat)
             {
                 // 与从窗体通信，告知目前哪些技能可用
                 object[] choice = new object[MMainCharacter.Instance.Skills.Count];
@@ -226,7 +225,7 @@ namespace MMT
                         MLevel.Levels[MLevel.CurrentLevel - 1].Enemies.Remove(enemy);
                         // 更新GameProfile
                         CurrentProfile.DefeatedCount++;
-                        fightOver = true;
+                        Combat = false;
                     }
                     // 切换轮次
                     currentOne = enemy;
@@ -247,13 +246,13 @@ namespace MMT
                         enemy.HP = enemy.MaxHP;
                         enemy.MP = enemy.MaxMP;
                         enemy.Power = enemy.MaxPower;
-                        fightOver = true;
+                        Combat = false;
                     }
                     // 切换轮次
                     currentOne = MMainCharacter.Instance;
                 }
             }
-            Combat = false;
+            // 关闭战斗界面
             MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.CloseCombatMenu));
             // 若主角战败，则调用DefeatedMode()
             if (MMainCharacter.Instance.HP <= 0)
