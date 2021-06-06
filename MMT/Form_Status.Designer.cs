@@ -164,8 +164,7 @@ namespace MMT
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = global::MMT.Properties.Resources.Img_GameScreen_attribute;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImage = global::MMT.Properties.Resources.Img_GameScreen_attr1;
             this.ClientSize = new System.Drawing.Size(384, 640);
             this.Controls.Add(this.picturebox_BackColor);
             this.Controls.Add(this.lbl_FloorNum);

@@ -20,14 +20,9 @@ namespace MMT
             InitializeComponent();
         }
 
-        private void btn_StopGame_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         public void Form_Status_Load(object sender, EventArgs e)
         {
-            this.lbl_FloorNum.Text = "——" + (MLevel.CurrentLevel + 1).ToString() + "——"; //不+1不太对劲的亚子
+            this.lbl_FloorNum.Text = "——" + MLevel.CurrentLevel.ToString() + "——";
             this.lbl_MpShow.Text = "法力值：" + MMainCharacter.Instance.MaxMP;
             this.lbl_HpShow.Text = "生命值：" + MMainCharacter.Instance.MaxHP;
             this.lbl_PowerShow.Text = "力量值：" + MMainCharacter.Instance.Power;
