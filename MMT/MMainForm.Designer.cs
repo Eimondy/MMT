@@ -29,12 +29,13 @@ namespace MMT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MMainForm));
+            this.Picturebox_Map = new System.Windows.Forms.PictureBox();
             this.Picturebox_MainMenu = new System.Windows.Forms.PictureBox();
             this.btn_MainMenu_Exit = new System.Windows.Forms.Button();
             this.btn_MainMenu_Load = new System.Windows.Forms.Button();
             this.btn_MainMenu_Start = new System.Windows.Forms.Button();
             this.lbl_MainMenu_MagicTower = new System.Windows.Forms.Label();
-            this.Picturebox_Map = new System.Windows.Forms.PictureBox();
             this.PictureBox_Inventory = new System.Windows.Forms.PictureBox();
             this.groupBox_Equipped = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,14 +76,23 @@ namespace MMT
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.listBox_Message = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).BeginInit();
             this.Picturebox_MainMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Inventory)).BeginInit();
             this.PictureBox_Inventory.SuspendLayout();
             this.groupBox_Equipped.SuspendLayout();
             this.groupBox_Inventory.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Picturebox_Map
+            // 
+            this.Picturebox_Map.Location = new System.Drawing.Point(384, 0);
+            this.Picturebox_Map.Name = "Picturebox_Map";
+            this.Picturebox_Map.Size = new System.Drawing.Size(600, 600);
+            this.Picturebox_Map.TabIndex = 7;
+            this.Picturebox_Map.TabStop = false;
+            this.Picturebox_Map.Visible = false;
             // 
             // Picturebox_MainMenu
             // 
@@ -162,19 +172,9 @@ namespace MMT
             this.lbl_MainMenu_MagicTower.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_MainMenu_MagicTower.UseWaitCursor = true;
             // 
-            // Picturebox_Map
-            // 
-            this.Picturebox_Map.Location = new System.Drawing.Point(384, 0);
-            this.Picturebox_Map.Name = "Picturebox_Map";
-            this.Picturebox_Map.Size = new System.Drawing.Size(600, 600);
-            this.Picturebox_Map.TabIndex = 7;
-            this.Picturebox_Map.TabStop = false;
-            this.Picturebox_Map.Visible = false;
-            // 
             // PictureBox_Inventory
             // 
-            this.PictureBox_Inventory.BackgroundImage = global::MMT.Properties.Resources.Img_GameScreen_inventory;
-            this.PictureBox_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PictureBox_Inventory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBox_Inventory.BackgroundImage")));
             this.PictureBox_Inventory.Controls.Add(this.groupBox_Equipped);
             this.PictureBox_Inventory.Controls.Add(this.groupBox_Inventory);
             this.PictureBox_Inventory.Controls.Add(this.listBox_Message);
@@ -595,6 +595,7 @@ namespace MMT
             this.Controls.Add(this.Picturebox_MainMenu);
             this.Controls.Add(this.PictureBox_Inventory);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "MMainForm";
@@ -604,10 +605,10 @@ namespace MMT
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MMainForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).EndInit();
             this.Picturebox_MainMenu.ResumeLayout(false);
             this.Picturebox_MainMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Inventory)).EndInit();
             this.PictureBox_Inventory.ResumeLayout(false);
             this.groupBox_Equipped.ResumeLayout(false);
