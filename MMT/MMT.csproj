@@ -381,5 +381,8 @@
   <ItemGroup>
     <None Include="Data\Image\Img_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Image\Img_BattleForm_back.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
