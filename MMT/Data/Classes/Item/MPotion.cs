@@ -19,8 +19,15 @@ namespace MMT.Data.Classes.Item
         internal ATTRIBUTE Type { get => type; set => type = value; }
 
         //构造方法
-        public MPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public MPotion(byte locationX, byte locationY, string name="") : base(locationX, locationY)
         {
+            Name = name;
+            var info = MMainLogic.Instance.Data["Item"].Where(i => i.Split(',')[0] == Name);
+            foreach (var i in info)
+            {
+                var s = i.Split(',');
+                PromotePoints = double.Parse(s[1]);
+            }
         }
         public override void Interact()
         {
@@ -61,9 +68,8 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class HealthPotion : MPotion
     {
-        public HealthPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public HealthPotion(byte locationX, byte locationY) : base(locationX, locationY, "生命药剂")
         {
-            Name = "生命药剂";
             Image = Properties.Resources.Img_item_HealthPotion;
             PromotePoints = 20;
             Type = ATTRIBUTE.HEALTH;
@@ -73,11 +79,9 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class MagicPotion : MPotion
     {
-        public MagicPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public MagicPotion(byte locationX, byte locationY) : base(locationX, locationY, "法力药剂")
         {
-            Name = "法力药剂";
             Image = Properties.Resources.Img_item_MagicPotion;
-            PromotePoints = 10;
             Type = ATTRIBUTE.MAGIC;
             Description = "使用后主角魔法值+10";
         }
@@ -85,11 +89,9 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class PowerPotion : MPotion
     {
-        public PowerPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public PowerPotion(byte locationX, byte locationY) : base(locationX, locationY, "力量药剂")
         {
-            Name = "力量药剂";
             Image = Properties.Resources.Img_item_PowerPotion;
-            PromotePoints = 8;
             Type = ATTRIBUTE.POWER;
             Description = "使用后主角力量值+8";
         }
@@ -97,11 +99,9 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class ArmorPotion : MPotion
     {
-        public ArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public ArmorPotion(byte locationX, byte locationY) : base(locationX, locationY, "护甲药剂")
         {
-            Name = "护甲药剂";
             Image = Properties.Resources.Img_item_ArmorPotion;
-            PromotePoints = 8;
             Type = ATTRIBUTE.ARMOR;
             Description = "使用后主角护甲值+8";
         }
@@ -109,11 +109,9 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class MagicArmorPotion : MPotion
     {
-        public MagicArmorPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public MagicArmorPotion(byte locationX, byte locationY) : base(locationX, locationY, "魔抗药剂")
         {
-            Name = "魔抗药剂";
             Image=Properties.Resources.Img_item_MagicAntidote;
-            PromotePoints = 8;
             Type = ATTRIBUTE.MAGICARMOR;
             Description = "使用后主角魔抗值+8";
         }
@@ -121,11 +119,9 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class SpeedPotion : MPotion
     {
-        public SpeedPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public SpeedPotion(byte locationX, byte locationY) : base(locationX, locationY, "速度药剂")
         {
-            Name = "速度药剂";
             Image=Properties.Resources.Img_item_SpeedPotion;
-            PromotePoints = 5;
             Type = ATTRIBUTE.SPEED;
             Description = "使用后主角速度值+8";
         }
@@ -133,11 +129,9 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class HitPotion : MPotion
     {
-        public HitPotion(byte locationX, byte locationY) : base(locationX, locationY)
+        public HitPotion(byte locationX, byte locationY) : base(locationX, locationY, "命中药剂")
         {
-            Name = "命中药剂";
             Image=Properties.Resources.Img_item_HitPotion;
-            PromotePoints = 0.1;
             Type = ATTRIBUTE.HITRATE;
             Description = "使用后主角命中率+0.1";
         }
