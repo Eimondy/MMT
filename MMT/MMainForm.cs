@@ -172,10 +172,18 @@ namespace MMT
 
         public void PausedMenu() 
         {
-            Fp.Show();
-            Fp.BringToFront();
-            // 设置位置
-            Fp.Location = new Point((Width - Fp.Width) / 2, (Height - Fp.Height) / 2);
+            Fp.Picturebox_Load_menu.Parent = this.Picturebox_Map;
+            Fp.Picturebox_Load_menu.Show();
+            Fp.Picturebox_Load_menu.Location=new Point((Picturebox_Map.Width - Fp.Width) / 2, (Picturebox_Map.Height - Fp.Height) / 2);
+            /*
+           Fp.Show();
+           Fp.BringToFront();
+           // 设置位置
+           Fp.BackgroundImage = this.Picturebox_Map.Image;
+           Fp.Picturebox_Load_menu.Parent = this.Picturebox_Map;
+           Fp.SendToBack();
+           //Fp.Picturebox_Load_menu.Location = new Point((Width - Fp.Width) / 2, (Height - Fp.Height) / 2);
+           */
         }
 
         public void ShowCombatMenu(object[] enemy) 

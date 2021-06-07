@@ -20,7 +20,7 @@ namespace MMT
         private void btn_Pause_Continue_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.PauseRelease();
-            this.Hide();
+            this.Picturebox_Load_menu.Hide();
         }
 
         private void btn_Pause_Save_Click(object sender, EventArgs e)
@@ -31,18 +31,19 @@ namespace MMT
         private void btn_Pause_Load_Click(object sender, EventArgs e)
         {
             MMainForm.Instance.LoadMenu();
+            this.Picturebox_Load_menu.Hide();
         }
 
         private void btn_Pause_Mainmenu_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.BackToMainMenu();
-            this.Hide();
+            this.Picturebox_Load_menu.Hide();
         }
 
         private void btn_Pause_Exit_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.Exit();
-            this.Hide();
+            this.Picturebox_Load_menu.Hide();
         }
     }
 }

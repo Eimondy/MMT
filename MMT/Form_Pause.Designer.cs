@@ -36,6 +36,9 @@ namespace MMT
             this.btn_Pause_Load = new System.Windows.Forms.Button();
             this.btn_Pause_Mainmenu = new System.Windows.Forms.Button();
             this.btn_Pause_Exit = new System.Windows.Forms.Button();
+            this.Picturebox_Load_menu = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Load_menu)).BeginInit();
+            this.Picturebox_Load_menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Pause
@@ -130,26 +133,40 @@ namespace MMT
             this.btn_Pause_Exit.UseVisualStyleBackColor = true;
             this.btn_Pause_Exit.Click += new System.EventHandler(this.btn_Pause_Exit_Click);
             // 
+            // Picturebox_Load_menu
+            // 
+            this.Picturebox_Load_menu.BackColor = System.Drawing.Color.Transparent;
+            this.Picturebox_Load_menu.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
+            this.Picturebox_Load_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Picturebox_Load_menu.Controls.Add(this.btn_Pause_Exit);
+            this.Picturebox_Load_menu.Controls.Add(this.btn_Pause_Mainmenu);
+            this.Picturebox_Load_menu.Controls.Add(this.btn_Pause_Load);
+            this.Picturebox_Load_menu.Controls.Add(this.btn_Pause_Save);
+            this.Picturebox_Load_menu.Controls.Add(this.btn_Pause_Continue);
+            this.Picturebox_Load_menu.Controls.Add(this.lbl_Pause);
+            this.Picturebox_Load_menu.Location = new System.Drawing.Point(0, 0);
+            this.Picturebox_Load_menu.Name = "Picturebox_Load_menu";
+            this.Picturebox_Load_menu.Size = new System.Drawing.Size(362, 573);
+            this.Picturebox_Load_menu.TabIndex = 6;
+            this.Picturebox_Load_menu.TabStop = false;
+            // 
             // Form_Pause
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(362, 573);
-            this.Controls.Add(this.btn_Pause_Exit);
-            this.Controls.Add(this.btn_Pause_Mainmenu);
-            this.Controls.Add(this.btn_Pause_Load);
-            this.Controls.Add(this.btn_Pause_Save);
-            this.Controls.Add(this.btn_Pause_Continue);
-            this.Controls.Add(this.lbl_Pause);
+            this.Controls.Add(this.Picturebox_Load_menu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(534, 50);
             this.Name = "Form_Pause";
             this.Text = "Form_Pause";
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Load_menu)).EndInit();
+            this.Picturebox_Load_menu.ResumeLayout(false);
+            this.Picturebox_Load_menu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -161,5 +178,6 @@ namespace MMT
         private System.Windows.Forms.Button btn_Pause_Load;
         private System.Windows.Forms.Button btn_Pause_Mainmenu;
         private System.Windows.Forms.Button btn_Pause_Exit;
+        public System.Windows.Forms.PictureBox Picturebox_Load_menu;
     }
 }

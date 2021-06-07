@@ -49,7 +49,7 @@ namespace MMT
             this.lbl_FloorNum.AutoSize = true;
             this.lbl_FloorNum.BackColor = System.Drawing.Color.Transparent;
             this.lbl_FloorNum.Font = new System.Drawing.Font("楷体", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_FloorNum.Location = new System.Drawing.Point(42, 96);
+            this.lbl_FloorNum.Location = new System.Drawing.Point(81, 96);
             this.lbl_FloorNum.Name = "lbl_FloorNum";
             this.lbl_FloorNum.Size = new System.Drawing.Size(291, 48);
             this.lbl_FloorNum.TabIndex = 3;
