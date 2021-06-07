@@ -6,11 +6,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CBeat : MSkill
     {
-        public CBeat()
+        public CBeat():base("拍打")
         {
-            Name = "Beat"; //技能名称
-            Points = 1.2f;//伤害倍数
-            Consumption = 20;//所消耗的对应属性的值
             Type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
             Description = "普通b级物理技能，伤害倍数1.2";//技能描述
         }

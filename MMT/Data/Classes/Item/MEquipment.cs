@@ -17,16 +17,16 @@ namespace MMT.Data.Classes.Item
         private int magic;//法力增值
         private int armor;//护甲增值
         private int magicArmor;//魔抗增值
-        private int speed;//速度增值
-        private float hitRate;//命中率增值
+        private double speed;//速度增值
+        private double hitRate;//命中率增值
         public string Description { get => description; set => description = value; }
         public EQUIPMENT Type { get => type; set => type = value; }
         public int Power { get => power; set => power = value; }
         public int Magic { get => magic; set => magic = value; }
         public int Armor { get => armor; set => armor = value; }
         public int MagicArmor { get => magicArmor; set => magicArmor = value; }
-        public int Speed { get => speed; set => speed = value; }
-        public float HitRate { get => hitRate; set => hitRate = value; }
+        public double Speed { get => speed; set => speed = value; }
+        public double HitRate { get => hitRate; set => hitRate = value; }
         // 穿戴装备，增加属性
         public void Equip()
         {
@@ -48,8 +48,20 @@ namespace MMT.Data.Classes.Item
             MMainCharacter.Instance.Equipped.Remove(this);     // 卸下装备
             MMainCharacter.Instance.PickDownEquipment(this);     // 减少属性
         }
-        public MEquipment(byte locationX, byte locationY) : base(locationX, locationY)
+        public MEquipment(byte locationX, byte locationY, string name = "") : base(locationX, locationY)
         {
+            Name = name;
+            var info = MMainLogic.Instance.Data["Item"].Where(i => i.Split(',')[0] == Name);
+            foreach (var i in info)
+            {
+                var s = i.Split(',');
+                Power = int.Parse(s[1]);
+                Magic = int.Parse(s[2]);
+                Armor = int.Parse(s[3]);
+                MagicArmor = int.Parse(s[4]);
+                Speed = double.Parse(s[5]);
+                HitRate = double.Parse(s[6]);
+            }
         }
         public override void Interact()
         {
@@ -81,196 +93,140 @@ namespace MMT.Data.Classes.Item
     [Serializable]
     public class BlueGem : MEquipment
     {
-        public BlueGem(byte locationX, byte locationY) : base(locationX, locationY)
+        public BlueGem(byte locationX, byte locationY) : base(locationX, locationY, "蓝宝石")
         {
-            Name = "蓝宝石";
             Type = EQUIPMENT.GEM;
             Image = Properties.Resources.Img_item_BlueGem;
-            Armor = 4;
-            MagicArmor = 4;
-            Magic = 10;
             Description = "在魔塔中比较普遍的一种水晶，装备之后能在一定程度上增加主角法力值、护甲和魔抗";
         }       
     }
     [Serializable]
     public class RedGem : MEquipment
     {
-        public RedGem(byte locationX, byte locationY) : base(locationX, locationY)
+        public RedGem(byte locationX, byte locationY) : base(locationX, locationY, "红宝石")
         {
-            Name = "红宝石";
             Type = EQUIPMENT.GEM;
             Image = Properties.Resources.Img_item_RedGem;
-            Power = 5;
-            Speed = 1;
-            HitRate = 0.1f;
             Description = "魔塔中蓝宝石变异而成，装备之后能在一定程度上增长主角力量，速度和命中率";
         }
     }
     [Serializable]
     public class RustySword : MEquipment
     {
-        public RustySword(byte locationX, byte locationY) : base(locationX, locationY)
+        public RustySword(byte locationX, byte locationY) : base(locationX, locationY, "生锈的宝剑")
         {
-            Name = "生锈的宝剑";
             Type = EQUIPMENT.WEAPON;
             Image = Properties.Resources.Img_item_RustySword;
-            Power = 10;
-            HitRate = 0.05f;
             Description = "曾经的冒险者遗失在魔塔中的宝剑，经过岁月的打磨，没有了往日的光辉";
         }
     }
     [Serializable]
     public class RottenStaff : MEquipment
     {
-        public RottenStaff(byte locationX, byte locationY) : base(locationX, locationY)
+        public RottenStaff(byte locationX, byte locationY) : base(locationX, locationY, "腐朽的法杖")
         {
-            Name = "腐朽的法杖";
             Type = EQUIPMENT.WEAPON;
             Image = Properties.Resources.Img_item_RottenStaff;
-            Power = 1;
-            Magic = 15;
-            HitRate = 0.05f;
             Description = "曾经的冒险者遗失在魔塔中的法杖，经过岁月的淘洗，不复当年的威力";
         }
     }
     [Serializable]
     public class SharpSword : MEquipment
     {
-        public SharpSword(byte locationX, byte locationY) : base(locationX, locationY)
+        public SharpSword(byte locationX, byte locationY) : base(locationX, locationY, "锋利的宝剑")
         {
-            Name = "锋利的宝剑";
             Type = EQUIPMENT.WEAPON;
             Image = Properties.Resources.Img_item_SharpSword;
-            Power = 30;
-            HitRate = 0.1f;
             Description = "一把完好锋利的宝剑，冷锋出鞘，刀光逼人";
         }
     }
     [Serializable]
     public class PowerfulStaff : MEquipment
     {
-        public PowerfulStaff(byte locationX, byte locationY) : base(locationX, locationY)
+        public PowerfulStaff(byte locationX, byte locationY) : base(locationX, locationY, "强力的法杖")
         {
-            Name = "强力的法杖";
             Type = EQUIPMENT.WEAPON;
             Image = Properties.Resources.Img_item_PowerfulStaff;
-            Power = 1;
-            Magic = 40;
-            HitRate = 0.1f;
             Description = "一把完好的法杖，光彩焕发，法力依旧";
         }
     }
     [Serializable]
     public class Excalibur : MEquipment
     {
-        public Excalibur(byte locationX, byte locationY) : base(locationX, locationY)
+        public Excalibur(byte locationX, byte locationY) : base(locationX, locationY, "石中剑")
         {
-            Name = "石中剑";
             Type = EQUIPMENT.WEAPON;
             Image = Properties.Resources.Img_item_Excalibur;
-            Power = 50;
-            Magic = 10;
-            Speed = 2;
-            HitRate = 0.2f;
             Description = "传说中为亚瑟王所佩戴的宝剑，不知道为什么出现在这里";
         }
     }
     [Serializable]
     public class MerlinStaff : MEquipment
     {
-        public MerlinStaff(byte locationX, byte locationY) : base(locationX, locationY)
+        public MerlinStaff(byte locationX, byte locationY) : base(locationX, locationY, "梅林的法杖")
         {
-            Name = "梅林的法杖";
             Type = EQUIPMENT.WEAPON;
             Image = Properties.Resources.Img_item_MerlinStaff;
-            Power = 1;
-            Magic = 55;
-            Speed = 2;
-            HitRate = 0.2f;
             Description = "梅林心爱的法杖，可能是在梅林的某次法术中被传送至此";
         }
     }
     [Serializable]
     public class Robe : MEquipment
     {
-        public Robe(byte locationX, byte locationY) : base(locationX, locationY)
+        public Robe(byte locationX, byte locationY) : base(locationX, locationY, "长袍")
         {
-            Name = "长袍";
             Type = EQUIPMENT.UPPER;
             Image=Properties.Resources.Img_item_Robe; 
-            Armor = 10;
-            MagicArmor = 8;
             Description = "随处可见的战士长袍，美观，耐用";
         }
     }
     [Serializable]
     public class Armor : MEquipment
     {
-        public Armor(byte locationX, byte locationY) : base(locationX, locationY)
+        public Armor(byte locationX, byte locationY) : base(locationX, locationY, "铠甲")
         {
-            Name = "铠甲";
             Type = EQUIPMENT.UPPER;
             Image = Properties.Resources.Img_item_Armor;
-            Armor = 30;
-            MagicArmor = 25;
             Description = "具有很强实用性的盔甲，战士的必备用品";
         }
     }
     [Serializable]
     public class OverlordArmor : MEquipment
     {
-        public OverlordArmor(byte locationX, byte locationY) : base(locationX, locationY)
+        public OverlordArmor(byte locationX, byte locationY) : base(locationX, locationY, "霸王甲胄")
         {
-            Name = "霸王甲胄";
             Type = EQUIPMENT.UPPER;
             Image =Properties.Resources.Img_item_OverlordArmor ;
-            Power = 5;
-            Magic = 10;
-            Armor = 50;
-            MagicArmor = 40;
-            Speed = 1;
-            HitRate = 0.1f;
             Description = "不死王的铠甲，只存在于典籍之中";
         }
     }
     [Serializable]
     public class StrawSandals : MEquipment
     {
-        public StrawSandals(byte locationX, byte locationY) : base(locationX, locationY)
+        public StrawSandals(byte locationX, byte locationY) : base(locationX, locationY, "草鞋")
         {
-            Name = "草鞋";
             Type = EQUIPMENT.SHOES;
             Image = Properties.Resources.Img_item_StrawSandals;
-            Speed = 1;
-            HitRate = 0.05f;
             Description = "用最普通的芦苇编制的草鞋，方便耐磨";
         }
     }
     [Serializable]
     public class LongShoes : MEquipment
     {
-        public LongShoes(byte locationX, byte locationY) : base(locationX, locationY)
+        public LongShoes(byte locationX, byte locationY) : base(locationX, locationY, "长筒靴")
         {
-            Name = "长筒靴";
             Type = EQUIPMENT.SHOES;
             Image = Properties.Resources.Img_item_LongShoes;
-            Speed = 2;
-            HitRate = 0.1f;
             Description = "少见的昂贵的长筒鞋";
         }
     }
     [Serializable]
     public class Legend : MEquipment
     {
-        public Legend(byte locationX, byte locationY) : base(locationX, locationY)
+        public Legend(byte locationX, byte locationY) : base(locationX, locationY, "传说")
         {
-            Name = "传说";
             Type = EQUIPMENT.WEAPON;
             Image =Properties.Resources.Img_item_Legend;
-            Power = 999;
-            Magic = 999;
-            Speed = 99;
-            HitRate = 1;
             Description = "这只不过是传说而已";
         }
     }
