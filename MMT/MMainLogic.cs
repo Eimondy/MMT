@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Data.Common;
 using System.Windows.Forms;
 using MMT.Data.Classes;
 using MMT.Data.Classes.Character;
@@ -30,6 +31,7 @@ namespace MMT
         private bool keyboardInput = false;
         private Keys keyboardData;
         private string defeatedEnemy;
+        private Dictionary<string, List<string>> data = new Dictionary<string, List<string>>();
         public static MMainLogic Instance
         {
             get
@@ -54,6 +56,7 @@ namespace MMT
         public bool KeyboardInput { get { return keyboardInput; } set { keyboardInput = value; } }
         public Keys KeyboardData { get { return keyboardData; } set { keyboardData = value; } }
         public string DefeatedEnemy { get { return defeatedEnemy; } set { defeatedEnemy = value; } }
+        public Dictionary<string, List<string>> Data { get { return data; } }
 
         public MMainLogic()
         {
@@ -73,6 +76,35 @@ namespace MMT
                 fs = new FileStream(file, FileMode.Open);
                 Saves.Add((MGameProfile)bf.Deserialize(fs));
             }
+            // 读取数据文件
+            /*
+            List<string> Characters = new List<string>();
+            List<string> Items = new List<string>();
+            List<string> Skills = new List<string>();
+            string path = @"..\..\Data\";
+            string[] names = { "Characters.csv", "Items.csv", "Skills.csv" };
+            StreamReader sr;
+            foreach (var s in names)
+            {
+                sr = new StreamReader(path + s);
+                while (!sr.EndOfStream)
+                    switch (s)
+                    {
+                        case "Characters.csv":
+                            Characters.Add(sr.ReadLine());
+                            break;
+                        case "Items.csv":
+                            Items.Add(sr.ReadLine());
+                            break;
+                        case "Skills.csv":
+                            Skills.Add(sr.ReadLine());
+                            break;
+                    }
+            }
+            Data.Add("Character", Characters);
+            Data.Add("Item", Items);
+            Data.Add("Skill", Skills);
+            */
         }
 
         public void GameOver()
