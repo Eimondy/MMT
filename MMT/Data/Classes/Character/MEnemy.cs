@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using MMT.Data.Classes.Skill;
 using MMT.Data.Classes;
@@ -18,6 +19,22 @@ namespace MMT.Data.Classes.Character
         {
             LocationX = x;
             LocationY = y;
+            /*
+            var info = MMainLogic.Instance.Data["Character"].Where(s => s.Split(',')[0] == Name);
+            foreach(var i in info)
+            {
+                var s = i.Split(',');
+                MaxHP = HP = Convert.ToInt32(s[1]);
+                MaxMP = MP = Convert.ToInt32(s[2]); ;
+                MaxPower = Power = Convert.ToInt32(s[31]);
+                Armor = Convert.ToInt32(s[4]);
+                MagicArmor = Convert.ToInt32(s[5]);
+                Speed = Convert.ToDouble(s[6]);
+                HitRate = Convert.ToDouble(s[7]);
+                AvoidRate = Convert.ToDouble(s[8]);
+                Exp = Convert.ToByte(s[9]);
+            }
+            */
         }
     }
 
