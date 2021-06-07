@@ -77,7 +77,6 @@ namespace MMT
                 Saves.Add((MGameProfile)bf.Deserialize(fs));
             }
             // 读取数据文件
-            /*
             List<string> Characters = new List<string>();
             List<string> Items = new List<string>();
             List<string> Skills = new List<string>();
@@ -86,7 +85,7 @@ namespace MMT
             StreamReader sr;
             foreach (var s in names)
             {
-                sr = new StreamReader(path + s);
+                sr = new StreamReader(path + s,Encoding.GetEncoding("gb2312"));
                 while (!sr.EndOfStream)
                     switch (s)
                     {
@@ -100,11 +99,11 @@ namespace MMT
                             Skills.Add(sr.ReadLine());
                             break;
                     }
+                sr.Close();
             }
             Data.Add("Character", Characters);
             Data.Add("Item", Items);
             Data.Add("Skill", Skills);
-            */
         }
 
         public void GameOver()
