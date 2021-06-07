@@ -158,7 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Level\" />
-    <Folder Include="Data\Sound\" />
     <Folder Include="Resources\" />
     <Folder Include="Saves\" />
   </ItemGroup>
@@ -383,6 +382,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Image\Img_BattleForm_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Sound\Walk1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Sound\Walk2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Sound\Walk3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Sound\Walk4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Sound\Walk5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Sound\Walk6.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

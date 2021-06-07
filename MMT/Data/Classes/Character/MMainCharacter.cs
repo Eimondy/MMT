@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Media;
 using MMT.Data.Classes.Item;
 using MMT.Data.Classes.Skill;
 using MMT.Data.Classes;
@@ -205,6 +206,30 @@ namespace MMT.Data.Classes.Character
                         { LocationY += 1; Image = Properties.Resources.Img_char_right; }
                     break;
             }
+            // 播放走路音效
+            SoundPlayer sp = new SoundPlayer();
+            switch((new Random()).Next(1, 7))
+            {
+                case 1:
+                    sp.Stream = Properties.Resources.Walk1;
+                    break;
+                case 2:
+                    sp.Stream = Properties.Resources.Walk2;
+                    break;
+                case 3:
+                    sp.Stream = Properties.Resources.Walk3;
+                    break;
+                case 4:
+                    sp.Stream = Properties.Resources.Walk4;
+                    break;
+                case 5:
+                    sp.Stream = Properties.Resources.Walk5;
+                    break;
+                case 6:
+                    sp.Stream = Properties.Resources.Walk6;
+                    break;
+            }
+            sp.Play();
             //Shell.WriteLine(string.Format("玩家位于：({0},{1})", LocationX, LocationY), ConsoleColor.Green);
         }
     }

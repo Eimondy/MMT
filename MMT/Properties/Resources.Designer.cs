@@ -799,5 +799,59 @@ namespace MMT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Walk1 {
+            get {
+                return ResourceManager.GetStream("Walk1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Walk2 {
+            get {
+                return ResourceManager.GetStream("Walk2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Walk3 {
+            get {
+                return ResourceManager.GetStream("Walk3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Walk4 {
+            get {
+                return ResourceManager.GetStream("Walk4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Walk5 {
+            get {
+                return ResourceManager.GetStream("Walk5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Walk6 {
+            get {
+                return ResourceManager.GetStream("Walk6", resourceCulture);
+            }
+        }
     }
 }
