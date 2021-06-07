@@ -29,6 +29,18 @@ namespace MMT.Data.Classes.Skill
         public string Description { get => description; set => description = value; }
 
         //技能使用
+        public MSkill(string name = "")
+        {
+            Name = name;
+            var info = MMainLogic.Instance.Data["Character"].Where(s => s.Split(',')[0] == Name);
+            foreach (var i in info)
+            {
+                var s = i.Split(',');
+                Points = double.Parse(s[1]);
+                Consumption = int.Parse(s[2]);
+            }
+        }
+
        public virtual bool Activate(MCharacter user, MCharacter enemy)
         {
             // 若可以使用技能，则减少相应的HP/Power
@@ -48,11 +60,6 @@ namespace MMT.Data.Classes.Skill
                     user.MP -= Consumption;
                     return true;
                 }
-        }
-
-        //构造方法
-        public MSkill()
-        {
         }
     }
 }
