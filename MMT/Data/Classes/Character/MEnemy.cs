@@ -15,18 +15,20 @@ namespace MMT.Data.Classes.Character
         public string Description { get { return description; } set { description = value; } }
         public MONSTER MonsterType { get { return monstertype; } set { monstertype = value; } }
         //敌人位置的初始化
-        public MEnemy(byte x,byte y)
+        public MEnemy(byte x,byte y, string n="")
         {
             LocationX = x;
             LocationY = y;
-            /*
+            Name = n;
+            
             var info = MMainLogic.Instance.Data["Character"].Where(s => s.Split(',')[0] == Name);
-            foreach(var i in info)
+            //var test = MMainLogic.Instance.Data["Character"][0].Split(',')[0];
+            foreach (var i in info)
             {
                 var s = i.Split(',');
                 MaxHP = HP = Convert.ToInt32(s[1]);
-                MaxMP = MP = Convert.ToInt32(s[2]); ;
-                MaxPower = Power = Convert.ToInt32(s[31]);
+                MaxMP = MP = Convert.ToInt32(s[2]);
+                MaxPower = Power = Convert.ToInt32(s[3]);
                 Armor = Convert.ToInt32(s[4]);
                 MagicArmor = Convert.ToInt32(s[5]);
                 Speed = Convert.ToDouble(s[6]);
@@ -34,7 +36,6 @@ namespace MMT.Data.Classes.Character
                 AvoidRate = Convert.ToDouble(s[8]);
                 Exp = Convert.ToByte(s[9]);
             }
-            */
         }
     }
 
@@ -43,20 +44,10 @@ namespace MMT.Data.Classes.Character
     {
         //构造函数
 
-        public GreenSlim(byte x,byte y) : base(x, y)
+        public GreenSlim(byte x,byte y) : base(x, y, "绿色史莱姆")
         {
-            Name = "绿色史莱姆";
             Image = Properties.Resources.Img_char_GreenSlim;     
             MonsterType = MONSTER.ORDINARY;
-            MaxHP = HP = 24;
-            MaxMP = MP = 0;
-            MaxPower = Power = 16;
-            Armor = 1;
-            MagicArmor = 0;
-            Speed = 0;
-            HitRate = 0.6;
-            AvoidRate = 0.9;
-            Exp = 1;
             Description = "迷宫中随处可见的小型生物，只有低级智能";
 
             //绿色史莱姆只装备了Oattack;
