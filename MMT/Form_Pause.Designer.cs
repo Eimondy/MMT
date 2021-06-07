@@ -29,6 +29,7 @@ namespace MMT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Pause));
             this.lbl_Pause = new System.Windows.Forms.Label();
             this.btn_Pause_Continue = new System.Windows.Forms.Button();
             this.btn_Pause_Save = new System.Windows.Forms.Button();
@@ -40,8 +41,10 @@ namespace MMT
             // lbl_Pause
             // 
             this.lbl_Pause.AutoSize = true;
+            this.lbl_Pause.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Pause.Font = new System.Drawing.Font("幼圆", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Pause.Location = new System.Drawing.Point(45, 25);
+            this.lbl_Pause.ForeColor = System.Drawing.Color.White;
+            this.lbl_Pause.Location = new System.Drawing.Point(74, 130);
             this.lbl_Pause.Name = "lbl_Pause";
             this.lbl_Pause.Size = new System.Drawing.Size(212, 48);
             this.lbl_Pause.TabIndex = 0;
@@ -49,8 +52,13 @@ namespace MMT
             // 
             // btn_Pause_Continue
             // 
-            this.btn_Pause_Continue.Font = new System.Drawing.Font("幼圆", 18F);
-            this.btn_Pause_Continue.Location = new System.Drawing.Point(29, 94);
+            this.btn_Pause_Continue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Pause_Continue.BackgroundImage")));
+            this.btn_Pause_Continue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pause_Continue.FlatAppearance.BorderSize = 0;
+            this.btn_Pause_Continue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pause_Continue.Font = new System.Drawing.Font("幼圆", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Pause_Continue.ForeColor = System.Drawing.Color.White;
+            this.btn_Pause_Continue.Location = new System.Drawing.Point(58, 199);
             this.btn_Pause_Continue.Name = "btn_Pause_Continue";
             this.btn_Pause_Continue.Size = new System.Drawing.Size(246, 51);
             this.btn_Pause_Continue.TabIndex = 1;
@@ -60,8 +68,13 @@ namespace MMT
             // 
             // btn_Pause_Save
             // 
-            this.btn_Pause_Save.Font = new System.Drawing.Font("幼圆", 18F);
-            this.btn_Pause_Save.Location = new System.Drawing.Point(29, 164);
+            this.btn_Pause_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Pause_Save.BackgroundImage")));
+            this.btn_Pause_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pause_Save.FlatAppearance.BorderSize = 0;
+            this.btn_Pause_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pause_Save.Font = new System.Drawing.Font("幼圆", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Pause_Save.ForeColor = System.Drawing.Color.White;
+            this.btn_Pause_Save.Location = new System.Drawing.Point(58, 269);
             this.btn_Pause_Save.Name = "btn_Pause_Save";
             this.btn_Pause_Save.Size = new System.Drawing.Size(246, 51);
             this.btn_Pause_Save.TabIndex = 2;
@@ -71,8 +84,13 @@ namespace MMT
             // 
             // btn_Pause_Load
             // 
-            this.btn_Pause_Load.Font = new System.Drawing.Font("幼圆", 18F);
-            this.btn_Pause_Load.Location = new System.Drawing.Point(29, 234);
+            this.btn_Pause_Load.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Pause_Load.BackgroundImage")));
+            this.btn_Pause_Load.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pause_Load.FlatAppearance.BorderSize = 0;
+            this.btn_Pause_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pause_Load.Font = new System.Drawing.Font("幼圆", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Pause_Load.ForeColor = System.Drawing.Color.White;
+            this.btn_Pause_Load.Location = new System.Drawing.Point(58, 339);
             this.btn_Pause_Load.Name = "btn_Pause_Load";
             this.btn_Pause_Load.Size = new System.Drawing.Size(246, 51);
             this.btn_Pause_Load.TabIndex = 3;
@@ -82,8 +100,13 @@ namespace MMT
             // 
             // btn_Pause_Mainmenu
             // 
-            this.btn_Pause_Mainmenu.Font = new System.Drawing.Font("幼圆", 18F);
-            this.btn_Pause_Mainmenu.Location = new System.Drawing.Point(29, 304);
+            this.btn_Pause_Mainmenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Pause_Mainmenu.BackgroundImage")));
+            this.btn_Pause_Mainmenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pause_Mainmenu.FlatAppearance.BorderSize = 0;
+            this.btn_Pause_Mainmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pause_Mainmenu.Font = new System.Drawing.Font("幼圆", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Pause_Mainmenu.ForeColor = System.Drawing.Color.White;
+            this.btn_Pause_Mainmenu.Location = new System.Drawing.Point(58, 409);
             this.btn_Pause_Mainmenu.Name = "btn_Pause_Mainmenu";
             this.btn_Pause_Mainmenu.Size = new System.Drawing.Size(246, 51);
             this.btn_Pause_Mainmenu.TabIndex = 4;
@@ -93,8 +116,13 @@ namespace MMT
             // 
             // btn_Pause_Exit
             // 
-            this.btn_Pause_Exit.Font = new System.Drawing.Font("幼圆", 18F);
-            this.btn_Pause_Exit.Location = new System.Drawing.Point(29, 374);
+            this.btn_Pause_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Pause_Exit.BackgroundImage")));
+            this.btn_Pause_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pause_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Pause_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pause_Exit.Font = new System.Drawing.Font("幼圆", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Pause_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Pause_Exit.Location = new System.Drawing.Point(58, 479);
             this.btn_Pause_Exit.Name = "btn_Pause_Exit";
             this.btn_Pause_Exit.Size = new System.Drawing.Size(246, 51);
             this.btn_Pause_Exit.TabIndex = 5;
@@ -106,13 +134,16 @@ namespace MMT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 450);
+            this.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(362, 573);
             this.Controls.Add(this.btn_Pause_Exit);
             this.Controls.Add(this.btn_Pause_Mainmenu);
             this.Controls.Add(this.btn_Pause_Load);
             this.Controls.Add(this.btn_Pause_Save);
             this.Controls.Add(this.btn_Pause_Continue);
             this.Controls.Add(this.lbl_Pause);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(534, 50);
             this.Name = "Form_Pause";

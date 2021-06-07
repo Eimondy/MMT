@@ -36,18 +36,24 @@ namespace MMT
             // lbl_Win
             // 
             this.lbl_Win.AutoSize = true;
-            this.lbl_Win.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Win.Location = new System.Drawing.Point(91, 68);
+            this.lbl_Win.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Win.Font = new System.Drawing.Font("幼圆", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Win.ForeColor = System.Drawing.Color.White;
+            this.lbl_Win.Location = new System.Drawing.Point(74, 98);
             this.lbl_Win.Name = "lbl_Win";
-            this.lbl_Win.Size = new System.Drawing.Size(411, 62);
+            this.lbl_Win.Size = new System.Drawing.Size(311, 35);
             this.lbl_Win.TabIndex = 0;
             this.lbl_Win.Text = "恭喜你击败了魔王";
             // 
             // btn_Win
             // 
+            this.btn_Win.BackgroundImage = global::MMT.Properties.Resources.Img_button;
+            this.btn_Win.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Win.FlatAppearance.BorderSize = 0;
+            this.btn_Win.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Win.Font = new System.Drawing.Font("微软雅黑", 20F);
             this.btn_Win.ForeColor = System.Drawing.Color.White;
-            this.btn_Win.Location = new System.Drawing.Point(143, 163);
+            this.btn_Win.Location = new System.Drawing.Point(82, 174);
             this.btn_Win.Name = "btn_Win";
             this.btn_Win.Size = new System.Drawing.Size(292, 63);
             this.btn_Win.TabIndex = 1;
@@ -59,13 +65,18 @@ namespace MMT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 300);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(450, 300);
             this.Controls.Add(this.btn_Win);
             this.Controls.Add(this.lbl_Win);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(384, 80);
             this.Name = "Form_Win";
             this.Text = "Form_Win";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.ResumeLayout(false);
             this.PerformLayout();
 

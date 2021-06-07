@@ -31,6 +31,7 @@ namespace MMT
             this.lbl_SpeedShow.Text = "速度：" + MMainCharacter.Instance.Speed;
             this.lbl_HitRateShow.Text = "命中率：" + MMainCharacter.Instance.HitRate;
             this.lbl_LevelShow.Text = "等级：" + MMainCharacter.Instance.Level;
+            this.lbl_Name.Text = "名称：" + MMainCharacter.Instance.Name;
         }
     }
 }

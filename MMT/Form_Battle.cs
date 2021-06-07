@@ -16,7 +16,9 @@ namespace MMT
     public partial class Form_Battle : Form
     {
         private List<Button> btns;
+        private MEnemy curEnemy;
         public List<Button> Btns { get => btns; }
+        public MEnemy CurEnemy { get => curEnemy; }
         public Form_Battle(object o)
         {
             InitializeComponent();
@@ -43,29 +45,43 @@ namespace MMT
             //this.TransparencyKey = Color.Red;
             //this.BackColor = Color.Red;
             // 数值调整
-            this.lbl_Battle_name1.Text = MMainCharacter.Instance.Name;
-            this.lbl_Battle_Mp1.Text = "法力值：" + MMainCharacter.Instance.MP;
-            this.lbl_Battle_Hp1.Text = "生命值：" + MMainCharacter.Instance.HP;
-            this.lbl_Battle_Level1.Text = "等级：" + MMainCharacter.Instance.Level;
-            this.lbl_Battle_Armor1.Text = "护甲：" + MMainCharacter.Instance.Armor;
-            this.lbl_Battle_MagicArmor1.Text = "魔抗：" + MMainCharacter.Instance.MagicArmor;
-            this.lbl_Battle_Speed1.Text = "速度：" + MMainCharacter.Instance.Speed;
-            this.lbl_Battle_Hitrate1.Text = string.Format("命中率：{0:F1}" , MMainCharacter.Instance.HitRate);
-            this.lbl_Battle_Power1.Text = "力量：" + MMainCharacter.Instance.Power;
-            MEnemy enemy = o as MEnemy;
-            this.lbl_Battle_name2.Text = enemy.Name;
-            this.lbl_Battle_Mp2.Text = "法力值：" + enemy.MP;
-            this.lbl_Battle_Hp2.Text = "生命值：" + enemy.HP;
-            this.lbl_Battle_Level2.Text = "等级：" + enemy.Level;
-            this.lbl_Battle_Armor2.Text = "护甲：" + enemy.Armor;
-            this.lbl_Battle_MagicArmor2.Text = "魔抗：" + enemy.MagicArmor;
-            this.lbl_Battle_Speed2.Text = "速度：" + enemy.Speed;
-            this.lbl_Battle_Hitrate2.Text = string.Format("命中率：{0:F1}", enemy.HitRate);
-            this.lbl_Battle_Power2.Text = "力量：" + enemy.Power;
+            curEnemy = o as MEnemy;
+            SetLable(MMainCharacter.Instance);
+            SetLable(CurEnemy);
+        }
+
+        public void SetLable(MCharacter character)
+        {
+            if (character is MMainCharacter)
+            {
+                this.lbl_Battle_name1.Text = character.Name;
+                this.lbl_Battle_Mp1.Text = "法力值：" + character.MP;
+                this.lbl_Battle_Hp1.Text = "生命值：" + character.HP;
+                this.lbl_Battle_Level1.Text = "等级：" + character.Level;
+                this.lbl_Battle_Armor1.Text = "护甲：" + character.Armor;
+                this.lbl_Battle_MagicArmor1.Text = "魔抗：" + character.MagicArmor;
+                this.lbl_Battle_Speed1.Text = "速度：" + character.Speed;
+                this.lbl_Battle_Hitrate1.Text = string.Format("命中率：{0:F1}", character.HitRate);
+                this.lbl_Battle_Power1.Text = "力量：" + character.Power;
+            }
+            else
+            {
+                this.lbl_Battle_name2.Text = character.Name;
+                this.lbl_Battle_Mp2.Text = "法力值：" + character.MP;
+                this.lbl_Battle_Hp2.Text = "生命值：" + character.HP;
+                this.lbl_Battle_Level2.Text = "等级：" + character.Level;
+                this.lbl_Battle_Armor2.Text = "护甲：" + character.Armor;
+                this.lbl_Battle_MagicArmor2.Text = "魔抗：" + character.MagicArmor;
+                this.lbl_Battle_Speed2.Text = "速度：" + character.Speed;
+                this.lbl_Battle_Hitrate2.Text = string.Format("命中率：{0:F1}", character.HitRate);
+                this.lbl_Battle_Power2.Text = "力量：" + character.Power;
+            }
         }
 
         public void UpdateCombatMenu(object[] choice)
         {
+            SetLable(MMainCharacter.Instance);
+            SetLable(CurEnemy);
             for (int i = 0; i < choice.Length; i++)
             {
                 if (Convert.ToBoolean(choice[i]))

@@ -69,13 +69,13 @@ namespace MMT
             this.Table_Load.AutoScroll = true;
             this.Table_Load.BackColor = System.Drawing.Color.Transparent;
             this.Table_Load.ColumnCount = 2;
-            this.Table_Load.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.Table_Load.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 424F));
+            this.Table_Load.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.Table_Load.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 411F));
             this.Table_Load.Location = new System.Drawing.Point(155, 94);
             this.Table_Load.Name = "Table_Load";
             this.Table_Load.RowCount = 1;
             this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 222F));
-            this.Table_Load.Size = new System.Drawing.Size(494, 222);
+            this.Table_Load.Size = new System.Drawing.Size(511, 222);
             this.Table_Load.TabIndex = 2;
             this.Table_Load.Paint += new System.Windows.Forms.PaintEventHandler(this.Table_Load_Paint);
             // 

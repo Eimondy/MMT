@@ -38,43 +38,43 @@ namespace MMT
             this.lbl_MainMenu_MagicTower = new System.Windows.Forms.Label();
             this.PictureBox_Inventory = new System.Windows.Forms.PictureBox();
             this.groupBox_Equipped = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_equipped_4 = new System.Windows.Forms.Label();
+            this.equipped_4 = new System.Windows.Forms.Button();
+            this.lbl_equipped_3 = new System.Windows.Forms.Label();
+            this.equipped_3 = new System.Windows.Forms.Button();
+            this.lbl_equipped_2 = new System.Windows.Forms.Label();
+            this.equipped_2 = new System.Windows.Forms.Button();
+            this.lbl_equipped_1 = new System.Windows.Forms.Label();
+            this.equipped_1 = new System.Windows.Forms.Button();
             this.groupBox_Inventory = new System.Windows.Forms.GroupBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.equipment_28 = new System.Windows.Forms.Button();
+            this.equipment_27 = new System.Windows.Forms.Button();
+            this.bequipment_26 = new System.Windows.Forms.Button();
+            this.equipment_25 = new System.Windows.Forms.Button();
+            this.equipment_24 = new System.Windows.Forms.Button();
+            this.equipment_23 = new System.Windows.Forms.Button();
+            this.equipment_22 = new System.Windows.Forms.Button();
+            this.equipment_21 = new System.Windows.Forms.Button();
+            this.equipment_20 = new System.Windows.Forms.Button();
+            this.equipment_19 = new System.Windows.Forms.Button();
+            this.equipment_18 = new System.Windows.Forms.Button();
+            this.equipment_17 = new System.Windows.Forms.Button();
+            this.equipment_16 = new System.Windows.Forms.Button();
+            this.equipment_15 = new System.Windows.Forms.Button();
+            this.equipment_14 = new System.Windows.Forms.Button();
+            this.equipment_13 = new System.Windows.Forms.Button();
+            this.equipment_12 = new System.Windows.Forms.Button();
+            this.equipment_11 = new System.Windows.Forms.Button();
+            this.equipment_10 = new System.Windows.Forms.Button();
+            this.equipment_9 = new System.Windows.Forms.Button();
+            this.equipment_8 = new System.Windows.Forms.Button();
+            this.equipment_7 = new System.Windows.Forms.Button();
+            this.buequipment_6 = new System.Windows.Forms.Button();
+            this.equipment_5 = new System.Windows.Forms.Button();
+            this.equipment_4 = new System.Windows.Forms.Button();
+            this.equipment_3 = new System.Windows.Forms.Button();
+            this.equipment_2 = new System.Windows.Forms.Button();
+            this.equipment_1 = new System.Windows.Forms.Button();
             this.listBox_Message = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).BeginInit();
@@ -104,7 +104,7 @@ namespace MMT
             this.Picturebox_MainMenu.Image = global::MMT.Properties.Resources.Img_start;
             this.Picturebox_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.Picturebox_MainMenu.Name = "Picturebox_MainMenu";
-            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1381, 602);
+            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1386, 602);
             this.Picturebox_MainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picturebox_MainMenu.TabIndex = 5;
             this.Picturebox_MainMenu.TabStop = false;
@@ -117,7 +117,7 @@ namespace MMT
             this.btn_MainMenu_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_MainMenu_Exit.Font = new System.Drawing.Font("华文行楷", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_MainMenu_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_MainMenu_Exit.Location = new System.Drawing.Point(210, 440);
+            this.btn_MainMenu_Exit.Location = new System.Drawing.Point(450, 440);
             this.btn_MainMenu_Exit.Name = "btn_MainMenu_Exit";
             this.btn_MainMenu_Exit.Size = new System.Drawing.Size(480, 60);
             this.btn_MainMenu_Exit.TabIndex = 2;
@@ -133,7 +133,7 @@ namespace MMT
             this.btn_MainMenu_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_MainMenu_Load.Font = new System.Drawing.Font("华文行楷", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_MainMenu_Load.ForeColor = System.Drawing.Color.White;
-            this.btn_MainMenu_Load.Location = new System.Drawing.Point(210, 350);
+            this.btn_MainMenu_Load.Location = new System.Drawing.Point(450, 350);
             this.btn_MainMenu_Load.Name = "btn_MainMenu_Load";
             this.btn_MainMenu_Load.Size = new System.Drawing.Size(480, 60);
             this.btn_MainMenu_Load.TabIndex = 1;
@@ -149,7 +149,7 @@ namespace MMT
             this.btn_MainMenu_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_MainMenu_Start.Font = new System.Drawing.Font("华文行楷", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_MainMenu_Start.ForeColor = System.Drawing.Color.White;
-            this.btn_MainMenu_Start.Location = new System.Drawing.Point(210, 260);
+            this.btn_MainMenu_Start.Location = new System.Drawing.Point(450, 260);
             this.btn_MainMenu_Start.Name = "btn_MainMenu_Start";
             this.btn_MainMenu_Start.Size = new System.Drawing.Size(480, 60);
             this.btn_MainMenu_Start.TabIndex = 0;
@@ -164,7 +164,7 @@ namespace MMT
             this.lbl_MainMenu_MagicTower.BackColor = System.Drawing.Color.Transparent;
             this.lbl_MainMenu_MagicTower.Font = new System.Drawing.Font("幼圆", 80F);
             this.lbl_MainMenu_MagicTower.ForeColor = System.Drawing.Color.White;
-            this.lbl_MainMenu_MagicTower.Location = new System.Drawing.Point(300, 80);
+            this.lbl_MainMenu_MagicTower.Location = new System.Drawing.Point(525, 80);
             this.lbl_MainMenu_MagicTower.Name = "lbl_MainMenu_MagicTower";
             this.lbl_MainMenu_MagicTower.Size = new System.Drawing.Size(315, 107);
             this.lbl_MainMenu_MagicTower.TabIndex = 3;
@@ -177,10 +177,9 @@ namespace MMT
             this.PictureBox_Inventory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBox_Inventory.BackgroundImage")));
             this.PictureBox_Inventory.Controls.Add(this.groupBox_Equipped);
             this.PictureBox_Inventory.Controls.Add(this.groupBox_Inventory);
-            this.PictureBox_Inventory.Controls.Add(this.listBox_Message);
             this.PictureBox_Inventory.Location = new System.Drawing.Point(984, 0);
             this.PictureBox_Inventory.Name = "PictureBox_Inventory";
-            this.PictureBox_Inventory.Size = new System.Drawing.Size(402, 600);
+            this.PictureBox_Inventory.Size = new System.Drawing.Size(402, 423);
             this.PictureBox_Inventory.TabIndex = 9;
             this.PictureBox_Inventory.TabStop = false;
             this.PictureBox_Inventory.Visible = false;
@@ -190,385 +189,481 @@ namespace MMT
             // 
             this.groupBox_Equipped.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_Equipped.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox_Equipped.Controls.Add(this.label3);
-            this.groupBox_Equipped.Controls.Add(this.button3);
-            this.groupBox_Equipped.Controls.Add(this.label4);
-            this.groupBox_Equipped.Controls.Add(this.button4);
-            this.groupBox_Equipped.Controls.Add(this.label2);
-            this.groupBox_Equipped.Controls.Add(this.button2);
-            this.groupBox_Equipped.Controls.Add(this.label1);
-            this.groupBox_Equipped.Controls.Add(this.button1);
+            this.groupBox_Equipped.Controls.Add(this.lbl_equipped_4);
+            this.groupBox_Equipped.Controls.Add(this.equipped_4);
+            this.groupBox_Equipped.Controls.Add(this.lbl_equipped_3);
+            this.groupBox_Equipped.Controls.Add(this.equipped_3);
+            this.groupBox_Equipped.Controls.Add(this.lbl_equipped_2);
+            this.groupBox_Equipped.Controls.Add(this.equipped_2);
+            this.groupBox_Equipped.Controls.Add(this.lbl_equipped_1);
+            this.groupBox_Equipped.Controls.Add(this.equipped_1);
             this.groupBox_Equipped.Location = new System.Drawing.Point(15, 49);
             this.groupBox_Equipped.Name = "groupBox_Equipped";
             this.groupBox_Equipped.Size = new System.Drawing.Size(376, 126);
             this.groupBox_Equipped.TabIndex = 10;
             this.groupBox_Equipped.TabStop = false;
             // 
-            // label3
+            // lbl_equipped_4
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(285, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 23);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "蓝宝石";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_equipped_4.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_4.Location = new System.Drawing.Point(285, 93);
+            this.lbl_equipped_4.Name = "lbl_equipped_4";
+            this.lbl_equipped_4.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_4.TabIndex = 7;
+            this.lbl_equipped_4.Text = "蓝宝石";
+            this.lbl_equipped_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // equipped_4
             // 
-            this.button3.Location = new System.Drawing.Point(285, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 70);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.equipped_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipped_4.BackgroundImage")));
+            this.equipped_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipped_4.FlatAppearance.BorderSize = 0;
+            this.equipped_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipped_4.Location = new System.Drawing.Point(285, 20);
+            this.equipped_4.Name = "equipped_4";
+            this.equipped_4.Size = new System.Drawing.Size(70, 70);
+            this.equipped_4.TabIndex = 6;
+            this.equipped_4.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // lbl_equipped_3
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(191, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 23);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "蓝宝石";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_equipped_3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_3.Location = new System.Drawing.Point(191, 93);
+            this.lbl_equipped_3.Name = "lbl_equipped_3";
+            this.lbl_equipped_3.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_3.TabIndex = 5;
+            this.lbl_equipped_3.Text = "蓝宝石";
+            this.lbl_equipped_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
+            // equipped_3
             // 
-            this.button4.Location = new System.Drawing.Point(191, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 70);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.equipped_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipped_3.BackgroundImage")));
+            this.equipped_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipped_3.FlatAppearance.BorderSize = 0;
+            this.equipped_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipped_3.Location = new System.Drawing.Point(191, 20);
+            this.equipped_3.Name = "equipped_3";
+            this.equipped_3.Size = new System.Drawing.Size(70, 70);
+            this.equipped_3.TabIndex = 4;
+            this.equipped_3.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lbl_equipped_2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(100, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "蓝宝石";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_equipped_2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_2.Location = new System.Drawing.Point(100, 93);
+            this.lbl_equipped_2.Name = "lbl_equipped_2";
+            this.lbl_equipped_2.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_2.TabIndex = 3;
+            this.lbl_equipped_2.Text = "蓝宝石";
+            this.lbl_equipped_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // equipped_2
             // 
-            this.button2.Location = new System.Drawing.Point(100, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 70);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.equipped_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipped_2.BackgroundImage")));
+            this.equipped_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipped_2.FlatAppearance.BorderSize = 0;
+            this.equipped_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipped_2.Location = new System.Drawing.Point(100, 20);
+            this.equipped_2.Name = "equipped_2";
+            this.equipped_2.Size = new System.Drawing.Size(70, 70);
+            this.equipped_2.TabIndex = 2;
+            this.equipped_2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbl_equipped_1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(10, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "蓝宝石";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_equipped_1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_1.Location = new System.Drawing.Point(10, 93);
+            this.lbl_equipped_1.Name = "lbl_equipped_1";
+            this.lbl_equipped_1.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_1.TabIndex = 1;
+            this.lbl_equipped_1.Text = "蓝宝石";
+            this.lbl_equipped_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // equipped_1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.equipped_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipped_1.BackgroundImage")));
+            this.equipped_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipped_1.FlatAppearance.BorderSize = 0;
+            this.equipped_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipped_1.Location = new System.Drawing.Point(10, 20);
+            this.equipped_1.Name = "equipped_1";
+            this.equipped_1.Size = new System.Drawing.Size(70, 70);
+            this.equipped_1.TabIndex = 0;
+            this.equipped_1.UseVisualStyleBackColor = true;
             // 
             // groupBox_Inventory
             // 
             this.groupBox_Inventory.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox_Inventory.Controls.Add(this.button19);
-            this.groupBox_Inventory.Controls.Add(this.button20);
-            this.groupBox_Inventory.Controls.Add(this.button21);
-            this.groupBox_Inventory.Controls.Add(this.button22);
-            this.groupBox_Inventory.Controls.Add(this.button23);
-            this.groupBox_Inventory.Controls.Add(this.button24);
-            this.groupBox_Inventory.Controls.Add(this.button25);
-            this.groupBox_Inventory.Controls.Add(this.button26);
-            this.groupBox_Inventory.Controls.Add(this.button27);
-            this.groupBox_Inventory.Controls.Add(this.button28);
-            this.groupBox_Inventory.Controls.Add(this.button29);
-            this.groupBox_Inventory.Controls.Add(this.button30);
-            this.groupBox_Inventory.Controls.Add(this.button31);
-            this.groupBox_Inventory.Controls.Add(this.button32);
-            this.groupBox_Inventory.Controls.Add(this.button12);
-            this.groupBox_Inventory.Controls.Add(this.button13);
-            this.groupBox_Inventory.Controls.Add(this.button14);
-            this.groupBox_Inventory.Controls.Add(this.button15);
-            this.groupBox_Inventory.Controls.Add(this.button16);
-            this.groupBox_Inventory.Controls.Add(this.button17);
-            this.groupBox_Inventory.Controls.Add(this.button18);
-            this.groupBox_Inventory.Controls.Add(this.button9);
-            this.groupBox_Inventory.Controls.Add(this.button10);
-            this.groupBox_Inventory.Controls.Add(this.button11);
-            this.groupBox_Inventory.Controls.Add(this.button6);
-            this.groupBox_Inventory.Controls.Add(this.button7);
-            this.groupBox_Inventory.Controls.Add(this.button5);
-            this.groupBox_Inventory.Controls.Add(this.button8);
+            this.groupBox_Inventory.Controls.Add(this.equipment_28);
+            this.groupBox_Inventory.Controls.Add(this.equipment_27);
+            this.groupBox_Inventory.Controls.Add(this.bequipment_26);
+            this.groupBox_Inventory.Controls.Add(this.equipment_25);
+            this.groupBox_Inventory.Controls.Add(this.equipment_24);
+            this.groupBox_Inventory.Controls.Add(this.equipment_23);
+            this.groupBox_Inventory.Controls.Add(this.equipment_22);
+            this.groupBox_Inventory.Controls.Add(this.equipment_21);
+            this.groupBox_Inventory.Controls.Add(this.equipment_20);
+            this.groupBox_Inventory.Controls.Add(this.equipment_19);
+            this.groupBox_Inventory.Controls.Add(this.equipment_18);
+            this.groupBox_Inventory.Controls.Add(this.equipment_17);
+            this.groupBox_Inventory.Controls.Add(this.equipment_16);
+            this.groupBox_Inventory.Controls.Add(this.equipment_15);
+            this.groupBox_Inventory.Controls.Add(this.equipment_14);
+            this.groupBox_Inventory.Controls.Add(this.equipment_13);
+            this.groupBox_Inventory.Controls.Add(this.equipment_12);
+            this.groupBox_Inventory.Controls.Add(this.equipment_11);
+            this.groupBox_Inventory.Controls.Add(this.equipment_10);
+            this.groupBox_Inventory.Controls.Add(this.equipment_9);
+            this.groupBox_Inventory.Controls.Add(this.equipment_8);
+            this.groupBox_Inventory.Controls.Add(this.equipment_7);
+            this.groupBox_Inventory.Controls.Add(this.buequipment_6);
+            this.groupBox_Inventory.Controls.Add(this.equipment_5);
+            this.groupBox_Inventory.Controls.Add(this.equipment_4);
+            this.groupBox_Inventory.Controls.Add(this.equipment_3);
+            this.groupBox_Inventory.Controls.Add(this.equipment_2);
+            this.groupBox_Inventory.Controls.Add(this.equipment_1);
             this.groupBox_Inventory.Location = new System.Drawing.Point(15, 199);
             this.groupBox_Inventory.Name = "groupBox_Inventory";
             this.groupBox_Inventory.Size = new System.Drawing.Size(376, 211);
             this.groupBox_Inventory.TabIndex = 11;
             this.groupBox_Inventory.TabStop = false;
             // 
-            // button19
+            // equipment_28
             // 
-            this.button19.Location = new System.Drawing.Point(310, 158);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(40, 40);
-            this.button19.TabIndex = 27;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
+            this.equipment_28.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_28.BackgroundImage")));
+            this.equipment_28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_28.FlatAppearance.BorderSize = 0;
+            this.equipment_28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_28.Location = new System.Drawing.Point(310, 158);
+            this.equipment_28.Name = "equipment_28";
+            this.equipment_28.Size = new System.Drawing.Size(40, 40);
+            this.equipment_28.TabIndex = 27;
+            this.equipment_28.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // equipment_27
             // 
-            this.button20.Location = new System.Drawing.Point(260, 158);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(40, 40);
-            this.button20.TabIndex = 26;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
+            this.equipment_27.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_27.BackgroundImage")));
+            this.equipment_27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_27.FlatAppearance.BorderSize = 0;
+            this.equipment_27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_27.Location = new System.Drawing.Point(260, 158);
+            this.equipment_27.Name = "equipment_27";
+            this.equipment_27.Size = new System.Drawing.Size(40, 40);
+            this.equipment_27.TabIndex = 26;
+            this.equipment_27.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // bequipment_26
             // 
-            this.button21.Location = new System.Drawing.Point(210, 158);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(40, 40);
-            this.button21.TabIndex = 25;
-            this.button21.Text = "button21";
-            this.button21.UseVisualStyleBackColor = true;
+            this.bequipment_26.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bequipment_26.BackgroundImage")));
+            this.bequipment_26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bequipment_26.FlatAppearance.BorderSize = 0;
+            this.bequipment_26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bequipment_26.Location = new System.Drawing.Point(210, 158);
+            this.bequipment_26.Name = "bequipment_26";
+            this.bequipment_26.Size = new System.Drawing.Size(40, 40);
+            this.bequipment_26.TabIndex = 25;
+            this.bequipment_26.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // equipment_25
             // 
-            this.button22.Location = new System.Drawing.Point(160, 158);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(40, 40);
-            this.button22.TabIndex = 24;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.equipment_25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_25.BackgroundImage")));
+            this.equipment_25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_25.FlatAppearance.BorderSize = 0;
+            this.equipment_25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_25.Location = new System.Drawing.Point(160, 158);
+            this.equipment_25.Name = "equipment_25";
+            this.equipment_25.Size = new System.Drawing.Size(40, 40);
+            this.equipment_25.TabIndex = 24;
+            this.equipment_25.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // equipment_24
             // 
-            this.button23.Location = new System.Drawing.Point(110, 158);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(40, 40);
-            this.button23.TabIndex = 23;
-            this.button23.Text = "button23";
-            this.button23.UseVisualStyleBackColor = true;
+            this.equipment_24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_24.BackgroundImage")));
+            this.equipment_24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_24.FlatAppearance.BorderSize = 0;
+            this.equipment_24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_24.Location = new System.Drawing.Point(110, 158);
+            this.equipment_24.Name = "equipment_24";
+            this.equipment_24.Size = new System.Drawing.Size(40, 40);
+            this.equipment_24.TabIndex = 23;
+            this.equipment_24.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // equipment_23
             // 
-            this.button24.Location = new System.Drawing.Point(60, 158);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(40, 40);
-            this.button24.TabIndex = 22;
-            this.button24.Text = "button24";
-            this.button24.UseVisualStyleBackColor = true;
+            this.equipment_23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_23.BackgroundImage")));
+            this.equipment_23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_23.FlatAppearance.BorderSize = 0;
+            this.equipment_23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_23.Location = new System.Drawing.Point(60, 158);
+            this.equipment_23.Name = "equipment_23";
+            this.equipment_23.Size = new System.Drawing.Size(40, 40);
+            this.equipment_23.TabIndex = 22;
+            this.equipment_23.UseVisualStyleBackColor = true;
             // 
-            // button25
+            // equipment_22
             // 
-            this.button25.Location = new System.Drawing.Point(10, 158);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(40, 40);
-            this.button25.TabIndex = 21;
-            this.button25.Text = "button25";
-            this.button25.UseVisualStyleBackColor = true;
+            this.equipment_22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_22.BackgroundImage")));
+            this.equipment_22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_22.FlatAppearance.BorderSize = 0;
+            this.equipment_22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_22.Location = new System.Drawing.Point(10, 158);
+            this.equipment_22.Name = "equipment_22";
+            this.equipment_22.Size = new System.Drawing.Size(40, 40);
+            this.equipment_22.TabIndex = 21;
+            this.equipment_22.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // equipment_21
             // 
-            this.button26.Location = new System.Drawing.Point(310, 112);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(40, 40);
-            this.button26.TabIndex = 20;
-            this.button26.Text = "button26";
-            this.button26.UseVisualStyleBackColor = true;
+            this.equipment_21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_21.BackgroundImage")));
+            this.equipment_21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_21.FlatAppearance.BorderSize = 0;
+            this.equipment_21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_21.Location = new System.Drawing.Point(310, 112);
+            this.equipment_21.Name = "equipment_21";
+            this.equipment_21.Size = new System.Drawing.Size(40, 40);
+            this.equipment_21.TabIndex = 20;
+            this.equipment_21.UseVisualStyleBackColor = true;
             // 
-            // button27
+            // equipment_20
             // 
-            this.button27.Location = new System.Drawing.Point(260, 112);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(40, 40);
-            this.button27.TabIndex = 19;
-            this.button27.Text = "button27";
-            this.button27.UseVisualStyleBackColor = true;
+            this.equipment_20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_20.BackgroundImage")));
+            this.equipment_20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_20.FlatAppearance.BorderSize = 0;
+            this.equipment_20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_20.Location = new System.Drawing.Point(260, 112);
+            this.equipment_20.Name = "equipment_20";
+            this.equipment_20.Size = new System.Drawing.Size(40, 40);
+            this.equipment_20.TabIndex = 19;
+            this.equipment_20.UseVisualStyleBackColor = true;
             // 
-            // button28
+            // equipment_19
             // 
-            this.button28.Location = new System.Drawing.Point(210, 112);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(40, 40);
-            this.button28.TabIndex = 18;
-            this.button28.Text = "button28";
-            this.button28.UseVisualStyleBackColor = true;
+            this.equipment_19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_19.BackgroundImage")));
+            this.equipment_19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_19.FlatAppearance.BorderSize = 0;
+            this.equipment_19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_19.Location = new System.Drawing.Point(210, 112);
+            this.equipment_19.Name = "equipment_19";
+            this.equipment_19.Size = new System.Drawing.Size(40, 40);
+            this.equipment_19.TabIndex = 18;
+            this.equipment_19.UseVisualStyleBackColor = true;
             // 
-            // button29
+            // equipment_18
             // 
-            this.button29.Location = new System.Drawing.Point(160, 112);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(40, 40);
-            this.button29.TabIndex = 17;
-            this.button29.Text = "button29";
-            this.button29.UseVisualStyleBackColor = true;
+            this.equipment_18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_18.BackgroundImage")));
+            this.equipment_18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_18.FlatAppearance.BorderSize = 0;
+            this.equipment_18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_18.Location = new System.Drawing.Point(160, 112);
+            this.equipment_18.Name = "equipment_18";
+            this.equipment_18.Size = new System.Drawing.Size(40, 40);
+            this.equipment_18.TabIndex = 17;
+            this.equipment_18.UseVisualStyleBackColor = true;
             // 
-            // button30
+            // equipment_17
             // 
-            this.button30.Location = new System.Drawing.Point(110, 112);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(40, 40);
-            this.button30.TabIndex = 16;
-            this.button30.Text = "button30";
-            this.button30.UseVisualStyleBackColor = true;
+            this.equipment_17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_17.BackgroundImage")));
+            this.equipment_17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_17.FlatAppearance.BorderSize = 0;
+            this.equipment_17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_17.Location = new System.Drawing.Point(110, 112);
+            this.equipment_17.Name = "equipment_17";
+            this.equipment_17.Size = new System.Drawing.Size(40, 40);
+            this.equipment_17.TabIndex = 16;
+            this.equipment_17.UseVisualStyleBackColor = true;
             // 
-            // button31
+            // equipment_16
             // 
-            this.button31.Location = new System.Drawing.Point(60, 112);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(40, 40);
-            this.button31.TabIndex = 15;
-            this.button31.Text = "button31";
-            this.button31.UseVisualStyleBackColor = true;
+            this.equipment_16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_16.BackgroundImage")));
+            this.equipment_16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_16.FlatAppearance.BorderSize = 0;
+            this.equipment_16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_16.Location = new System.Drawing.Point(60, 112);
+            this.equipment_16.Name = "equipment_16";
+            this.equipment_16.Size = new System.Drawing.Size(40, 40);
+            this.equipment_16.TabIndex = 15;
+            this.equipment_16.UseVisualStyleBackColor = true;
             // 
-            // button32
+            // equipment_15
             // 
-            this.button32.Location = new System.Drawing.Point(10, 112);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(40, 40);
-            this.button32.TabIndex = 14;
-            this.button32.Text = "button32";
-            this.button32.UseVisualStyleBackColor = true;
+            this.equipment_15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_15.BackgroundImage")));
+            this.equipment_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_15.FlatAppearance.BorderSize = 0;
+            this.equipment_15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_15.Location = new System.Drawing.Point(10, 112);
+            this.equipment_15.Name = "equipment_15";
+            this.equipment_15.Size = new System.Drawing.Size(40, 40);
+            this.equipment_15.TabIndex = 14;
+            this.equipment_15.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // equipment_14
             // 
-            this.button12.Location = new System.Drawing.Point(310, 66);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(40, 40);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
+            this.equipment_14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_14.BackgroundImage")));
+            this.equipment_14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_14.FlatAppearance.BorderSize = 0;
+            this.equipment_14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_14.Location = new System.Drawing.Point(310, 66);
+            this.equipment_14.Name = "equipment_14";
+            this.equipment_14.Size = new System.Drawing.Size(40, 40);
+            this.equipment_14.TabIndex = 13;
+            this.equipment_14.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // equipment_13
             // 
-            this.button13.Location = new System.Drawing.Point(260, 66);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(40, 40);
-            this.button13.TabIndex = 12;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            this.equipment_13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_13.BackgroundImage")));
+            this.equipment_13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_13.FlatAppearance.BorderSize = 0;
+            this.equipment_13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_13.Location = new System.Drawing.Point(260, 66);
+            this.equipment_13.Name = "equipment_13";
+            this.equipment_13.Size = new System.Drawing.Size(40, 40);
+            this.equipment_13.TabIndex = 12;
+            this.equipment_13.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // equipment_12
             // 
-            this.button14.Location = new System.Drawing.Point(210, 66);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(40, 40);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            this.equipment_12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_12.BackgroundImage")));
+            this.equipment_12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_12.FlatAppearance.BorderSize = 0;
+            this.equipment_12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_12.Location = new System.Drawing.Point(210, 66);
+            this.equipment_12.Name = "equipment_12";
+            this.equipment_12.Size = new System.Drawing.Size(40, 40);
+            this.equipment_12.TabIndex = 11;
+            this.equipment_12.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // equipment_11
             // 
-            this.button15.Location = new System.Drawing.Point(160, 66);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(40, 40);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "button15";
-            this.button15.UseVisualStyleBackColor = true;
+            this.equipment_11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_11.BackgroundImage")));
+            this.equipment_11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_11.FlatAppearance.BorderSize = 0;
+            this.equipment_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_11.Location = new System.Drawing.Point(160, 66);
+            this.equipment_11.Name = "equipment_11";
+            this.equipment_11.Size = new System.Drawing.Size(40, 40);
+            this.equipment_11.TabIndex = 10;
+            this.equipment_11.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // equipment_10
             // 
-            this.button16.Location = new System.Drawing.Point(110, 66);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(40, 40);
-            this.button16.TabIndex = 9;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
+            this.equipment_10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_10.BackgroundImage")));
+            this.equipment_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_10.FlatAppearance.BorderSize = 0;
+            this.equipment_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_10.Location = new System.Drawing.Point(110, 66);
+            this.equipment_10.Name = "equipment_10";
+            this.equipment_10.Size = new System.Drawing.Size(40, 40);
+            this.equipment_10.TabIndex = 9;
+            this.equipment_10.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // equipment_9
             // 
-            this.button17.Location = new System.Drawing.Point(60, 66);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(40, 40);
-            this.button17.TabIndex = 8;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
+            this.equipment_9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_9.BackgroundImage")));
+            this.equipment_9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_9.FlatAppearance.BorderSize = 0;
+            this.equipment_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_9.Location = new System.Drawing.Point(60, 66);
+            this.equipment_9.Name = "equipment_9";
+            this.equipment_9.Size = new System.Drawing.Size(40, 40);
+            this.equipment_9.TabIndex = 8;
+            this.equipment_9.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // equipment_8
             // 
-            this.button18.Location = new System.Drawing.Point(10, 66);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(40, 40);
-            this.button18.TabIndex = 7;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
+            this.equipment_8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_8.BackgroundImage")));
+            this.equipment_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_8.FlatAppearance.BorderSize = 0;
+            this.equipment_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_8.Location = new System.Drawing.Point(10, 66);
+            this.equipment_8.Name = "equipment_8";
+            this.equipment_8.Size = new System.Drawing.Size(40, 40);
+            this.equipment_8.TabIndex = 7;
+            this.equipment_8.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // equipment_7
             // 
-            this.button9.Location = new System.Drawing.Point(310, 20);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(40, 40);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.equipment_7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_7.BackgroundImage")));
+            this.equipment_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_7.FlatAppearance.BorderSize = 0;
+            this.equipment_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_7.Location = new System.Drawing.Point(310, 20);
+            this.equipment_7.Name = "equipment_7";
+            this.equipment_7.Size = new System.Drawing.Size(40, 40);
+            this.equipment_7.TabIndex = 6;
+            this.equipment_7.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // buequipment_6
             // 
-            this.button10.Location = new System.Drawing.Point(260, 20);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(40, 40);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.buequipment_6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buequipment_6.BackgroundImage")));
+            this.buequipment_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buequipment_6.FlatAppearance.BorderSize = 0;
+            this.buequipment_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buequipment_6.Location = new System.Drawing.Point(260, 20);
+            this.buequipment_6.Name = "buequipment_6";
+            this.buequipment_6.Size = new System.Drawing.Size(40, 40);
+            this.buequipment_6.TabIndex = 5;
+            this.buequipment_6.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // equipment_5
             // 
-            this.button11.Location = new System.Drawing.Point(210, 20);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(40, 40);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.equipment_5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_5.BackgroundImage")));
+            this.equipment_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_5.FlatAppearance.BorderSize = 0;
+            this.equipment_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_5.Location = new System.Drawing.Point(210, 20);
+            this.equipment_5.Name = "equipment_5";
+            this.equipment_5.Size = new System.Drawing.Size(40, 40);
+            this.equipment_5.TabIndex = 4;
+            this.equipment_5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // equipment_4
             // 
-            this.button6.Location = new System.Drawing.Point(160, 20);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(40, 40);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.equipment_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_4.BackgroundImage")));
+            this.equipment_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_4.FlatAppearance.BorderSize = 0;
+            this.equipment_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_4.Location = new System.Drawing.Point(160, 20);
+            this.equipment_4.Name = "equipment_4";
+            this.equipment_4.Size = new System.Drawing.Size(40, 40);
+            this.equipment_4.TabIndex = 3;
+            this.equipment_4.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // equipment_3
             // 
-            this.button7.Location = new System.Drawing.Point(110, 20);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 40);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.equipment_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_3.BackgroundImage")));
+            this.equipment_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_3.FlatAppearance.BorderSize = 0;
+            this.equipment_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_3.Location = new System.Drawing.Point(110, 20);
+            this.equipment_3.Name = "equipment_3";
+            this.equipment_3.Size = new System.Drawing.Size(40, 40);
+            this.equipment_3.TabIndex = 2;
+            this.equipment_3.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // equipment_2
             // 
-            this.button5.Location = new System.Drawing.Point(60, 20);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 40);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.equipment_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_2.BackgroundImage")));
+            this.equipment_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_2.FlatAppearance.BorderSize = 0;
+            this.equipment_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_2.Location = new System.Drawing.Point(60, 20);
+            this.equipment_2.Name = "equipment_2";
+            this.equipment_2.Size = new System.Drawing.Size(40, 40);
+            this.equipment_2.TabIndex = 1;
+            this.equipment_2.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // equipment_1
             // 
-            this.button8.Location = new System.Drawing.Point(10, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(40, 40);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.equipment_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("equipment_1.BackgroundImage")));
+            this.equipment_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipment_1.FlatAppearance.BorderSize = 0;
+            this.equipment_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipment_1.Location = new System.Drawing.Point(10, 20);
+            this.equipment_1.Name = "equipment_1";
+            this.equipment_1.Size = new System.Drawing.Size(40, 40);
+            this.equipment_1.TabIndex = 0;
+            this.equipment_1.UseVisualStyleBackColor = true;
             // 
             // listBox_Message
             // 
@@ -579,10 +674,10 @@ namespace MMT
             this.listBox_Message.ItemHeight = 16;
             this.listBox_Message.Items.AddRange(new object[] {
             "获得HealthPotion，增加20点HP"});
-            this.listBox_Message.Location = new System.Drawing.Point(15, 440);
+            this.listBox_Message.Location = new System.Drawing.Point(984, 416);
             this.listBox_Message.Name = "listBox_Message";
             this.listBox_Message.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBox_Message.Size = new System.Drawing.Size(376, 144);
+            this.listBox_Message.Size = new System.Drawing.Size(402, 192);
             this.listBox_Message.TabIndex = 12;
             // 
             // MMainForm
@@ -593,6 +688,7 @@ namespace MMT
             this.ClientSize = new System.Drawing.Size(1382, 601);
             this.Controls.Add(this.Picturebox_Map);
             this.Controls.Add(this.Picturebox_MainMenu);
+            this.Controls.Add(this.listBox_Message);
             this.Controls.Add(this.PictureBox_Inventory);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -627,43 +723,43 @@ namespace MMT
         private System.Windows.Forms.PictureBox Picturebox_Map;
         private System.Windows.Forms.PictureBox PictureBox_Inventory;
         private System.Windows.Forms.GroupBox groupBox_Equipped;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_equipped_4;
+        private System.Windows.Forms.Button equipped_4;
+        private System.Windows.Forms.Label lbl_equipped_3;
+        private System.Windows.Forms.Button equipped_3;
+        private System.Windows.Forms.Label lbl_equipped_2;
+        private System.Windows.Forms.Button equipped_2;
+        private System.Windows.Forms.Label lbl_equipped_1;
+        private System.Windows.Forms.Button equipped_1;
         private System.Windows.Forms.GroupBox groupBox_Inventory;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button equipment_28;
+        private System.Windows.Forms.Button equipment_27;
+        private System.Windows.Forms.Button bequipment_26;
+        private System.Windows.Forms.Button equipment_25;
+        private System.Windows.Forms.Button equipment_24;
+        private System.Windows.Forms.Button equipment_23;
+        private System.Windows.Forms.Button equipment_22;
+        private System.Windows.Forms.Button equipment_21;
+        private System.Windows.Forms.Button equipment_20;
+        private System.Windows.Forms.Button equipment_19;
+        private System.Windows.Forms.Button equipment_18;
+        private System.Windows.Forms.Button equipment_17;
+        private System.Windows.Forms.Button equipment_16;
+        private System.Windows.Forms.Button equipment_15;
+        private System.Windows.Forms.Button equipment_14;
+        private System.Windows.Forms.Button equipment_13;
+        private System.Windows.Forms.Button equipment_12;
+        private System.Windows.Forms.Button equipment_11;
+        private System.Windows.Forms.Button equipment_10;
+        private System.Windows.Forms.Button equipment_9;
+        private System.Windows.Forms.Button equipment_8;
+        private System.Windows.Forms.Button equipment_7;
+        private System.Windows.Forms.Button buequipment_6;
+        private System.Windows.Forms.Button equipment_5;
+        private System.Windows.Forms.Button equipment_4;
+        private System.Windows.Forms.Button equipment_3;
+        private System.Windows.Forms.Button equipment_2;
+        private System.Windows.Forms.Button equipment_1;
         private System.Windows.Forms.ListBox listBox_Message;
     }
 }

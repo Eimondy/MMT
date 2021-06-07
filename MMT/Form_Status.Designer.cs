@@ -39,6 +39,7 @@ namespace MMT
             this.lbl_LevelShow = new System.Windows.Forms.Label();
             this.lbl_HitRateShow = new System.Windows.Forms.Label();
             this.picturebox_BackColor = new System.Windows.Forms.PictureBox();
+            this.lbl_Name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_BackColor)).BeginInit();
             this.picturebox_BackColor.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +49,7 @@ namespace MMT
             this.lbl_FloorNum.AutoSize = true;
             this.lbl_FloorNum.BackColor = System.Drawing.Color.Transparent;
             this.lbl_FloorNum.Font = new System.Drawing.Font("楷体", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_FloorNum.Location = new System.Drawing.Point(42, 22);
+            this.lbl_FloorNum.Location = new System.Drawing.Point(42, 96);
             this.lbl_FloorNum.Name = "lbl_FloorNum";
             this.lbl_FloorNum.Size = new System.Drawing.Size(291, 48);
             this.lbl_FloorNum.TabIndex = 3;
@@ -59,7 +60,7 @@ namespace MMT
             this.lbl_MpShow.AutoSize = true;
             this.lbl_MpShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_MpShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_MpShow.Location = new System.Drawing.Point(40, 90);
+            this.lbl_MpShow.Location = new System.Drawing.Point(40, 130);
             this.lbl_MpShow.Name = "lbl_MpShow";
             this.lbl_MpShow.Size = new System.Drawing.Size(101, 30);
             this.lbl_MpShow.TabIndex = 6;
@@ -70,7 +71,7 @@ namespace MMT
             this.lbl_PowerShow.AutoSize = true;
             this.lbl_PowerShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_PowerShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_PowerShow.Location = new System.Drawing.Point(40, 125);
+            this.lbl_PowerShow.Location = new System.Drawing.Point(40, 165);
             this.lbl_PowerShow.Name = "lbl_PowerShow";
             this.lbl_PowerShow.Size = new System.Drawing.Size(101, 30);
             this.lbl_PowerShow.TabIndex = 7;
@@ -81,7 +82,7 @@ namespace MMT
             this.lbl_ArmorShow.AutoSize = true;
             this.lbl_ArmorShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_ArmorShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_ArmorShow.Location = new System.Drawing.Point(40, 160);
+            this.lbl_ArmorShow.Location = new System.Drawing.Point(40, 200);
             this.lbl_ArmorShow.Name = "lbl_ArmorShow";
             this.lbl_ArmorShow.Size = new System.Drawing.Size(79, 30);
             this.lbl_ArmorShow.TabIndex = 8;
@@ -92,7 +93,7 @@ namespace MMT
             this.lbl_MagicArmorShow.AutoSize = true;
             this.lbl_MagicArmorShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_MagicArmorShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_MagicArmorShow.Location = new System.Drawing.Point(40, 190);
+            this.lbl_MagicArmorShow.Location = new System.Drawing.Point(40, 230);
             this.lbl_MagicArmorShow.Name = "lbl_MagicArmorShow";
             this.lbl_MagicArmorShow.Size = new System.Drawing.Size(79, 30);
             this.lbl_MagicArmorShow.TabIndex = 9;
@@ -103,7 +104,7 @@ namespace MMT
             this.lbl_HpShow.AutoSize = true;
             this.lbl_HpShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_HpShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_HpShow.Location = new System.Drawing.Point(40, 55);
+            this.lbl_HpShow.Location = new System.Drawing.Point(40, 95);
             this.lbl_HpShow.Name = "lbl_HpShow";
             this.lbl_HpShow.Size = new System.Drawing.Size(101, 30);
             this.lbl_HpShow.TabIndex = 5;
@@ -114,7 +115,7 @@ namespace MMT
             this.lbl_SpeedShow.AutoSize = true;
             this.lbl_SpeedShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_SpeedShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_SpeedShow.Location = new System.Drawing.Point(40, 225);
+            this.lbl_SpeedShow.Location = new System.Drawing.Point(40, 265);
             this.lbl_SpeedShow.Name = "lbl_SpeedShow";
             this.lbl_SpeedShow.Size = new System.Drawing.Size(79, 30);
             this.lbl_SpeedShow.TabIndex = 10;
@@ -125,7 +126,7 @@ namespace MMT
             this.lbl_LevelShow.AutoSize = true;
             this.lbl_LevelShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_LevelShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_LevelShow.Location = new System.Drawing.Point(40, 20);
+            this.lbl_LevelShow.Location = new System.Drawing.Point(40, 60);
             this.lbl_LevelShow.Name = "lbl_LevelShow";
             this.lbl_LevelShow.Size = new System.Drawing.Size(79, 30);
             this.lbl_LevelShow.TabIndex = 12;
@@ -136,7 +137,7 @@ namespace MMT
             this.lbl_HitRateShow.AutoSize = true;
             this.lbl_HitRateShow.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.lbl_HitRateShow.ForeColor = System.Drawing.Color.White;
-            this.lbl_HitRateShow.Location = new System.Drawing.Point(40, 260);
+            this.lbl_HitRateShow.Location = new System.Drawing.Point(40, 300);
             this.lbl_HitRateShow.Name = "lbl_HitRateShow";
             this.lbl_HitRateShow.Size = new System.Drawing.Size(101, 30);
             this.lbl_HitRateShow.TabIndex = 13;
@@ -153,19 +154,31 @@ namespace MMT
             this.picturebox_BackColor.Controls.Add(this.lbl_ArmorShow);
             this.picturebox_BackColor.Controls.Add(this.lbl_PowerShow);
             this.picturebox_BackColor.Controls.Add(this.lbl_MpShow);
-            this.picturebox_BackColor.Location = new System.Drawing.Point(50, 202);
+            this.picturebox_BackColor.Location = new System.Drawing.Point(59, 147);
             this.picturebox_BackColor.Name = "picturebox_BackColor";
-            this.picturebox_BackColor.Size = new System.Drawing.Size(265, 369);
+            this.picturebox_BackColor.Size = new System.Drawing.Size(265, 341);
             this.picturebox_BackColor.TabIndex = 4;
             this.picturebox_BackColor.TabStop = false;
+            // 
+            // lbl_Name
+            // 
+            this.lbl_Name.AutoSize = true;
+            this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Name.Font = new System.Drawing.Font("微软雅黑", 16F);
+            this.lbl_Name.ForeColor = System.Drawing.Color.White;
+            this.lbl_Name.Location = new System.Drawing.Point(99, 177);
+            this.lbl_Name.Name = "lbl_Name";
+            this.lbl_Name.Size = new System.Drawing.Size(79, 30);
+            this.lbl_Name.TabIndex = 13;
+            this.lbl_Name.Text = "名称：";
             // 
             // Form_Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = global::MMT.Properties.Resources.Img_GameScreen_attr1;
             this.ClientSize = new System.Drawing.Size(384, 640);
+            this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.picturebox_BackColor);
             this.Controls.Add(this.lbl_FloorNum);
             this.DoubleBuffered = true;
@@ -192,5 +205,6 @@ namespace MMT
         private System.Windows.Forms.Label lbl_LevelShow;
         private System.Windows.Forms.Label lbl_HitRateShow;
         private System.Windows.Forms.PictureBox picturebox_BackColor;
+        private System.Windows.Forms.Label lbl_Name;
     }
 }

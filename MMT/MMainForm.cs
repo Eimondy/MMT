@@ -32,10 +32,10 @@ namespace MMT
             }
         }
 
-        public Form_Status Fs { get => fs; }
-        public Form_Load Fl { get => fl; }
-        public Form_Pause Fp { get => fp; }
-        public Form_Battle Fb { get => fb; }
+        public Form_Status Fs { get => fs; set => fs = value; }
+        public Form_Load Fl { get => fl; set => fl = value; }
+        public Form_Pause Fp { get => fp; set => fp = value; }
+        public Form_Battle Fb { get => fb; set => fb = value; }
 
         public MMainForm()
         {
@@ -107,6 +107,39 @@ namespace MMT
             //更新属性和装备
             this.Fs.Form_Status_Load(null,null);
             this.PictureBox_Inventory_LoadCompleted(null,null);
+
+            // 绘制属性背景
+            int attrMargin = 0;
+            Bitmap attrImg = new Bitmap(Fs.Width, Fs.Height);
+            Graphics attrG = Graphics.FromImage(attrImg);
+            int xBlock = (Fs.Width - 2 * attrMargin) / x + 1, yBlock = (Fs.Height - 2 * attrMargin) / x + 1;
+            for(int i = 0;i<xBlock;i++)
+            {
+                for(int j = 0; j < yBlock; j++)
+                {
+                    if (i == 0 || i == xBlock - 1 || j == 0 || j == yBlock - 1)
+                        attrG.DrawImage(wall, x * i, x * j, x, x);
+                    else
+                        attrG.DrawImage(ground, x * i, x * j, x, x);
+                }
+            }
+            Fs.BackgroundImage = attrImg;
+            // 绘制装备栏背景
+            int invMargin = 0;
+            Bitmap invImg = new Bitmap(PictureBox_Inventory.Width, PictureBox_Inventory.Height);
+            Graphics invG = Graphics.FromImage(invImg);
+            int xBlockInv = (PictureBox_Inventory.Width - 2 * invMargin) / x + 1, yBlockInv = (PictureBox_Inventory.Height - 2 * invMargin) / x + 1;
+            for (int i = 0; i < xBlockInv; i++)
+            {
+                for (int j = 0; j < yBlockInv; j++)
+                {
+                    if (i == 0 || i == xBlockInv - 1 || j == 0 || j == yBlockInv - 1)
+                        invG.DrawImage(wall, x * i, x * j, x, x);
+                    else
+                        invG.DrawImage(ground, x * i, x * j, x, x);
+                }
+            }
+            PictureBox_Inventory.Image = invImg;
         }
 
         public void GameStart() 
@@ -114,12 +147,16 @@ namespace MMT
             this.Picturebox_MainMenu.Hide();
             this.PictureBox_Inventory.Visible = true;
             Fs.Show();
+            Fs.Height = this.Height;
             Draw();
         }
 
         public void MainMenu() 
         {
-            
+            this.PictureBox_Inventory.Hide();
+            this.Picturebox_Map.Hide();
+            this.Picturebox_MainMenu.Show();
+            Fs.Hide();
         }
 
         public void LoadMenu() 
@@ -137,11 +174,8 @@ namespace MMT
         {
             Fp.Show();
             Fp.BringToFront();
-        }
-
-        public void SettingMenu() 
-        { 
-        
+            // 设置位置
+            Fp.Location = new Point((Width - Fp.Width) / 2, (Height - Fp.Height) / 2);
         }
 
         public void ShowCombatMenu(object[] enemy) 
@@ -155,11 +189,13 @@ namespace MMT
 
         public void UpdateCombatMenu(object[] choice)
         {
-            Fb.UpdateCombatMenu(choice);
+            if(Fb != null)
+                Fb.UpdateCombatMenu(choice);
         }
         public void CloseCombatMenu()
         {
             Fb.Close();
+            Fb = null;
         }
         public void EndingMenu() 
         {
@@ -243,8 +279,8 @@ namespace MMT
 
         private void PictureBox_Inventory_LoadCompleted(object sender, AsyncCompletedEventArgs e) //draw重绘时更新装备和背包的数据
         {
-           // this.groupBox_Equipped
-           // this.groupBox_Inventory
+            // this.groupBox_Equipped
+            // this.groupBox_Inventory
         }
     }
 }
