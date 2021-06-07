@@ -439,6 +439,15 @@ namespace MMT
                             }
                         }
                 }
+                if(Paused && KeyboardInput && KeyboardData == Keys.Escape)
+                {
+                    PauseRelease();
+                    // 重置输入
+                    KeyboardInput = false;
+                    KeyboardData = Keys.None;
+                    // 与窗体通信
+                    MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Fp.Hide));
+                }
                 if (IsGameOver) break;     // 若游戏结束，则退出循环，关闭线程
             }
         }
