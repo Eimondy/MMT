@@ -32,7 +32,7 @@ namespace MMT.Data.Classes.Skill
         public MSkill(string name = "")
         {
             Name = name;
-            var info = MMainLogic.Instance.Data["Character"].Where(s => s.Split(',')[0] == Name);
+            var info = MMainLogic.Instance.Data["Skill"].Where(s => s.Split(',')[0] == Name);
             foreach (var i in info)
             {
                 var s = i.Split(',');
