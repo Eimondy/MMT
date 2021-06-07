@@ -509,6 +509,6 @@ namespace MMT
         private System.Windows.Forms.Label lbl_Battle_Hitrate2;
         private System.Windows.Forms.Button btn_Battle_attack;
         private System.Windows.Forms.Label lbl_Battle_vs;
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel1;
     }
 }

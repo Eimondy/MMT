@@ -17,35 +17,51 @@ namespace MMT
             InitializeComponent();
             this.Table_Load.RowCount = MMainLogic.Instance.Saves.Count;
             for (int i = 0; i < Table_Load.RowCount; i++)
+                this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77f));
+            Label[] tx = new Label[MMainLogic.Instance.Saves.Count];
+            Label[] tx1 = new Label[MMainLogic.Instance.Saves.Count];
+            for (int i = 0; i < Table_Load.RowCount; i++)
             {
-                this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, this.Width * 0.333334f));
+                tx[i] = new Label();
+                tx[i].Anchor = System.Windows.Forms.AnchorStyles.None;
+                tx[i].AutoSize = true;
+                tx[i].Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                tx[i].ForeColor = System.Drawing.Color.White;
+                tx1[i] = new Label();
+                tx1[i].Anchor = System.Windows.Forms.AnchorStyles.None;
+                tx1[i].AutoSize = true;
+                tx1[i].Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                tx1[i].ForeColor = System.Drawing.Color.White;
+            }
+            for (int i = 0; i < Table_Load.RowCount; i++)
+            {
+                //this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77f));
+                tx[i].Text = (i + 1).ToString();
+                this.Table_Load.Controls.Add(tx[i], 0, i);
+                tx1[i].Text = MMainLogic.Instance.Saves[i].ToString().Replace("\n"," ");
+                this.Table_Load.Controls.Add(tx1[i], 1, i);
             }
         }
-
-        public static void addTableElement(TableLayoutPanel tbp,string s1,string s2)
-        {
-            Label tx1 = new Label();
-            tx1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            tx1.AutoSize = true;
-            tx1.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            tx1.ForeColor = System.Drawing.Color.White;
-            tx1.Text = s1;
-            tbp.Controls.Add(tx1, 0, tbp.RowCount - 1);
-        }
-
 
         private void btn_Load_Confirm_Click(object sender, EventArgs e)
         {
             //MMainLogic.Instance.Start(num);     // 读取选中的存档并开始游戏
-            // 判断是否在游戏暂停时呼出
-            if (MMainLogic.Instance.Paused)
-                MMainForm.Instance.Fp.Hide();
             this.Hide();
         }
 
         private void btn_Load_Cancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide();            
+            if (MMainLogic.Instance.Paused)
+            {
+                MMainForm.Instance.Picturebox_MainMenu.Hide();
+                MMainForm.Instance.Fs.Show();
+                MMainForm.Instance.Picturebox_Map.Show();
+                MMainForm.Instance.PictureBox_Inventory.Show();
+            }
+            else {
+                MMainForm.Instance.MainMenu();
+            }
         }
 
         private void Table_Load_Paint(object sender, PaintEventArgs e)

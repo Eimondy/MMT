@@ -15,14 +15,12 @@ namespace MMT
         public Form_Win()
         {
             InitializeComponent();
-            // 设置位置
-            this.Location = new Point((MMainForm.Instance.Width - Width) / 2, (MMainForm.Instance.Height - Height) / 2);
         }
 
         private void btn_Win_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.BackToMainMenu();
-            this.Close();
+            this.Picturebox_Win.Hide();
         }
     }
 }

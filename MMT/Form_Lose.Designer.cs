@@ -33,6 +33,9 @@ namespace MMT
             this.lbl_Lose = new System.Windows.Forms.Label();
             this.btn_Lose_Again = new System.Windows.Forms.Button();
             this.btn_Lose_Exit = new System.Windows.Forms.Button();
+            this.Picturebox_Lose = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Lose)).BeginInit();
+            this.Picturebox_Lose.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Lose
@@ -40,9 +43,9 @@ namespace MMT
             this.lbl_Lose.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Lose.Font = new System.Drawing.Font("幼圆", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbl_Lose.ForeColor = System.Drawing.Color.White;
-            this.lbl_Lose.Location = new System.Drawing.Point(166, 92);
+            this.lbl_Lose.Location = new System.Drawing.Point(89, 92);
             this.lbl_Lose.Name = "lbl_Lose";
-            this.lbl_Lose.Size = new System.Drawing.Size(251, 62);
+            this.lbl_Lose.Size = new System.Drawing.Size(417, 62);
             this.lbl_Lose.TabIndex = 1;
             this.lbl_Lose.Text = "你被[]击败";
             this.lbl_Lose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,29 +82,42 @@ namespace MMT
             this.btn_Lose_Exit.UseVisualStyleBackColor = true;
             this.btn_Lose_Exit.Click += new System.EventHandler(this.btn_Lose_Exit_Click);
             // 
+            // Picturebox_Lose
+            // 
+            this.Picturebox_Lose.BackColor = System.Drawing.Color.Transparent;
+            this.Picturebox_Lose.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
+            this.Picturebox_Lose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Picturebox_Lose.Controls.Add(this.btn_Lose_Exit);
+            this.Picturebox_Lose.Controls.Add(this.btn_Lose_Again);
+            this.Picturebox_Lose.Controls.Add(this.lbl_Lose);
+            this.Picturebox_Lose.Location = new System.Drawing.Point(0, 0);
+            this.Picturebox_Lose.Name = "Picturebox_Lose";
+            this.Picturebox_Lose.Size = new System.Drawing.Size(600, 351);
+            this.Picturebox_Lose.TabIndex = 4;
+            this.Picturebox_Lose.TabStop = false;
+            // 
             // Form_Lose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 351);
-            this.Controls.Add(this.btn_Lose_Exit);
-            this.Controls.Add(this.btn_Lose_Again);
-            this.Controls.Add(this.lbl_Lose);
+            this.Controls.Add(this.Picturebox_Lose);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(384, 80);
             this.Name = "Form_Lose";
             this.Text = "Form_Lose";
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Lose)).EndInit();
+            this.Picturebox_Lose.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_Lose;
         private System.Windows.Forms.Button btn_Lose_Again;
         private System.Windows.Forms.Button btn_Lose_Exit;
+        private System.Windows.Forms.Label lbl_Lose;
+        public System.Windows.Forms.PictureBox Picturebox_Lose;
     }
 }

@@ -45,7 +45,6 @@ namespace MMT
             Fs.MdiParent = this;
 
             fl = new Form_Load();
-            Fl.MdiParent = this;
             Fl.TopLevel = false;
             Fl.Parent = this.Picturebox_MainMenu;
 
@@ -166,8 +165,19 @@ namespace MMT
             this.btn_MainMenu_Exit.Visible = false;
             this.btn_MainMenu_Load.Visible = false;
             this.btn_MainMenu_Start.Visible = false;     */
-            Fl.Show();
-            Fl.BringToFront();
+            if (!MMainLogic.Instance.Paused)
+            {
+                Fl.Show();
+                Fl.BringToFront();
+            }
+            else {
+                Fs.Hide();
+                this.Picturebox_Map.Hide();
+                this.PictureBox_Inventory.Hide();
+                this.Picturebox_MainMenu.Show();
+                Fl.Show(); 
+                Fl.BringToFront();
+            }
         }
 
         public void PausedMenu() 
@@ -189,10 +199,10 @@ namespace MMT
         public void ShowCombatMenu(object[] enemy) 
         {
             fb = new Form_Battle(enemy[0]);
-            Fb.TopLevel = false;
-            Fb.Parent = this;
-            Fb.Show();
-            Fb.BringToFront();
+            Fb.panel1.Parent = this.Picturebox_Map;
+            Fb.panel1.Location=new Point((Picturebox_Map.Width - Fb.panel1.Width) / 2, (Picturebox_Map.Height - Fb.panel1.Height) / 2);
+            Fb.panel1.Show();
+            Fb.panel1.BringToFront();
         }
 
         public void UpdateCombatMenu(object[] choice)
@@ -202,7 +212,7 @@ namespace MMT
         }
         public void CloseCombatMenu()
         {
-            Fb.Close();
+            Fb.panel1.Hide();
             Fb = null;
         }
         public void EndingMenu() 
@@ -211,18 +221,18 @@ namespace MMT
             if (MMainLogic.Instance.Victory)
             {
                 Form_Win Fw = new Form_Win();
-                Fw.TopLevel = false;
-                Fw.Parent = this;
-                Fw.Show();
-                Fw.BringToFront();
+                Fw.Picturebox_Win.Parent = this.Picturebox_Map;
+                Fw.Picturebox_Win.Location = new Point((Picturebox_Map.Width - Fw.Picturebox_Win.Width) / 2, (Picturebox_Map.Height - Fw.Picturebox_Win.Height) / 2);
+                Fw.Picturebox_Win.Show();
+                Fw.Picturebox_Win.BringToFront();
             }
             else if(MMainLogic.Instance.Defeated)
             {
-                Form_Lose Fl = new Form_Lose();
-                Fl.TopLevel = false;
-                Fl.Parent = this;
-                Fl.Show();
-                Fl.BringToFront();
+                Form_Lose Flose = new Form_Lose();
+                Flose.Picturebox_Lose.Parent = this.Picturebox_Map;
+                Flose.Picturebox_Lose.Location = new Point((Picturebox_Map.Width - Flose.Picturebox_Lose.Width) / 2, (Picturebox_Map.Height - Flose.Picturebox_Lose.Height) / 2);
+                Flose.Picturebox_Lose.Show();
+                Flose.Picturebox_Lose.BringToFront();
             }
         }
 
@@ -257,12 +267,15 @@ namespace MMT
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.Start(0, "TEST");
+            MMainCharacter.Instance.MaxHP = 1;
+            MMainCharacter.Instance.Speed = -1;
             this.GameStart();
         }
 
         private void btn_MainMenu_Load_Click(object sender, EventArgs e)
         {
-            LoadMenu();
+            if(MMainLogic.Instance.Saves.Count!=0) 
+                LoadMenu();
         }
 
         private void btn_MainMenu_Exit_Click(object sender, EventArgs e)

@@ -338,6 +338,7 @@ namespace MMT
             Shell.WriteLine("重玩", ConsoleColor.Black);
             MLevel.LocateNearExit(false);
             IsInGame = true;     // 设置游戏进行中
+            Draw();
         }
 
         public void BackToMainMenu()     // 游戏胜利之后/战斗失败之后，返回主菜单。不保存当前存档
@@ -446,7 +447,7 @@ namespace MMT
                     KeyboardInput = false;
                     KeyboardData = Keys.None;
                     // 与窗体通信
-                    MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Fp.Hide));
+                    MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Fp.Picturebox_Load_menu.Hide));
                 }
                 if (IsGameOver) break;     // 若游戏结束，则退出循环，关闭线程
             }

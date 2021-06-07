@@ -31,6 +31,8 @@ namespace MMT
         {
             this.lbl_Win = new System.Windows.Forms.Label();
             this.btn_Win = new System.Windows.Forms.Button();
+            this.Picturebox_Win = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Win)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Win
@@ -61,22 +63,34 @@ namespace MMT
             this.btn_Win.UseVisualStyleBackColor = true;
             this.btn_Win.Click += new System.EventHandler(this.btn_Win_Click);
             // 
+            // Picturebox_Win
+            // 
+            this.Picturebox_Win.BackColor = System.Drawing.Color.Transparent;
+            this.Picturebox_Win.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
+            this.Picturebox_Win.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Picturebox_Win.Location = new System.Drawing.Point(0, 0);
+            this.Picturebox_Win.Name = "Picturebox_Win";
+            this.Picturebox_Win.Size = new System.Drawing.Size(450, 300);
+            this.Picturebox_Win.TabIndex = 2;
+            this.Picturebox_Win.TabStop = false;
+            this.Picturebox_Win.Controls.Add(this.btn_Win);
+            this.Picturebox_Win.Controls.Add(this.lbl_Win);
+            // 
             // Form_Win
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::MMT.Properties.Resources.Img_menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(450, 300);
-            this.Controls.Add(this.btn_Win);
-            this.Controls.Add(this.lbl_Win);
+            this.Controls.Add(this.Picturebox_Win);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(384, 80);
             this.Name = "Form_Win";
             this.Text = "Form_Win";
             this.TransparencyKey = System.Drawing.Color.White;
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Win)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,5 +100,6 @@ namespace MMT
 
         private System.Windows.Forms.Label lbl_Win;
         private System.Windows.Forms.Button btn_Win;
+        public System.Windows.Forms.PictureBox Picturebox_Win;
     }
 }

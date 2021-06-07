@@ -674,10 +674,10 @@ namespace MMT
             this.listBox_Message.ItemHeight = 16;
             this.listBox_Message.Items.AddRange(new object[] {
             "获得HealthPotion，增加20点HP"});
-            this.listBox_Message.Location = new System.Drawing.Point(984, 416);
+            this.listBox_Message.Location = new System.Drawing.Point(990, 416);
             this.listBox_Message.Name = "listBox_Message";
             this.listBox_Message.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBox_Message.Size = new System.Drawing.Size(402, 192);
+            this.listBox_Message.Size = new System.Drawing.Size(385, 176);
             this.listBox_Message.TabIndex = 12;
             // 
             // MMainForm
@@ -694,6 +694,8 @@ namespace MMT
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
+            this.MaximumSize = new System.Drawing.Size(1398, 640);
+            this.MinimumSize = new System.Drawing.Size(1398, 640);
             this.Name = "MMainForm";
             this.Text = "MyMagicTower";
             this.Load += new System.EventHandler(this.MMainForm_Load);
@@ -719,9 +721,9 @@ namespace MMT
         private System.Windows.Forms.Button btn_MainMenu_Load;
         private System.Windows.Forms.Button btn_MainMenu_Exit;
         private System.Windows.Forms.Label lbl_MainMenu_MagicTower;
-        private System.Windows.Forms.PictureBox Picturebox_MainMenu;
-        private System.Windows.Forms.PictureBox Picturebox_Map;
-        private System.Windows.Forms.PictureBox PictureBox_Inventory;
+        public System.Windows.Forms.PictureBox Picturebox_MainMenu;
+        public System.Windows.Forms.PictureBox Picturebox_Map;
+        public System.Windows.Forms.PictureBox PictureBox_Inventory;
         private System.Windows.Forms.GroupBox groupBox_Equipped;
         private System.Windows.Forms.Label lbl_equipped_4;
         private System.Windows.Forms.Button equipped_4;
