@@ -18,6 +18,9 @@ namespace MMT
         private Form_Load fl;
         private Form_Pause fp;
         private Form_Battle fb;
+        private List<Button> equipped;
+        private List<Button> equipment;
+        private List<Label> lblEquipped;
         public static MMainForm Instance
         {
             get
@@ -36,6 +39,9 @@ namespace MMT
         public Form_Load Fl { get => fl; set => fl = value; }
         public Form_Pause Fp { get => fp; set => fp = value; }
         public Form_Battle Fb { get => fb; set => fb = value; }
+        public List<Button> Equipped { get => equipped; }
+        public List<Button> Equipment { get => equipment; }
+        public List<Label> LblEquipped { get => lblEquipped; }
 
         public MMainForm()
         {
@@ -51,6 +57,71 @@ namespace MMT
             fp = new Form_Pause();
             Fp.TopLevel = false;
             Fp.Parent = this;
+
+            equipped = new List<Button>()
+            {
+                equipped_1, equipped_2, equipped_3, equipped_4
+            };
+            equipment = new List<Button>()
+            {
+                equipment_1, equipment_2, equipment_3, equipment_4, equipment_5, equipment_6, equipment_7,
+                equipment_8, equipment_9, equipment_10, equipment_11, equipment_12, equipment_13, equipment_14,
+                equipment_15, equipment_16, equipment_17, equipment_18, equipment_19, equipment_20, equipment_21,
+                equipment_22, equipment_23, equipment_24, equipment_25, equipment_26, equipment_27, equipment_28
+            };
+            lblEquipped = new List<Label>()
+            {
+                lbl_equipped_1, lbl_equipped_2, lbl_equipped_3, lbl_equipped_4
+            };
+            // 初始化PictureBox_Register
+            /*
+            Picturebox_Register.Controls.Add(lbl_Register);
+            Picturebox_Register.Controls.Add(TextBox_Register);
+            Picturebox_Register.Controls.Add(btn_Register_Confirm);
+            Picturebox_Register.Controls.Add(btn_Register_Cancle);
+            Picturebox_MainMenu.Controls.Add(Picturebox_Register);*/
+        }
+
+        public void UpdateEquipped()
+        {
+            int total = MMainCharacter.Instance.Equipped.Count;
+            for (int i = 0; i < 4; i++)
+            {
+                if (i < total && total <= 4)
+                {
+                    Equipped[i].BackgroundImage = MMainCharacter.Instance.Equipped[i].Image;
+                    LblEquipped[i].Text = MMainCharacter.Instance.Equipped[i].Name;
+                    ToolTip_.SetToolTip(Equipped[i], MMainCharacter.Instance.Equipped[i].ToString());
+                }
+                else
+                {
+                    Equipped[i].BackgroundImage = Properties.Resources.Img_slot;
+                    LblEquipped[i].Text = "";
+                    ToolTip_.SetToolTip(Equipped[i], "");
+                }
+            }
+        }
+
+        public void UpdateEquipment()
+        {
+            int total = MMainCharacter.Instance.Equipment.Count + MMainCharacter.Instance.Keys.Count;
+            for(int i = 0; i < 28; i++)
+            {
+                if (i < total && total <=28)
+                {
+                    int idx = i;
+                    if (i >= MMainCharacter.Instance.Equipment.Count)
+                        idx = i - MMainCharacter.Instance.Equipment.Count;
+                    Equipment[i].Visible = true;
+                    Equipment[i].BackgroundImage = MMainCharacter.Instance.Equipment[idx].Image;
+                    ToolTip_.SetToolTip(Equipment[i], MMainCharacter.Instance.Equipment[idx].ToString());
+                }
+                else
+                {
+                    Equipment[i].Visible = false;
+                    Equipment[i].BackgroundImage = Properties.Resources.Img_slot;
+                }
+            }
         }
 
         public void Draw()
@@ -144,6 +215,8 @@ namespace MMT
         public void GameStart() 
         {
             this.Picturebox_MainMenu.Hide();
+            this.Picturebox_Register.Hide();
+            this.lbl_Register.Text = "";
             this.PictureBox_Inventory.Visible = true;
             Fs.Show();
             Fs.Height = this.Height;
@@ -266,10 +339,8 @@ namespace MMT
 
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
-            MMainLogic.Instance.Start(0, "TEST");
-            MMainCharacter.Instance.MaxHP = 1;
-            MMainCharacter.Instance.Speed = -1;
-            this.GameStart();
+            Picturebox_Register.Show();
+            Picturebox_Register.BringToFront();
         }
 
         private void btn_MainMenu_Load_Click(object sender, EventArgs e)
@@ -302,6 +373,25 @@ namespace MMT
         {
             // this.groupBox_Equipped
             // this.groupBox_Inventory
+        }
+
+        private void btn_Register_Confirm_Click(object sender, EventArgs e)
+        {
+            if (TextBox_Register.Text == "") return;
+            MMainLogic.Instance.Start(0, TextBox_Register.Text);
+
+            MMainCharacter.Instance.MaxHP = 1;
+            MMainCharacter.Instance.Speed = -1;
+
+            UpdateEquipped();
+            UpdateEquipment();
+            this.GameStart();
+        }
+
+        private void btn_Register_Cancle_Click(object sender, EventArgs e)
+        {
+            Picturebox_Register.Hide();
+            TextBox_Register.Text = "";
         }
     }
 }

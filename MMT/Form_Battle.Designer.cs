@@ -29,6 +29,7 @@ namespace MMT
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_Battle_skill2 = new System.Windows.Forms.Button();
             this.btn_Battle_skill1 = new System.Windows.Forms.Button();
             this.btn_Battle_skill3 = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@ namespace MMT
             this.btn_Battle_attack = new System.Windows.Forms.Button();
             this.lbl_Battle_vs = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ToolTip_ = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -510,5 +512,6 @@ namespace MMT
         private System.Windows.Forms.Button btn_Battle_attack;
         private System.Windows.Forms.Label lbl_Battle_vs;
         public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolTip ToolTip_;
     }
 }

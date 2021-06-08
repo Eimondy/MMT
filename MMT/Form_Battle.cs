@@ -30,20 +30,21 @@ namespace MMT
                 btn_Battle_attack
             };
             // 按钮绑定事件，并设置外观
-            foreach(var b in Btns)
+            for(int i=0; i<Btns.Count;i++)
             {
-                b.Click += new EventHandler(BtnClick);
-                b.BackgroundImage = Properties.Resources.Img_button;
-                b.BackgroundImageLayout = ImageLayout.Stretch;
-                b.FlatAppearance.BorderSize = 0;
-                b.FlatStyle = FlatStyle.Flat;
+                Btns[i].Click += new EventHandler(BtnClick);
+                Btns[i].BackgroundImage = Properties.Resources.Img_button;
+                Btns[i].BackgroundImageLayout = ImageLayout.Stretch;
+                Btns[i].FlatAppearance.BorderSize = 0;
+                Btns[i].FlatStyle = FlatStyle.Flat;
+                // 设置ToolTip
+                if (i == 8) break;
+                var s = MMainCharacter.Instance.Skills[i];
+                ToolTip_.SetToolTip(Btns[i], string.Format("{0}\n类型 {1} 消耗 {2}\n{3}", s.Name, s.Type, s.Consumption, s.Description));
             }
+            ToolTip_.SetToolTip(Btns[8], "普通攻击");
             // 设置位置
             this.Location = new Point((MMainForm.Instance.Width - Width) / 2, (MMainForm.Instance.Height - Height) / 2);
-            // 窗体透明
-            this.Opacity = 1.0;
-            //this.TransparencyKey = Color.Red;
-            //this.BackColor = Color.Red;
             // 数值调整
             curEnemy = o as MEnemy;
             SetLable(MMainCharacter.Instance);

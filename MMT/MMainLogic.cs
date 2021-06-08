@@ -16,8 +16,8 @@ namespace MMT
 {
     class MMainLogic
     {
-        private delegate void TOUI();
-        private delegate void TOUIARG(object[] args);
+        //private delegate void TOUI();
+        //private delegate void TOUIARG(object[] args);
 
         private static MMainLogic instance;
         private List<MGameProfile> saves = new List<MGameProfile>();
@@ -115,7 +115,7 @@ namespace MMT
 
         public void Draw()
         {
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Draw));
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.Draw));
         }
 
         public void Start(int saveNum = 0, string pn="")
@@ -153,7 +153,7 @@ namespace MMT
             if (Thread.CurrentThread.Name == "Form")
                 MMainForm.Instance.Dispose();
             else if (Thread.CurrentThread.Name == "Logic")
-                MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Dispose));
+                MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.Dispose));
         }
 
         public void NewGame(string pn)
@@ -189,7 +189,7 @@ namespace MMT
             Shell.WriteLine("进入战斗", ConsoleColor.Black);
             Combat = true;
             // 与窗体通信，显示战斗界面
-            MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.ShowCombatMenu), new object[1] { new object[1] { enemy } });
+            MMainForm.Instance.BeginInvoke(new Action<object[]>(MMainForm.Instance.ShowCombatMenu), new object[1] { new object[1] { enemy } });
             // 比较速度判出先后手
             MCharacter currentOne;
             if (MMainCharacter.Instance.Speed >= enemy.Speed)
@@ -221,7 +221,7 @@ namespace MMT
                             choice[i] = false;
                     }
                 }
-                MMainForm.Instance.BeginInvoke(new TOUIARG(MMainForm.Instance.UpdateCombatMenu), new object[1] { choice });
+                MMainForm.Instance.BeginInvoke(new Action<object[]>(MMainForm.Instance.UpdateCombatMenu), new object[1] { choice });
                 Shell.WriteLine(string.Format("玩家HP：{0}     敌人HP：{1}", MMainCharacter.Instance.HP, enemy.HP), ConsoleColor.Green);
                 if (currentOne is MMainCharacter)     // 主角的轮次。若30秒之内不攻击，则使用普通攻击。
                 {
@@ -284,7 +284,7 @@ namespace MMT
                 }
             }
             // 关闭战斗界面
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.CloseCombatMenu));
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.CloseCombatMenu));
             // 若主角战败，则调用DefeatedMode()
             if (MMainCharacter.Instance.HP <= 0)
             {
@@ -305,7 +305,7 @@ namespace MMT
             Shell.WriteLine("游戏胜利", ConsoleColor.Black);
             IsInGame = false;
             Victory = true;
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.EndingMenu));
             // 展示统计信息
             Shell.WriteLine(CurrentProfile.ToString(), ConsoleColor.Green);
         }
@@ -315,7 +315,7 @@ namespace MMT
             Shell.WriteLine("游戏失败", ConsoleColor.Black);
             IsInGame = false;
             Defeated = true;
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.EndingMenu));
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.EndingMenu));
         }
 
         public void PauseRelease()
@@ -330,7 +330,7 @@ namespace MMT
             Shell.WriteLine("游戏暂停", ConsoleColor.Black);
             IsInGame = false;
             Paused = true;
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.PausedMenu));
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.PausedMenu));
         }
 
         public void StarFromCurrentLevel()     // 战斗失败之后，从当前关卡重玩。将主角传送至关卡入口处即可
@@ -347,7 +347,7 @@ namespace MMT
             MLevel.Levels = new List<MLevel>();
             IsInGame = false;
             CurrentProfile = null;
-            MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.MainMenu));
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.MainMenu));
         }
 
         public void GameLoop()
@@ -421,7 +421,7 @@ namespace MMT
                                     }
                             }
                             // 发生交互
-                            Shell.WriteLine(string.Format("与{0}发生交互", item.Name), ConsoleColor.Blue);
+                            //Shell.WriteLine(string.Format("与{0}发生交互", item.Name), ConsoleColor.Blue);
                             item.Interact();
                             Draw();
                             break;
@@ -447,7 +447,7 @@ namespace MMT
                     KeyboardInput = false;
                     KeyboardData = Keys.None;
                     // 与窗体通信
-                    MMainForm.Instance.BeginInvoke(new TOUI(MMainForm.Instance.Fp.Picturebox_Load_menu.Hide));
+                    MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.Fp.Picturebox_Load_menu.Hide));
                 }
                 if (IsGameOver) break;     // 若游戏结束，则退出循环，关闭线程
             }
