@@ -49,6 +49,7 @@ namespace MMT.Data.Classes.Skill
                     return false;
                 else
                 {
+                    Shell.WriteLine(string.Format("{0}使用[{1}]发起攻击！", user.Name, Name));
                     user.Power -= Consumption;
                     return true;
                 }
@@ -57,6 +58,7 @@ namespace MMT.Data.Classes.Skill
                     return false;
                 else
                 {
+                    Shell.WriteLine(string.Format("{0}使用[{1}]发起攻击！", user.Name, Name));
                     user.MP -= Consumption;
                     return true;
                 }

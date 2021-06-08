@@ -27,6 +27,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
                 enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -55,6 +59,10 @@ namespace MMT.Data.Classes.Skill
                 enemy.MP -= Consumption;
                 //每回合掉血还没写
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -78,6 +86,10 @@ namespace MMT.Data.Classes.Skill
             if (p < user.HitRate)
             {
                 enemy.Power -= Convert.ToInt32(enemy.Power * 0.2);
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
         }
@@ -105,6 +117,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
                 enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -127,7 +143,11 @@ namespace MMT.Data.Classes.Skill
             if (!base.Activate(user, enemy)) return false;
             Random rd = new Random();
             double p = rd.NextDouble();
-            if (p > user.HitRate) return true; 
+            if (p > user.HitRate)
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+                return true;
+            }
             //第一次攻击
             var Attack = user.MaxPower * Points * COMBAT.ATTACK;
             var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
@@ -169,6 +189,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
                 enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -195,6 +219,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
                 enemy.MP -= Convert.ToInt32(enemy.MP * 0.4);
                 enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
 
@@ -223,6 +251,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
                 user.Armor *= 2;
                 enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
 
@@ -254,6 +286,10 @@ namespace MMT.Data.Classes.Skill
 
                 //无视一切技能加成还未完成
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -276,7 +312,11 @@ namespace MMT.Data.Classes.Skill
             if (!base.Activate(user, enemy)) return false;
             Random rd = new Random();
             double p = rd.NextDouble();
-            if (p > user.HitRate) return true;
+            if (p > user.HitRate)
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+                return true;
+            }
             var Attack = user.MaxMP * Points * COMBAT.ATTACK;
             var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
             enemy.HP -= (int)TakeAttack; //这里把伤害转成整型了
@@ -290,6 +330,4 @@ namespace MMT.Data.Classes.Skill
             return true;
         }
     }
-
-
 }

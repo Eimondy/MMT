@@ -24,6 +24,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
                 enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -49,6 +53,10 @@ namespace MMT.Data.Classes.Skill
                 var Attack = user.MaxMP * Points * COMBAT.ATTACK;
                 var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
                 enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
         }
@@ -76,6 +84,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
                 enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -102,6 +114,10 @@ namespace MMT.Data.Classes.Skill
             {
                 enemy.Armor = enemy.Armor - 4;
                 if (enemy.Armor < 0) enemy.Armor = 0;
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
         }
@@ -133,6 +149,10 @@ namespace MMT.Data.Classes.Skill
                 var TakeAttack = Attack - enemy.MagicArmor * COMBAT.DEFENSE;
                 enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
             }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
+            }
             return true;
         }
     }
@@ -162,6 +182,10 @@ namespace MMT.Data.Classes.Skill
                 enemy.Armor = Convert.ToInt32(enemy.Armor * 0.6); //敌人护甲降低40%
                 var TakeAttack = Attack - enemy.Armor * COMBAT.DEFENSE;
                 enemy.HP = enemy.HP - (int)TakeAttack; //这里把伤害转成整型了
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
         }
@@ -194,6 +218,10 @@ namespace MMT.Data.Classes.Skill
                 user.HP += Convert.ToInt32(Hp);
                 if (user.HP > user.MaxHP)
                     user.HP = user.MaxHP;
+            }
+            else
+            {
+                Shell.WriteLine(string.Format("{0}的[{1}]未命中！", user.Name, Name));
             }
             return true;
         }
