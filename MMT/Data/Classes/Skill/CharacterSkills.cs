@@ -35,11 +35,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CExtinctRoar : MSkill
     {
-        public CExtinctRoar()
+        public CExtinctRoar():base("灭生啸")
         {
-            Name = "ExtinctRoar"; //技能名称
-            Points = 1.5f;//伤害倍数
-            Consumption = 60;//所消耗的对应属性的值
             Type = ATTRIBUTE.MAGIC;//技能类型,仅POWER和MAGIC
             Description = "普通A级法术技能，对敌人造成1.5倍伤害";//技能描述
         }
@@ -65,11 +62,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CFragmentImpact : MSkill
     {
-        public CFragmentImpact()
+        public CFragmentImpact():base("碎裂撞击")
         {
-            Name = "FragmentImpact"; //技能名称
-            Points = 1.5f;//伤害倍数
-            Consumption = 60;//所消耗的对应属性的值
             Type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
             Description = "普通A级物理技能，对敌人造成1.5倍伤害";//技能描述
         }
@@ -95,11 +89,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CFrustrated : MSkill
     {
-        public CFrustrated()
+        public CFrustrated():base("挫锐")
         {
-            Name = "Frustrated"; //技能名称
-            Points = 1.0f;//伤害倍数
-            Consumption = 20;//所消耗的对应属性的值
             Type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
             Description = "命中敌人可降低敌人4点护甲";//技能描述
         }
@@ -126,11 +117,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CGodShine : MSkill
     {
-        public CGodShine()
+        public CGodShine():base("千烈虚光闪")
         {
-            Name = "GodShine"; //技能名称
-            Points = 2.0f;//伤害倍数
-            Consumption = 120;//所消耗的对应属性的值
             Type = ATTRIBUTE.MAGIC;//技能类型,仅POWER和MAGIC
             Description = "S级法术技能，对敌人造成2倍伤害，并降低对手40%魔抗";//技能描述
         }
@@ -160,11 +148,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CGodStrick : MSkill
     {
-        public CGodStrick()
+        public CGodStrick():base("神谕灭魔击")
         {
-            Name = "GodStrick"; //技能名称
-            Points = 2.0f;//伤害倍数
-            Consumption = 120;//所消耗的对应属性的值
             Type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
             Description = "S级物理技能，对敌人造成2倍伤害，并降低对手40%护甲";//技能描述
         }
@@ -194,11 +179,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CStrongAbsorption : MSkill
     {
-        public CStrongAbsorption()
+        public CStrongAbsorption():base("强力汲取")
         {
-            Name = "StrongAbsorption";
-            Points = 1.3f;
-            Consumption = 60;//所消耗的对应属性的值
             Type = ATTRIBUTE.MAGIC;//技能类型,仅POWER和MAGIC
             Description = "对敌人造成伤害倍数为1.3倍的伤害，同时回复所造成伤害的30%为自己的血量";//技能描述
         }
@@ -230,11 +212,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class CTreat : MSkill
     {
-        public CTreat()
+        public CTreat():base("自愈")
         {
-            Name = "Treat"; //技能名称
-            Points = 0.0f;//伤害倍数
-            Consumption = 20;//所消耗的对应属性的值
             Type = ATTRIBUTE.MAGIC;//技能类型,仅POWER和MAGIC
             Description = "使用后不对敌方造成伤害，回复自身血量50点";//技能描述
         }
