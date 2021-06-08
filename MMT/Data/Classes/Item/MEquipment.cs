@@ -30,6 +30,7 @@ namespace MMT.Data.Classes.Item
         // 穿戴装备，增加属性
         public void Equip()
         {
+            Shell.WriteLine(string.Format("装备{0}", Name), ConsoleColor.Green);
             // 若当前已装备相同类型的装备，则先卸下旧的，再换上新的
             foreach (MEquipment e in MMainCharacter.Instance.Equipped)
             {
@@ -41,12 +42,15 @@ namespace MMT.Data.Classes.Item
             }
             MMainCharacter.Instance.Equipped.Add(this);     // 穿戴装备
             MMainCharacter.Instance.PickUpEquipment(this);     // 增加属性
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipped));
         }
         // 卸下装备，减少属性
         public void Unequip()
         {
+            Shell.WriteLine(string.Format("卸下{0}", Name), ConsoleColor.Green);
             MMainCharacter.Instance.Equipped.Remove(this);     // 卸下装备
             MMainCharacter.Instance.PickDownEquipment(this);     // 减少属性
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipped));
         }
         public MEquipment(byte locationX, byte locationY, string name = "") : base(locationX, locationY)
         {
@@ -70,6 +74,7 @@ namespace MMT.Data.Classes.Item
         }
         public void Picked()
         {
+            Shell.WriteLine(string.Format("获取{0}", Name), ConsoleColor.Green);
             // 若未装备相同类型的装备，则装备上当前装备
             bool equipped = false;
             foreach (MEquipment e in MMainCharacter.Instance.Equipped)
@@ -88,6 +93,13 @@ namespace MMT.Data.Classes.Item
             MMainCharacter.Instance.Equipment.Add(this);
             // 将该装备从关卡中移除
             MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
+            // 与窗体通信更新装备栏
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipment));
+        }
+
+        public override string ToString()
+        {
+            return string.Format(string.Format("{0}\n力量 {1} 法力 {2}\n护甲 {3} 魔抗 {4}\n速度 {5} 命中率 {6}\n{7}", Name, Power, Magic, Armor, MagicArmor, Speed, HitRate, Description));
         }
     }
     [Serializable]

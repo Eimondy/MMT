@@ -35,10 +35,5 @@ namespace MMT.Data.Classes.Item
             LocationX = item.LocationX;
             LocationY = item.LocationY;
         }
-        /*
-        public override bool Equals(object obj)     // 用于从Item列表中移除某个对象时，判断两个Item对象是否相等。因为一个关卡中，每个Item的位置都不同，所以只需要判断名称和位置是否相等即可
-        {
-            return (obj as MItem).Name == Name && (obj as MItem).LocationX == LocationX && (obj as MItem).LocationY == LocationY;
-        }*/
     }
 }

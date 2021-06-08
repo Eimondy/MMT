@@ -45,6 +45,8 @@ namespace MMT.Data.Classes.Item
             MMainCharacter.Instance.Keys.Add(this);
             // 将该钥匙从关卡中移除
             MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
+            // 与窗体通信更新装备栏
+            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipment));
         }
     }
 }

@@ -31,10 +31,16 @@ namespace MMT.Data.Classes.Item
         }
         public override void Interact()
         {
-            if(MMainCharacter.Instance.Keys.Find(key => key.RelatedDoor == RelatedKey) != null)
+            Shell.WriteLine(string.Format("这是{0}号门", RelatedKey), ConsoleColor.Yellow);
+            MKey key = MMainCharacter.Instance.Keys.Find(k => k.RelatedDoor == RelatedKey);
+            if (key != null)
             {
+                // 从关卡中移除门
                 MLevel.Levels[MLevel.CurrentLevel - 1].Items.Remove(this);
-                MMainLogic.Instance.CurrentProfile.DoorCount++;//将所开的门类信息加一
+                // 从背包中移除对应钥匙
+                MMainCharacter.Instance.Keys.Remove(key);
+                // 将所开的门类信息加一
+                MMainLogic.Instance.CurrentProfile.DoorCount++;
                 Shell.WriteLine(string.Format("开启{0}号门", RelatedKey), ConsoleColor.Yellow);
             }
         }

@@ -33,7 +33,7 @@ namespace MMT.Data.Classes.Item
         {
             base.Interact();
             Picked();
-            Shell.WriteLine(string.Format("增加{0}{1}点", Type.ToString(), PromotePoints), ConsoleColor.Yellow);
+            Shell.WriteLine(string.Format("获取{0}，增加{1}{2}点", Name, Type.ToString(), PromotePoints), ConsoleColor.Yellow);
         }
         public void Picked()
         {
