@@ -6,11 +6,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class OAttack : MSkill
     {
-        public OAttack()
+        public OAttack():base("暗算")
         {
-            Name = "Attack"; //技能名称
-            Points = 1.1f;//伤害倍数
-            Consumption = 15;//所消耗的对应属性的值
             Type = ATTRIBUTE.POWER;//技能类型,仅POWER和MAGIC
             Description = "普通b级物理技能，伤害倍数1.1";//技能描述
         }
@@ -34,11 +31,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class OPosion : MSkill
     {
-        public OPosion()
+        public OPosion():base("毒物")
         {
-            Name = "Posion"; //技能名称
-            Points = 1.1f;//伤害倍数
-            Consumption = 20;//所消耗的对应属性的值
             Type = ATTRIBUTE.MAGIC;//技能类型,仅POWER和MAGIC
             Description = "法术技能，命中后使主角进入中毒状态，每回合持续掉血10点，持续两回合";//技能描述
         }
@@ -62,11 +56,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class EEvilFluctuation : MSkill
     {
-        public EEvilFluctuation()
+        public EEvilFluctuation():base("恶之波动")
         {
-            Name = "EvilFluctuation";
-            Points = 1.2f;
-            Consumption = 30;
             Type = ATTRIBUTE.POWER;
             Description = "物理技能，命中后使主角进入疲惫状态，虚弱主角20%力量";
         }
@@ -86,11 +77,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class EDeadWinding:MSkill
     { 
-        public EDeadWinding()
+        public EDeadWinding():base("死亡缠绕")
         {
-            Name = "DeadWinding";
-            Points = 1.2;
-            Consumption = 40;
             Type = ATTRIBUTE.MAGIC;
             Description = "法术技能，伤害倍数1.2";
         }
@@ -113,11 +101,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class BDevilChopper:MSkill
     {
-        public BDevilChopper()
+        public BDevilChopper():base("恶魔斩")
         {
-            Name = "DevilChopper";
-            Points = 1.2;
-            Consumption = 80;
             Type = ATTRIBUTE.POWER;
             Description = "骷髅将军专属物理技能，命中后有50%概率进行二次攻击，第二次攻击伤害倍数减为1.1";
 
@@ -149,11 +134,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class BSarifice:MSkill
     {
-        public BSarifice()
+        public BSarifice():base("献祭")
         {
-            Name = "Sarifice";
-            Points = 1.3;
-            Consumption = 50;
             Type = ATTRIBUTE.MAGIC;
             Description = "骷髅将军专属法术技能，伤害倍数1.3";
 
@@ -176,11 +158,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class BSoulKnife : MSkill
     {
-        public BSoulKnife()
+        public BSoulKnife():base("切裂魂刀")
         {
-            Name = "SoulKnife";
-            Points = 1.2;
-            Consumption = 50;
             Type = ATTRIBUTE.POWER;
             Description = "大法师专属物理技能，伤害倍数1.2且降低主角40%魔抗";
         }
@@ -204,11 +183,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class BSoulGift : MSkill 
     {
-        public BSoulGift()
+        public BSoulGift():base("亡魂之赐")
         {
-            Name = "SoulGift";
-            Points = 1.4;
-            Consumption = 125;
             Type = ATTRIBUTE.MAGIC;
             Description = "大法师专属法术技能，伤害倍数1.4，且提高自身100%护甲值";
         }
@@ -232,11 +208,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class BSoulChop : MSkill
     {
-        public BSoulChop()
+        public BSoulChop():base("九魂灭天斩")
         {
-            Name = "SoulChop";
-            Points = 1.5;
-            Consumption = 200;
             Type = ATTRIBUTE.POWER;
             Description = "魔王专属物理技能，伤害倍数2，同时清楚自身一切负面效果，无视对方一切技能加成";
 
@@ -261,11 +234,8 @@ namespace MMT.Data.Classes.Skill
     [Serializable]
     public class BDarkCurse : MSkill
     {
-        public BDarkCurse()
+        public BDarkCurse():base("暗灵寂灭咒")
         {
-            Name = "DarkCurse";
-            Points = 1.5;
-            Consumption = 200;
             Type = ATTRIBUTE.MAGIC;
             Description = "魔王专属法术技能，伤害倍数2，30%概率打出二次攻击，二次攻击伤害倍数减为1.3";
 
