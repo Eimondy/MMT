@@ -73,13 +73,6 @@ namespace MMT
             {
                 lbl_equipped_1, lbl_equipped_2, lbl_equipped_3, lbl_equipped_4
             };
-            // 初始化PictureBox_Register
-            /*
-            Picturebox_Register.Controls.Add(lbl_Register);
-            Picturebox_Register.Controls.Add(TextBox_Register);
-            Picturebox_Register.Controls.Add(btn_Register_Confirm);
-            Picturebox_Register.Controls.Add(btn_Register_Cancle);
-            Picturebox_MainMenu.Controls.Add(Picturebox_Register);*/
         }
 
         public void UpdateEquipped()
@@ -215,8 +208,6 @@ namespace MMT
         public void GameStart() 
         {
             this.Picturebox_MainMenu.Hide();
-            this.Picturebox_Register.Hide();
-            this.lbl_Register.Text = "";
             this.PictureBox_Inventory.Visible = true;
             Fs.Show();
             Fs.Height = this.Height;
@@ -339,8 +330,14 @@ namespace MMT
 
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
-            Picturebox_Register.Show();
-            Picturebox_Register.BringToFront();
+            MMainLogic.Instance.Start(0, "TEST");
+
+            MMainCharacter.Instance.MaxHP = 1;
+            MMainCharacter.Instance.Speed = -1;
+
+            UpdateEquipped();
+            UpdateEquipment();
+            this.GameStart();
         }
 
         private void btn_MainMenu_Load_Click(object sender, EventArgs e)
@@ -373,25 +370,6 @@ namespace MMT
         {
             // this.groupBox_Equipped
             // this.groupBox_Inventory
-        }
-
-        private void btn_Register_Confirm_Click(object sender, EventArgs e)
-        {
-            if (TextBox_Register.Text == "") return;
-            MMainLogic.Instance.Start(0, TextBox_Register.Text);
-
-            MMainCharacter.Instance.MaxHP = 1;
-            MMainCharacter.Instance.Speed = -1;
-
-            UpdateEquipped();
-            UpdateEquipment();
-            this.GameStart();
-        }
-
-        private void btn_Register_Cancle_Click(object sender, EventArgs e)
-        {
-            Picturebox_Register.Hide();
-            TextBox_Register.Text = "";
         }
     }
 }

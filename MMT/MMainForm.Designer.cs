@@ -214,7 +214,6 @@ namespace MMT
             this.btn_Register_Cancle.Text = "取消";
             this.btn_Register_Cancle.UseVisualStyleBackColor = true;
             this.btn_Register_Cancle.UseWaitCursor = true;
-            this.btn_Register_Cancle.Click += new System.EventHandler(this.btn_Register_Cancle_Click);
             // 
             // btn_Register_Confirm
             // 
@@ -231,7 +230,6 @@ namespace MMT
             this.btn_Register_Confirm.Text = "确认";
             this.btn_Register_Confirm.UseVisualStyleBackColor = true;
             this.btn_Register_Confirm.UseWaitCursor = true;
-            this.btn_Register_Confirm.Click += new System.EventHandler(this.btn_Register_Confirm_Click);
             // 
             // TextBox_Register
             // 
