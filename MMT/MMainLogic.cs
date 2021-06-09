@@ -124,8 +124,9 @@ namespace MMT
             {
                 NewGame(pn);
                 MLevel.Levels.Add(new MLevel(1));
+                MMainCharacter.Instance = new MMainCharacter();
                 MMainCharacter.Instance.Name = CurrentProfile.PlayerName;     // 新主角只用定义Name
-                MMainCharacter.Instance.LocationX = 9;     // 新主角移动至第一关入口处
+                MMainCharacter.Instance.LocationX = 9;
                 MMainCharacter.Instance.LocationY = 4;
             }
             else     // 加载游戏
@@ -294,10 +295,10 @@ namespace MMT
             else
             {
                 Shell.WriteLine(string.Format("击败{0}，获得{1}经验值", enemy.Name, enemy.Exp), ConsoleColor.Green);
+                // 若敌人为关底Boss，则调用VictoryMode()
+                if (MLevel.CurrentLevel == 16 && enemy is TheDevil)
+                    VictoryMode();
             }
-            // 若敌人为关底Boss，则调用VictoryMode()
-            if (MLevel.CurrentLevel == 16 && enemy is TheDevil)
-                VictoryMode();
         }
 
         public void VictoryMode()
