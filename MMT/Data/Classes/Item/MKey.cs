@@ -48,5 +48,10 @@ namespace MMT.Data.Classes.Item
             // 与窗体通信更新装备栏
             MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipment));
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0}号钥匙", RelatedDoor);
+        }
     }
 }

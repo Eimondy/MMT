@@ -42,6 +42,8 @@ namespace MMT.Data.Classes.Item
                 // 将所开的门类信息加一
                 MMainLogic.Instance.CurrentProfile.DoorCount++;
                 Shell.WriteLine(string.Format("开启{0}号门", RelatedKey), ConsoleColor.Yellow);
+                // 与窗体通信更新装备栏
+                MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipment));
             }
         }
     }
