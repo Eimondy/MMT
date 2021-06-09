@@ -181,7 +181,6 @@ namespace MMT.Data.Classes
                 }
                 if (set) break;
             }
-            Shell.WriteLine(string.Format("玩家位于：({0},{1})", MMainCharacter.Instance.LocationX, MMainCharacter.Instance.LocationY), ConsoleColor.Green);
         }
     }
 
