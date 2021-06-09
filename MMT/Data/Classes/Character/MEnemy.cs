@@ -233,7 +233,7 @@ namespace MMT.Data.Classes.Character
     public class GrandMaster : MEnemy
     {
         //构造函数
-        public GrandMaster(byte x, byte y) : base(x, y, "大魔法师")
+        public GrandMaster(byte x, byte y) : base(x, y, "大法师")
         {
  
             Image = Properties.Resources.Img_char_GrandMaster;     

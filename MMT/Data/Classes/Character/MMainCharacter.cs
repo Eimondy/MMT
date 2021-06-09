@@ -74,55 +74,6 @@ namespace MMT.Data.Classes.Character
             };
         }
 
-        //带参数的完全构造函数,注意x,y坐标，level,exp为byte类型
-        public MMainCharacter(byte location_x, byte location_y, byte level=1, byte exp=0)
-        {
-            this.Name = "勇士";
-            this.Image = Properties.Resources.Img_char_down;
-            this.MaxHP = 50;
-            this.HP = 50;
-            this.MaxMP = 0;
-            this.MP = 0;
-            this.MaxPower = 15;
-            this.Power = 15;
-            this.Armor = 10;
-            this.MagicArmor = 5;
-            this.Speed = 1;
-            this.HitRate = 0.8;
-            this.AvoidRate = 1.0;
-            this.Image = null;     // 图片暂时未添加
-            this.LocationX = location_x;
-            this.LocationY = location_y;
-            this.Level = level;
-            this.Exp = exp;
-            this.ExpToLevelUp = Convert.ToByte(this.Level + 10) - exp;
-            this.Skills = new List<MSkill>();   // 技能暂时未添加
-        }
-        /*
-        public MMainCharacter(MMainCharacter c)     // copy constructor
-        {
-            this.Name = c.Name;
-            this.Image = Properties.Resources.Img_character_test;
-            this.MaxHP = c.MaxHP;
-            this.HP = c.HP;
-            this.MaxMP = c.MaxMP;
-            this.MP = c.MP;
-            this.MaxPower = c.MaxPower;
-            this.Power = c.Power;
-            this.Armor = c.Armor;
-            this.MagicArmor = c.MagicArmor;
-            this.Speed = c.Speed;
-            this.HitRate = c.HitRate;
-            this.AvoidRate = c.AvoidRate;
-            this.Image = c.Image;
-            this.LocationX = c.LocationX;
-            this.LocationY = c.LocationY;
-            this.Level = c.Level;
-            this.Exp = c.Exp;
-            this.ExpToLevelUp = Convert.ToByte(this.Level + 10) - this.Exp;
-            this.Skills = c.Skills;     
-        }*/
-
         // 获取经验值
         public void GetExp(MEnemy e)
         {
