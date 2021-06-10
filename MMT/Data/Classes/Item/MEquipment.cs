@@ -30,7 +30,6 @@ namespace MMT.Data.Classes.Item
         // 穿戴装备，增加属性
         public void Equip()
         {
-            Shell.WriteLine(string.Format("装备{0}", Name), ConsoleColor.Green);
             // 若当前已装备相同类型的装备，则先卸下旧的，再换上新的
             foreach (MEquipment e in MMainCharacter.Instance.Equipped)
             {
@@ -40,6 +39,7 @@ namespace MMT.Data.Classes.Item
                     break;
                 }
             }
+            Shell.WriteLine(string.Format("装备{0}", Name), ConsoleColor.Green);
             MMainCharacter.Instance.Equipped.Add(this);     // 穿戴装备
             MMainCharacter.Instance.PickUpEquipment(this);     // 增加属性
             if(System.Threading.Thread.CurrentThread.Name == "Logic")

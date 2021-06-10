@@ -60,6 +60,8 @@ namespace MMT.Data.Classes.Character
                 double Attack = MaxPower * COMBAT.ATTACK;
                 int TakeAttack = Convert.ToInt32(Attack - enemy.Armor * COMBAT.DEFENSE);
                 enemy.HP -= TakeAttack;
+                if (enemy.HP < 0)
+                    enemy.HP = 0;
             }
             else     // 直接使用技能
                 skill.Activate(this, enemy);

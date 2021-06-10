@@ -360,7 +360,7 @@ namespace MMT
         private void EquippedBtnClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
-            int idx = int.Parse(b.Name[b.Name.Length - 1].ToString()) - 1;
+            int idx = int.Parse(b.Name.Split('_')[1]) - 1;
             // 若有装备则卸下，否则返回
             if (idx >= MMainCharacter.Instance.Equipped.Count) return;
             MMainCharacter.Instance.Equipped[idx].Unequip();
@@ -371,7 +371,7 @@ namespace MMT
         private void EquipmentBtnClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
-            int idx = int.Parse(b.Name[b.Name.Length - 1].ToString()) - 1;
+            int idx = int.Parse(b.Name.Split('_')[1]) - 1;
             // 若为装备则穿戴
             if (idx >= MMainCharacter.Instance.Equipment.Count) return;
             MMainCharacter.Instance.Equipment[idx].Equip();
