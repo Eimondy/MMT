@@ -37,6 +37,7 @@ namespace MMT
             // btn_Load_Confirm
             // 
             this.btn_Load_Confirm.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Load_Confirm.Enabled = false;
             this.btn_Load_Confirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Load_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Load_Confirm.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -71,10 +72,11 @@ namespace MMT
             this.Table_Load.ColumnCount = 2;
             this.Table_Load.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.31799F));
             this.Table_Load.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.68201F));
-            this.Table_Load.Location = new System.Drawing.Point(155, 94);
+            this.Table_Load.Location = new System.Drawing.Point(128, 94);
             this.Table_Load.Name = "Table_Load";
             this.Table_Load.RowCount = 1;
-            this.Table_Load.Size = new System.Drawing.Size(511, 222);
+            this.Table_Load.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Table_Load.Size = new System.Drawing.Size(545, 222);
             this.Table_Load.TabIndex = 2;
             this.Table_Load.Paint += new System.Windows.Forms.PaintEventHandler(this.Table_Load_Paint);
             // 

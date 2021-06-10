@@ -83,6 +83,7 @@ namespace MMT
             this.equipment_1 = new System.Windows.Forms.Button();
             this.listBox_Message = new System.Windows.Forms.ListBox();
             this.ToolTip_ = new System.Windows.Forms.ToolTip(this.components);
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).BeginInit();
             this.Picturebox_MainMenu.SuspendLayout();
@@ -92,6 +93,7 @@ namespace MMT
             this.PictureBox_Inventory.SuspendLayout();
             this.groupBox_Equipped.SuspendLayout();
             this.groupBox_Inventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // Picturebox_Map
@@ -762,12 +764,23 @@ namespace MMT
             this.listBox_Message.Size = new System.Drawing.Size(385, 176);
             this.listBox_Message.TabIndex = 12;
             // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(0, 0);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(98, 49);
+            this.player.TabIndex = 14;
+            this.player.Visible = false;
+            // 
             // MMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 601);
+            this.Controls.Add(this.player);
             this.Controls.Add(this.Picturebox_Map);
             this.Controls.Add(this.Picturebox_MainMenu);
             this.Controls.Add(this.listBox_Message);
@@ -797,6 +810,7 @@ namespace MMT
             this.PictureBox_Inventory.ResumeLayout(false);
             this.groupBox_Equipped.ResumeLayout(false);
             this.groupBox_Inventory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -855,6 +869,7 @@ namespace MMT
         private System.Windows.Forms.TextBox TextBox_Register;
         private System.Windows.Forms.Button btn_Register_Confirm;
         private System.Windows.Forms.Button btn_Register_Cancle;
+        public AxWMPLib.AxWindowsMediaPlayer player;
     }
 }
 

@@ -13,7 +13,7 @@ namespace MMT.Data.Classes
     {
         private string playerName;
         private int playedTime;
-        private MMainCharacter character = MMainCharacter.Instance;
+        private MMainCharacter character;
         private int currentLevelNumber;
         private List<MLevel> existLevels;
         private int defeatedCount;
@@ -22,7 +22,7 @@ namespace MMT.Data.Classes
 
         public string PlayerName { get { return playerName; } set { playerName = value; } }
         public int PlayedTime { get { return playedTime; } set { playedTime = value; } }
-        public MMainCharacter Character { get { return character; } }
+        public MMainCharacter Character { get { return character; } set { character = value; } }
         public int CurrentLevelNumber { get { return currentLevelNumber; } set { currentLevelNumber = value; } }
         public List<MLevel> ExistLevels { get { return existLevels; } set { existLevels = value; } }
         public int DefeatedCount { get { return defeatedCount; } set { defeatedCount = value; } }
@@ -76,7 +76,13 @@ namespace MMT.Data.Classes
 
         public override string ToString()
         {
-            return string.Format("玩家：{0}\n游玩时间：{1}\n击败敌人：{2}\n开启密室：{3}\n收集物品：{4}\n", PlayerName, PlayedTime, DefeatedCount, DoorCount, ItemCount.Count);
+            return string.Format("玩家：{0}\n游玩时间：{1}\n当前关卡：{2}\n击败敌人：{3}\n开启密室：{4}\n收集物品：{5}\n", PlayerName, GetTime(), CurrentLevelNumber, DefeatedCount, DoorCount, ItemCount.Count);
+        }
+
+        private string GetTime()
+        {
+            int m = PlayedTime / 60, s = PlayedTime % 60;
+            return string.Format("{0}分{1}秒", m, s);
         }
     }
 }

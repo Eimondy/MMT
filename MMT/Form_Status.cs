@@ -30,7 +30,7 @@ namespace MMT
             this.lbl_MagicArmorShow.Text = "魔抗：" + MMainCharacter.Instance.MagicArmor;
             this.lbl_SpeedShow.Text = "速度：" + MMainCharacter.Instance.Speed.ToString("F2");
             this.lbl_HitRateShow.Text = "命中率：" + MMainCharacter.Instance.HitRate.ToString("F2");
-            this.lbl_LevelShow.Text = "等级：" + MMainCharacter.Instance.Level;
+            this.lbl_LevelShow.Text = "等级：" + MMainCharacter.Instance.Level + " " + MMainCharacter.Instance.Exp + "/" + (MMainCharacter.Instance.ExpToLevelUp+ MMainCharacter.Instance.Exp).ToString();
             this.lbl_Name.Text = "名称：" + MMainCharacter.Instance.Name;
         }
     }

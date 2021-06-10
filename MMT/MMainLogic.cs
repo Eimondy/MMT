@@ -32,6 +32,7 @@ namespace MMT
         private Keys keyboardData;
         private string defeatedEnemy;
         private Dictionary<string, List<string>> data = new Dictionary<string, List<string>>();
+        private DateTime playTime;
         public static MMainLogic Instance
         {
             get
@@ -57,6 +58,7 @@ namespace MMT
         public Keys KeyboardData { get { return keyboardData; } set { keyboardData = value; } }
         public string DefeatedEnemy { get { return defeatedEnemy; } set { defeatedEnemy = value; } }
         public Dictionary<string, List<string>> Data { get { return data; } }
+        public DateTime PlayTime { get { return playTime; } set { playTime = value; } }
 
         public MMainLogic()
         {
@@ -124,7 +126,6 @@ namespace MMT
             {
                 NewGame(pn);
                 MLevel.Levels.Add(new MLevel(1));
-                MMainCharacter.Instance = new MMainCharacter();
                 MMainCharacter.Instance.Name = CurrentProfile.PlayerName;     // 新主角只用定义Name
                 MMainCharacter.Instance.LocationX = 9;
                 MMainCharacter.Instance.LocationY = 4;
@@ -136,14 +137,11 @@ namespace MMT
                 MLevel.CurrentLevel = CurrentProfile.CurrentLevelNumber;
                 MMainCharacter.Instance = CurrentProfile.Character;     // 旧主角需要跟存档中的主角一样
             }
+            PlayTime = DateTime.Now;
             // 设置进入游戏标志
             IsInGame = true;
             // 重置其他标志
-            Paused = false;
-            Combat = false;
-            Victory = false;
-            Defeated = false;
-            IsGameOver = false;
+            ResetMarks(false);
             Shell.WriteLine("游戏开始", ConsoleColor.Black);
         }
 
@@ -179,10 +177,19 @@ namespace MMT
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 CurrentProfile.ExistLevels = MLevel.Levels;
+                CurrentProfile.CurrentLevelNumber = MLevel.CurrentLevel;
+                CurrentProfile.Character = MMainCharacter.Instance;
+                // 计时
+                CurrentProfile.PlayedTime += (int)(DateTime.Now - PlayTime).TotalSeconds;
                 bf.Serialize(fs, CurrentProfile);
             }
             // 更新Saves
             Saves.Add(CurrentProfile);
+            // 与窗体通信
+            if (System.Threading.Thread.CurrentThread.Name == "Logic")
+                MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.Fl.AddNewSave));
+            else
+                MMainForm.Instance.Fl.AddNewSave();
         }
         
         public void CombatMode(MEnemy enemy)
@@ -308,6 +315,7 @@ namespace MMT
             Victory = true;
             MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.EndingMenu));
             // 展示统计信息
+            CurrentProfile.PlayedTime += (int)(PlayTime - DateTime.Now).TotalSeconds;
             Shell.WriteLine(CurrentProfile.ToString(), ConsoleColor.Green);
         }
 
@@ -348,7 +356,17 @@ namespace MMT
             MLevel.Levels = new List<MLevel>();
             IsInGame = false;
             CurrentProfile = null;
+            ResetMarks(false);
             MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.MainMenu));
+        }
+
+        public void ResetMarks(bool m = false)
+        {
+            Paused = m;
+            Combat = m;
+            Victory = m;
+            Defeated = m;
+            IsGameOver = m;
         }
 
         public void GameLoop()

@@ -21,6 +21,7 @@ namespace MMT
         private void btn_Lose_Again_Click(object sender, EventArgs e)
         {
             MMainLogic.Instance.StarFromCurrentLevel();
+            MMainForm.Instance.SwitchBGM(1);
             this.Picturebox_Lose.Hide();
         }
 

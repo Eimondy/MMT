@@ -42,7 +42,8 @@ namespace MMT.Data.Classes.Item
             }
             MMainCharacter.Instance.Equipped.Add(this);     // 穿戴装备
             MMainCharacter.Instance.PickUpEquipment(this);     // 增加属性
-            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipped));
+            if(System.Threading.Thread.CurrentThread.Name == "Logic")
+                MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipped));
         }
         // 卸下装备，减少属性
         public void Unequip()
@@ -50,7 +51,8 @@ namespace MMT.Data.Classes.Item
             Shell.WriteLine(string.Format("卸下{0}", Name), ConsoleColor.Green);
             MMainCharacter.Instance.Equipped.Remove(this);     // 卸下装备
             MMainCharacter.Instance.PickDownEquipment(this);     // 减少属性
-            MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipped));
+            if (System.Threading.Thread.CurrentThread.Name == "Logic")
+                MMainForm.Instance.BeginInvoke(new Action(MMainForm.Instance.UpdateEquipped));
         }
         public MEquipment(byte locationX, byte locationY, string name = "") : base(locationX, locationY)
         {

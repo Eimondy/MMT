@@ -21,7 +21,7 @@ namespace MMT
         static void Main()
         {
             AllocConsole();
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MMainLogic Logic = MMainLogic.Instance;
@@ -49,8 +49,10 @@ namespace MMT
             Console.ForegroundColor = color;
             Console.WriteLine("[{0}] {1}", DateTime.Now.ToString(), text);
             Console.ForegroundColor = ConsoleColor.White;
-            if(Thread.CurrentThread.Name == "Logic" && MMainLogic.Instance.IsInGame)
+            if (Thread.CurrentThread.Name == "Logic" && (MMainLogic.Instance.IsInGame || MMainLogic.Instance.Paused))
                 MMainForm.Instance.BeginInvoke(new WRITE(MMainForm.Instance.Write), text);
+            else if (Thread.CurrentThread.Name == "Form" && (MMainLogic.Instance.IsInGame || MMainLogic.Instance.Paused))
+                MMainForm.Instance.Write(text);
         }
     }
 }

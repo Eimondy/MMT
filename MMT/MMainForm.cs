@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 using MMT.Data.Classes;
 using MMT.Data.Classes.Character;
 using MMT.Data.Classes.Item;
@@ -58,21 +59,34 @@ namespace MMT
             Fp.TopLevel = false;
             Fp.Parent = this;
 
-            equipped = new List<Button>()
+            InitEquipBtn();
+
+            player.enableContextMenu = false;
+            player.settings.setMode("loop", true);
+            // player.settings.volume = 100;     // 播放音量
+            SwitchBGM(0);
+        }
+
+        public void SwitchBGM(int n)     // 0 - menu, 1 - game, 2 - combat, 3 - end
+        {
+            string url = "";
+            switch (n)
             {
-                equipped_1, equipped_2, equipped_3, equipped_4
-            };
-            equipment = new List<Button>()
-            {
-                equipment_1, equipment_2, equipment_3, equipment_4, equipment_5, equipment_6, equipment_7,
-                equipment_8, equipment_9, equipment_10, equipment_11, equipment_12, equipment_13, equipment_14,
-                equipment_15, equipment_16, equipment_17, equipment_18, equipment_19, equipment_20, equipment_21,
-                equipment_22, equipment_23, equipment_24, equipment_25, equipment_26, equipment_27, equipment_28
-            };
-            lblEquipped = new List<Label>()
-            {
-                lbl_equipped_1, lbl_equipped_2, lbl_equipped_3, lbl_equipped_4
-            };
+                case 0:
+                    url = System.IO.Path.GetFullPath(@"..\..\Data\Sound\Main.mp3");
+                    break;
+                case 1:
+                    url = System.IO.Path.GetFullPath(@"..\..\Data\Sound\GameScreen.mp3");
+                    break;
+                case 2:
+                    url = System.IO.Path.GetFullPath(@"..\..\Data\Sound\Combat.mp3");
+                    break;
+                case 3:
+                    url = System.IO.Path.GetFullPath(@"..\..\Data\Sound\Ending.mp3");
+                    break;
+            }
+            player.URL = url;
+            player.Ctlcontrols.play();
         }
 
         public void UpdateEquipped()
@@ -103,11 +117,18 @@ namespace MMT
                 if (i < total && total <=28)
                 {
                     int idx = i;
-                    if (i >= MMainCharacter.Instance.Equipment.Count)
-                        idx = i - MMainCharacter.Instance.Equipment.Count;
                     Equipment[i].Visible = true;
-                    Equipment[i].BackgroundImage = MMainCharacter.Instance.Equipment[idx].Image;
-                    ToolTip_.SetToolTip(Equipment[i], MMainCharacter.Instance.Equipment[idx].ToString());
+                    if (i >= MMainCharacter.Instance.Equipment.Count)     // 装钥匙
+                    {
+                        idx = i - MMainCharacter.Instance.Equipment.Count;
+                        Equipment[i].BackgroundImage = MMainCharacter.Instance.Keys[idx].Image;
+                        ToolTip_.SetToolTip(Equipment[i], MMainCharacter.Instance.Keys[idx].ToString());
+                    }
+                    else     // 装装备
+                    {
+                        Equipment[i].BackgroundImage = MMainCharacter.Instance.Equipment[idx].Image;
+                        ToolTip_.SetToolTip(Equipment[i], MMainCharacter.Instance.Equipment[idx].ToString());
+                    }
                 }
                 else
                 {
@@ -207,10 +228,14 @@ namespace MMT
 
         public void GameStart() 
         {
+            UpdateEquipped();
+            UpdateEquipment();
             this.Picturebox_MainMenu.Hide();
             this.PictureBox_Inventory.Visible = true;
             Fs.Show();
             Fs.Height = this.Height;
+            Fs.Location = new Point(0, 0);
+            SwitchBGM(1);
             Draw();
         }
 
@@ -219,6 +244,7 @@ namespace MMT
             this.PictureBox_Inventory.Hide();
             this.Picturebox_Map.Hide();
             this.Picturebox_MainMenu.Show();
+            SwitchBGM(0);
             Fs.Hide();
         }
 
@@ -267,6 +293,7 @@ namespace MMT
             Fb.panel1.Location=new Point((Picturebox_Map.Width - Fb.panel1.Width) / 2, (Picturebox_Map.Height - Fb.panel1.Height) / 2);
             Fb.panel1.Show();
             Fb.panel1.BringToFront();
+            SwitchBGM(2);
         }
 
         public void UpdateCombatMenu(object[] choice)
@@ -278,6 +305,7 @@ namespace MMT
         {
             Fb.panel1.Hide();
             Fb = null;
+            SwitchBGM(1);
         }
         public void EndingMenu() 
         {
@@ -298,7 +326,59 @@ namespace MMT
                 Flose.Picturebox_Lose.Show();
                 Flose.Picturebox_Lose.BringToFront();
             }
+            SwitchBGM(3);
         }
+
+        private void InitEquipBtn()
+        {
+            equipped = new List<Button>()
+            {
+                equipped_1, equipped_2, equipped_3, equipped_4
+            };
+            equipment = new List<Button>()
+            {
+                equipment_1, equipment_2, equipment_3, equipment_4, equipment_5, equipment_6, equipment_7,
+                equipment_8, equipment_9, equipment_10, equipment_11, equipment_12, equipment_13, equipment_14,
+                equipment_15, equipment_16, equipment_17, equipment_18, equipment_19, equipment_20, equipment_21,
+                equipment_22, equipment_23, equipment_24, equipment_25, equipment_26, equipment_27, equipment_28
+            };
+            lblEquipped = new List<Label>()
+            {
+                lbl_equipped_1, lbl_equipped_2, lbl_equipped_3, lbl_equipped_4
+            };
+            // 绑定事件
+            foreach(var b in Equipped)
+            {
+                b.Click += new EventHandler(EquippedBtnClick);
+            }
+            foreach(var b in Equipment)
+            {
+                b.Click += new EventHandler(EquipmentBtnClick);
+            }
+        }
+
+        private void EquippedBtnClick(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            int idx = int.Parse(b.Name[b.Name.Length - 1].ToString()) - 1;
+            // 若有装备则卸下，否则返回
+            if (idx >= MMainCharacter.Instance.Equipped.Count) return;
+            MMainCharacter.Instance.Equipped[idx].Unequip();
+            // 更新装备栏
+            UpdateEquipped();
+        }
+
+        private void EquipmentBtnClick(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            int idx = int.Parse(b.Name[b.Name.Length - 1].ToString()) - 1;
+            // 若为装备则穿戴
+            if (idx >= MMainCharacter.Instance.Equipment.Count) return;
+            MMainCharacter.Instance.Equipment[idx].Equip();
+            // 更新装备栏
+            UpdateEquipped();
+        }
+
 
         private void MMainForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -330,13 +410,11 @@ namespace MMT
 
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
-            MMainLogic.Instance.Start(0, "TEST");
+            MMainLogic.Instance.Start(0, "B");
 
-            MMainCharacter.Instance.MaxHP = 1;
-            MMainCharacter.Instance.Speed = -1;
+            //MMainCharacter.Instance.MaxHP = 1;
+            //MMainCharacter.Instance.Speed = -1;
 
-            UpdateEquipped();
-            UpdateEquipment();
             this.GameStart();
         }
 
