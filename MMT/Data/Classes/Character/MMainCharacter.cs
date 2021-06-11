@@ -92,12 +92,12 @@ namespace MMT.Data.Classes.Character
             Level++;
             Exp = Convert.ToByte(0 - OldExpToLevelUp);
             ExpToLevelUp = Convert.ToByte(Level + 10) - Exp;
-            MaxHP += 15;
-            MaxMP += 10;
-            MaxPower += 5;
-            Armor += 3;
+            MaxHP += 10;                //数据测试后，将人物血量设置为+10
+            MaxMP += 8;                //人物mp设置为+8
+            MaxPower += 4;              //人物power设置为+4
+            Armor += 3;                 
             MagicArmor += 8;
-            Speed += 0.5f;
+            Speed += 0.3f;              //人物速度设置为+0.3f
             //可以添加升级提示框
 
             //升级之后当前mp,hp回满

@@ -50,7 +50,7 @@ namespace MMT.Data.Classes.Skill
             double p = rd.NextDouble();
             if (p < user.HitRate) //命中
             {
-                enemy.MP -= Consumption;
+                enemy.HP -= Consumption;
                 //每回合掉血还没写
             }
             else
