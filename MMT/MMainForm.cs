@@ -19,6 +19,7 @@ namespace MMT
         private Form_Load fl;
         private Form_Pause fp;
         private Form_Battle fb;
+        private Form_Create fc;
         private List<Button> equipped;
         private List<Button> equipment;
         private List<Label> lblEquipped;
@@ -42,6 +43,7 @@ namespace MMT
         public Form_Load Fl { get => fl; set => fl = value; }
         public Form_Pause Fp { get => fp; set => fp = value; }
         public Form_Battle Fb { get => fb; set => fb = value; }
+        public Form_Create Fc { get => fc; set => fc = value; }
         public List<Button> Equipped { get => equipped; }
         public List<Button> Equipment { get => equipment; }
         public List<Label> LblEquipped { get => lblEquipped; }
@@ -60,6 +62,8 @@ namespace MMT
             fp = new Form_Pause();
             Fp.TopLevel = false;
             Fp.Parent = this;
+
+            fc = new Form_Create();
 
             InitEquipBtn();
 
@@ -409,12 +413,10 @@ namespace MMT
 
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
         {
-            MMainLogic.Instance.Start(0, "B");
-
-            //MMainCharacter.Instance.MaxHP = 1;
-            //MMainCharacter.Instance.Speed = -1;
-
-            this.GameStart();
+            Fc.TopLevel = false;
+            Fc.Parent = this.Picturebox_MainMenu;
+            Fc.Show();
+            Fc.BringToFront();
         }
 
         private void btn_MainMenu_Load_Click(object sender, EventArgs e)
