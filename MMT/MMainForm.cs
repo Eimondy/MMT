@@ -22,6 +22,8 @@ namespace MMT
         private List<Button> equipped;
         private List<Button> equipment;
         private List<Label> lblEquipped;
+        private bool repaintAttrInv = false;
+        private byte lastLv = 0;
         public static MMainForm Instance
         {
             get
@@ -170,14 +172,22 @@ namespace MMT
                             wall = Properties.Resources.Img_wall4;
                             break;
                     }
+                    // 绘制地图
                     if (CurLevel.Map.Content[i, j] == BLOCKS.WALL)
                         cur.DrawImage(wall, x * j, x * i, x, x);
                     else
                         cur.DrawImage(ground, x * j, x * i, x, x);
                 }
             }
+            // 若地图材质变化，则重绘属性栏与背包栏
+            if (lastLv != MLevel.CurrentLevel)
+            {
+                lastLv = Convert.ToByte(MLevel.CurrentLevel);
+                repaintAttrInv = true;
+            }
+            //else if(lastLv == MLevel.CurrentLevel)
             // 绘制物品
-            foreach(var o in MLevel.Levels[MLevel.CurrentLevel - 1].Items)
+            foreach (var o in MLevel.Levels[MLevel.CurrentLevel - 1].Items)
                 cur.DrawImage(o.Image, x * (o.LocationY - 1), x * (o.LocationX - 1), x, x);
             // 绘制敌人
             foreach (var o in MLevel.Levels[MLevel.CurrentLevel - 1].Enemies)
@@ -190,40 +200,43 @@ namespace MMT
 
             //更新属性和装备
             this.Fs.Form_Status_Load(null,null);
-            this.PictureBox_Inventory_LoadCompleted(null,null);
 
-            // 绘制属性背景
-            int attrMargin = 0;
-            Bitmap attrImg = new Bitmap(Fs.Width, Fs.Height);
-            Graphics attrG = Graphics.FromImage(attrImg);
-            int xBlock = (Fs.Width - 2 * attrMargin) / x + 1, yBlock = (Fs.Height - 2 * attrMargin) / x + 1;
-            for(int i = 0;i<xBlock;i++)
+            if (repaintAttrInv)
             {
-                for(int j = 0; j < yBlock; j++)
+                // 绘制属性背景
+                int attrMargin = 0;
+                Bitmap attrImg = new Bitmap(Fs.Width, Fs.Height);
+                Graphics attrG = Graphics.FromImage(attrImg);
+                int xBlock = (Fs.Width - 2 * attrMargin) / x + 1, yBlock = (Fs.Height - 2 * attrMargin) / x + 1;
+                for (int i = 0; i < xBlock; i++)
                 {
-                    if (i == 0 || i == xBlock - 1 || j == 0 || j == yBlock - 1)
-                        attrG.DrawImage(wall, x * i, x * j, x, x);
-                    else
-                        attrG.DrawImage(ground, x * i, x * j, x, x);
+                    for (int j = 0; j < yBlock; j++)
+                    {
+                        if (i == 0 || i == xBlock - 1 || j == 0 || j == yBlock - 1)
+                            attrG.DrawImage(wall, x * i, x * j, x, x);
+                        else
+                            attrG.DrawImage(ground, x * i, x * j, x, x);
+                    }
                 }
-            }
-            Fs.BackgroundImage = attrImg;
-            // 绘制装备栏背景
-            int invMargin = 0;
-            Bitmap invImg = new Bitmap(PictureBox_Inventory.Width, PictureBox_Inventory.Height);
-            Graphics invG = Graphics.FromImage(invImg);
-            int xBlockInv = (PictureBox_Inventory.Width - 2 * invMargin) / x + 1, yBlockInv = (PictureBox_Inventory.Height - 2 * invMargin) / x + 1;
-            for (int i = 0; i < xBlockInv; i++)
-            {
-                for (int j = 0; j < yBlockInv; j++)
+                Fs.BackgroundImage = attrImg;
+                // 绘制装备栏背景
+                int invMargin = 0;
+                Bitmap invImg = new Bitmap(PictureBox_Inventory.Width, PictureBox_Inventory.Height);
+                Graphics invG = Graphics.FromImage(invImg);
+                int xBlockInv = (PictureBox_Inventory.Width - 2 * invMargin) / x + 1, yBlockInv = (PictureBox_Inventory.Height - 2 * invMargin) / x + 1;
+                for (int i = 0; i < xBlockInv; i++)
                 {
-                    if (i == 0 || i == xBlockInv - 1 || j == 0 || j == yBlockInv - 1)
-                        invG.DrawImage(wall, x * i, x * j, x, x);
-                    else
-                        invG.DrawImage(ground, x * i, x * j, x, x);
+                    for (int j = 0; j < yBlockInv; j++)
+                    {
+                        if (i == 0 || i == xBlockInv - 1 || j == 0 || j == yBlockInv - 1)
+                            invG.DrawImage(wall, x * i, x * j, x, x);
+                        else
+                            invG.DrawImage(ground, x * i, x * j, x, x);
+                    }
                 }
+                PictureBox_Inventory.Image = invImg;
+                repaintAttrInv = false;
             }
-            PictureBox_Inventory.Image = invImg;
         }
 
         public void GameStart() 
@@ -435,7 +448,7 @@ namespace MMT
             if (listBox_Message.TopIndex == listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight))
                 scroll = true;
             listBox_Message.Items.Add(info);
-            if(scroll)
+            if (scroll)
                 listBox_Message.TopIndex = listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight);
         }
 
