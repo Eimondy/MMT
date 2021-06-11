@@ -72,6 +72,12 @@
     <Compile Include="Form_Battle.Designer.cs">
       <DependentUpon>Form_Battle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Create.Designer.cs">
+      <DependentUpon>Form_Create.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Load.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Battle.resx">
       <DependentUpon>Form_Battle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Create.resx">
+      <DependentUpon>Form_Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>
