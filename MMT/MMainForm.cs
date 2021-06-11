@@ -450,7 +450,7 @@ namespace MMT
             l.Font = new Font("幼圆", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             l.Name = "Label_Message_" + (Panel_Message.Controls.Count + 1).ToString();
             Panel_Message.Controls.Add(l);
-            Panel_Message.VerticalScroll.Value = Panel_Message.VerticalScroll.Maximum;
+            //Panel_Message.VerticalScroll.Value = Panel_Message.VerticalScroll.Maximum;
         }
 
         private void Panel_Inventory_Paint(object sender, PaintEventArgs e)
@@ -462,6 +462,27 @@ namespace MMT
         {
             // this.groupBox_Equipped
             // this.groupBox_Inventory
+        }
+
+        private void Panel_Message_Scroll(object sender, ScrollEventArgs e)
+        {
+            //Panel_ME.DoubleBuffered = true;
+            // 背景重绘移动到此
+            /*
+            if (Panel_Message.BackgroundImage != null)
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                e.Graphics.DrawImage(
+                this.BackgroundImage,
+                new System.Drawing.Rectangle(0, 0, this.Width, this.Height),
+                0,
+                0,
+                this.BackgroundImage.Width,
+                this.BackgroundImage.Height,
+                System.Drawing.GraphicsUnit.Pixel);
+            }
+            base.OnPaint(e);*/
+            //Panel_Message.BackgroundImage = Properties.Resources.Img_slot;
         }
     }
 }

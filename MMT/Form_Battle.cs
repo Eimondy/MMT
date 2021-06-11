@@ -61,7 +61,7 @@ namespace MMT
                 this.lbl_Battle_Level1.Text = "等级：" + character.Level;
                 this.lbl_Battle_Armor1.Text = "护甲：" + character.Armor;
                 this.lbl_Battle_MagicArmor1.Text = "魔抗：" + character.MagicArmor;
-                this.lbl_Battle_Speed1.Text = "速度：" + character.Speed;
+                this.lbl_Battle_Speed1.Text = string.Format("速度：{0:F1}", character.Speed);
                 this.lbl_Battle_Hitrate1.Text = string.Format("命中率：{0:F1}", character.HitRate);
                 this.lbl_Battle_Power1.Text = "力量：" + character.Power;
             }
@@ -73,7 +73,7 @@ namespace MMT
                 this.lbl_Battle_Level2.Text = "等级：" + character.Level;
                 this.lbl_Battle_Armor2.Text = "护甲：" + character.Armor;
                 this.lbl_Battle_MagicArmor2.Text = "魔抗：" + character.MagicArmor;
-                this.lbl_Battle_Speed2.Text = "速度：" + character.Speed;
+                this.lbl_Battle_Speed2.Text = string.Format("速度：{0:F1}", character.Speed);
                 this.lbl_Battle_Hitrate2.Text = string.Format("命中率：{0:F1}", character.HitRate);
                 this.lbl_Battle_Power2.Text = "力量：" + character.Power;
             }

@@ -19,6 +19,7 @@ namespace MMT
 
         private void btn_Create_Confirm_Click(object sender, EventArgs e)
         {
+            if (textBox_Create.Text == "") return;
             this.Hide();
             MMainLogic.Instance.Start(0, textBox_Create.Text);
 
@@ -30,6 +31,7 @@ namespace MMT
 
         private void btn_Create_Cancel_Click(object sender, EventArgs e)
         {
+            textBox_Create.Text = "";
             this.Hide();
             //MMainForm.Instance.MainMenu();
         }
