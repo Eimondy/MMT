@@ -49,7 +49,7 @@ namespace MMT
         public MMainForm()
         {
             InitializeComponent();
-
+            // 602
             fs = new Form_Status();
             Fs.MdiParent = this;
 
@@ -185,7 +185,6 @@ namespace MMT
                 lastLv = Convert.ToByte(MLevel.CurrentLevel);
                 repaintAttrInv = true;
             }
-            //else if(lastLv == MLevel.CurrentLevel)
             // 绘制物品
             foreach (var o in MLevel.Levels[MLevel.CurrentLevel - 1].Items)
                 cur.DrawImage(o.Image, x * (o.LocationY - 1), x * (o.LocationX - 1), x, x);
@@ -245,6 +244,7 @@ namespace MMT
             UpdateEquipment();
             this.Picturebox_MainMenu.Hide();
             this.PictureBox_Inventory.Visible = true;
+            this.Panel_Message_F.Visible = true;
             Fs.Show();
             Fs.Height = this.Height;
             Fs.Location = new Point(0, 0);
@@ -252,8 +252,9 @@ namespace MMT
             Draw();
         }
 
-        public void MainMenu() 
+        public void MainMenu()
         {
+            this.Panel_Message_F.Hide();
             this.PictureBox_Inventory.Hide();
             this.Picturebox_Map.Hide();
             this.Picturebox_MainMenu.Show();
@@ -401,24 +402,9 @@ namespace MMT
                 MMT.Data.Classes.Character.MMainCharacter.Instance.AttackChoice = 0;
         }
 
-        private void MMainForm_Paint(object sender, PaintEventArgs e)     // 绘制事件
-        {
-
-        }
-
-        private void MMainForm_SizeChanged(object sender, EventArgs e)     // 更改窗体大小时，重设画布
-        {
-            //g = this.CreateGraphics();
-        }
-
         private void MMainForm_KeyUp(object sender, KeyEventArgs e)
         {
             MMainLogic.Instance.KeyboardInput = false;
-        }
-
-        private void MMainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_MainMenu_Start_Click(object sender, EventArgs e)
@@ -444,12 +430,25 @@ namespace MMT
 
         public void Write(string info)
         {
+            /*
             bool scroll = false;
             if (listBox_Message.TopIndex == listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight))
                 scroll = true;
             listBox_Message.Items.Add(info);
             if (scroll)
                 listBox_Message.TopIndex = listBox_Message.Items.Count - (int)(listBox_Message.Height / listBox_Message.ItemHeight);
+            */
+            Label l = new Label();
+            l.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            l.BackColor = Color.Transparent;
+            l.AutoSize = false;
+            l.Size = new Size(358, 20);
+            l.Location = new Point(15, Panel_Message.Controls.Count * 20 + 10);
+            l.Text = info;
+            l.Font = new Font("幼圆", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+            l.Name = "Label_Message_" + (Panel_Message.Controls.Count + 1).ToString();
+            Panel_Message.Controls.Add(l);
+            Panel_Message.VerticalScroll.Value = Panel_Message.VerticalScroll.Maximum;
         }
 
         private void Panel_Inventory_Paint(object sender, PaintEventArgs e)

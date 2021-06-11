@@ -81,9 +81,10 @@ namespace MMT
             this.equipment_3 = new System.Windows.Forms.Button();
             this.equipment_2 = new System.Windows.Forms.Button();
             this.equipment_1 = new System.Windows.Forms.Button();
-            this.listBox_Message = new System.Windows.Forms.ListBox();
             this.ToolTip_ = new System.Windows.Forms.ToolTip(this.components);
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.Panel_Message = new System.Windows.Forms.Panel();
+            this.Panel_Message_F = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).BeginInit();
             this.Picturebox_MainMenu.SuspendLayout();
@@ -94,6 +95,7 @@ namespace MMT
             this.groupBox_Equipped.SuspendLayout();
             this.groupBox_Inventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            this.Panel_Message_F.SuspendLayout();
             this.SuspendLayout();
             // 
             // Picturebox_Map
@@ -116,7 +118,7 @@ namespace MMT
             this.Picturebox_MainMenu.Image = global::MMT.Properties.Resources.Img_start;
             this.Picturebox_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.Picturebox_MainMenu.Name = "Picturebox_MainMenu";
-            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1398, 602);
+            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1383, 602);
             this.Picturebox_MainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picturebox_MainMenu.TabIndex = 5;
             this.Picturebox_MainMenu.TabStop = false;
@@ -749,21 +751,6 @@ namespace MMT
             this.equipment_1.TabIndex = 0;
             this.equipment_1.UseVisualStyleBackColor = true;
             // 
-            // listBox_Message
-            // 
-            this.listBox_Message.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox_Message.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.listBox_Message.ForeColor = System.Drawing.Color.Lime;
-            this.listBox_Message.FormattingEnabled = true;
-            this.listBox_Message.ItemHeight = 16;
-            this.listBox_Message.Items.AddRange(new object[] {
-            "获得HealthPotion，增加20点HP"});
-            this.listBox_Message.Location = new System.Drawing.Point(990, 416);
-            this.listBox_Message.Name = "listBox_Message";
-            this.listBox_Message.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBox_Message.Size = new System.Drawing.Size(385, 176);
-            this.listBox_Message.TabIndex = 12;
-            // 
             // player
             // 
             this.player.Enabled = true;
@@ -774,16 +761,38 @@ namespace MMT
             this.player.TabIndex = 14;
             this.player.Visible = false;
             // 
+            // Panel_Message
+            // 
+            this.Panel_Message.AutoScroll = true;
+            this.Panel_Message.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_Message.BackgroundImage = global::MMT.Properties.Resources.Img_slot;
+            this.Panel_Message.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Panel_Message.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Message.Name = "Panel_Message";
+            this.Panel_Message.Size = new System.Drawing.Size(402, 183);
+            this.Panel_Message.TabIndex = 16;
+            // 
+            // Panel_Message_F
+            // 
+            this.Panel_Message_F.BackgroundImage = global::MMT.Properties.Resources.Img_slot;
+            this.Panel_Message_F.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Panel_Message_F.Controls.Add(this.Panel_Message);
+            this.Panel_Message_F.Location = new System.Drawing.Point(984, 417);
+            this.Panel_Message_F.Name = "Panel_Message_F";
+            this.Panel_Message_F.Size = new System.Drawing.Size(402, 183);
+            this.Panel_Message_F.TabIndex = 17;
+            this.Panel_Message_F.Visible = false;
+            // 
             // MMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 601);
+            this.Controls.Add(this.Panel_Message_F);
             this.Controls.Add(this.player);
             this.Controls.Add(this.Picturebox_Map);
             this.Controls.Add(this.Picturebox_MainMenu);
-            this.Controls.Add(this.listBox_Message);
             this.Controls.Add(this.PictureBox_Inventory);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -794,9 +803,6 @@ namespace MMT
             this.MinimumSize = new System.Drawing.Size(1398, 640);
             this.Name = "MMainForm";
             this.Text = "MyMagicTower";
-            this.Load += new System.EventHandler(this.MMainForm_Load);
-            this.SizeChanged += new System.EventHandler(this.MMainForm_SizeChanged);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MMainForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).EndInit();
@@ -811,6 +817,7 @@ namespace MMT
             this.groupBox_Equipped.ResumeLayout(false);
             this.groupBox_Inventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            this.Panel_Message_F.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -862,7 +869,6 @@ namespace MMT
         private System.Windows.Forms.Button equipment_3;
         private System.Windows.Forms.Button equipment_2;
         private System.Windows.Forms.Button equipment_1;
-        private System.Windows.Forms.ListBox listBox_Message;
         private System.Windows.Forms.ToolTip ToolTip_;
         private System.Windows.Forms.PictureBox Picturebox_Register;
         private System.Windows.Forms.Label lbl_Register;
@@ -870,6 +876,8 @@ namespace MMT
         private System.Windows.Forms.Button btn_Register_Confirm;
         private System.Windows.Forms.Button btn_Register_Cancle;
         public AxWMPLib.AxWindowsMediaPlayer player;
+        private System.Windows.Forms.Panel Panel_Message;
+        private System.Windows.Forms.Panel Panel_Message_F;
     }
 }
 
