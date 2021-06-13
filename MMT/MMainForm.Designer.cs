@@ -766,15 +766,16 @@ namespace MMT
             this.Panel_Message.AutoScroll = true;
             this.Panel_Message.BackColor = System.Drawing.Color.Transparent;
             this.Panel_Message.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Panel_Message.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Message.Location = new System.Drawing.Point(39, 20);
             this.Panel_Message.Name = "Panel_Message";
-            this.Panel_Message.Size = new System.Drawing.Size(402, 183);
+            this.Panel_Message.Size = new System.Drawing.Size(326, 135);
             this.Panel_Message.TabIndex = 16;
             this.Panel_Message.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Panel_Message_Scroll);
             // 
             // Panel_Message_F
             // 
-            this.Panel_Message_F.BackgroundImage = global::MMT.Properties.Resources.Img_slot;
+            this.Panel_Message_F.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Panel_Message_F.BackgroundImage = global::MMT.Properties.Resources.Img_scroll;
             this.Panel_Message_F.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel_Message_F.Controls.Add(this.Panel_Message);
             this.Panel_Message_F.Location = new System.Drawing.Point(984, 417);

@@ -444,8 +444,8 @@ namespace MMT
             l.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             l.BackColor = Color.Transparent;
             l.AutoSize = false;
-            l.Size = new Size(358, 20);
-            l.Location = new Point(15, Panel_Message.Controls.Count * 20 + 10);
+            l.Size = new Size(300, 20);
+            l.Location = new Point(5, Panel_Message.Controls.Count * 20);
             l.Text = info;
             l.Font = new Font("幼圆", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             l.Name = "Label_Message_" + (Panel_Message.Controls.Count + 1).ToString();
