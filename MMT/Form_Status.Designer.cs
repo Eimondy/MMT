@@ -177,7 +177,7 @@ namespace MMT
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(384, 640);
+            this.ClientSize = new System.Drawing.Size(420, 660);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.picturebox_BackColor);
             this.Controls.Add(this.lbl_FloorNum);

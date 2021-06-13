@@ -96,9 +96,9 @@ namespace MMT
             // 
             // Picturebox_Map
             // 
-            this.Picturebox_Map.Location = new System.Drawing.Point(384, 0);
+            this.Picturebox_Map.Location = new System.Drawing.Point(420, 0);
             this.Picturebox_Map.Name = "Picturebox_Map";
-            this.Picturebox_Map.Size = new System.Drawing.Size(600, 600);
+            this.Picturebox_Map.Size = new System.Drawing.Size(660, 660);
             this.Picturebox_Map.TabIndex = 7;
             this.Picturebox_Map.TabStop = false;
             this.Picturebox_Map.Visible = false;
@@ -114,7 +114,7 @@ namespace MMT
             this.Picturebox_MainMenu.Image = global::MMT.Properties.Resources.Img_start;
             this.Picturebox_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.Picturebox_MainMenu.Name = "Picturebox_MainMenu";
-            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1386, 602);
+            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1500, 660);
             this.Picturebox_MainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picturebox_MainMenu.TabIndex = 5;
             this.Picturebox_MainMenu.TabStop = false;
@@ -289,9 +289,9 @@ namespace MMT
             this.PictureBox_Inventory.Controls.Add(this.equipped_3);
             this.PictureBox_Inventory.Controls.Add(this.equipped_2);
             this.PictureBox_Inventory.Controls.Add(this.equipped_1);
-            this.PictureBox_Inventory.Location = new System.Drawing.Point(984, 0);
+            this.PictureBox_Inventory.Location = new System.Drawing.Point(1080, 0);
             this.PictureBox_Inventory.Name = "PictureBox_Inventory";
-            this.PictureBox_Inventory.Size = new System.Drawing.Size(402, 423);
+            this.PictureBox_Inventory.Size = new System.Drawing.Size(420, 420);
             this.PictureBox_Inventory.TabIndex = 9;
             this.PictureBox_Inventory.TabStop = false;
             this.PictureBox_Inventory.Visible = false;
@@ -668,9 +668,9 @@ namespace MMT
             this.equipped_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.equipped_4.FlatAppearance.BorderSize = 0;
             this.equipped_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.equipped_4.Location = new System.Drawing.Point(285, 20);
+            this.equipped_4.Location = new System.Drawing.Point(240, 60);
             this.equipped_4.Name = "equipped_4";
-            this.equipped_4.Size = new System.Drawing.Size(70, 70);
+            this.equipped_4.Size = new System.Drawing.Size(60, 60);
             this.equipped_4.TabIndex = 6;
             this.equipped_4.UseVisualStyleBackColor = false;
             // 
@@ -681,9 +681,9 @@ namespace MMT
             this.equipped_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.equipped_3.FlatAppearance.BorderSize = 0;
             this.equipped_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.equipped_3.Location = new System.Drawing.Point(191, 20);
+            this.equipped_3.Location = new System.Drawing.Point(180, 60);
             this.equipped_3.Name = "equipped_3";
-            this.equipped_3.Size = new System.Drawing.Size(70, 70);
+            this.equipped_3.Size = new System.Drawing.Size(60, 60);
             this.equipped_3.TabIndex = 4;
             this.equipped_3.UseVisualStyleBackColor = false;
             // 
@@ -694,9 +694,9 @@ namespace MMT
             this.equipped_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.equipped_2.FlatAppearance.BorderSize = 0;
             this.equipped_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.equipped_2.Location = new System.Drawing.Point(100, 20);
+            this.equipped_2.Location = new System.Drawing.Point(120, 60);
             this.equipped_2.Name = "equipped_2";
-            this.equipped_2.Size = new System.Drawing.Size(70, 70);
+            this.equipped_2.Size = new System.Drawing.Size(60, 60);
             this.equipped_2.TabIndex = 2;
             this.equipped_2.UseVisualStyleBackColor = false;
             // 
@@ -707,9 +707,9 @@ namespace MMT
             this.equipped_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.equipped_1.FlatAppearance.BorderSize = 0;
             this.equipped_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.equipped_1.Location = new System.Drawing.Point(10, 20);
+            this.equipped_1.Location = new System.Drawing.Point(60, 60);
             this.equipped_1.Name = "equipped_1";
-            this.equipped_1.Size = new System.Drawing.Size(70, 70);
+            this.equipped_1.Size = new System.Drawing.Size(60, 60);
             this.equipped_1.TabIndex = 0;
             this.equipped_1.UseVisualStyleBackColor = false;
             // 
@@ -770,7 +770,7 @@ namespace MMT
             this.Panel_Message.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Panel_Message.Location = new System.Drawing.Point(39, 20);
             this.Panel_Message.Name = "Panel_Message";
-            this.Panel_Message.Size = new System.Drawing.Size(326, 135);
+            this.Panel_Message.Size = new System.Drawing.Size(344, 189);
             this.Panel_Message.TabIndex = 16;
             this.Panel_Message.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Panel_Message_Scroll);
             // 
@@ -780,9 +780,9 @@ namespace MMT
             this.Panel_Message_F.BackgroundImage = global::MMT.Properties.Resources.Img_scroll;
             this.Panel_Message_F.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Panel_Message_F.Controls.Add(this.Panel_Message);
-            this.Panel_Message_F.Location = new System.Drawing.Point(984, 417);
+            this.Panel_Message_F.Location = new System.Drawing.Point(1080, 420);
             this.Panel_Message_F.Name = "Panel_Message_F";
-            this.Panel_Message_F.Size = new System.Drawing.Size(402, 183);
+            this.Panel_Message_F.Size = new System.Drawing.Size(420, 240);
             this.Panel_Message_F.TabIndex = 17;
             this.Panel_Message_F.Visible = false;
             // 
@@ -791,7 +791,7 @@ namespace MMT
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1382, 601);
+            this.ClientSize = new System.Drawing.Size(1500, 658);
             this.Controls.Add(this.Panel_Message_F);
             this.Controls.Add(this.player);
             this.Controls.Add(this.Picturebox_Map);
@@ -802,8 +802,8 @@ namespace MMT
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.MaximumSize = new System.Drawing.Size(1398, 640);
-            this.MinimumSize = new System.Drawing.Size(1398, 640);
+            this.MaximumSize = new System.Drawing.Size(1516, 697);
+            this.MinimumSize = new System.Drawing.Size(1516, 697);
             this.Name = "MMainForm";
             this.Text = "MyMagicTower";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);
