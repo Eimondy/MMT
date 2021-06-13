@@ -102,12 +102,14 @@ namespace MMT
             {
                 if (i < total && total <= 4)
                 {
+                    Equipped[i].Visible = true;
                     Equipped[i].BackgroundImage = MMainCharacter.Instance.Equipped[i].Image;
                     LblEquipped[i].Text = MMainCharacter.Instance.Equipped[i].Name;
                     ToolTip_.SetToolTip(Equipped[i], MMainCharacter.Instance.Equipped[i].ToString());
                 }
                 else
                 {
+                    Equipped[i].Visible = false;
                     Equipped[i].BackgroundImage = Properties.Resources.Img_slot;
                     LblEquipped[i].Text = "";
                     ToolTip_.SetToolTip(Equipped[i], "");
@@ -208,17 +210,18 @@ namespace MMT
             {
                 // 绘制属性背景
                 int attrMargin = 0;
+                int tx = 60;
                 Bitmap attrImg = new Bitmap(Fs.Width, Fs.Height);
                 Graphics attrG = Graphics.FromImage(attrImg);
-                int xBlock = (Fs.Width - 2 * attrMargin) / x + 1, yBlock = (Fs.Height - 2 * attrMargin) / x + 1;
+                int xBlock = (Fs.Width - 2 * attrMargin) / tx + 1, yBlock = (Fs.Height - 2 * attrMargin) / tx + 1;
                 for (int i = 0; i < xBlock; i++)
                 {
                     for (int j = 0; j < yBlock; j++)
                     {
                         if (i == 0 || i == xBlock - 1 || j == 0 || j == yBlock - 1)
-                            attrG.DrawImage(wall, x * i, x * j, x, x);
+                            attrG.DrawImage(wall, tx * i, tx * j, tx, tx);
                         else
-                            attrG.DrawImage(ground, x * i, x * j, x, x);
+                            attrG.DrawImage(ground, tx * i, tx * j, tx, tx);
                     }
                 }
                 Fs.BackgroundImage = attrImg;
@@ -226,15 +229,18 @@ namespace MMT
                 int invMargin = 0;
                 Bitmap invImg = new Bitmap(PictureBox_Inventory.Width, PictureBox_Inventory.Height);
                 Graphics invG = Graphics.FromImage(invImg);
-                int xBlockInv = (PictureBox_Inventory.Width - 2 * invMargin) / x + 1, yBlockInv = (PictureBox_Inventory.Height - 2 * invMargin) / x + 1;
+                int xBlockInv = (PictureBox_Inventory.Width - 2 * invMargin) / tx, yBlockInv = (PictureBox_Inventory.Height - 2 * invMargin) / tx+1;
                 for (int i = 0; i < xBlockInv; i++)
                 {
                     for (int j = 0; j < yBlockInv; j++)
                     {
                         if (i == 0 || i == xBlockInv - 1 || j == 0 || j == yBlockInv - 1)
-                            invG.DrawImage(wall, x * i, x * j, x, x);
+                            invG.DrawImage(wall, tx * i, tx * j, tx, tx);
                         else
-                            invG.DrawImage(ground, x * i, x * j, x, x);
+                        {
+                            invG.DrawImage(ground, tx * i, tx * j, tx, tx);
+                            //Shell.WriteLine(string.Format("{0},{1},{2},{3}", tx * i, tx * j, tx * i + tx, tx * j + tx));
+                        }
                     }
                 }
                 PictureBox_Inventory.Image = invImg;
@@ -360,6 +366,12 @@ namespace MMT
                 equipment_15, equipment_16, equipment_17, equipment_18, equipment_19, equipment_20, equipment_21,
                 equipment_22, equipment_23, equipment_24, equipment_25, equipment_26, equipment_27, equipment_28
             };
+            for (int i = 0; i < 20; i++) {
+                int row = i / 5;
+                int col = i % 5;
+                equipment[i].Location = new Point(60 + col * 60, 180 + row * 60);
+                equipment[i].Size = new Size(60, 60);
+            }
             lblEquipped = new List<Label>()
             {
                 lbl_equipped_1, lbl_equipped_2, lbl_equipped_3, lbl_equipped_4
