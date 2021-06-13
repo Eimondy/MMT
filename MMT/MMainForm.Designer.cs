@@ -31,6 +31,16 @@ namespace MMT
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MMainForm));
+            this.lbl_equipped_4 = new System.Windows.Forms.Label();
+            this.lbl_equipped_3 = new System.Windows.Forms.Label();
+            this.lbl_equipped_2 = new System.Windows.Forms.Label();
+            this.lbl_equipped_1 = new System.Windows.Forms.Label();
+            this.ToolTip_ = new System.Windows.Forms.ToolTip(this.components);
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.picturebox_pillar2 = new System.Windows.Forms.PictureBox();
+            this.picturebox_pillar1 = new System.Windows.Forms.PictureBox();
+            this.Panel_Message_F = new System.Windows.Forms.Panel();
+            this.Panel_Message = new System.Windows.Forms.Panel();
             this.Picturebox_Map = new System.Windows.Forms.PictureBox();
             this.Picturebox_MainMenu = new System.Windows.Forms.PictureBox();
             this.btn_MainMenu_Exit = new System.Windows.Forms.Button();
@@ -75,14 +85,10 @@ namespace MMT
             this.equipped_3 = new System.Windows.Forms.Button();
             this.equipped_2 = new System.Windows.Forms.Button();
             this.equipped_1 = new System.Windows.Forms.Button();
-            this.lbl_equipped_4 = new System.Windows.Forms.Label();
-            this.lbl_equipped_3 = new System.Windows.Forms.Label();
-            this.lbl_equipped_2 = new System.Windows.Forms.Label();
-            this.lbl_equipped_1 = new System.Windows.Forms.Label();
-            this.ToolTip_ = new System.Windows.Forms.ToolTip(this.components);
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
-            this.Panel_Message = new System.Windows.Forms.Panel();
-            this.Panel_Message_F = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_pillar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_pillar1)).BeginInit();
+            this.Panel_Message_F.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).BeginInit();
             this.Picturebox_MainMenu.SuspendLayout();
@@ -90,13 +96,104 @@ namespace MMT
             this.Picturebox_Register.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Inventory)).BeginInit();
             this.PictureBox_Inventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            this.Panel_Message_F.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lbl_equipped_4
+            // 
+            this.lbl_equipped_4.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_4.Location = new System.Drawing.Point(285, 93);
+            this.lbl_equipped_4.Name = "lbl_equipped_4";
+            this.lbl_equipped_4.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_4.TabIndex = 7;
+            this.lbl_equipped_4.Text = "蓝宝石";
+            this.lbl_equipped_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_equipped_3
+            // 
+            this.lbl_equipped_3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_3.Location = new System.Drawing.Point(191, 93);
+            this.lbl_equipped_3.Name = "lbl_equipped_3";
+            this.lbl_equipped_3.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_3.TabIndex = 5;
+            this.lbl_equipped_3.Text = "蓝宝石";
+            this.lbl_equipped_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_equipped_2
+            // 
+            this.lbl_equipped_2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_2.Location = new System.Drawing.Point(100, 93);
+            this.lbl_equipped_2.Name = "lbl_equipped_2";
+            this.lbl_equipped_2.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_2.TabIndex = 3;
+            this.lbl_equipped_2.Text = "蓝宝石";
+            this.lbl_equipped_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_equipped_1
+            // 
+            this.lbl_equipped_1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_equipped_1.Location = new System.Drawing.Point(10, 93);
+            this.lbl_equipped_1.Name = "lbl_equipped_1";
+            this.lbl_equipped_1.Size = new System.Drawing.Size(70, 23);
+            this.lbl_equipped_1.TabIndex = 1;
+            this.lbl_equipped_1.Text = "蓝宝石";
+            this.lbl_equipped_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(0, 0);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(98, 49);
+            this.player.TabIndex = 14;
+            this.player.Visible = false;
+            // 
+            // picturebox_pillar2
+            // 
+            this.picturebox_pillar2.BackgroundImage = global::MMT.Properties.Resources.Img_pillar2;
+            this.picturebox_pillar2.Location = new System.Drawing.Point(1080, 0);
+            this.picturebox_pillar2.Name = "picturebox_pillar2";
+            this.picturebox_pillar2.Size = new System.Drawing.Size(20, 660);
+            this.picturebox_pillar2.TabIndex = 20;
+            this.picturebox_pillar2.TabStop = false;
+            this.picturebox_pillar2.Visible = false;
+            // 
+            // picturebox_pillar1
+            // 
+            this.picturebox_pillar1.BackgroundImage = global::MMT.Properties.Resources.Img_pillar2;
+            this.picturebox_pillar1.Location = new System.Drawing.Point(420, 0);
+            this.picturebox_pillar1.Name = "picturebox_pillar1";
+            this.picturebox_pillar1.Size = new System.Drawing.Size(20, 660);
+            this.picturebox_pillar1.TabIndex = 19;
+            this.picturebox_pillar1.TabStop = false;
+            this.picturebox_pillar1.Visible = false;
+            // 
+            // Panel_Message_F
+            // 
+            this.Panel_Message_F.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Panel_Message_F.BackgroundImage = global::MMT.Properties.Resources.Img_scroll;
+            this.Panel_Message_F.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Panel_Message_F.Controls.Add(this.Panel_Message);
+            this.Panel_Message_F.Location = new System.Drawing.Point(1100, 420);
+            this.Panel_Message_F.Name = "Panel_Message_F";
+            this.Panel_Message_F.Size = new System.Drawing.Size(420, 240);
+            this.Panel_Message_F.TabIndex = 17;
+            this.Panel_Message_F.Visible = false;
+            // 
+            // Panel_Message
+            // 
+            this.Panel_Message.AutoScroll = true;
+            this.Panel_Message.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_Message.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Panel_Message.Location = new System.Drawing.Point(39, 20);
+            this.Panel_Message.Name = "Panel_Message";
+            this.Panel_Message.Size = new System.Drawing.Size(344, 195);
+            this.Panel_Message.TabIndex = 16;
+            this.Panel_Message.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Panel_Message_Scroll);
             // 
             // Picturebox_Map
             // 
-            this.Picturebox_Map.Location = new System.Drawing.Point(420, 0);
+            this.Picturebox_Map.Location = new System.Drawing.Point(430, 0);
             this.Picturebox_Map.Name = "Picturebox_Map";
             this.Picturebox_Map.Size = new System.Drawing.Size(660, 660);
             this.Picturebox_Map.TabIndex = 7;
@@ -114,7 +211,7 @@ namespace MMT
             this.Picturebox_MainMenu.Image = global::MMT.Properties.Resources.Img_start;
             this.Picturebox_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.Picturebox_MainMenu.Name = "Picturebox_MainMenu";
-            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1500, 660);
+            this.Picturebox_MainMenu.Size = new System.Drawing.Size(1520, 660);
             this.Picturebox_MainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picturebox_MainMenu.TabIndex = 5;
             this.Picturebox_MainMenu.TabStop = false;
@@ -289,7 +386,7 @@ namespace MMT
             this.PictureBox_Inventory.Controls.Add(this.equipped_3);
             this.PictureBox_Inventory.Controls.Add(this.equipped_2);
             this.PictureBox_Inventory.Controls.Add(this.equipped_1);
-            this.PictureBox_Inventory.Location = new System.Drawing.Point(1080, 0);
+            this.PictureBox_Inventory.Location = new System.Drawing.Point(1100, 0);
             this.PictureBox_Inventory.Name = "PictureBox_Inventory";
             this.PictureBox_Inventory.Size = new System.Drawing.Size(420, 420);
             this.PictureBox_Inventory.TabIndex = 9;
@@ -713,85 +810,14 @@ namespace MMT
             this.equipped_1.TabIndex = 0;
             this.equipped_1.UseVisualStyleBackColor = false;
             // 
-            // lbl_equipped_4
-            // 
-            this.lbl_equipped_4.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_equipped_4.Location = new System.Drawing.Point(285, 93);
-            this.lbl_equipped_4.Name = "lbl_equipped_4";
-            this.lbl_equipped_4.Size = new System.Drawing.Size(70, 23);
-            this.lbl_equipped_4.TabIndex = 7;
-            this.lbl_equipped_4.Text = "蓝宝石";
-            this.lbl_equipped_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_equipped_3
-            // 
-            this.lbl_equipped_3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_equipped_3.Location = new System.Drawing.Point(191, 93);
-            this.lbl_equipped_3.Name = "lbl_equipped_3";
-            this.lbl_equipped_3.Size = new System.Drawing.Size(70, 23);
-            this.lbl_equipped_3.TabIndex = 5;
-            this.lbl_equipped_3.Text = "蓝宝石";
-            this.lbl_equipped_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_equipped_2
-            // 
-            this.lbl_equipped_2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_equipped_2.Location = new System.Drawing.Point(100, 93);
-            this.lbl_equipped_2.Name = "lbl_equipped_2";
-            this.lbl_equipped_2.Size = new System.Drawing.Size(70, 23);
-            this.lbl_equipped_2.TabIndex = 3;
-            this.lbl_equipped_2.Text = "蓝宝石";
-            this.lbl_equipped_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_equipped_1
-            // 
-            this.lbl_equipped_1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_equipped_1.Location = new System.Drawing.Point(10, 93);
-            this.lbl_equipped_1.Name = "lbl_equipped_1";
-            this.lbl_equipped_1.Size = new System.Drawing.Size(70, 23);
-            this.lbl_equipped_1.TabIndex = 1;
-            this.lbl_equipped_1.Text = "蓝宝石";
-            this.lbl_equipped_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // player
-            // 
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 0);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(98, 49);
-            this.player.TabIndex = 14;
-            this.player.Visible = false;
-            // 
-            // Panel_Message
-            // 
-            this.Panel_Message.AutoScroll = true;
-            this.Panel_Message.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_Message.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Panel_Message.Location = new System.Drawing.Point(39, 20);
-            this.Panel_Message.Name = "Panel_Message";
-            this.Panel_Message.Size = new System.Drawing.Size(344, 189);
-            this.Panel_Message.TabIndex = 16;
-            this.Panel_Message.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Panel_Message_Scroll);
-            // 
-            // Panel_Message_F
-            // 
-            this.Panel_Message_F.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Panel_Message_F.BackgroundImage = global::MMT.Properties.Resources.Img_scroll;
-            this.Panel_Message_F.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Panel_Message_F.Controls.Add(this.Panel_Message);
-            this.Panel_Message_F.Location = new System.Drawing.Point(1080, 420);
-            this.Panel_Message_F.Name = "Panel_Message_F";
-            this.Panel_Message_F.Size = new System.Drawing.Size(420, 240);
-            this.Panel_Message_F.TabIndex = 17;
-            this.Panel_Message_F.Visible = false;
-            // 
             // MMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1500, 658);
+            this.ClientSize = new System.Drawing.Size(1520, 657);
+            this.Controls.Add(this.picturebox_pillar2);
+            this.Controls.Add(this.picturebox_pillar1);
             this.Controls.Add(this.Panel_Message_F);
             this.Controls.Add(this.player);
             this.Controls.Add(this.Picturebox_Map);
@@ -802,12 +828,16 @@ namespace MMT
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.MaximumSize = new System.Drawing.Size(1516, 697);
-            this.MinimumSize = new System.Drawing.Size(1516, 697);
+            this.MaximumSize = new System.Drawing.Size(1536, 696);
+            this.MinimumSize = new System.Drawing.Size(1536, 696);
             this.Name = "MMainForm";
             this.Text = "MyMagicTower";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MMainForm_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_pillar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_pillar1)).EndInit();
+            this.Panel_Message_F.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox_MainMenu)).EndInit();
             this.Picturebox_MainMenu.ResumeLayout(false);
@@ -817,8 +847,6 @@ namespace MMT
             this.Picturebox_Register.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Inventory)).EndInit();
             this.PictureBox_Inventory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            this.Panel_Message_F.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -877,6 +905,8 @@ namespace MMT
         public AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.Panel Panel_Message;
         private System.Windows.Forms.Panel Panel_Message_F;
+        private System.Windows.Forms.PictureBox picturebox_pillar1;
+        private System.Windows.Forms.PictureBox picturebox_pillar2;
     }
 }
 

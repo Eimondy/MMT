@@ -153,7 +153,7 @@ namespace MMT
             if (MLevel.CurrentLevel - 1 >= MLevel.Levels.Count)     // 解决双线程变量共享读失败问题
                 return;
             MLevel CurLevel = MLevel.Levels[MLevel.CurrentLevel - 1];
-            var x = this.Picturebox_Map.Width / CurLevel.Map.Size;
+            int x = (int)Math.Ceiling((double)this.Picturebox_Map.Width / CurLevel.Map.Size);
             Image ground = null, wall = null;
             for (int i = 0; i < CurLevel.Map.Size; i++)
             {
@@ -255,6 +255,8 @@ namespace MMT
             this.Picturebox_MainMenu.Hide();
             this.PictureBox_Inventory.Visible = true;
             this.Panel_Message_F.Visible = true;
+            this.picturebox_pillar1.Show();
+            this.picturebox_pillar2.Show();
             Fs.Show();
             Fs.Height = this.Height;
             Fs.Location = new Point(0, 0);
@@ -264,6 +266,8 @@ namespace MMT
 
         public void MainMenu()
         {
+            this.picturebox_pillar1.Hide();
+            this.picturebox_pillar2.Hide();
             this.Panel_Message_F.Hide();
             this.PictureBox_Inventory.Hide();
             this.Picturebox_Map.Hide();
@@ -281,11 +285,15 @@ namespace MMT
             this.btn_MainMenu_Start.Visible = false;     */
             if (!MMainLogic.Instance.Paused)
             {
+                picturebox_pillar1.Hide();
+                picturebox_pillar2.Hide();
                 Fl.Show();
                 Fl.BringToFront();
             }
             else {
                 Fs.Hide();
+                picturebox_pillar1.Hide();
+                picturebox_pillar2.Hide();
                 this.Picturebox_Map.Hide();
                 this.PictureBox_Inventory.Hide();
                 this.Picturebox_MainMenu.Show();
